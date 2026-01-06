@@ -1,0 +1,19 @@
+// Copyright 2017-2025 @pezkuwi/api authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Metadata } from '@pezkuwi/types';
+import type { RuntimeVersionPartial } from '@pezkuwi/types/interfaces';
+import type { DecoratedMeta } from '@pezkuwi/types/metadata/decorate/types';
+import type { Registry } from '@pezkuwi/types/types';
+import type { ApiDecoration, ApiTypes } from '../types/index.js';
+
+export interface VersionedRegistry<ApiType extends ApiTypes> {
+  counter: number;
+  decoratedApi?: ApiDecoration<ApiType>;
+  decoratedMeta?: DecoratedMeta;
+  isDefault?: boolean;
+  lastBlockHash?: Uint8Array | null;
+  metadata: Metadata;
+  registry: Registry;
+  runtimeVersion: RuntimeVersionPartial;
+}

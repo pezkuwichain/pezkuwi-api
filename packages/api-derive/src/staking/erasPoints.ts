@@ -1,0 +1,67 @@
+// Copyright 2017-2025 @pezkuwi/api-derive authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Observable } from 'rxjs';
+import type { EraIndex } from '@pezkuwi/types/interfaces';
+import type { PezpalletStakingEraRewardPoints } from '@pezkuwi/types/lookup';
+import type { DeriveApi, DeriveEraPoints, DeriveEraValPoints } from '../types.js';
+
+import { map, of } from 'rxjs';
+
+import { BN_ZERO } from '@pezkuwi/util';
+
+import { memo } from '../util/index.js';
+import { filterCachedEras, getEraMultiCache, setEraMultiCache } from './cache.js';
+import { erasHistoricApply, filterEras } from './util.js';
+
+const CACHE_KEY = 'eraPoints';
+
+function mapValidators ({ individual }: PezpalletStakingEraRewardPoints): DeriveEraValPoints {
+  return [...individual.entries()]
+    .filter(([, points]) => points.gt(BN_ZERO))
+    .reduce((result: DeriveEraValPoints, [validatorId, points]): DeriveEraValPoints => {
+      result[validatorId.toString()] = points;
+
+      return result;
+    }, {});
+}
+
+function mapPoints (eras: EraIndex[], points: PezpalletStakingEraRewardPoints[]): DeriveEraPoints[] {
+  return eras.map((era, index): DeriveEraPoints => ({
+    era,
+    eraPoints: points[index].total,
+    validators: mapValidators(points[index])
+  }));
+}
+
+export function _erasPoints (instanceId: string, api: DeriveApi): (eras: EraIndex[], withActive: boolean) => Observable<DeriveEraPoints[]> {
+  return memo(instanceId, (eras: EraIndex[], withActive: boolean): Observable<DeriveEraPoints[]> => {
+    if (!eras.length) {
+      return of([]);
+    }
+
+    const cached = getEraMultiCache<DeriveEraPoints>(CACHE_KEY, eras, withActive);
+    const remaining = filterEras(eras, cached);
+
+    return !remaining.length
+      ? of(cached)
+      : api.query.staking.erasRewardPoints.multi(remaining).pipe(
+        map((p) => filterCachedEras(eras, cached, setEraMultiCache(CACHE_KEY, withActive, mapPoints(remaining, p))))
+      );
+  });
+}
+
+/**
+ * @name erasPoints
+ * @description Retrieves historical era points with its validators.
+ * @param {boolean} withActive? (Optional) Whether to include the active era in the result.
+ * @example
+ * ```javascript
+ * const points = await api.derive.staking.erasPoints(true);
+ * console.log(
+ *   "Validator points:",
+ *   points.map(({ era, eraPoints }) => `Era: ${era}, points ${eraPoints}`)
+ * );
+ * ```
+ */
+export const erasPoints = /*#__PURE__*/ erasHistoricApply('_erasPoints');

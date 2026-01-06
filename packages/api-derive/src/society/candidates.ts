@@ -1,0 +1,71 @@
+// Copyright 2017-2025 @pezkuwi/api-derive authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Observable } from 'rxjs';
+import type { AccountId32, BalanceOf } from '@pezkuwi/types/interfaces';
+import type { PezpalletSocietyBid, PezpalletSocietyBidKind, PezpalletSocietyCandidacy } from '@pezkuwi/types/lookup';
+import type { ITuple } from '@pezkuwi/types/types';
+import type { Option, Vec } from '@pezkuwi/types-codec';
+import type { DeriveApi, DeriveSocietyCandidate } from '../types.js';
+
+import { combineLatest, map, of, switchMap } from 'rxjs';
+
+import { memo } from '../util/index.js';
+
+type ResultSuspend = Option<ITuple<[BalanceOf, PezpalletSocietyBidKind]>>;
+type Result = [PezpalletSocietyBid[], ResultSuspend[]]
+
+function getPrev (api: DeriveApi): Observable<DeriveSocietyCandidate[]> {
+  return api.query.society.candidates<Vec<PezpalletSocietyBid>>().pipe(
+    switchMap((candidates): Observable<Result> =>
+      combineLatest([
+        of(candidates),
+        api.query.society['suspendedCandidates'].multi<Option<ITuple<[BalanceOf, PezpalletSocietyBidKind]>>>(
+          candidates.map(({ who }) => who)
+        )
+      ])
+    ),
+    map(([candidates, suspended]: Result): DeriveSocietyCandidate[] =>
+      candidates.map(({ kind, value, who }, index) => ({
+        accountId: who,
+        isSuspended: suspended[index].isSome,
+        kind,
+        value
+      }))
+    )
+  );
+}
+
+function getCurr (api: DeriveApi) {
+  return api.query.society.candidates.entries().pipe(
+    map((entries) =>
+      entries
+        .filter(([, opt]) => opt.isSome)
+        .map(([{ args: [accountId] }, opt]): [AccountId32, PezpalletSocietyCandidacy] => [accountId, opt.unwrap()])
+        // FIXME We are missing the new fields from the candidate record
+        .map(([accountId, { bid, kind }]) => ({
+          accountId,
+          isSuspended: false,
+          kind,
+          value: bid
+        }))
+    )
+  );
+}
+
+/**
+ * @name candidate
+ * @description Retrieves the list of candidates for the society module.
+ * @example
+ * ```javascript
+ * const societyCandidates = await api.derive.society.candidates();
+ * console.log(societyCandidates);
+ * ```
+ */
+export function candidates (instanceId: string, api: DeriveApi): () => Observable<DeriveSocietyCandidate[]> {
+  return memo(instanceId, (): Observable<DeriveSocietyCandidate[]> =>
+    api.query.society['suspendedCandidates'] && api.query.society.candidates.creator.meta.type.isPlain
+      ? getPrev(api)
+      : getCurr(api)
+  );
+}

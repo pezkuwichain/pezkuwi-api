@@ -1,0 +1,44 @@
+// Copyright 2017-2025 @pezkuwi/api-derive authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Observable } from 'rxjs';
+import type { AccountId, AccountIndex, Address } from '@pezkuwi/types/interfaces';
+import type { DeriveApi } from '../types.js';
+
+import { map, of } from 'rxjs';
+
+import { assertReturn, isU8a } from '@pezkuwi/util';
+import { decodeAddress } from '@pezkuwi/util-crypto';
+
+import { memo } from '../util/index.js';
+
+/**
+ * @name accountId
+ * @param {(Address | AccountId | AccountIndex | string | null)} address An accounts address in various formats.
+ * @description Resolves an address (in different formats) to its corresponding `AccountId`.
+ * @example
+ * ```javascript
+ * const ALICE = "F7Hs";
+ *
+ * api.derive.accounts.accountId(ALICE, (accountId) => {
+ *   console.log(`Resolved AccountId: ${accountId}`);
+ * });
+ * ```
+ */
+export function accountId (instanceId: string, api: DeriveApi): (address?: Address | AccountId | AccountIndex | string | null) => Observable<AccountId> {
+  return memo(instanceId, (address?: Address | AccountId | AccountIndex | string | null): Observable<AccountId> => {
+    const decoded = isU8a(address)
+      ? address
+      : decodeAddress((address || '').toString());
+
+    if (decoded.length > 8) {
+      return of(api.registry.createType(decoded.length === 20 ? 'AccountId20' : 'AccountId', decoded));
+    }
+
+    const accountIndex = api.registry.createType('AccountIndex', decoded);
+
+    return api.derive.accounts.indexToId(accountIndex.toString()).pipe(
+      map((a) => assertReturn(a, 'Unable to retrieve accountId'))
+    );
+  });
+}

@@ -1,0 +1,7 @@
+// Copyright 2017-2025 @pezkuwi/api-contract authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { BlueprintSubmittableResult as BaseBlueprintSubmittableResult, CodeSubmittableResult as BaseCodeSubmittableResult } from '../base/index.js';
+
+export type BlueprintSubmittableResult = BaseBlueprintSubmittableResult<'promise'>;
+export type CodeSubmittableResult = BaseCodeSubmittableResult<'promise'>;

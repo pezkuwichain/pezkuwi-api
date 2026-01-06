@@ -1,0 +1,23 @@
+// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { SignOptions } from '@pezkuwi/keyring/types';
+import type { Registry } from '@pezkuwi/types-codec/types';
+import type { IKeyringPair } from '../types/index.js';
+
+import { blake2AsU8a } from '@pezkuwi/util-crypto';
+
+// a helper function for both types of payloads, Raw and metadata-known
+export function sign (_registry: Registry, signerPair: IKeyringPair, u8a: Uint8Array, options?: SignOptions): Uint8Array {
+  const encoded = u8a.length > 256
+    ? blake2AsU8a(u8a)
+    : u8a;
+
+  return signerPair.sign(encoded, options);
+}
+
+export function signGeneral (registry: Registry, u8a: Uint8Array): Uint8Array {
+  const encoded = registry.hash(u8a);
+
+  return encoded;
+}

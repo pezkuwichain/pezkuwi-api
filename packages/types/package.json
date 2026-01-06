@@ -1,0 +1,37 @@
+{
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "description": "Implementation of the Parity codec",
+  "engines": {
+    "node": ">=18"
+  },
+  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/types#readme",
+  "license": "Apache-2.0",
+  "name": "@pezkuwi/types",
+  "repository": {
+    "directory": "packages/types",
+    "type": "git",
+    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+  },
+  "sideEffects": [
+    "./packageDetect.js",
+    "./packageDetect.cjs"
+  ],
+  "type": "module",
+  "version": "16.5.6",
+  "main": "index.js",
+  "dependencies": {
+    "@pezkuwi/keyring": "^14.0.1",
+    "@pezkuwi/types-augment": "16.5.4",
+    "@pezkuwi/types-codec": "16.5.4",
+    "@pezkuwi/types-create": "16.5.4",
+    "@pezkuwi/util": "^14.0.1",
+    "@pezkuwi/util-crypto": "^14.0.1",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@pezkuwi/keyring": "^14.0.1",
+    "@pezkuwi/types-support": "16.5.4"
+  }
+}

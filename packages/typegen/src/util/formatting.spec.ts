@@ -1,0 +1,30 @@
+// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+/// <reference types="@pezkuwi/dev-test/globals.d.ts" />
+
+import { TypeRegistry } from '@pezkuwi/types';
+
+import { formatType } from './formatting.js';
+
+describe('formatType', (): void => {
+  const registry = new TypeRegistry();
+
+  it('handles nested Tuples', (): void => {
+    expect(
+      formatType(registry, {}, '(AccountId, (Balance, u32), u64)', {
+        codecTypes: {},
+        definitions: {},
+        extrinsicTypes: {},
+        genericTypes: {},
+        ignoredTypes: [],
+        localTypes: {},
+        lookupTypes: {},
+        metadataTypes: {},
+        primitiveTypes: {},
+        typeToModule: {},
+        typesTypes: {}
+      })
+    ).toEqual('ITuple<[AccountId, ITuple<[Balance, u32]>, u64]>');
+  });
+});

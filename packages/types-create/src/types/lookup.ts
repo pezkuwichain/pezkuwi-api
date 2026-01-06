@@ -1,0 +1,21 @@
+// Copyright 2017-2025 @pezkuwi/types-create authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Option, Text } from '@pezkuwi/types-codec';
+import type { ICompact, INumber, LookupString } from '@pezkuwi/types-codec/types';
+import type { TypeDef } from './types.js';
+
+// A simplified SiType without the need for an interface import
+// (while type interfaces are still in @pezkuwi/types). This provides
+// the minimum interface allowing us to work with it here
+interface SiTypeBase {
+  def: {
+    asTuple: ICompact<INumber>[]
+  }
+}
+
+export interface ILookup {
+  getSiType (lookupId: ICompact<INumber> | LookupString | number): SiTypeBase;
+  getTypeDef (lookupId: ICompact<INumber> | LookupString | number): TypeDef;
+  sanitizeField (name: Option<Text>): [string | null, string | null];
+}

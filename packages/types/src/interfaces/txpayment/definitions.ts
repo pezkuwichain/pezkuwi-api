@@ -1,0 +1,11 @@
+// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { Definitions } from '../../types/index.js';
+
+export default {
+  rpc: {},
+  types: {
+    Multiplier: 'Fixed128'
+  }
+} as Definitions;

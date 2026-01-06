@@ -1,0 +1,55 @@
+{
+  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "engines": {
+    "node": ">=18.14"
+  },
+  "homepage": "https://github.com/pezkuwichain/pezkuwi-api#readme",
+  "license": "Apache-2.0",
+  "packageManager": "yarn@4.6.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "version": "16.5.6",
+  "versions": {
+    "git": "16.5.4",
+    "npm": "16.5.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn build:interfaces && pezkuwi-dev-build-ts",
+    "build:before": "pezkuwi-dev-copy-dir --cd packages/typegen scripts build",
+    "build:interfaces": "node --loader @pezkuwi/dev-ts packages/typegen/scripts/pezkuwi-types-internal-interfaces.mjs",
+    "build:metadata": "yarn build:interfaces && pezkuwi-dev-run-test packages/types/src/metadata/v14",
+    "build:release": "pezkuwi-ci-ghact-build",
+    "build:rollup": "pezkuwi-exec-rollup --config",
+    "build:upgrades": "pezkuwi-dev-run-test upgrades/e2e",
+    "chain:info": "pezkuwi-types-chain-info",
+    "clean": "pezkuwi-dev-clean-build",
+    "deno": "yarn pezkuwi-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
+    "lint": "pezkuwi-dev-run-lint",
+    "postinstall": "pezkuwi-dev-yarn-only",
+    "test": "pezkuwi-dev-run-test --env node ^e2e",
+    "test:node": "pezkuwi-dev-run-test --env node ^e2e",
+    "test:one": "pezkuwi-dev-run-test --env node"
+  },
+  "devDependencies": {
+    "@pezkuwi/dev": "^0.85.1",
+    "@pezkuwi/dev-test": "^0.85.1",
+    "@pezkuwi/dev-ts": "^0.85.1",
+    "@pezkuwi/typegen": "^16.5.4",
+    "@types/node": "^22.10.5"
+  },
+  "resolutions": {
+    "@pezkuwi/dev": "0.85.1",
+    "@pezkuwi/dev-test": "0.85.1",
+    "@pezkuwi/dev-ts": "0.85.1",
+    "typescript": "5.5.4"
+  }
+}

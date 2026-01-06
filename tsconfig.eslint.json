@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "composite": false,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "packages/**/src/**/*",
+    "packages/**/scripts/**/*",
+    "scripts/*",
+    ".prettierrc.cjs",
+    "eslint.config.js",
+    "rollup.config.js"
+  ],
+  "exclude": [
+    "**/node_modules/**/*",
+    // We exclude these since it creates some issues with the
+    // @typescript-eslint/dot-notation rules
+    "packages/api-augment/src/zagros/*.ts",
+    "packages/api-augment/src/pezkuwi/*.ts"
+  ]
+}

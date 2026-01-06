@@ -1,0 +1,106 @@
+// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// SPDX-License-Identifier: Apache-2.0
+
+import type { HexString } from '@pezkuwi/util/types';
+
+import fs from 'node:fs';
+import path from 'node:path';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import * as bizinikiwiDefs from '@pezkuwi/types/interfaces/definitions';
+import { isHex } from '@pezkuwi/util';
+
+import { generateDefaultLookup } from './generate/index.js';
+import { generateInterfaceTypes } from './generate/interfaceRegistry.js';
+import { generateTsDef } from './generate/tsDef.js';
+import { assertDir, assertFile, getMetadataViaWs } from './util/index.js';
+
+interface ArgV { input: string; package: string; endpoint?: string; }
+
+async function mainPromise (): Promise<void> {
+  const { endpoint, input, package: pkg } = yargs(hideBin(process.argv)).strict().options({
+    endpoint: {
+      description: 'The endpoint to connect to (e.g. wss://dicle-rpc.pezkuwi.io) or relative path to a file containing the JSON output of an RPC state_getMetadata call',
+      type: 'string'
+    },
+    input: {
+      description: 'The directory to use for the user definitions',
+      required: true,
+      type: 'string'
+    },
+    package: {
+      description: 'The package name & path to use for the user types',
+      required: true,
+      type: 'string'
+    }
+  }).argv as ArgV;
+
+  const inputPath = assertDir(path.join(process.cwd(), input));
+  let userDefs: Record<string, any> = {};
+
+  try {
+    const defCont = await import(
+      assertFile(path.join(inputPath, 'definitions.ts'))
+    ) as Record<string, any>;
+
+    userDefs = defCont;
+  } catch (error) {
+    console.error('ERROR: Unable to load user definitions:', (error as Error).message);
+  }
+
+  const userKeys = Object.keys(userDefs);
+  const filteredBase = Object
+    .entries(bizinikiwiDefs as Record<string, unknown>)
+    .filter(([key]) => {
+      if (userKeys.includes(key)) {
+        console.warn(`Override found for ${key} in user types, ignoring in @pezkuwi/types`);
+
+        return false;
+      }
+
+      return true;
+    })
+    .reduce((defs: Record<string, any>, [key, value]) => {
+      defs[key] = value;
+
+      return defs;
+    }, {});
+
+  const allDefs = {
+    '@pezkuwi/types/interfaces': filteredBase,
+    [pkg]: userDefs
+  };
+
+  generateTsDef(allDefs, inputPath, pkg);
+  generateInterfaceTypes(allDefs, path.join(inputPath, 'augment-types.ts'));
+
+  if (endpoint) {
+    let metaHex: HexString;
+
+    if (endpoint.startsWith('wss://') || endpoint.startsWith('ws://')) {
+      metaHex = await getMetadataViaWs(endpoint);
+    } else {
+      metaHex = (
+        JSON.parse(
+          fs.readFileSync(assertFile(path.join(process.cwd(), endpoint)), 'utf-8')
+        ) as { result: HexString }
+      ).result;
+
+      if (!isHex(metaHex)) {
+        throw new Error('Invalid metadata file');
+      }
+    }
+
+    generateDefaultLookup(inputPath, metaHex);
+  }
+}
+
+export function main (): void {
+  mainPromise().catch((error) => {
+    console.error();
+    console.error(error);
+    console.error();
+    process.exit(1);
+  });
+}
