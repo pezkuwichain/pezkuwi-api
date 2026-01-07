@@ -10,10 +10,16 @@ import { BN, hexToU8a } from '@pezkuwi/util';
 
 import * as allKnown from './e2e/index.js';
 
-// testnets are not available in the networks map
+// Pezkuwi networks - placeholder genesis hashes until mainnet launch
 const NET_EXTRA: Record<string, { genesisHash: HexString[] }> = {
   dicle: {
-    genesisHash: ['0xe143f23803ac50e8f6f8e62695d1ce9e4e1d68aa36c1cd2cfd15340213f3423e']
+    genesisHash: ['0xd9d3cd7c1e5d890d969b957f4c5b71a111bbeeabc968f1d0d4538c2663f080a7']
+  },
+  pezkuwi: {
+    genesisHash: ['0x41693961995d879073269a008d0a52832caa3e0ae73869f02127f3d5daa4934c']
+  },
+  zagros: {
+    genesisHash: ['0x297f5a4d105b4b28312586ff1915572ffe4ee015ff772b76399ecbff25a22026']
   }
 };
 
