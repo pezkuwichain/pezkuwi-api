@@ -40,16 +40,16 @@
     "test:one": "pezkuwi-dev-run-test --env node"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "^0.85.1",
-    "@pezkuwi/dev-test": "^0.85.1",
-    "@pezkuwi/dev-ts": "^0.85.1",
+    "@pezkuwi/dev": "^0.85.3",
+    "@pezkuwi/dev-test": "^0.85.3",
+    "@pezkuwi/dev-ts": "^0.85.3",
     "@pezkuwi/typegen": "^16.5.4",
     "@types/node": "^22.10.5"
   },
   "resolutions": {
-    "@pezkuwi/dev": "0.85.1",
-    "@pezkuwi/dev-test": "0.85.1",
-    "@pezkuwi/dev-ts": "0.85.1",
+    "@pezkuwi/dev": "0.85.3",
+    "@pezkuwi/dev-test": "0.85.3",
+    "@pezkuwi/dev-ts": "0.85.3",
     "typescript": "5.5.4"
   }
 }
