@@ -45,15 +45,15 @@ function parse ([ids, didUpdate, relayDispatchQueueSizes, infos, pendingSwaps]: 
  */
 export function overview (instanceId: string, api: DeriveApi): () => Observable<DeriveTeyrchain[]> {
   return memo(instanceId, (): Observable<DeriveTeyrchain[]> =>
-    api.query.registrar?.['teyrchains'] && api.query['teyrchains']
-      ? api.query.registrar['teyrchains']<ParaId[]>().pipe(
+    api.query['registrar']?.['teyrchains'] && api.query['teyrchains']
+      ? api.query['registrar']['teyrchains']<ParaId[]>().pipe(
         switchMap((paraIds) =>
           combineLatest([
             of(paraIds),
             api.query['teyrchains']['didUpdate']<DidUpdate>(),
             api.query['teyrchains']['relayDispatchQueueSize'].multi<RelayDispatchQueueSize>(paraIds),
-            api.query.registrar.paras.multi<ParaInfoResult>(paraIds),
-            api.query.registrar.pendingSwap.multi<PendingSwap>(paraIds)
+            api.query['registrar']['paras'].multi<ParaInfoResult>(paraIds),
+            api.query['registrar']['pendingSwap'].multi<PendingSwap>(paraIds)
           ])
         ),
         map(parse)

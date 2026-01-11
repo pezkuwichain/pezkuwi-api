@@ -980,7 +980,7 @@
                   " Any liquidity locks on some account balances.",
                   " NOTE: Should only be accessed when setting, changing and freeing a lock.",
                   "",
-                  " Use of locks is deprecated in favour of freezes. See `https://github.com/pezkuwichain/bizinikiwi/pull/12951/`"
+                  " Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`"
                 ]
               },
               {
@@ -999,7 +999,7 @@
                 "docs": [
                   " Named reserves on some account balances.",
                   "",
-                  " Use of reserves is deprecated in favour of holds. See `https://github.com/pezkuwichain/bizinikiwi/pull/12951/`"
+                  " Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`"
                 ]
               },
               {
@@ -1068,7 +1068,7 @@
                 " The maximum number of locks that should exist on an account.",
                 " Not strictly enforced, but used for weight estimation.",
                 "",
-                " Use of locks is deprecated in favour of freezes. See `https://github.com/pezkuwichain/bizinikiwi/pull/12951/`"
+                " Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`"
               ]
             },
             {
@@ -1078,7 +1078,7 @@
               "docs": [
                 " The maximum number of named reserves that can exist on an account.",
                 "",
-                " Use of reserves is deprecated in favour of holds. See `https://github.com/pezkuwichain/bizinikiwi/pull/12951/`"
+                " Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`"
               ]
             },
             {
@@ -2425,7 +2425,7 @@
                 "fallback": "0x00000000",
                 "docs": [
                   " DEPRECATED: associated with `spend_local` call and will be removed in May 2025.",
-                  " Refer to <https://github.com/pezkuwichain/pezkuwi-sdk/pull/5961> for migration to `spend`.",
+                  " Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.",
                   "",
                   " Number of proposals that have been made."
                 ]
@@ -2445,7 +2445,7 @@
                 "fallback": "0x00",
                 "docs": [
                   " DEPRECATED: associated with `spend_local` call and will be removed in May 2025.",
-                  " Refer to <https://github.com/pezkuwichain/pezkuwi-sdk/pull/5961> for migration to `spend`.",
+                  " Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.",
                   "",
                   " Proposals that have been made."
                 ]
@@ -2470,7 +2470,7 @@
                 "fallback": "0x00",
                 "docs": [
                   " DEPRECATED: associated with `spend_local` call and will be removed in May 2025.",
-                  " Refer to <https://github.com/pezkuwichain/pezkuwi-sdk/pull/5961> for migration to `spend`.",
+                  " Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.",
                   "",
                   " Proposal indices that have been approved but not yet awarded."
                 ]
@@ -2553,7 +2553,7 @@
               "value": "0x64000000",
               "docs": [
                 " DEPRECATED: associated with `spend_local` call and will be removed in May 2025.",
-                " Refer to <https://github.com/pezkuwichain/pezkuwi-sdk/pull/5961> for migration to `spend`.",
+                " Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.",
                 "",
                 " The maximum number of approvals that can wait in the spending queue.",
                 "",
@@ -4714,7 +4714,7 @@
           "docs": []
         },
         {
-          "name": "TeyrchainsOrigin",
+          "name": "ParachainsOrigin",
           "storage": null,
           "calls": null,
           "events": null,
@@ -4810,7 +4810,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " All the validators actively participating in teyrchain consensus.",
+                  " All the validators actively participating in parachain consensus.",
                   " Indices are into the broader validator set."
                 ]
               },
@@ -4822,7 +4822,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " The teyrchain attestation keys of the validators actively participating in teyrchain",
+                  " The parachain attestation keys of the validators actively participating in parachain",
                   " consensus. This should be the same length as `ActiveValidatorIndices`."
                 ]
               },
@@ -4948,10 +4948,10 @@
                 "fallback": "0x00",
                 "docs": [
                   " All the validator groups. One for each core. Indices are into `ActiveValidators` - not the",
-                  " broader set of Pezkuwi validators, but instead just the subset used for teyrchains during",
+                  " broader set of Polkadot validators, but instead just the subset used for parachains during",
                   " this session.",
                   "",
-                  " Bound: The number of cores is the sum of the numbers of teyrchains and parathread",
+                  " Bound: The number of cores is the sum of the numbers of parachains and parathread",
                   " multiplexers. Reasonably, 100-1000. The dominant factor is the number of validators: safe",
                   " upper bound at 10k."
                 ]
@@ -4967,7 +4967,7 @@
                   " The block number where the session start occurred. Used to track how many group rotations",
                   " have occurred.",
                   "",
-                  " Note that in the context of teyrchains modules the session change is signaled during",
+                  " Note that in the context of parachains modules the session change is signaled during",
                   " the block and enacted at the end of the block (at the finalization stage, to be exact).",
                   " Thus for all intents and purposes the effect of the session change is observed at the",
                   " block following the session change, block number of which we save in this storage value."
@@ -5031,17 +5031,17 @@
                 ]
               },
               {
-                "name": "Teyrchains",
+                "name": "Parachains",
                 "modifier": "Default",
                 "type": {
                   "plain": 827
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " All lease holding teyrchains. Ordered ascending by `ParaId`. On demand teyrchains are not",
+                  " All lease holding parachains. Ordered ascending by `ParaId`. On demand parachains are not",
                   " included.",
                   "",
-                  " Consider using the [`TeyrchainsCache`] type of modifying."
+                  " Consider using the [`ParachainsCache`] type of modifying."
                 ]
               },
               {
@@ -5092,7 +5092,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " The context (relay-chain block number) of the most recent teyrchain head."
+                  " The context (relay-chain block number) of the most recent parachain head."
                 ]
               },
               {
@@ -5148,7 +5148,7 @@
                 },
                 "fallback": "0x0000",
                 "docs": [
-                  " Past code of teyrchains. The teyrchains themselves may not be registered anymore,",
+                  " Past code of parachains. The parachains themselves may not be registered anymore,",
                   " but we also keep their code on-chain for the same amount of time as outdated code",
                   " to keep it available for approval checkers."
                 ]
@@ -5165,7 +5165,7 @@
                   " was replaced. Note that this is the actual height of the included block, not the expected",
                   " height at which the code upgrade would be applied, although they may be equal.",
                   " This is to ensure the entire acceptance period is covered, not an offset acceptance period",
-                  " starting from the time at which the teyrchain perceives a code upgrade as having occurred.",
+                  " starting from the time at which the parachain perceives a code upgrade as having occurred.",
                   " Multiple entries for a single para are permitted. Ordered ascending by block number."
                 ]
               },
@@ -5183,7 +5183,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " The block number at which the planned code change is expected for a teyrchain.",
+                  " The block number at which the planned code change is expected for a parachain.",
                   "",
                   " The change will be applied after the first parablock for this ID included which executes",
                   " in the context of a relay chain block with a number >= `expected_at`."
@@ -5199,9 +5199,9 @@
                 "docs": [
                   " The list of upcoming future code upgrades.",
                   "",
-                  " Each item is a pair of the teyrchain and the expected block at which the upgrade should be",
+                  " Each item is a pair of the parachain and the expected block at which the upgrade should be",
                   " applied. The upgrade will be applied at the given relay chain block. In contrast to",
-                  " [`FutureCodeUpgrades`] this code upgrade will be applied regardless the teyrchain making any",
+                  " [`FutureCodeUpgrades`] this code upgrade will be applied regardless the parachain making any",
                   " progress or not.",
                   "",
                   " Ordered ascending by block number."
@@ -5257,16 +5257,16 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " This is used by the relay-chain to communicate to a teyrchain a go-ahead with in the upgrade",
+                  " This is used by the relay-chain to communicate to a parachain a go-ahead with in the upgrade",
                   " procedure.",
                   "",
                   " This value is absent when there are no upgrades scheduled or during the time the relay chain",
                   " performs the checks. It is set at the first relay-chain block when the corresponding",
-                  " teyrchain can switch its upgrade function. As soon as the teyrchain's block is included, the",
+                  " parachain can switch its upgrade function. As soon as the parachain's block is included, the",
                   " value gets reset to `None`.",
                   "",
-                  " NOTE that this field is used by teyrchains via merkle storage proofs, therefore changing",
-                  " the format will require migration of teyrchains."
+                  " NOTE that this field is used by parachains via merkle storage proofs, therefore changing",
+                  " the format will require migration of parachains."
                 ]
               },
               {
@@ -5284,14 +5284,14 @@
                 "fallback": "0x00",
                 "docs": [
                   " This is used by the relay-chain to communicate that there are restrictions for performing",
-                  " an upgrade for this teyrchain.",
+                  " an upgrade for this parachain.",
                   "",
-                  " This may be a because the teyrchain waits for the upgrade cooldown to expire. Another",
+                  " This may be a because the parachain waits for the upgrade cooldown to expire. Another",
                   " potential use case is when we want to perform some maintenance (such as storage migration)",
                   " we could restrict upgrades to make the process simpler.",
                   "",
-                  " NOTE that this field is used by teyrchains via merkle storage proofs, therefore changing",
-                  " the format will require migration of teyrchains."
+                  " NOTE that this field is used by parachains via merkle storage proofs, therefore changing",
+                  " the format will require migration of parachains."
                 ]
               },
               {
@@ -5302,7 +5302,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " The list of teyrchains that are awaiting for their upgrade restriction to cooldown.",
+                  " The list of parachains that are awaiting for their upgrade restriction to cooldown.",
                   "",
                   " Ordered ascending by block number."
                 ]
@@ -5432,7 +5432,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " Whether the teyrchains modules have been initialized within this block.",
+                  " Whether the parachains modules have been initialized within this block.",
                   "",
                   " Semantically a `bool`, but this guarantees it should never hit the trie,",
                   " as this is cleared in `on_finalize` and Frame optimizes `None` values to be empty values.",
@@ -5847,7 +5847,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " The validator account keys of the validators actively participating in teyrchain consensus."
+                  " The validator account keys of the validators actively participating in parachain consensus."
                 ]
               },
               {
@@ -5958,7 +5958,7 @@
                 "fallback": "0x00",
                 "docs": [
                   " Whether the chain is frozen. Starts as `None`. When this is `Some`,",
-                  " the chain will not accept any new teyrchain blocks for backing or inclusion,",
+                  " the chain will not accept any new parachain blocks for backing or inclusion,",
                   " and its value indicates the last valid block number in the chain.",
                   " It can only be set back to `None` by governance intervention."
                 ]
@@ -6286,7 +6286,7 @@
               "type": 6,
               "value": "0x0010a5d4e80000000000000000000000",
               "docs": [
-                " The deposit to be paid to run a on-demand teyrchain.",
+                " The deposit to be paid to run a on-demand parachain.",
                 " This should include the cost for storing the genesis head and validation code."
               ]
             },
@@ -6324,7 +6324,7 @@
                 },
                 "fallback": "0x00",
                 "docs": [
-                  " Amounts held on deposit for each (possibly future) leased teyrchain.",
+                  " Amounts held on deposit for each (possibly future) leased parachain.",
                   "",
                   " The actual amount locked on its behalf by any account at any time is the maximum of the",
                   " second values of the items in this list whose first value is the account.",
@@ -6332,10 +6332,10 @@
                   " The first item in the list is the amount locked for the current Lease Period. Following",
                   " items are for the subsequent lease periods.",
                   "",
-                  " The default value (an empty list) implies that the teyrchain no longer exists (or never",
+                  " The default value (an empty list) implies that the parachain no longer exists (or never",
                   " existed) as far as this pallet is concerned.",
                   "",
-                  " If a teyrchain doesn't exist *yet* but is scheduled to exist in the future, then it",
+                  " If a parachain doesn't exist *yet* but is scheduled to exist in the future, then it",
                   " will be left-padded with one or more `None`s to denote the fact that nothing is held on",
                   " deposit for the non-existent chain currently, but is held at some point in the future.",
                   "",
@@ -6686,7 +6686,7 @@
                 " keys which are then hashed and concatenated, resulting in arbitrarily long keys.",
                 "",
                 " Use the *state migration RPC* to retrieve the length of the longest key in your",
-                " storage: <https://github.com/pezkuwichain/bizinikiwi/issues/11642>",
+                " storage: <https://github.com/paritytech/substrate/issues/11642>",
                 "",
                 " The migration will halt with a `Halted` event if this value is too small.",
                 " Since there is no real penalty from over-estimating, it is advised to use a large",
@@ -6698,7 +6698,7 @@
                 " - [`frame_support::storage::StorageDoubleMap`]: 96 byte",
                 "",
                 " For more info see",
-                " <https://www.shawntabrizi.com/blog/bizinikiwi/querying-bizinikiwi-storage-via-rpc/>"
+                " <https://www.shawntabrizi.com/blog/substrate/querying-substrate-storage-via-rpc/>"
               ]
             }
           ],
@@ -7102,7 +7102,7 @@
               "docs": [
                 " The maximum amount of weight (if any) to be used from remaining weight `on_idle` which",
                 " should be provided to the message queue for servicing enqueued items `on_idle`.",
-                " Useful for teyrchains to process messages at the same block they are received.",
+                " Useful for parachains to process messages at the same block they are received.",
                 "",
                 " If `None`, it will not call `ServiceQueues::service_queues` in `on_idle`."
               ]
@@ -7817,7 +7817,7 @@
             }
           ],
           "docs": [
-            " The `Core` runtime api that every Bizinikiwi runtime needs to implement."
+            " The `Core` runtime api that every Substrate runtime needs to implement."
           ]
         },
         {
@@ -8198,7 +8198,7 @@
           ]
         },
         {
-          "name": "TeyrchainHost",
+          "name": "ParachainHost",
           "methods": [
             {
               "name": "validators",
@@ -8396,7 +8396,7 @@
               "docs": [
                 " Get the session info for the given session, if stored.",
                 "",
-                " NOTE: This function is only available since teyrchain host version 2."
+                " NOTE: This function is only available since parachain host version 2."
               ]
             },
             {
@@ -8415,7 +8415,7 @@
               "docs": [
                 " Submits a PVF pre-checking statement into the transaction pool.",
                 "",
-                " NOTE: This function is only available since teyrchain host version 2."
+                " NOTE: This function is only available since parachain host version 2."
               ]
             },
             {
@@ -8425,7 +8425,7 @@
               "docs": [
                 " Returns code hashes of PVFs that require pre-checking by validators in the active set.",
                 "",
-                " NOTE: This function is only available since teyrchain host version 2."
+                " NOTE: This function is only available since parachain host version 2."
               ]
             },
             {
@@ -8444,7 +8444,7 @@
               "docs": [
                 " Fetch the hash of the validation code used by a para, making the given `OccupiedCoreAssumption`.",
                 "",
-                " NOTE: This function is only available since teyrchain host version 2."
+                " NOTE: This function is only available since parachain host version 2."
               ]
             },
             {
@@ -8474,7 +8474,7 @@
               "output": 1006,
               "docs": [
                 " Returns a list of validators that lost a past session dispute and need to be slashed.",
-                " NOTE: This function is only available since teyrchain host version 5."
+                " NOTE: This function is only available since parachain host version 5."
               ]
             },
             {
@@ -8488,7 +8488,7 @@
               "output": 1010,
               "docs": [
                 " Returns a merkle proof of a validator session key.",
-                " NOTE: This function is only available since teyrchain host version 5."
+                " NOTE: This function is only available since parachain host version 5."
               ]
             },
             {
@@ -8507,7 +8507,7 @@
               "docs": [
                 " Submit an unsigned extrinsic to slash validators who lost a dispute about",
                 " a candidate of a past session.",
-                " NOTE: This function is only available since teyrchain host version 5."
+                " NOTE: This function is only available since parachain host version 5."
               ]
             },
             {
@@ -8515,7 +8515,7 @@
               "inputs": [],
               "output": 4,
               "docs": [
-                " Get the minimum number of backing votes for a teyrchain candidate.",
+                " Get the minimum number of backing votes for a parachain candidate.",
                 " This is a staging method! Do not use on production runtimes!"
               ]
             },
@@ -8529,7 +8529,7 @@
               ],
               "output": 1013,
               "docs": [
-                " Returns the state of teyrchain backing for a given para."
+                " Returns the state of parachain backing for a given para."
               ]
             },
             {
@@ -8604,7 +8604,7 @@
               ],
               "output": 1029,
               "docs": [
-                " Returns the constraints on the actions that can be taken by a new teyrchain",
+                " Returns the constraints on the actions that can be taken by a new parachain",
                 " block."
               ]
             },
@@ -8618,7 +8618,7 @@
             }
           ],
           "docs": [
-            " The API for querying the state of teyrchains on-chain."
+            " The API for querying the state of parachains on-chain."
           ]
         },
         {

@@ -46,7 +46,7 @@ describe('SignerPayload', (): void => {
       new SignerPayload(registry, {
         address: '5DTestUPts3kjeXSTMyerHihn1uwMfLj8vU8sqF7qYrFabHE',
         // eslint-disable-next-line sort-keys
-        assetId: { parents: 0, interior: { x2: [{ palletInstance: 50 }, { generalIndex: 123 }] } },
+        assetId: { parents: 0, interior: { x2: [{ pezpalletInstance: 50 }, { generalIndex: 123 }] } },
         blockHash: '0xde8f69eeb5e065e18c6950ff708d7e551f68dc9bf59a07c52367c0280f805ec7',
         blockNumber: '0x231d30',
         era: registry.createType('ExtrinsicEra', { current: 2301232, period: 200 }),
@@ -84,7 +84,7 @@ describe('SignerPayload', (): void => {
   it('handles Option<AssetId> correctly', (): void => {
     const test = new SignerPayload(registry, {
       // eslint-disable-next-line sort-keys
-      assetId: { parents: 0, interior: { x2: [{ palletInstance: 50 }, { generalIndex: 123 }] } }
+      assetId: { parents: 0, interior: { x2: [{ pezpalletInstance: 50 }, { generalIndex: 123 }] } }
     });
 
     expect(
@@ -137,7 +137,7 @@ describe('SignerPayload', (): void => {
     expect(u8aToHex(payload.assetId?.toU8a()))
       .toEqual(u8aToHex(registry.createType('Option<MultiLocation>', {
         // eslint-disable-next-line sort-keys
-        parents: 0, interior: { X2: [{ palletInstance: 50 }, { generalIndex: 123 }] }
+        parents: 0, interior: { X2: [{ pezpalletInstance: 50 }, { generalIndex: 123 }] }
       }).toU8a()));
   });
 

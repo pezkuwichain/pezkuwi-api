@@ -15,20 +15,436 @@
   },
   "sideEffects": [
     "./packageDetect.js",
-    "./packageDetect.cjs"
+    "./cjs/packageDetect.js"
   ],
   "type": "module",
-  "version": "16.5.6",
-  "main": "index.js",
+  "types": "./index.d.ts",
+  "version": "16.5.9",
+  "main": "./cjs/index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "module": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "default": "./cjs/index.js"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./bundle": {
+      "module": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      },
+      "require": {
+        "types": "./cjs/bundle.d.ts",
+        "default": "./cjs/bundle.js"
+      },
+      "default": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      }
+    },
+    "./chain": {
+      "module": {
+        "types": "./chain/index.d.ts",
+        "default": "./chain/index.js"
+      },
+      "require": {
+        "types": "./cjs/chain/index.d.ts",
+        "default": "./cjs/chain/index.js"
+      },
+      "default": {
+        "types": "./chain/index.d.ts",
+        "default": "./chain/index.js"
+      }
+    },
+    "./cjs/*": "./cjs/*.js",
+    "./cjs/package.json": "./cjs/package.json",
+    "./package.json": {
+      "require": "./cjs/package.json",
+      "default": "./package.json"
+    },
+    "./packageDetect": {
+      "module": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      },
+      "require": {
+        "types": "./cjs/packageDetect.d.ts",
+        "default": "./cjs/packageDetect.js"
+      },
+      "default": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      }
+    },
+    "./packageInfo": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./packageInfo.js": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./spec": {
+      "module": {
+        "types": "./spec/index.d.ts",
+        "default": "./spec/index.js"
+      },
+      "require": {
+        "types": "./cjs/spec/index.d.ts",
+        "default": "./cjs/spec/index.js"
+      },
+      "default": {
+        "types": "./spec/index.d.ts",
+        "default": "./spec/index.js"
+      }
+    },
+    "./spec/centrifuge-chain": {
+      "module": {
+        "types": "./spec/centrifuge-chain.d.ts",
+        "default": "./spec/centrifuge-chain.js"
+      },
+      "require": {
+        "types": "./cjs/spec/centrifuge-chain.d.ts",
+        "default": "./cjs/spec/centrifuge-chain.js"
+      },
+      "default": {
+        "types": "./spec/centrifuge-chain.d.ts",
+        "default": "./spec/centrifuge-chain.js"
+      }
+    },
+    "./spec/dicle": {
+      "module": {
+        "types": "./spec/dicle.d.ts",
+        "default": "./spec/dicle.js"
+      },
+      "require": {
+        "types": "./cjs/spec/dicle.d.ts",
+        "default": "./cjs/spec/dicle.js"
+      },
+      "default": {
+        "types": "./spec/dicle.d.ts",
+        "default": "./spec/dicle.js"
+      }
+    },
+    "./spec/node": {
+      "module": {
+        "types": "./spec/node.d.ts",
+        "default": "./spec/node.js"
+      },
+      "require": {
+        "types": "./cjs/spec/node.d.ts",
+        "default": "./cjs/spec/node.js"
+      },
+      "default": {
+        "types": "./spec/node.d.ts",
+        "default": "./spec/node.js"
+      }
+    },
+    "./spec/node-template": {
+      "module": {
+        "types": "./spec/node-template.d.ts",
+        "default": "./spec/node-template.js"
+      },
+      "require": {
+        "types": "./cjs/spec/node-template.d.ts",
+        "default": "./cjs/spec/node-template.js"
+      },
+      "default": {
+        "types": "./spec/node-template.d.ts",
+        "default": "./spec/node-template.js"
+      }
+    },
+    "./spec/pezkuwi": {
+      "module": {
+        "types": "./spec/pezkuwi.d.ts",
+        "default": "./spec/pezkuwi.js"
+      },
+      "require": {
+        "types": "./cjs/spec/pezkuwi.d.ts",
+        "default": "./cjs/spec/pezkuwi.js"
+      },
+      "default": {
+        "types": "./spec/pezkuwi.d.ts",
+        "default": "./spec/pezkuwi.js"
+      }
+    },
+    "./spec/pezkuwichain": {
+      "module": {
+        "types": "./spec/pezkuwichain.d.ts",
+        "default": "./spec/pezkuwichain.js"
+      },
+      "require": {
+        "types": "./cjs/spec/pezkuwichain.d.ts",
+        "default": "./cjs/spec/pezkuwichain.js"
+      },
+      "default": {
+        "types": "./spec/pezkuwichain.d.ts",
+        "default": "./spec/pezkuwichain.js"
+      }
+    },
+    "./spec/shell": {
+      "module": {
+        "types": "./spec/shell.d.ts",
+        "default": "./spec/shell.js"
+      },
+      "require": {
+        "types": "./cjs/spec/shell.d.ts",
+        "default": "./cjs/spec/shell.js"
+      },
+      "default": {
+        "types": "./spec/shell.d.ts",
+        "default": "./spec/shell.js"
+      }
+    },
+    "./spec/statemine": {
+      "module": {
+        "types": "./spec/statemine.d.ts",
+        "default": "./spec/statemine.js"
+      },
+      "require": {
+        "types": "./cjs/spec/statemine.d.ts",
+        "default": "./cjs/spec/statemine.js"
+      },
+      "default": {
+        "types": "./spec/statemine.d.ts",
+        "default": "./spec/statemine.js"
+      }
+    },
+    "./spec/statemint": {
+      "module": {
+        "types": "./spec/statemint.d.ts",
+        "default": "./spec/statemint.js"
+      },
+      "require": {
+        "types": "./cjs/spec/statemint.d.ts",
+        "default": "./cjs/spec/statemint.js"
+      },
+      "default": {
+        "types": "./spec/statemint.d.ts",
+        "default": "./spec/statemint.js"
+      }
+    },
+    "./spec/westmint": {
+      "module": {
+        "types": "./spec/westmint.d.ts",
+        "default": "./spec/westmint.js"
+      },
+      "require": {
+        "types": "./cjs/spec/westmint.d.ts",
+        "default": "./cjs/spec/westmint.js"
+      },
+      "default": {
+        "types": "./spec/westmint.d.ts",
+        "default": "./spec/westmint.js"
+      }
+    },
+    "./spec/zagros": {
+      "module": {
+        "types": "./spec/zagros.d.ts",
+        "default": "./spec/zagros.js"
+      },
+      "require": {
+        "types": "./cjs/spec/zagros.d.ts",
+        "default": "./cjs/spec/zagros.js"
+      },
+      "default": {
+        "types": "./spec/zagros.d.ts",
+        "default": "./spec/zagros.js"
+      }
+    },
+    "./upgrades": {
+      "module": {
+        "types": "./upgrades/index.d.ts",
+        "default": "./upgrades/index.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/index.d.ts",
+        "default": "./cjs/upgrades/index.js"
+      },
+      "default": {
+        "types": "./upgrades/index.d.ts",
+        "default": "./upgrades/index.js"
+      }
+    },
+    "./upgrades/e2e": {
+      "module": {
+        "types": "./upgrades/e2e/index.d.ts",
+        "default": "./upgrades/e2e/index.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/e2e/index.d.ts",
+        "default": "./cjs/upgrades/e2e/index.js"
+      },
+      "default": {
+        "types": "./upgrades/e2e/index.d.ts",
+        "default": "./upgrades/e2e/index.js"
+      }
+    },
+    "./upgrades/e2e/dicle": {
+      "module": {
+        "types": "./upgrades/e2e/dicle.d.ts",
+        "default": "./upgrades/e2e/dicle.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/e2e/dicle.d.ts",
+        "default": "./cjs/upgrades/e2e/dicle.js"
+      },
+      "default": {
+        "types": "./upgrades/e2e/dicle.d.ts",
+        "default": "./upgrades/e2e/dicle.js"
+      }
+    },
+    "./upgrades/e2e/pezkuwi": {
+      "module": {
+        "types": "./upgrades/e2e/pezkuwi.d.ts",
+        "default": "./upgrades/e2e/pezkuwi.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/e2e/pezkuwi.d.ts",
+        "default": "./cjs/upgrades/e2e/pezkuwi.js"
+      },
+      "default": {
+        "types": "./upgrades/e2e/pezkuwi.d.ts",
+        "default": "./upgrades/e2e/pezkuwi.js"
+      }
+    },
+    "./upgrades/e2e/zagros": {
+      "module": {
+        "types": "./upgrades/e2e/zagros.d.ts",
+        "default": "./upgrades/e2e/zagros.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/e2e/zagros.d.ts",
+        "default": "./cjs/upgrades/e2e/zagros.js"
+      },
+      "default": {
+        "types": "./upgrades/e2e/zagros.d.ts",
+        "default": "./upgrades/e2e/zagros.js"
+      }
+    },
+    "./upgrades/manual": {
+      "module": {
+        "types": "./upgrades/manual/index.d.ts",
+        "default": "./upgrades/manual/index.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/manual/index.d.ts",
+        "default": "./cjs/upgrades/manual/index.js"
+      },
+      "default": {
+        "types": "./upgrades/manual/index.d.ts",
+        "default": "./upgrades/manual/index.js"
+      }
+    },
+    "./upgrades/manual/dicle": {
+      "module": {
+        "types": "./upgrades/manual/dicle.d.ts",
+        "default": "./upgrades/manual/dicle.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/manual/dicle.d.ts",
+        "default": "./cjs/upgrades/manual/dicle.js"
+      },
+      "default": {
+        "types": "./upgrades/manual/dicle.d.ts",
+        "default": "./upgrades/manual/dicle.js"
+      }
+    },
+    "./upgrades/manual/pezkuwi": {
+      "module": {
+        "types": "./upgrades/manual/pezkuwi.d.ts",
+        "default": "./upgrades/manual/pezkuwi.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/manual/pezkuwi.d.ts",
+        "default": "./cjs/upgrades/manual/pezkuwi.js"
+      },
+      "default": {
+        "types": "./upgrades/manual/pezkuwi.d.ts",
+        "default": "./upgrades/manual/pezkuwi.js"
+      }
+    },
+    "./upgrades/manual/zagros": {
+      "module": {
+        "types": "./upgrades/manual/zagros.d.ts",
+        "default": "./upgrades/manual/zagros.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/manual/zagros.d.ts",
+        "default": "./cjs/upgrades/manual/zagros.js"
+      },
+      "default": {
+        "types": "./upgrades/manual/zagros.d.ts",
+        "default": "./upgrades/manual/zagros.js"
+      }
+    },
+    "./upgrades/types": {
+      "module": {
+        "types": "./upgrades/types.d.ts",
+        "default": "./upgrades/types.js"
+      },
+      "require": {
+        "types": "./cjs/upgrades/types.d.ts",
+        "default": "./cjs/upgrades/types.js"
+      },
+      "default": {
+        "types": "./upgrades/types.d.ts",
+        "default": "./upgrades/types.js"
+      }
+    },
+    "./util": {
+      "module": {
+        "types": "./util.d.ts",
+        "default": "./util.js"
+      },
+      "require": {
+        "types": "./cjs/util.d.ts",
+        "default": "./cjs/util.js"
+      },
+      "default": {
+        "types": "./util.d.ts",
+        "default": "./util.js"
+      }
+    }
+  },
   "dependencies": {
-    "@pezkuwi/networks": "^14.0.1",
-    "@pezkuwi/types": "16.5.4",
-    "@pezkuwi/types-codec": "16.5.4",
-    "@pezkuwi/types-create": "16.5.4",
-    "@pezkuwi/util": "^14.0.1",
+    "@pezkuwi/networks": "16.5.9",
+    "@pezkuwi/types": "16.5.9",
+    "@pezkuwi/types-codec": "16.5.9",
+    "@pezkuwi/types-create": "16.5.9",
+    "@pezkuwi/util": "14.0.11",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@pezkuwi/api": "16.5.4"
+    "@pezkuwi/api": "workspace:*"
   }
 }

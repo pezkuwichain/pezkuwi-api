@@ -62,7 +62,7 @@ describe('ExtrinsicPayload', (): void => {
       interior: {
         x2: [
           {
-            palletInstance: 50
+            pezpalletInstance: 50
           },
           {
             generalIndex: 1984

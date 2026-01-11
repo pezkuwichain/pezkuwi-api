@@ -30,31 +30,31 @@
         document.body.appendChild(pre);
       }
     </script>
-    <script src="node_modules/@polkadot/util/bundle-polkadot-util.js"></script>
-    <script src="node_modules/@polkadot/util-crypto/bundle-polkadot-util-crypto.js"></script>
-    <script src="node_modules/@polkadot/keyring/bundle-polkadot-keyring.js"></script>
-    <script src="packages/types/build/bundle-polkadot-types.js"></script>
+    <script src="node_modules/@pezkuwi/util/bundle-pezkuwi-util.js"></script>
+    <script src="node_modules/@pezkuwi/util-crypto/bundle-pezkuwi-util-crypto.js"></script>
+    <script src="node_modules/@pezkuwi/keyring/bundle-pezkuwi-keyring.js"></script>
+    <script src="packages/types/build/bundle-pezkuwi-types.js"></script>
     <script>
-      log('polkadotTypes');
+      log('pezkuwiTypes');
 
-      const { TypeRegistry } = polkadotTypes;
+      const { TypeRegistry } = pezkuwiTypes;
       const registry = new TypeRegistry();
 
       log('createType', registry.createType('Balance', 1234567890).toHuman());
     </script>
-    <script src="packages/api/build/bundle-polkadot-api.js"></script>
+    <script src="packages/api/build/bundle-pezkuwi-api.js"></script>
     <script>
-      log('polkadotApi');
+      log('pezkuwiApi');
 
-      const { ApiPromise, WsProvider } = polkadotApi;
-      const provider = new WsProvider('wss://rpc.polkadot.io');
+      const { ApiPromise, WsProvider } = pezkuwiApi;
+      const provider = new WsProvider('wss://rpc.pezkuwi.io');
 
       ApiPromise
         .create({ provider })
         .then((api) =>
           // use the derive version, checking that that also works
           api.derive.chain.subscribeNewHeads((h) =>
-            log(polkadotUtil.formatNumber(h.number.unwrap()), h.hash.toHex())
+            log(pezkuwiUtil.formatNumber(h.number.unwrap()), h.hash.toHex())
           )
         );
     </script>

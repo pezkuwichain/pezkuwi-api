@@ -19,27 +19,19 @@ interface TestDef {
 
 const TESTS: TestDef[] = [
   {
-    genesisHash: '0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe',
-    network: 'dicle',
-    versions: [
-      [0, [0, 1020]],
-      [17, [901442, 1045]]
-    ]
-  },
-  {
-    genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3',
-    network: 'pezkuwi',
-    versions: [
-      [0, [0, 0]],
-      [19, [2436698, 26]]
-    ]
-  },
-  {
-    genesisHash: '0xe143f23803ac50e8f6f8e62695d1ce9e4e1d68aa36c1cd2cfd15340213f3423e',
+    genesisHash: '0xd9d3cd7c1e5d890d969b957f4c5b71a111bbeeabc968f1d0d4538c2663f080a7',
     network: 'dicle',
     versions: [
       [0, [214356, 4]],
       [23, [4207800, 48]]
+    ]
+  },
+  {
+    genesisHash: '0x41693961995d879073269a008d0a52832caa3e0ae73869f02127f3d5daa4934c',
+    network: 'pezkuwi',
+    versions: [
+      [0, [0, 0]],
+      [19, [2436698, 26]]
     ]
   }
 ];

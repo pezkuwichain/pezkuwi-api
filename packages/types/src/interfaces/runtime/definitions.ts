@@ -152,6 +152,8 @@ export default {
         System: 'SystemOrigin'
       }
     },
+    PalletId: 'PezpalletId',
+    ParachainsInherentData: 'TeyrchainsInherentData',
     PezpalletId: 'LockIdentifier',
     PezpalletsOrigin: 'OriginCaller',
     PezpalletVersion: {

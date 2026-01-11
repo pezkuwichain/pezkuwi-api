@@ -46,7 +46,7 @@ function createChildKey (info: AllInfo): string {
  */
 export function childKey (instanceId: string, api: DeriveApi): (paraId: string | number | BN) => Observable<string | null> {
   return memo(instanceId, (paraId: string | number | BN): Observable<string | null> =>
-    api.query.crowdloan.funds<Option<PezkuwiRuntimeCommonCrowdloanFundInfo>>(paraId).pipe(
+    api.query['crowdloan']['funds']<Option<PezkuwiRuntimeCommonCrowdloanFundInfo>>(paraId).pipe(
       map((optInfo) =>
         optInfo.isSome
           ? createChildKey(optInfo.unwrap())

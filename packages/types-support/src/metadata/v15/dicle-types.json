@@ -547,7 +547,7 @@
     "id": 21,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeEvent"
       ],
       "params": [],
@@ -989,7 +989,7 @@
                 {
                   "name": null,
                   "type": 600,
-                  "typeName": "teyrchains_inclusion::Event<Runtime>",
+                  "typeName": "parachains_inclusion::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -1002,7 +1002,7 @@
                 {
                   "name": null,
                   "type": 604,
-                  "typeName": "teyrchains_paras::Event<Runtime>",
+                  "typeName": "parachains_paras::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -1015,7 +1015,7 @@
                 {
                   "name": null,
                   "type": 605,
-                  "typeName": "teyrchains_hrmp::Event<Runtime>",
+                  "typeName": "parachains_hrmp::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -1028,7 +1028,7 @@
                 {
                   "name": null,
                   "type": 606,
-                  "typeName": "teyrchains_disputes::Event<Runtime>",
+                  "typeName": "parachains_disputes::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -1041,7 +1041,7 @@
                 {
                   "name": null,
                   "type": 609,
-                  "typeName": "teyrchains_on_demand::Event<Runtime>",
+                  "typeName": "parachains_on_demand::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -3774,7 +3774,7 @@
     "id": 53,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "impls",
         "VersionedLocatableAsset"
       ],
@@ -4187,7 +4187,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -4444,25 +4444,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -4499,7 +4499,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -4958,7 +4958,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -5202,25 +5202,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -5257,7 +5257,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -5579,7 +5579,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -5823,13 +5823,13 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
@@ -5860,7 +5860,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -6825,7 +6825,7 @@
     "id": 100,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeCall"
       ],
       "params": [],
@@ -10283,7 +10283,7 @@
     "id": 138,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "SessionKeys"
       ],
       "params": [],
@@ -10336,7 +10336,7 @@
     "id": 139,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "validator_app",
         "Public"
@@ -10361,7 +10361,7 @@
     "id": 140,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "assignment_app",
         "Public"
@@ -11750,7 +11750,7 @@
     "id": 160,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "OriginCaller"
       ],
       "params": [],
@@ -11784,12 +11784,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainsOrigin",
+              "name": "ParachainsOrigin",
               "fields": [
                 {
                   "name": null,
                   "type": 163,
-                  "typeName": "teyrchains_origin::Origin",
+                  "typeName": "parachains_origin::Origin",
                   "docs": []
                 }
               ],
@@ -11873,7 +11873,7 @@
     "id": 162,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "governance",
         "origins",
         "pallet_custom_origins",
@@ -12061,7 +12061,7 @@
     "id": 163,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "origin",
         "pallet",
         "Origin"
@@ -12071,7 +12071,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -12093,7 +12093,7 @@
     "id": 164,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "Id"
       ],
@@ -12822,7 +12822,7 @@
     "id": 172,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeParameters"
       ],
       "params": [],
@@ -12865,7 +12865,7 @@
     "id": 173,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "Parameters"
@@ -12979,7 +12979,7 @@
     "id": 174,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "MinInflation"
@@ -13061,7 +13061,7 @@
     "id": 177,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "MaxInflation"
@@ -13079,7 +13079,7 @@
     "id": 178,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "IdealStake"
@@ -13097,7 +13097,7 @@
     "id": 179,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "Falloff"
@@ -13115,7 +13115,7 @@
     "id": 180,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "UseAuctionSlots"
@@ -13173,7 +13173,7 @@
     "id": 182,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "treasury",
         "Parameters"
@@ -13230,7 +13230,7 @@
     "id": 183,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "treasury",
         "BurnPortion"
@@ -13312,7 +13312,7 @@
     "id": 186,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "treasury",
         "BurnDestination"
@@ -13370,7 +13370,7 @@
     "id": 188,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "BurnDestinationAccount"
       ],
       "params": [],
@@ -13393,7 +13393,7 @@
     "id": 189,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Call"
@@ -13621,7 +13621,7 @@
     "id": 190,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EcdsaSignature"
       ],
@@ -13659,7 +13659,7 @@
     "id": 192,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EthereumAddress"
       ],
@@ -13778,7 +13778,7 @@
     "id": 196,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "StatementKind"
       ],
@@ -15976,7 +15976,7 @@
     "id": 209,
     "type": {
       "path": [
-        "zagros_runtime_constants",
+        "kusama_runtime_constants",
         "proxy",
         "ProxyType"
       ],
@@ -17391,7 +17391,7 @@
     "id": 219,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "NposCompactSolution24"
       ],
       "params": [],
@@ -20419,7 +20419,7 @@
     "id": 320,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "pallet",
         "Call"
@@ -20553,7 +20553,7 @@
               ],
               "index": 8,
               "docs": [
-                "Set the teyrchain validator-group rotation frequency"
+                "Set the parachain validator-group rotation frequency"
               ]
             },
             {
@@ -20613,7 +20613,7 @@
               ],
               "index": 13,
               "docs": [
-                "Set the maximum number of validators to use in teyrchain consensus."
+                "Set the maximum number of validators to use in parachain consensus."
               ]
             },
             {
@@ -20875,7 +20875,7 @@
               ]
             },
             {
-              "name": "set_hrmp_max_teyrchain_inbound_channels",
+              "name": "set_hrmp_max_parachain_inbound_channels",
               "fields": [
                 {
                   "name": "new",
@@ -20886,7 +20886,7 @@
               ],
               "index": 34,
               "docs": [
-                "Sets the maximum number of inbound HRMP channels a teyrchain is allowed to accept."
+                "Sets the maximum number of inbound HRMP channels a parachain is allowed to accept."
               ]
             },
             {
@@ -20905,7 +20905,7 @@
               ]
             },
             {
-              "name": "set_hrmp_max_teyrchain_outbound_channels",
+              "name": "set_hrmp_max_parachain_outbound_channels",
               "fields": [
                 {
                   "name": "new",
@@ -20916,7 +20916,7 @@
               ],
               "index": 37,
               "docs": [
-                "Sets the maximum number of outbound HRMP channels a teyrchain is allowed to open."
+                "Sets the maximum number of outbound HRMP channels a parachain is allowed to open."
               ]
             },
             {
@@ -20961,7 +20961,7 @@
               ],
               "index": 43,
               "docs": [
-                "Sets the minimum delay between announcing the upgrade block for a teyrchain until the",
+                "Sets the minimum delay between announcing the upgrade block for a parachain until the",
                 "upgrade taking place.",
                 "",
                 "See the field documentation for information and constraints for the new value."
@@ -21151,7 +21151,7 @@
     "id": 321,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "async_backing",
         "AsyncBackingParams"
@@ -21182,7 +21182,7 @@
     "id": 322,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "executor_params",
         "ExecutorParams"
@@ -21220,7 +21220,7 @@
     "id": 324,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "executor_params",
         "ExecutorParam"
@@ -21335,7 +21335,7 @@
     "id": 325,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "PvfPrepKind"
       ],
@@ -21365,7 +21365,7 @@
     "id": 326,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "PvfExecKind"
       ],
@@ -21395,7 +21395,7 @@
     "id": 327,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "ApprovalVotingParams"
       ],
@@ -21419,7 +21419,7 @@
     "id": 328,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "SchedulerParams"
       ],
@@ -21508,7 +21508,7 @@
     "id": 329,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "shared",
         "pallet",
         "Call"
@@ -21533,7 +21533,7 @@
     "id": 330,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Call"
@@ -21558,7 +21558,7 @@
     "id": 331,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras_inherent",
         "pallet",
         "Call"
@@ -21578,7 +21578,7 @@
                 {
                   "name": "data",
                   "type": 332,
-                  "typeName": "TeyrchainsInherentData<HeaderFor<T>>",
+                  "typeName": "ParachainsInherentData<HeaderFor<T>>",
                   "docs": []
                 }
               ],
@@ -21599,7 +21599,7 @@
     "id": 332,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "InherentData"
       ],
@@ -21659,7 +21659,7 @@
     "id": 334,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "signed",
         "UncheckedSigned"
@@ -21705,7 +21705,7 @@
     "id": 335,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "AvailabilityBitfield"
       ],
@@ -21760,7 +21760,7 @@
     "id": 338,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "ValidatorIndex"
       ],
@@ -21784,7 +21784,7 @@
     "id": 339,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "validator_app",
         "Signature"
@@ -21822,7 +21822,7 @@
     "id": 341,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "BackedCandidate"
       ],
@@ -21863,7 +21863,7 @@
     "id": 342,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "CommittedCandidateReceiptV2"
       ],
@@ -21898,7 +21898,7 @@
     "id": 343,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "CandidateDescriptorV2"
       ],
@@ -21993,7 +21993,7 @@
     "id": 344,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "InternalVersion"
       ],
@@ -22031,7 +22031,7 @@
     "id": 346,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "ValidationCodeHash"
       ],
@@ -22055,7 +22055,7 @@
     "id": 347,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "CandidateCommitments"
       ],
@@ -22180,7 +22180,7 @@
     "id": 350,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "OutboundHrmpMessage"
       ],
       "params": [
@@ -22267,7 +22267,7 @@
     "id": 353,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "ValidationCode"
       ],
@@ -22291,7 +22291,7 @@
     "id": 354,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "HeadData"
       ],
@@ -22328,7 +22328,7 @@
     "id": 356,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "ValidityAttestation"
       ],
@@ -22385,7 +22385,7 @@
     "id": 358,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "DisputeStatementSet"
       ],
@@ -22421,7 +22421,7 @@
     "id": 359,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "CandidateHash"
       ],
       "params": [],
@@ -22472,7 +22472,7 @@
     "id": 362,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "DisputeStatement"
       ],
@@ -22516,7 +22516,7 @@
     "id": 363,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "ValidDisputeStatementKind"
       ],
@@ -22598,7 +22598,7 @@
     "id": 365,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "InvalidDisputeStatementKind"
       ],
@@ -22622,7 +22622,7 @@
     "id": 366,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Call"
@@ -22654,7 +22654,7 @@
               ],
               "index": 0,
               "docs": [
-                "Set the storage for the teyrchain validation code immediately."
+                "Set the storage for the parachain validation code immediately."
               ]
             },
             {
@@ -22675,7 +22675,7 @@
               ],
               "index": 1,
               "docs": [
-                "Set the storage for the current teyrchain head data immediately."
+                "Set the storage for the current parachain head data immediately."
               ]
             },
             {
@@ -22738,7 +22738,7 @@
               ],
               "index": 4,
               "docs": [
-                "Put a teyrchain directly into the next session's action queue.",
+                "Put a parachain directly into the next session's action queue.",
                 "We can't queue it any sooner than this without going into the",
                 "initializer..."
               ]
@@ -22763,11 +22763,11 @@
                 "Otherwise, the code will be added into the storage. Note that the code will be added",
                 "into storage with reference count 0. This is to account the fact that there are no users",
                 "for this code yet. The caller will have to make sure that this code eventually gets",
-                "used by some teyrchain or removed from the storage to avoid storage leaks. For the",
+                "used by some parachain or removed from the storage to avoid storage leaks. For the",
                 "latter prefer to use the `poke_unused_validation_code` dispatchable to raw storage",
                 "manipulation.",
                 "",
-                "This function is mainly meant to be used for upgrading teyrchains that do not follow",
+                "This function is mainly meant to be used for upgrading parachains that do not follow",
                 "the go-ahead signal while the PVF pre-checking feature is enabled."
               ]
             },
@@ -22786,7 +22786,7 @@
                 "Remove the validation code from the storage iff the reference count is 0.",
                 "",
                 "This is better than removing the storage directly, because it will not remove the code",
-                "that was suddenly got used by some teyrchain while this dispatchable was pending",
+                "that was suddenly got used by some parachain while this dispatchable was pending",
                 "dispatching."
               ]
             },
@@ -22830,7 +22830,7 @@
               ],
               "index": 8,
               "docs": [
-                "Set the storage for the current teyrchain head data immediately."
+                "Set the storage for the current parachain head data immediately."
               ]
             },
             {
@@ -22845,7 +22845,7 @@
               ],
               "index": 9,
               "docs": [
-                "Remove an upgrade cooldown for a teyrchain.",
+                "Remove an upgrade cooldown for a parachain.",
                 "",
                 "The cost for removing the cooldown earlier depends on the time left for the cooldown",
                 "multiplied by [`Config::CooldownRemovalMultiplier`]. The paid tokens are burned."
@@ -22875,7 +22875,7 @@
               ],
               "index": 10,
               "docs": [
-                "Sets the storage for the authorized current code hash of the teyrchain.",
+                "Sets the storage for the authorized current code hash of the parachain.",
                 "If not applied, it will be removed at the `System::block_number() + valid_period` block.",
                 "",
                 "This can be useful, when triggering `Paras::force_set_current_code(para, code)`",
@@ -22906,7 +22906,7 @@
               ],
               "index": 11,
               "docs": [
-                "Applies the already authorized current code for the teyrchain,",
+                "Applies the already authorized current code for the parachain,",
                 "triggering the same functionality as `force_set_current_code`."
               ]
             }
@@ -22922,7 +22922,7 @@
     "id": 367,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "PvfCheckStatement"
       ],
@@ -22964,7 +22964,7 @@
     "id": 368,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "initializer",
         "pallet",
         "Call"
@@ -22990,7 +22990,7 @@
               ],
               "index": 0,
               "docs": [
-                "Issue a signal to the consensus engine to forcibly act as though all teyrchain",
+                "Issue a signal to the consensus engine to forcibly act as though all parachain",
                 "blocks in all relay chain blocks up to and including the given number in the current",
                 "chain are valid and should be finalized."
               ]
@@ -23007,7 +23007,7 @@
     "id": 369,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Call"
@@ -23045,7 +23045,7 @@
               ],
               "index": 0,
               "docs": [
-                "Initiate opening a channel from a teyrchain to a given recipient with given channel",
+                "Initiate opening a channel from a parachain to a given recipient with given channel",
                 "parameters.",
                 "",
                 "- `proposed_max_capacity` - specifies how many messages can be in the channel at once.",
@@ -23118,7 +23118,7 @@
               "docs": [
                 "This extrinsic triggers the cleanup of all the HRMP storage items that a para may have.",
                 "Normally this happens once per session, but this allows you to trigger the cleanup",
-                "immediately for a specific teyrchain.",
+                "immediately for a specific parachain.",
                 "",
                 "Number of inbound and outbound channels for `para` must be provided as witness data.",
                 "",
@@ -23232,7 +23232,7 @@
                 "configured limits.",
                 "",
                 "Expected use is when one (and only one) of the `ParaId`s involved in the channel is",
-                "governed by the system, e.g. a system teyrchain.",
+                "governed by the system, e.g. a system parachain.",
                 "",
                 "Origin must be the `ChannelManager`."
               ]
@@ -23310,13 +23310,13 @@
               ],
               "index": 10,
               "docs": [
-                "Establish a bidirectional HRMP channel between a teyrchain and a system chain.",
+                "Establish a bidirectional HRMP channel between a parachain and a system chain.",
                 "",
                 "Arguments:",
                 "",
                 "- `target_system_chain`: A system chain, `ParaId`.",
                 "",
-                "The origin needs to be the teyrchain origin."
+                "The origin needs to be the parachain origin."
               ]
             }
           ]
@@ -23331,7 +23331,7 @@
     "id": 370,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "HrmpChannelId"
       ],
@@ -23361,7 +23361,7 @@
     "id": 371,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Call"
@@ -23393,7 +23393,7 @@
     "id": 372,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "slashing",
         "pallet",
@@ -23439,7 +23439,7 @@
     "id": 373,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "DisputeProof"
       ],
@@ -23481,7 +23481,7 @@
     "id": 374,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "slashing",
         "DisputesTimeSlot"
@@ -23512,7 +23512,7 @@
     "id": 375,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "DisputeOffenceKind"
       ],
@@ -23548,7 +23548,7 @@
     "id": 376,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "pallet",
         "Call"
@@ -23681,7 +23681,7 @@
     "id": 377,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Call"
@@ -23724,8 +23724,8 @@
                 "## Arguments",
                 "- `origin`: Must be called by a `Signed` origin.",
                 "- `id`: The para ID. Must be owned/managed by the `origin` signing account.",
-                "- `genesis_head`: The genesis head data of the teyrchain/thread.",
-                "- `validation_code`: The initial validation code of the teyrchain/thread.",
+                "- `genesis_head`: The genesis head data of the parachain/thread.",
+                "- `validation_code`: The initial validation code of the parachain/thread.",
                 "",
                 "## Deposits/Fees",
                 "The account with the originating signature must reserve a deposit.",
@@ -23782,7 +23782,7 @@
                 "This function must be called by a Root origin.",
                 "",
                 "The deposit taken can be specified for this registration. Any `ParaId`",
-                "can be registered, including sub-1000 IDs which are System Teyrchains."
+                "can be registered, including sub-1000 IDs which are System Parachains."
               ]
             },
             {
@@ -23800,7 +23800,7 @@
                 "Deregister a Para Id, freeing all data and returning any deposit.",
                 "",
                 "The caller must be Root, the `para` owner, or the `para` itself. The para must be an",
-                "on-demand teyrchain."
+                "on-demand parachain."
               ]
             },
             {
@@ -23821,7 +23821,7 @@
               ],
               "index": 3,
               "docs": [
-                "Swap a lease holding teyrchain with another teyrchain, either on-demand or lease",
+                "Swap a lease holding parachain with another parachain, either on-demand or lease",
                 "holding.",
                 "",
                 "The origin must be Root, the `para` owner, or the `para` itself.",
@@ -23830,9 +23830,9 @@
                 "the swap will be stored in the pending swaps map, ready for a later confirmatory swap.",
                 "",
                 "The `ParaId`s remain mapped to the same head data and code so external code can rely on",
-                "`ParaId` to be a long-term identifier of a notional \"teyrchain\". However, their",
-                "scheduling info (i.e. whether they're an on-demand teyrchain or lease holding",
-                "teyrchain), auction information and the auction deposit are switched."
+                "`ParaId` to be a long-term identifier of a notional \"parachain\". However, their",
+                "scheduling info (i.e. whether they're an on-demand parachain or lease holding",
+                "parachain), auction information and the auction deposit are switched."
               ]
             },
             {
@@ -23850,7 +23850,7 @@
                 "Remove a manager lock from a para. This will allow the manager of a",
                 "previously locked para to deregister or swap a para without using governance.",
                 "",
-                "Can only be called by the Root origin or the teyrchain."
+                "Can only be called by the Root origin or the parachain."
               ]
             },
             {
@@ -23862,8 +23862,8 @@
                 "",
                 "This function will reserve a new Para Id to be owned/managed by the origin account.",
                 "The origin account is able to register head data and validation code using `register` to",
-                "create an on-demand teyrchain. Using the Slots pallet, an on-demand teyrchain can then",
-                "be upgraded to a lease holding teyrchain.",
+                "create an on-demand parachain. Using the Slots pallet, an on-demand parachain can then",
+                "be upgraded to a lease holding parachain.",
                 "",
                 "## Arguments",
                 "- `origin`: Must be called by a `Signed` origin. Becomes the manager/owner of the new",
@@ -23892,7 +23892,7 @@
                 "Add a manager lock from a para. This will prevent the manager of a",
                 "para to deregister or swap a para.",
                 "",
-                "Can be called by Root, the teyrchain, or the teyrchain manager if the teyrchain is",
+                "Can be called by Root, the parachain, or the parachain manager if the parachain is",
                 "unlocked."
               ]
             },
@@ -23914,16 +23914,16 @@
               ],
               "index": 7,
               "docs": [
-                "Schedule a teyrchain upgrade.",
+                "Schedule a parachain upgrade.",
                 "",
                 "This will kick off a check of `new_code` by all validators. After the majority of the",
                 "validators have reported on the validity of the code, the code will either be enacted",
                 "or the upgrade will be rejected. If the code will be enacted, the current code of the",
-                "teyrchain will be overwritten directly. This means that any PoV will be checked by this",
-                "new code. The teyrchain itself will not be informed explicitly that the validation code",
+                "parachain will be overwritten directly. This means that any PoV will be checked by this",
+                "new code. The parachain itself will not be informed explicitly that the validation code",
                 "has changed.",
                 "",
-                "Can be called by Root, the teyrchain, or the teyrchain manager if the teyrchain is",
+                "Can be called by Root, the parachain, or the parachain manager if the parachain is",
                 "unlocked."
               ]
             },
@@ -23945,9 +23945,9 @@
               ],
               "index": 8,
               "docs": [
-                "Set the teyrchain's current head.",
+                "Set the parachain's current head.",
                 "",
-                "Can be called by Root, the teyrchain, or the teyrchain manager if the teyrchain is",
+                "Can be called by Root, the parachain, or the parachain manager if the parachain is",
                 "unlocked."
               ]
             }
@@ -23963,7 +23963,7 @@
     "id": 378,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Call"
@@ -24048,7 +24048,7 @@
               ],
               "index": 2,
               "docs": [
-                "Try to onboard a teyrchain that has a lease for the current lease period.",
+                "Try to onboard a parachain that has a lease for the current lease period.",
                 "",
                 "This function can be useful if there was some state issue with a para that should",
                 "have onboarded, but was unable to. As long as they have a lease period, we can",
@@ -24069,7 +24069,7 @@
     "id": 379,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Call"
@@ -24144,8 +24144,8 @@
               ],
               "index": 1,
               "docs": [
-                "Make a new bid from an account (including a teyrchain account) for deploying a new",
-                "teyrchain.",
+                "Make a new bid from an account (including a parachain account) for deploying a new",
+                "parachain.",
                 "",
                 "Multiple simultaneous bids from the same bidder are allowed only as long as all active",
                 "bids overlap each other (i.e. are mutually exclusive). Bids cannot be redacted.",
@@ -24158,7 +24158,7 @@
                 "absolute lease period index value, not an auction-specific offset.",
                 "- `last_slot` is the last lease period index of the range to bid on. This is the",
                 "absolute lease period index value, not an auction-specific offset.",
-                "- `amount` is the amount to bid to be held as deposit for the teyrchain should the",
+                "- `amount` is the amount to bid to be held as deposit for the parachain should the",
                 "bid win. This amount is held throughout the range."
               ]
             },
@@ -24197,7 +24197,7 @@
     "id": 381,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Call"
@@ -24253,11 +24253,11 @@
               ],
               "index": 0,
               "docs": [
-                "Create a new crowdloaning campaign for a teyrchain slot with the given lease period",
+                "Create a new crowdloaning campaign for a parachain slot with the given lease period",
                 "range.",
                 "",
-                "This applies a lock to your teyrchain configuration, ensuring that it cannot be changed",
-                "by the teyrchain manager."
+                "This applies a lock to your parachain configuration, ensuring that it cannot be changed",
+                "by the parachain manager."
               ]
             },
             {
@@ -24284,7 +24284,7 @@
               ],
               "index": 1,
               "docs": [
-                "Contribute to a crowd sale. This will transfer some balance over to fund a teyrchain",
+                "Contribute to a crowd sale. This will transfer some balance over to fund a parachain",
                 "slot. It will be withdrawable when the crowdloan has ended and the funds are unused."
               ]
             },
@@ -24322,7 +24322,7 @@
                 "block number.",
                 "",
                 "- `who`: The account whose contribution should be withdrawn.",
-                "- `index`: The teyrchain to whose crowdloan the contribution was made."
+                "- `index`: The parachain to whose crowdloan the contribution was made."
               ]
             },
             {
@@ -24465,7 +24465,7 @@
               "index": 8,
               "docs": [
                 "Contribute your entire balance to a crowd sale. This will transfer the entire balance of",
-                "a user over to fund a teyrchain slot. It will be withdrawable when the crowdloan has",
+                "a user over to fund a parachain slot. It will be withdrawable when the crowdloan has",
                 "ended and the funds are unused."
               ]
             }
@@ -24673,7 +24673,7 @@
     "id": 386,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "coretime",
         "pallet",
         "Call"
@@ -24867,7 +24867,7 @@
     "id": 390,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "PartsOf57600"
       ],
@@ -24963,8 +24963,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -25025,8 +25025,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -25203,8 +25203,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -25259,8 +25259,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -25348,8 +25348,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `X2(Parent,",
-                "  Teyrchain(..))` to send from teyrchain to teyrchain, or `X1(Teyrchain(..))` to send",
-                "  from relay to teyrchain.",
+                "  Parachain(..))` to send from parachain to parachain, or `X1(Parachain(..))` to send",
+                "  from relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -25470,9 +25470,9 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain, or `(parents: 2, (GlobalConsensus(..), ..))` to send from",
-                "  teyrchain across a bridge to another ecosystem destination.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain, or `(parents: 2, (GlobalConsensus(..), ..))` to send from",
+                "  parachain across a bridge to another ecosystem destination.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
                 "  fee on the `dest` (and possibly reserve) chains.",
                 "- `assets_transfer_type`: The XCM `TransferType` used to transfer the `assets`.",
@@ -34519,7 +34519,7 @@
     "id": 484,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "AggregateMessageOrigin"
       ],
@@ -34550,7 +34550,7 @@
     "id": 485,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "UmpQueueId"
       ],
@@ -39850,7 +39850,7 @@
     "id": 566,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeParametersKey"
       ],
       "params": [],
@@ -39893,7 +39893,7 @@
     "id": 567,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "ParametersKey"
@@ -39977,7 +39977,7 @@
     "id": 568,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "treasury",
         "ParametersKey"
@@ -40062,7 +40062,7 @@
     "id": 570,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeParametersValue"
       ],
       "params": [],
@@ -40105,7 +40105,7 @@
     "id": 571,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "inflation",
         "ParametersValue"
@@ -40189,7 +40189,7 @@
     "id": 572,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "dynamic_params",
         "treasury",
         "ParametersValue"
@@ -40234,7 +40234,7 @@
     "id": 573,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Event"
@@ -41090,7 +41090,7 @@
     "id": 580,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "Runtime"
       ],
       "params": [],
@@ -43740,7 +43740,7 @@
     "id": 600,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Event"
@@ -43880,7 +43880,7 @@
     "id": 601,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "CandidateReceiptV2"
       ],
@@ -43915,7 +43915,7 @@
     "id": 602,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "CoreIndex"
       ],
@@ -43939,7 +43939,7 @@
     "id": 603,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "GroupIndex"
       ],
@@ -43963,7 +43963,7 @@
     "id": 604,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Event"
@@ -44132,7 +44132,7 @@
                   "type": 164,
                   "typeName": "ParaId",
                   "docs": [
-                    "The teyrchain for which the cooldown got removed."
+                    "The parachain for which the cooldown got removed."
                   ]
                 }
               ],
@@ -44186,7 +44186,7 @@
     "id": 605,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Event"
@@ -44237,7 +44237,7 @@
               "name": "OpenChannelCanceled",
               "fields": [
                 {
-                  "name": "by_teyrchain",
+                  "name": "by_parachain",
                   "type": 164,
                   "typeName": "ParaId",
                   "docs": []
@@ -44279,7 +44279,7 @@
               "name": "ChannelClosed",
               "fields": [
                 {
-                  "name": "by_teyrchain",
+                  "name": "by_parachain",
                   "type": 164,
                   "typeName": "ParaId",
                   "docs": []
@@ -44395,7 +44395,7 @@
     "id": 606,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Event"
@@ -44482,7 +44482,7 @@
     "id": 607,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "DisputeLocation"
       ],
@@ -44512,7 +44512,7 @@
     "id": 608,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "DisputeResult"
       ],
@@ -44542,7 +44542,7 @@
     "id": 609,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "pallet",
         "Event"
@@ -44631,7 +44631,7 @@
     "id": 610,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Event"
@@ -44727,7 +44727,7 @@
     "id": 611,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Event"
@@ -44798,7 +44798,7 @@
               ],
               "index": 1,
               "docs": [
-                "A para has won the right to a continuous set of lease periods as a teyrchain.",
+                "A para has won the right to a continuous set of lease periods as a parachain.",
                 "First balance is any extra amount reserved on top of the para's existing deposit.",
                 "Second balance is the total amount reserved."
               ]
@@ -44815,7 +44815,7 @@
     "id": 612,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Event"
@@ -44945,8 +44945,8 @@
               ],
               "index": 4,
               "docs": [
-                "Someone attempted to lease the same slot twice for a teyrchain. The amount is held in",
-                "reserve but no teyrchain slot has been leased."
+                "Someone attempted to lease the same slot twice for a parachain. The amount is held in",
+                "reserve but no parachain slot has been leased."
               ]
             },
             {
@@ -45022,7 +45022,7 @@
     "id": 613,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Event"
@@ -45226,7 +45226,7 @@
               ],
               "index": 9,
               "docs": [
-                "A teyrchain has been moved to `NewRaise`"
+                "A parachain has been moved to `NewRaise`"
               ]
             }
           ]
@@ -45241,7 +45241,7 @@
     "id": 614,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "coretime",
         "pallet",
         "Event"
@@ -48456,7 +48456,7 @@
     "id": 668,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeHoldReason"
       ],
       "params": [],
@@ -48746,7 +48746,7 @@
     "id": 677,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeFreezeReason"
       ],
       "params": [],
@@ -52933,7 +52933,7 @@
     "id": 764,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Error"
@@ -58363,7 +58363,7 @@
     "id": 876,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "HostConfiguration"
       ],
@@ -58449,7 +58449,7 @@
               "docs": []
             },
             {
-              "name": "hrmp_max_teyrchain_outbound_channels",
+              "name": "hrmp_max_parachain_outbound_channels",
               "type": 4,
               "typeName": "u32",
               "docs": []
@@ -58479,7 +58479,7 @@
               "docs": []
             },
             {
-              "name": "hrmp_max_teyrchain_inbound_channels",
+              "name": "hrmp_max_parachain_inbound_channels",
               "type": 4,
               "typeName": "u32",
               "docs": []
@@ -58623,7 +58623,7 @@
     "id": 879,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "pallet",
         "Error"
@@ -58683,7 +58683,7 @@
     "id": 882,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "shared",
         "AllowedRelayParentsTracker"
       ],
@@ -58735,7 +58735,7 @@
     "id": 884,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "shared",
         "RelayParentInfo"
       ],
@@ -58945,7 +58945,7 @@
     "id": 894,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "CandidatePendingAvailability"
       ],
@@ -59026,7 +59026,7 @@
     "id": 895,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Error"
@@ -59086,7 +59086,7 @@
               "index": 5,
               "docs": [
                 "The candidate's relay-parent was not allowed. Either it was",
-                "not recent enough or it didn't advance based on the last teyrchain block."
+                "not recent enough or it didn't advance based on the last parachain block."
               ]
             },
             {
@@ -59191,7 +59191,7 @@
     "id": 896,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "ScrapedOnChainVotes"
       ],
@@ -59286,7 +59286,7 @@
     "id": 901,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras_inherent",
         "pallet",
         "Error"
@@ -59403,7 +59403,7 @@
     "id": 905,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "scheduler",
         "common",
         "Assignment"
@@ -59481,7 +59481,7 @@
     "id": 908,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "PvfCheckActiveVoteState"
       ],
@@ -59547,7 +59547,7 @@
     "id": 910,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "PvfCheckCause"
       ],
@@ -59608,7 +59608,7 @@
     "id": 911,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "UpgradeStrategy"
       ],
@@ -59664,7 +59664,7 @@
     "id": 914,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaLifecycle"
       ],
@@ -59685,7 +59685,7 @@
               "docs": []
             },
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [],
               "index": 2,
               "docs": []
@@ -59697,7 +59697,7 @@
               "docs": []
             },
             {
-              "name": "DowngradingTeyrchain",
+              "name": "DowngradingParachain",
               "fields": [],
               "index": 4,
               "docs": []
@@ -59709,7 +59709,7 @@
               "docs": []
             },
             {
-              "name": "OffboardingTeyrchain",
+              "name": "OffboardingParachain",
               "fields": [],
               "index": 6,
               "docs": []
@@ -59738,7 +59738,7 @@
     "id": 916,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaPastCodeMeta"
       ],
@@ -59786,7 +59786,7 @@
     "id": 918,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ReplacementTimes"
       ],
@@ -59834,7 +59834,7 @@
     "id": 920,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "AuthorizedCodeHashAndExpiry"
       ],
@@ -59869,7 +59869,7 @@
     "id": 921,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "UpgradeGoAhead"
       ],
@@ -59899,7 +59899,7 @@
     "id": 922,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "UpgradeRestriction"
       ],
@@ -59923,7 +59923,7 @@
     "id": 923,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaGenesisArgs"
       ],
@@ -59959,7 +59959,7 @@
     "id": 924,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Error"
@@ -60002,7 +60002,7 @@
               "fields": [],
               "index": 3,
               "docs": [
-                "Para cannot be upgraded to a lease holding teyrchain."
+                "Para cannot be upgraded to a lease holding parachain."
               ]
             },
             {
@@ -60010,7 +60010,7 @@
               "fields": [],
               "index": 4,
               "docs": [
-                "Para cannot be downgraded to an on-demand teyrchain."
+                "Para cannot be downgraded to an on-demand parachain."
               ]
             },
             {
@@ -60066,7 +60066,7 @@
               "fields": [],
               "index": 11,
               "docs": [
-                "Teyrchain cannot currently schedule a code upgrade."
+                "Parachain cannot currently schedule a code upgrade."
               ]
             },
             {
@@ -60126,7 +60126,7 @@
     "id": 926,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "initializer",
         "BufferedSessionChange"
       ],
@@ -60175,7 +60175,7 @@
     "id": 928,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundDownwardMessage"
       ],
       "params": [
@@ -60209,7 +60209,7 @@
     "id": 929,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "HrmpOpenChannelRequest"
       ],
@@ -60276,7 +60276,7 @@
     "id": 931,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "HrmpChannel"
       ],
@@ -60355,7 +60355,7 @@
     "id": 933,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundHrmpMessage"
       ],
       "params": [
@@ -60416,7 +60416,7 @@
     "id": 936,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Error"
@@ -60615,7 +60615,7 @@
     "id": 938,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "SessionInfo"
       ],
@@ -60711,7 +60711,7 @@
     "id": 939,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "IndexedVec"
       ],
@@ -60744,7 +60744,7 @@
     "id": 940,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "IndexedVec"
       ],
@@ -60791,7 +60791,7 @@
     "id": 942,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "DisputeState"
       ],
@@ -60865,7 +60865,7 @@
     "id": 944,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Error"
@@ -60963,7 +60963,7 @@
     "id": 945,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "PendingSlashes"
       ],
@@ -61051,7 +61051,7 @@
     "id": 949,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "slashing",
         "pallet",
@@ -61127,7 +61127,7 @@
     "id": 950,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "types",
         "CoreAffinityCount"
@@ -61158,7 +61158,7 @@
     "id": 951,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "types",
         "QueueStatusType"
@@ -61201,7 +61201,7 @@
     "id": 952,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "types",
         "QueueIndex"
@@ -61253,7 +61253,7 @@
     "id": 954,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "types",
         "ReverseQueueIndex"
@@ -61318,7 +61318,7 @@
     "id": 957,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "types",
         "EnqueuedOrder"
@@ -61408,7 +61408,7 @@
     "id": 961,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "on_demand",
         "pallet",
         "Error"
@@ -61473,7 +61473,7 @@
     "id": 963,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "Schedule"
       ],
@@ -61514,7 +61514,7 @@
     "id": 964,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "CoreDescriptor"
       ],
@@ -61589,7 +61589,7 @@
     "id": 966,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "QueueDescriptor"
       ],
@@ -61664,7 +61664,7 @@
     "id": 968,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "WorkState"
       ],
@@ -61738,7 +61738,7 @@
     "id": 971,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "AssignmentState"
       ],
@@ -61768,7 +61768,7 @@
     "id": 972,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "assigner_coretime",
         "pallet",
         "Error"
@@ -61809,7 +61809,7 @@
     "id": 973,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "ParaInfo"
       ],
@@ -61854,7 +61854,7 @@
     "id": 974,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Error"
@@ -61909,11 +61909,11 @@
               ]
             },
             {
-              "name": "NotTeyrchain",
+              "name": "NotParachain",
               "fields": [],
               "index": 5,
               "docs": [
-                "Para is not a Teyrchain."
+                "Para is not a Parachain."
               ]
             },
             {
@@ -61921,7 +61921,7 @@
               "fields": [],
               "index": 6,
               "docs": [
-                "Para is not a Parathread (on-demand teyrchain)."
+                "Para is not a Parathread (on-demand parachain)."
               ]
             },
             {
@@ -61937,7 +61937,7 @@
               "fields": [],
               "index": 8,
               "docs": [
-                "Cannot schedule downgrade of lease holding teyrchain to on-demand teyrchain"
+                "Cannot schedule downgrade of lease holding parachain to on-demand parachain"
               ]
             },
             {
@@ -61945,7 +61945,7 @@
               "fields": [],
               "index": 9,
               "docs": [
-                "Cannot schedule upgrade of on-demand teyrchain to lease holding teyrchain"
+                "Cannot schedule upgrade of on-demand parachain to lease holding parachain"
               ]
             },
             {
@@ -61953,7 +61953,7 @@
               "fields": [],
               "index": 10,
               "docs": [
-                "Para is locked from manipulation by the manager. Must use teyrchain or relay chain",
+                "Para is locked from manipulation by the manager. Must use parachain or relay chain",
                 "governance."
               ]
             },
@@ -61978,7 +61978,7 @@
               "fields": [],
               "index": 13,
               "docs": [
-                "Cannot perform a teyrchain slot / lifecycle swap. Check that the state of both paras",
+                "Cannot perform a parachain slot / lifecycle swap. Check that the state of both paras",
                 "are correct for the swap to work."
               ]
             }
@@ -62007,7 +62007,7 @@
     "id": 976,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Error"
@@ -62026,7 +62026,7 @@
               "fields": [],
               "index": 0,
               "docs": [
-                "The teyrchain ID is not onboarding."
+                "The parachain ID is not onboarding."
               ]
             },
             {
@@ -62132,7 +62132,7 @@
     "id": 981,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Error"
@@ -62214,7 +62214,7 @@
     "id": 982,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "FundInfo"
       ],
@@ -62309,7 +62309,7 @@
     "id": 983,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "LastContribution"
       ],
@@ -62364,7 +62364,7 @@
     "id": 984,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Error"
@@ -62475,11 +62475,11 @@
               ]
             },
             {
-              "name": "NotTeyrchain",
+              "name": "NotParachain",
               "fields": [],
               "index": 12,
               "docs": [
-                "This crowdloan does not correspond to a teyrchain."
+                "This crowdloan does not correspond to a parachain."
               ]
             },
             {
@@ -62487,7 +62487,7 @@
               "fields": [],
               "index": 13,
               "docs": [
-                "This teyrchain lease is still active and retirement cannot yet begin."
+                "This parachain lease is still active and retirement cannot yet begin."
               ]
             },
             {
@@ -62495,7 +62495,7 @@
               "fields": [],
               "index": 14,
               "docs": [
-                "This teyrchain's bid or lease is still active and withdraw cannot yet begin."
+                "This parachain's bid or lease is still active and withdraw cannot yet begin."
               ]
             },
             {
@@ -62575,7 +62575,7 @@
     "id": 985,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "coretime",
         "pallet",
         "Error"
@@ -62594,7 +62594,7 @@
               "fields": [],
               "index": 0,
               "docs": [
-                "The paraid making the call is not the coretime brokerage system teyrchain."
+                "The paraid making the call is not the coretime brokerage system parachain."
               ]
             },
             {
@@ -68385,7 +68385,7 @@
             {
               "name": "next_mint",
               "type": 1043,
-              "typeName": "(pezkuwi_primitives::Balance, pezkuwi_primitives::Balance)",
+              "typeName": "(polkadot_primitives::Balance, polkadot_primitives::Balance)",
               "docs": []
             }
           ]
@@ -69105,7 +69105,7 @@
     "id": 1063,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "GroupRotationInfo"
       ],
@@ -69159,7 +69159,7 @@
     "id": 1065,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "CoreState"
       ],
@@ -69218,7 +69218,7 @@
     "id": 1066,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "OccupiedCore"
       ],
@@ -69333,7 +69333,7 @@
     "id": 1068,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "ScheduledCore"
       ],
@@ -69403,7 +69403,7 @@
     "id": 1070,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "collator_app",
         "Public"
@@ -69428,7 +69428,7 @@
     "id": 1071,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "OccupiedCoreAssumption"
       ],
@@ -69504,7 +69504,7 @@
     "id": 1073,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "PersistedValidationData"
       ],
@@ -69662,7 +69662,7 @@
     "id": 1078,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "CandidateEvent"
       ],
@@ -70046,7 +70046,7 @@
     "id": 1090,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "slashing",
         "PendingSlashes"
@@ -70077,7 +70077,7 @@
     "id": 1091,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "slashing",
         "SlashingOffenceKind"
@@ -70148,7 +70148,7 @@
     "id": 1093,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "slashing",
         "OpaqueKeyOwnershipProof"
@@ -70173,7 +70173,7 @@
     "id": 1094,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "slashing",
         "DisputeProof"
@@ -70256,7 +70256,7 @@
     "id": 1096,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "async_backing",
         "BackingState"
@@ -70296,7 +70296,7 @@
     "id": 1097,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "async_backing",
         "Constraints"
@@ -70404,7 +70404,7 @@
     "id": 1098,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "async_backing",
         "InboundHrmpLimitations"
@@ -70461,7 +70461,7 @@
     "id": 1101,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "async_backing",
         "OutboundHrmpChannelLimitations"
@@ -70599,7 +70599,7 @@
     "id": 1106,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "async_backing",
         "CandidatePendingAvailability"
@@ -70768,7 +70768,7 @@
     "id": 1112,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "async_backing",
         "Constraints"
@@ -72604,7 +72604,7 @@
     "id": 1159,
     "type": {
       "path": [
-        "staging_zagros_runtime",
+        "staging_kusama_runtime",
         "RuntimeError"
       ],
       "params": [],
@@ -73007,7 +73007,7 @@
                 {
                   "name": null,
                   "type": 879,
-                  "typeName": "teyrchains_configuration::Error<Runtime>",
+                  "typeName": "parachains_configuration::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73020,7 +73020,7 @@
                 {
                   "name": null,
                   "type": 895,
-                  "typeName": "teyrchains_inclusion::Error<Runtime>",
+                  "typeName": "parachains_inclusion::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73033,7 +73033,7 @@
                 {
                   "name": null,
                   "type": 901,
-                  "typeName": "teyrchains_paras_inherent::Error<Runtime>",
+                  "typeName": "parachains_paras_inherent::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73046,7 +73046,7 @@
                 {
                   "name": null,
                   "type": 924,
-                  "typeName": "teyrchains_paras::Error<Runtime>",
+                  "typeName": "parachains_paras::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73059,7 +73059,7 @@
                 {
                   "name": null,
                   "type": 936,
-                  "typeName": "teyrchains_hrmp::Error<Runtime>",
+                  "typeName": "parachains_hrmp::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73072,7 +73072,7 @@
                 {
                   "name": null,
                   "type": 944,
-                  "typeName": "teyrchains_disputes::Error<Runtime>",
+                  "typeName": "parachains_disputes::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73085,7 +73085,7 @@
                 {
                   "name": null,
                   "type": 949,
-                  "typeName": "teyrchains_slashing::Error<Runtime>",
+                  "typeName": "parachains_slashing::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73098,7 +73098,7 @@
                 {
                   "name": null,
                   "type": 961,
-                  "typeName": "teyrchains_on_demand::Error<Runtime>",
+                  "typeName": "parachains_on_demand::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -73111,7 +73111,7 @@
                 {
                   "name": null,
                   "type": 972,
-                  "typeName": "teyrchains_assigner_coretime::Error<Runtime>",
+                  "typeName": "parachains_assigner_coretime::Error<Runtime>",
                   "docs": []
                 }
               ],

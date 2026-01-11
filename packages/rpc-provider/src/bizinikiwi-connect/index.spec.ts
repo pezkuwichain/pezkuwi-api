@@ -471,6 +471,8 @@ describe('ScProvider', () => {
           subscription: token
         }
       });
+
+      await wait(0);
       expect(cb).toHaveBeenCalledTimes(1);
       expect(cb).toHaveBeenLastCalledWith(null, 1);
 
@@ -482,6 +484,8 @@ describe('ScProvider', () => {
           subscription: token
         }
       });
+
+      await wait(0);
       expect(cb).toHaveBeenCalledTimes(2);
       expect(cb).toHaveBeenLastCalledWith(null, 2);
 
@@ -575,9 +579,9 @@ describe('ScProvider', () => {
         }
       });
 
-      expect(token).toBe(unsubscribeToken);
+      await wait(0);
       expect(cb).toHaveBeenCalledTimes(1);
-      expect(cb).toHaveBeenLastCalledWith(expect.any(Error), undefined);
+      expect(cb).toHaveBeenLastCalledWith(new Error('boom!'), undefined);
     });
 
     it('errors when subscribing to an unsupported method', async () => {

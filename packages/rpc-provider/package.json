@@ -15,27 +15,328 @@
   },
   "sideEffects": [
     "./packageDetect.js",
-    "./packageDetect.cjs"
+    "./cjs/packageDetect.js"
   ],
   "type": "module",
-  "version": "16.5.6",
-  "main": "index.js",
+  "types": "./index.d.ts",
+  "version": "16.5.9",
+  "main": "./cjs/index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "module": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "default": "./cjs/index.js"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./bizinikiwi-connect": {
+      "module": {
+        "types": "./bizinikiwi-connect/index.d.ts",
+        "default": "./bizinikiwi-connect/index.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi-connect/index.d.ts",
+        "default": "./cjs/bizinikiwi-connect/index.js"
+      },
+      "default": {
+        "types": "./bizinikiwi-connect/index.d.ts",
+        "default": "./bizinikiwi-connect/index.js"
+      }
+    },
+    "./bizinikiwi-connect/Health": {
+      "module": {
+        "types": "./bizinikiwi-connect/Health.d.ts",
+        "default": "./bizinikiwi-connect/Health.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi-connect/Health.d.ts",
+        "default": "./cjs/bizinikiwi-connect/Health.js"
+      },
+      "default": {
+        "types": "./bizinikiwi-connect/Health.d.ts",
+        "default": "./bizinikiwi-connect/Health.js"
+      }
+    },
+    "./bizinikiwi-connect/types": {
+      "module": {
+        "types": "./bizinikiwi-connect/types.d.ts",
+        "default": "./bizinikiwi-connect/types.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi-connect/types.d.ts",
+        "default": "./cjs/bizinikiwi-connect/types.js"
+      },
+      "default": {
+        "types": "./bizinikiwi-connect/types.d.ts",
+        "default": "./bizinikiwi-connect/types.js"
+      }
+    },
+    "./bundle": {
+      "module": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      },
+      "require": {
+        "types": "./cjs/bundle.d.ts",
+        "default": "./cjs/bundle.js"
+      },
+      "default": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      }
+    },
+    "./cjs/*": "./cjs/*.js",
+    "./cjs/package.json": "./cjs/package.json",
+    "./coder": {
+      "module": {
+        "types": "./coder/index.d.ts",
+        "default": "./coder/index.js"
+      },
+      "require": {
+        "types": "./cjs/coder/index.d.ts",
+        "default": "./cjs/coder/index.js"
+      },
+      "default": {
+        "types": "./coder/index.d.ts",
+        "default": "./coder/index.js"
+      }
+    },
+    "./coder/error": {
+      "module": {
+        "types": "./coder/error.d.ts",
+        "default": "./coder/error.js"
+      },
+      "require": {
+        "types": "./cjs/coder/error.d.ts",
+        "default": "./cjs/coder/error.js"
+      },
+      "default": {
+        "types": "./coder/error.d.ts",
+        "default": "./coder/error.js"
+      }
+    },
+    "./defaults": {
+      "module": {
+        "types": "./defaults.d.ts",
+        "default": "./defaults.js"
+      },
+      "require": {
+        "types": "./cjs/defaults.d.ts",
+        "default": "./cjs/defaults.js"
+      },
+      "default": {
+        "types": "./defaults.d.ts",
+        "default": "./defaults.js"
+      }
+    },
+    "./http": {
+      "module": {
+        "types": "./http/index.d.ts",
+        "default": "./http/index.js"
+      },
+      "require": {
+        "types": "./cjs/http/index.d.ts",
+        "default": "./cjs/http/index.js"
+      },
+      "default": {
+        "types": "./http/index.d.ts",
+        "default": "./http/index.js"
+      }
+    },
+    "./http/types": {
+      "module": {
+        "types": "./http/types.d.ts",
+        "default": "./http/types.js"
+      },
+      "require": {
+        "types": "./cjs/http/types.d.ts",
+        "default": "./cjs/http/types.js"
+      },
+      "default": {
+        "types": "./http/types.d.ts",
+        "default": "./http/types.js"
+      }
+    },
+    "./lru": {
+      "module": {
+        "types": "./lru.d.ts",
+        "default": "./lru.js"
+      },
+      "require": {
+        "types": "./cjs/lru.d.ts",
+        "default": "./cjs/lru.js"
+      },
+      "default": {
+        "types": "./lru.d.ts",
+        "default": "./lru.js"
+      }
+    },
+    "./mock": {
+      "module": {
+        "types": "./mock/index.d.ts",
+        "default": "./mock/index.js"
+      },
+      "require": {
+        "types": "./cjs/mock/index.d.ts",
+        "default": "./cjs/mock/index.js"
+      },
+      "default": {
+        "types": "./mock/index.d.ts",
+        "default": "./mock/index.js"
+      }
+    },
+    "./mock/mockHttp": {
+      "module": {
+        "types": "./mock/mockHttp.d.ts",
+        "default": "./mock/mockHttp.js"
+      },
+      "require": {
+        "types": "./cjs/mock/mockHttp.d.ts",
+        "default": "./cjs/mock/mockHttp.js"
+      },
+      "default": {
+        "types": "./mock/mockHttp.d.ts",
+        "default": "./mock/mockHttp.js"
+      }
+    },
+    "./mock/mockWs": {
+      "module": {
+        "types": "./mock/mockWs.d.ts",
+        "default": "./mock/mockWs.js"
+      },
+      "require": {
+        "types": "./cjs/mock/mockWs.d.ts",
+        "default": "./cjs/mock/mockWs.js"
+      },
+      "default": {
+        "types": "./mock/mockWs.d.ts",
+        "default": "./mock/mockWs.js"
+      }
+    },
+    "./mock/types": {
+      "module": {
+        "types": "./mock/types.d.ts",
+        "default": "./mock/types.js"
+      },
+      "require": {
+        "types": "./cjs/mock/types.d.ts",
+        "default": "./cjs/mock/types.js"
+      },
+      "default": {
+        "types": "./mock/types.d.ts",
+        "default": "./mock/types.js"
+      }
+    },
+    "./package.json": {
+      "require": "./cjs/package.json",
+      "default": "./package.json"
+    },
+    "./packageDetect": {
+      "module": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      },
+      "require": {
+        "types": "./cjs/packageDetect.d.ts",
+        "default": "./cjs/packageDetect.js"
+      },
+      "default": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      }
+    },
+    "./packageInfo": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./packageInfo.js": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./types": {
+      "module": {
+        "types": "./types.d.ts",
+        "default": "./types.js"
+      },
+      "require": {
+        "types": "./cjs/types.d.ts",
+        "default": "./cjs/types.js"
+      },
+      "default": {
+        "types": "./types.d.ts",
+        "default": "./types.js"
+      }
+    },
+    "./ws": {
+      "module": {
+        "types": "./ws/index.d.ts",
+        "default": "./ws/index.js"
+      },
+      "require": {
+        "types": "./cjs/ws/index.d.ts",
+        "default": "./cjs/ws/index.js"
+      },
+      "default": {
+        "types": "./ws/index.d.ts",
+        "default": "./ws/index.js"
+      }
+    },
+    "./ws/errors": {
+      "module": {
+        "types": "./ws/errors.d.ts",
+        "default": "./ws/errors.js"
+      },
+      "require": {
+        "types": "./cjs/ws/errors.d.ts",
+        "default": "./cjs/ws/errors.js"
+      },
+      "default": {
+        "types": "./ws/errors.d.ts",
+        "default": "./ws/errors.js"
+      }
+    }
+  },
   "dependencies": {
-    "@pezkuwi/keyring": "^14.0.1",
-    "@pezkuwi/types": "16.5.4",
-    "@pezkuwi/types-support": "16.5.4",
-    "@pezkuwi/util": "^14.0.1",
-    "@pezkuwi/util-crypto": "^14.0.1",
-    "@pezkuwi/x-fetch": "^14.0.1",
-    "@pezkuwi/x-global": "^14.0.1",
-    "@pezkuwi/x-ws": "^14.0.1",
+    "@pezkuwi/keyring": "14.0.11",
+    "@pezkuwi/types": "16.5.9",
+    "@pezkuwi/types-support": "16.5.9",
+    "@pezkuwi/util": "14.0.11",
+    "@pezkuwi/util-crypto": "14.0.11",
+    "@pezkuwi/x-fetch": "14.0.11",
+    "@pezkuwi/x-global": "14.0.11",
+    "@pezkuwi/x-ws": "14.0.11",
     "eventemitter3": "^5.0.1",
     "mock-socket": "^9.3.1",
     "nock": "^13.5.5",
     "tslib": "^2.8.1"
-  },
-  "devDependencies": {
-    "@bizinikiwi/connect": "2.1.9"
   },
   "optionalDependencies": {
     "@bizinikiwi/connect": "2.1.9"

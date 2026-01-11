@@ -90,14 +90,14 @@ function parse (id: ParaId, [active, retryQueue, selectedThreads, didUpdate, inf
 */
 export function info (instanceId: string, api: DeriveApi): (id: ParaId | number) => Observable<DeriveTeyrchainFull | null> {
   return memo(instanceId, (id: ParaId | number): Observable<DeriveTeyrchainFull | null> =>
-    api.query.registrar && api.query['teyrchains']
+    api.query['registrar'] && api.query['teyrchains']
       ? api.queryMulti<Result>([
-        api.query.registrar['active'],
-        api.query.registrar['retryQueue'],
-        api.query.registrar['selectedThreads'],
+        api.query['registrar']['active'],
+        api.query['registrar']['retryQueue'],
+        api.query['registrar']['selectedThreads'],
         api.query['teyrchains']['didUpdate'],
-        [api.query.registrar.paras, id],
-        [api.query.registrar.pendingSwap, id],
+        [api.query['registrar']['paras'], id],
+        [api.query['registrar']['pendingSwap'], id],
         [api.query['teyrchains']['heads'], id],
         [api.query['teyrchains']['relayDispatchQueue'], id]
       ])

@@ -14,10 +14,10 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "16.5.6",
+  "version": "16.5.9",
   "versions": {
-    "git": "16.5.4",
-    "npm": "16.5.4"
+    "git": "16.5.9",
+    "npm": "16.5.9"
   },
   "workspaces": [
     "packages/*"
@@ -43,13 +43,30 @@
     "@pezkuwi/dev": "^0.85.3",
     "@pezkuwi/dev-test": "^0.85.3",
     "@pezkuwi/dev-ts": "^0.85.3",
-    "@pezkuwi/typegen": "^16.5.4",
+    "@pezkuwi/typegen": "workspace:*",
     "@types/node": "^22.10.5"
   },
   "resolutions": {
-    "@pezkuwi/dev": "0.85.3",
-    "@pezkuwi/dev-test": "0.85.3",
-    "@pezkuwi/dev-ts": "0.85.3",
+    "@pezkuwi/dev": "portal:../pezkuwi-dev/packages/dev",
+    "@pezkuwi/dev-test": "portal:../pezkuwi-dev/packages/dev-test",
+    "@pezkuwi/dev-ts": "portal:../pezkuwi-dev/packages/dev-ts",
+    "@pezkuwi/hw-ledger": "portal:../pezkuwi-common/packages/hw-ledger",
+    "@pezkuwi/hw-ledger-transports": "portal:../pezkuwi-common/packages/hw-ledger-transports",
+    "@pezkuwi/keyring": "portal:../pezkuwi-common/packages/keyring",
+    "@pezkuwi/networks": "portal:../pezkuwi-common/packages/networks",
+    "@pezkuwi/util": "portal:../pezkuwi-common/packages/util",
+    "@pezkuwi/util-crypto": "portal:../pezkuwi-common/packages/util-crypto",
+    "@pezkuwi/wasm-bridge": "7.5.4",
+    "@pezkuwi/wasm-crypto": "7.5.4",
+    "@pezkuwi/wasm-util": "7.5.4",
+    "@pezkuwi/x-bigint": "portal:../pezkuwi-common/packages/x-bigint",
+    "@pezkuwi/x-bundle": "portal:../pezkuwi-common/packages/x-bundle",
+    "@pezkuwi/x-fetch": "portal:../pezkuwi-common/packages/x-fetch",
+    "@pezkuwi/x-global": "portal:../pezkuwi-common/packages/x-global",
+    "@pezkuwi/x-randomvalues": "portal:../pezkuwi-common/packages/x-randomvalues",
+    "@pezkuwi/x-textdecoder": "portal:../pezkuwi-common/packages/x-textdecoder",
+    "@pezkuwi/x-textencoder": "portal:../pezkuwi-common/packages/x-textencoder",
+    "@pezkuwi/x-ws": "portal:../pezkuwi-common/packages/x-ws",
     "typescript": "5.5.4"
   }
 }

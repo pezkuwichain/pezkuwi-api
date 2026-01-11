@@ -15,18 +15,446 @@
   },
   "sideEffects": [
     "./packageDetect.js",
-    "./packageDetect.cjs"
+    "./cjs/packageDetect.js"
   ],
   "type": "module",
-  "version": "16.5.6",
-  "main": "index.js",
+  "types": "./index.d.ts",
+  "version": "16.5.9",
+  "main": "./cjs/index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "module": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "require": {
+        "types": "./cjs/index.d.ts",
+        "default": "./cjs/index.js"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./assetHubDicle": {
+      "module": "./assetHubDicle/index.js",
+      "require": "./cjs/assetHubDicle/index.js",
+      "default": "./assetHubDicle/index.js"
+    },
+    "./assetHubDicle/consts": {
+      "module": "./assetHubDicle/consts.js",
+      "require": "./cjs/assetHubDicle/consts.js",
+      "default": "./assetHubDicle/consts.js"
+    },
+    "./assetHubDicle/errors": {
+      "module": "./assetHubDicle/errors.js",
+      "require": "./cjs/assetHubDicle/errors.js",
+      "default": "./assetHubDicle/errors.js"
+    },
+    "./assetHubDicle/events": {
+      "module": "./assetHubDicle/events.js",
+      "require": "./cjs/assetHubDicle/events.js",
+      "default": "./assetHubDicle/events.js"
+    },
+    "./assetHubDicle/query": {
+      "module": "./assetHubDicle/query.js",
+      "require": "./cjs/assetHubDicle/query.js",
+      "default": "./assetHubDicle/query.js"
+    },
+    "./assetHubDicle/registry": {
+      "module": "./assetHubDicle/registry.js",
+      "require": "./cjs/assetHubDicle/registry.js",
+      "default": "./assetHubDicle/registry.js"
+    },
+    "./assetHubDicle/runtime": {
+      "module": "./assetHubDicle/runtime.js",
+      "require": "./cjs/assetHubDicle/runtime.js",
+      "default": "./assetHubDicle/runtime.js"
+    },
+    "./assetHubDicle/tx": {
+      "module": "./assetHubDicle/tx.js",
+      "require": "./cjs/assetHubDicle/tx.js",
+      "default": "./assetHubDicle/tx.js"
+    },
+    "./assetHubPezkuwi": {
+      "module": "./assetHubPezkuwi/index.js",
+      "require": "./cjs/assetHubPezkuwi/index.js",
+      "default": "./assetHubPezkuwi/index.js"
+    },
+    "./assetHubPezkuwi/consts": {
+      "module": "./assetHubPezkuwi/consts.js",
+      "require": "./cjs/assetHubPezkuwi/consts.js",
+      "default": "./assetHubPezkuwi/consts.js"
+    },
+    "./assetHubPezkuwi/errors": {
+      "module": "./assetHubPezkuwi/errors.js",
+      "require": "./cjs/assetHubPezkuwi/errors.js",
+      "default": "./assetHubPezkuwi/errors.js"
+    },
+    "./assetHubPezkuwi/events": {
+      "module": "./assetHubPezkuwi/events.js",
+      "require": "./cjs/assetHubPezkuwi/events.js",
+      "default": "./assetHubPezkuwi/events.js"
+    },
+    "./assetHubPezkuwi/query": {
+      "module": "./assetHubPezkuwi/query.js",
+      "require": "./cjs/assetHubPezkuwi/query.js",
+      "default": "./assetHubPezkuwi/query.js"
+    },
+    "./assetHubPezkuwi/registry": {
+      "module": "./assetHubPezkuwi/registry.js",
+      "require": "./cjs/assetHubPezkuwi/registry.js",
+      "default": "./assetHubPezkuwi/registry.js"
+    },
+    "./assetHubPezkuwi/runtime": {
+      "module": "./assetHubPezkuwi/runtime.js",
+      "require": "./cjs/assetHubPezkuwi/runtime.js",
+      "default": "./assetHubPezkuwi/runtime.js"
+    },
+    "./assetHubPezkuwi/tx": {
+      "module": "./assetHubPezkuwi/tx.js",
+      "require": "./cjs/assetHubPezkuwi/tx.js",
+      "default": "./assetHubPezkuwi/tx.js"
+    },
+    "./base": {
+      "module": {
+        "types": "./base.d.ts",
+        "default": "./base.js"
+      },
+      "require": {
+        "types": "./cjs/base.d.ts",
+        "default": "./cjs/base.js"
+      },
+      "default": {
+        "types": "./base.d.ts",
+        "default": "./base.js"
+      }
+    },
+    "./bizinikiwi": {
+      "module": {
+        "types": "./bizinikiwi/index.d.ts",
+        "default": "./bizinikiwi/index.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/index.d.ts",
+        "default": "./cjs/bizinikiwi/index.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/index.d.ts",
+        "default": "./bizinikiwi/index.js"
+      }
+    },
+    "./bizinikiwi/consts": {
+      "module": {
+        "types": "./bizinikiwi/consts.d.ts",
+        "default": "./bizinikiwi/consts.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/consts.d.ts",
+        "default": "./cjs/bizinikiwi/consts.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/consts.d.ts",
+        "default": "./bizinikiwi/consts.js"
+      }
+    },
+    "./bizinikiwi/errors": {
+      "module": {
+        "types": "./bizinikiwi/errors.d.ts",
+        "default": "./bizinikiwi/errors.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/errors.d.ts",
+        "default": "./cjs/bizinikiwi/errors.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/errors.d.ts",
+        "default": "./bizinikiwi/errors.js"
+      }
+    },
+    "./bizinikiwi/events": {
+      "module": {
+        "types": "./bizinikiwi/events.d.ts",
+        "default": "./bizinikiwi/events.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/events.d.ts",
+        "default": "./cjs/bizinikiwi/events.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/events.d.ts",
+        "default": "./bizinikiwi/events.js"
+      }
+    },
+    "./bizinikiwi/query": {
+      "module": {
+        "types": "./bizinikiwi/query.d.ts",
+        "default": "./bizinikiwi/query.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/query.d.ts",
+        "default": "./cjs/bizinikiwi/query.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/query.d.ts",
+        "default": "./bizinikiwi/query.js"
+      }
+    },
+    "./bizinikiwi/registry": {
+      "module": {
+        "types": "./bizinikiwi/registry.d.ts",
+        "default": "./bizinikiwi/registry.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/registry.d.ts",
+        "default": "./cjs/bizinikiwi/registry.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/registry.d.ts",
+        "default": "./bizinikiwi/registry.js"
+      }
+    },
+    "./bizinikiwi/runtime": {
+      "module": {
+        "types": "./bizinikiwi/runtime.d.ts",
+        "default": "./bizinikiwi/runtime.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/runtime.d.ts",
+        "default": "./cjs/bizinikiwi/runtime.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/runtime.d.ts",
+        "default": "./bizinikiwi/runtime.js"
+      }
+    },
+    "./bizinikiwi/tx": {
+      "module": {
+        "types": "./bizinikiwi/tx.d.ts",
+        "default": "./bizinikiwi/tx.js"
+      },
+      "require": {
+        "types": "./cjs/bizinikiwi/tx.d.ts",
+        "default": "./cjs/bizinikiwi/tx.js"
+      },
+      "default": {
+        "types": "./bizinikiwi/tx.d.ts",
+        "default": "./bizinikiwi/tx.js"
+      }
+    },
+    "./bundle": {
+      "module": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      },
+      "require": {
+        "types": "./cjs/bundle.d.ts",
+        "default": "./cjs/bundle.js"
+      },
+      "default": {
+        "types": "./bundle.d.ts",
+        "default": "./bundle.js"
+      }
+    },
+    "./cjs/*": "./cjs/*.js",
+    "./cjs/package.json": "./cjs/package.json",
+    "./dicle/consts": {
+      "module": "./dicle/consts.js",
+      "require": "./cjs/dicle/consts.js",
+      "default": "./dicle/consts.js"
+    },
+    "./dicle/errors": {
+      "module": "./dicle/errors.js",
+      "require": "./cjs/dicle/errors.js",
+      "default": "./dicle/errors.js"
+    },
+    "./dicle/events": {
+      "module": "./dicle/events.js",
+      "require": "./cjs/dicle/events.js",
+      "default": "./dicle/events.js"
+    },
+    "./dicle/query": {
+      "module": "./dicle/query.js",
+      "require": "./cjs/dicle/query.js",
+      "default": "./dicle/query.js"
+    },
+    "./dicle/runtime": {
+      "module": "./dicle/runtime.js",
+      "require": "./cjs/dicle/runtime.js",
+      "default": "./dicle/runtime.js"
+    },
+    "./dicle/tx": {
+      "module": "./dicle/tx.js",
+      "require": "./cjs/dicle/tx.js",
+      "default": "./dicle/tx.js"
+    },
+    "./package.json": {
+      "require": "./cjs/package.json",
+      "default": "./package.json"
+    },
+    "./packageDetect": {
+      "module": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      },
+      "require": {
+        "types": "./cjs/packageDetect.d.ts",
+        "default": "./cjs/packageDetect.js"
+      },
+      "default": {
+        "types": "./packageDetect.d.ts",
+        "default": "./packageDetect.js"
+      }
+    },
+    "./packageInfo": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./packageInfo.js": {
+      "module": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      },
+      "require": {
+        "types": "./cjs/packageInfo.d.ts",
+        "default": "./cjs/packageInfo.js"
+      },
+      "default": {
+        "types": "./packageInfo.d.ts",
+        "default": "./packageInfo.js"
+      }
+    },
+    "./pezkuwi": {
+      "module": {
+        "types": "./pezkuwi/index.d.ts",
+        "default": "./pezkuwi/index.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/index.d.ts",
+        "default": "./cjs/pezkuwi/index.js"
+      },
+      "default": {
+        "types": "./pezkuwi/index.d.ts",
+        "default": "./pezkuwi/index.js"
+      }
+    },
+    "./pezkuwi/consts": {
+      "module": {
+        "types": "./pezkuwi/consts.d.ts",
+        "default": "./pezkuwi/consts.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/consts.d.ts",
+        "default": "./cjs/pezkuwi/consts.js"
+      },
+      "default": {
+        "types": "./pezkuwi/consts.d.ts",
+        "default": "./pezkuwi/consts.js"
+      }
+    },
+    "./pezkuwi/errors": {
+      "module": {
+        "types": "./pezkuwi/errors.d.ts",
+        "default": "./pezkuwi/errors.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/errors.d.ts",
+        "default": "./cjs/pezkuwi/errors.js"
+      },
+      "default": {
+        "types": "./pezkuwi/errors.d.ts",
+        "default": "./pezkuwi/errors.js"
+      }
+    },
+    "./pezkuwi/events": {
+      "module": {
+        "types": "./pezkuwi/events.d.ts",
+        "default": "./pezkuwi/events.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/events.d.ts",
+        "default": "./cjs/pezkuwi/events.js"
+      },
+      "default": {
+        "types": "./pezkuwi/events.d.ts",
+        "default": "./pezkuwi/events.js"
+      }
+    },
+    "./pezkuwi/query": {
+      "module": {
+        "types": "./pezkuwi/query.d.ts",
+        "default": "./pezkuwi/query.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/query.d.ts",
+        "default": "./cjs/pezkuwi/query.js"
+      },
+      "default": {
+        "types": "./pezkuwi/query.d.ts",
+        "default": "./pezkuwi/query.js"
+      }
+    },
+    "./pezkuwi/registry": {
+      "module": {
+        "types": "./pezkuwi/registry.d.ts",
+        "default": "./pezkuwi/registry.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/registry.d.ts",
+        "default": "./cjs/pezkuwi/registry.js"
+      },
+      "default": {
+        "types": "./pezkuwi/registry.d.ts",
+        "default": "./pezkuwi/registry.js"
+      }
+    },
+    "./pezkuwi/runtime": {
+      "module": {
+        "types": "./pezkuwi/runtime.d.ts",
+        "default": "./pezkuwi/runtime.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/runtime.d.ts",
+        "default": "./cjs/pezkuwi/runtime.js"
+      },
+      "default": {
+        "types": "./pezkuwi/runtime.d.ts",
+        "default": "./pezkuwi/runtime.js"
+      }
+    },
+    "./pezkuwi/tx": {
+      "module": {
+        "types": "./pezkuwi/tx.d.ts",
+        "default": "./pezkuwi/tx.js"
+      },
+      "require": {
+        "types": "./cjs/pezkuwi/tx.d.ts",
+        "default": "./cjs/pezkuwi/tx.js"
+      },
+      "default": {
+        "types": "./pezkuwi/tx.d.ts",
+        "default": "./pezkuwi/tx.js"
+      }
+    }
+  },
   "dependencies": {
-    "@pezkuwi/api-base": "16.5.4",
-    "@pezkuwi/rpc-augment": "16.5.4",
-    "@pezkuwi/types": "16.5.4",
-    "@pezkuwi/types-augment": "16.5.4",
-    "@pezkuwi/types-codec": "16.5.4",
-    "@pezkuwi/util": "^14.0.1",
+    "@pezkuwi/api-base": "16.5.9",
+    "@pezkuwi/rpc-augment": "16.5.9",
+    "@pezkuwi/types": "16.5.9",
+    "@pezkuwi/types-augment": "16.5.9",
+    "@pezkuwi/types-codec": "16.5.9",
+    "@pezkuwi/util": "14.0.11",
     "tslib": "^2.8.1"
   }
 }

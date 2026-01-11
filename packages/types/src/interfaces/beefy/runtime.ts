@@ -55,7 +55,7 @@ const BEEFY_V4: Record<string, DefinitionCall> = {
     params: [
       {
         name: 'equivocationProof',
-        type: 'PezspConsensusBeefyDoubleVotingProof'
+        type: 'BeefyEquivocationProof'
       },
       {
         name: 'keyOwnerProof',

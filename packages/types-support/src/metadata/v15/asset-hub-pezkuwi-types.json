@@ -547,7 +547,7 @@
     "id": 21,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeEvent"
       ],
       "params": [],
@@ -568,12 +568,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainSystem",
+              "name": "ParachainSystem",
               "fields": [
                 {
                   "name": null,
                   "type": 33,
-                  "typeName": "pezcumulus_pallet_teyrchain_system::Event<Runtime>",
+                  "typeName": "cumulus_pallet_parachain_system::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -716,7 +716,7 @@
                 {
                   "name": null,
                   "type": 91,
-                  "typeName": "pezcumulus_pallet_xcmp_queue::Event<Runtime>",
+                  "typeName": "cumulus_pallet_xcmp_queue::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -724,7 +724,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiXcm",
+              "name": "PolkadotXcm",
               "fields": [
                 {
                   "name": null,
@@ -737,12 +737,12 @@
               "docs": []
             },
             {
-              "name": "PezcumulusXcm",
+              "name": "CumulusXcm",
               "fields": [
                 {
                   "name": null,
                   "type": 166,
-                  "typeName": "pezcumulus_pallet_xcm::Event<Runtime>",
+                  "typeName": "cumulus_pallet_xcm::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -750,7 +750,7 @@
               "docs": []
             },
             {
-              "name": "ToZagrosXcmRouter",
+              "name": "ToKusamaXcmRouter",
               "fields": [
                 {
                   "name": null,
@@ -1890,7 +1890,7 @@
     "id": 32,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeTask"
       ],
       "params": [],
@@ -1906,7 +1906,7 @@
     "id": 33,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "pallet",
         "Event"
       ],
@@ -2507,7 +2507,7 @@
     "id": 41,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeParametersKey"
       ],
       "params": [],
@@ -2563,7 +2563,7 @@
     "id": 42,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "ParametersKey"
@@ -2673,7 +2673,7 @@
     "id": 43,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "SignedPhase"
@@ -2691,7 +2691,7 @@
     "id": 44,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "MaxSignedSubmissions"
@@ -2709,7 +2709,7 @@
     "id": 45,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "UnsignedPhase"
@@ -2727,7 +2727,7 @@
     "id": 46,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "MinerPages"
@@ -2745,7 +2745,7 @@
     "id": 47,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "MaxElectingVoters"
@@ -2763,7 +2763,7 @@
     "id": 48,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "TargetSnapshotPerBlock"
@@ -2781,7 +2781,7 @@
     "id": 49,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "MaxEraDuration"
@@ -2799,7 +2799,7 @@
     "id": 50,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "scheduler",
         "ParametersKey"
@@ -2844,7 +2844,7 @@
     "id": 51,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "scheduler",
         "MaxScheduledPerBlock"
@@ -2862,7 +2862,7 @@
     "id": 52,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "scheduler",
         "MaximumWeight"
@@ -2880,7 +2880,7 @@
     "id": 53,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "message_queue",
         "ParametersKey"
@@ -2925,7 +2925,7 @@
     "id": 54,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "message_queue",
         "MaxOnInitWeight"
@@ -2943,7 +2943,7 @@
     "id": 55,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "message_queue",
         "MaxOnIdleWeight"
@@ -3001,7 +3001,7 @@
     "id": 57,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeParametersValue"
       ],
       "params": [],
@@ -3057,7 +3057,7 @@
     "id": 58,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "ParametersValue"
@@ -3167,7 +3167,7 @@
     "id": 59,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "scheduler",
         "ParametersValue"
@@ -3212,7 +3212,7 @@
     "id": 60,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "message_queue",
         "ParametersValue"
@@ -4178,7 +4178,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -4435,13 +4435,13 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
@@ -4472,7 +4472,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -4883,7 +4883,7 @@
     "id": 86,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Event"
@@ -4936,7 +4936,7 @@
     "id": 87,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EthereumAddress"
       ],
@@ -5253,7 +5253,7 @@
     "id": 91,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "pallet",
         "Event"
       ],
@@ -5278,7 +5278,7 @@
               ],
               "index": 0,
               "docs": [
-                "An HRMP message was sent to a sibling teyrchain."
+                "An HRMP message was sent to a sibling parachain."
               ]
             }
           ]
@@ -9187,7 +9187,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -9431,25 +9431,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -9486,7 +9486,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -9914,7 +9914,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -10158,25 +10158,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -10213,7 +10213,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -10557,7 +10557,7 @@
     "id": 166,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcm",
+        "cumulus_pallet_xcm",
         "pallet",
         "Event"
       ],
@@ -10896,7 +10896,7 @@
     "id": 170,
     "type": {
       "path": [
-        "pezcumulus_primitives_core",
+        "cumulus_primitives_core",
         "AggregateMessageOrigin"
       ],
       "params": [],
@@ -10938,7 +10938,7 @@
     "id": 171,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "Id"
       ],
@@ -11703,7 +11703,7 @@
     "id": 179,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "ProxyType"
       ],
       "params": [],
@@ -16816,7 +16816,7 @@
     "id": 206,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "impls",
         "VersionedLocatableAsset"
       ],
@@ -16891,7 +16891,7 @@
     "id": 207,
     "type": {
       "path": [
-        "teyrchains_common",
+        "parachains_common",
         "pay",
         "VersionedLocatableAccount"
       ],
@@ -17707,7 +17707,7 @@
     "id": 213,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeCall"
       ],
       "params": [],
@@ -17728,12 +17728,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainSystem",
+              "name": "ParachainSystem",
               "fields": [
                 {
                   "name": null,
                   "type": 218,
-                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<TeyrchainSystem, Runtime>",
+                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<ParachainSystem, Runtime>",
                   "docs": []
                 }
               ],
@@ -17754,12 +17754,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainInfo",
+              "name": "ParachainInfo",
               "fields": [
                 {
                   "name": null,
                   "type": 240,
-                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<TeyrchainInfo, Runtime>",
+                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<ParachainInfo, Runtime>",
                   "docs": []
                 }
               ],
@@ -17884,12 +17884,12 @@
               "docs": []
             },
             {
-              "name": "PezkuwiXcm",
+              "name": "PolkadotXcm",
               "fields": [
                 {
                   "name": null,
                   "type": 269,
-                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<PezkuwiXcm, Runtime>",
+                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<PolkadotXcm, Runtime>",
                   "docs": []
                 }
               ],
@@ -17897,12 +17897,12 @@
               "docs": []
             },
             {
-              "name": "PezcumulusXcm",
+              "name": "CumulusXcm",
               "fields": [
                 {
                   "name": null,
                   "type": 313,
-                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<PezcumulusXcm, Runtime>",
+                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<CumulusXcm, Runtime>",
                   "docs": []
                 }
               ],
@@ -17910,12 +17910,12 @@
               "docs": []
             },
             {
-              "name": "ToZagrosXcmRouter",
+              "name": "ToKusamaXcmRouter",
               "fields": [
                 {
                   "name": null,
                   "type": 314,
-                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<ToZagrosXcmRouter, Runtime>",
+                  "typeName": "self::sp_api_hidden_includes_construct_runtime::hidden_include::dispatch\n::CallableCallFor<ToKusamaXcmRouter, Runtime>",
                   "docs": []
                 }
               ],
@@ -18597,7 +18597,7 @@
     "id": 218,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "pallet",
         "Call"
       ],
@@ -18616,7 +18616,7 @@
                 {
                   "name": "data",
                   "type": 219,
-                  "typeName": "BasicTeyrchainInherentData",
+                  "typeName": "BasicParachainInherentData",
                   "docs": []
                 },
                 {
@@ -18664,9 +18664,9 @@
     "id": 219,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
-        "teyrchain_inherent",
-        "BasicTeyrchainInherentData"
+        "cumulus_pallet_parachain_system",
+        "parachain_inherent",
+        "BasicParachainInherentData"
       ],
       "params": [],
       "def": {
@@ -18706,7 +18706,7 @@
     "id": 220,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "PersistedValidationData"
       ],
@@ -18757,7 +18757,7 @@
     "id": 221,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "HeadData"
       ],
@@ -18943,8 +18943,8 @@
     "id": 227,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
-        "teyrchain_inherent",
+        "cumulus_pallet_parachain_system",
+        "parachain_inherent",
         "InboundMessagesData"
       ],
       "params": [],
@@ -18973,8 +18973,8 @@
     "id": 228,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
-        "teyrchain_inherent",
+        "cumulus_pallet_parachain_system",
+        "parachain_inherent",
         "AbridgedInboundMessagesCollection"
       ],
       "params": [
@@ -19008,7 +19008,7 @@
     "id": 229,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundDownwardMessage"
       ],
       "params": [
@@ -19068,7 +19068,7 @@
     "id": 232,
     "type": {
       "path": [
-        "pezcumulus_primitives_teyrchain_inherent",
+        "cumulus_primitives_parachain_inherent",
         "HashedMessage"
       ],
       "params": [],
@@ -19097,8 +19097,8 @@
     "id": 233,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
-        "teyrchain_inherent",
+        "cumulus_pallet_parachain_system",
+        "parachain_inherent",
         "AbridgedInboundMessagesCollection"
       ],
       "params": [
@@ -19146,7 +19146,7 @@
     "id": 235,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundHrmpMessage"
       ],
       "params": [
@@ -19278,7 +19278,7 @@
     "id": 240,
     "type": {
       "path": [
-        "staging_teyrchain_info",
+        "staging_parachain_info",
         "pallet",
         "Call"
       ],
@@ -19824,7 +19824,7 @@
     "id": 246,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeParameters"
       ],
       "params": [],
@@ -19880,7 +19880,7 @@
     "id": 247,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "staking_election",
         "Parameters"
@@ -20032,7 +20032,7 @@
     "id": 248,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "scheduler",
         "Parameters"
@@ -20089,7 +20089,7 @@
     "id": 249,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "dynamic_params",
         "message_queue",
         "Parameters"
@@ -20837,7 +20837,7 @@
     "id": 257,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Call"
@@ -21065,7 +21065,7 @@
     "id": 258,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EcdsaSignature"
       ],
@@ -21198,7 +21198,7 @@
     "id": 263,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "StatementKind"
       ],
@@ -21500,7 +21500,7 @@
     "id": 266,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "SessionKeys"
       ],
       "params": [],
@@ -21548,7 +21548,7 @@
     "id": 268,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "pallet",
         "Call"
       ],
@@ -21724,8 +21724,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -21786,8 +21786,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -21964,8 +21964,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -22020,8 +22020,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -22109,8 +22109,8 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `X2(Parent,",
-                "  Teyrchain(..))` to send from teyrchain to teyrchain, or `X1(Teyrchain(..))` to send",
-                "  from relay to teyrchain.",
+                "  Parachain(..))` to send from parachain to parachain, or `X1(Parachain(..))` to send",
+                "  from relay to parachain.",
                 "- `beneficiary`: A beneficiary location for the assets in the context of `dest`. Will",
                 "  generally be an `AccountId32` value.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
@@ -22231,9 +22231,9 @@
                 "",
                 "- `origin`: Must be capable of withdrawing the `assets` and executing XCM.",
                 "- `dest`: Destination context for the assets. Will typically be `[Parent,",
-                "  Teyrchain(..)]` to send from teyrchain to teyrchain, or `[Teyrchain(..)]` to send from",
-                "  relay to teyrchain, or `(parents: 2, (GlobalConsensus(..), ..))` to send from",
-                "  teyrchain across a bridge to another ecosystem destination.",
+                "  Parachain(..)]` to send from parachain to parachain, or `[Parachain(..)]` to send from",
+                "  relay to parachain, or `(parents: 2, (GlobalConsensus(..), ..))` to send from",
+                "  parachain across a bridge to another ecosystem destination.",
                 "- `assets`: The assets to be withdrawn. This should include the assets used to pay the",
                 "  fee on the `dest` (and possibly reserve) chains.",
                 "- `assets_transfer_type`: The XCM `TransferType` used to transfer the `assets`.",
@@ -28235,7 +28235,7 @@
     "id": 313,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcm",
+        "cumulus_pallet_xcm",
         "pallet",
         "Call"
       ],
@@ -28452,7 +28452,7 @@
               ],
               "index": 1,
               "docs": [
-                "Initiates the registration for a Pezkuwi-native token as a wrapped ERC20 token on",
+                "Initiates the registration for a Polkadot-native token as a wrapped ERC20 token on",
                 "Ethereum.",
                 "- `asset_id`: Location of the asset",
                 "- `metadata`: Metadata to include in the instantiated ERC20 contract on Ethereum",
@@ -28851,7 +28851,7 @@
     "id": 321,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "OriginCaller"
       ],
       "params": [],
@@ -28872,7 +28872,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiXcm",
+              "name": "PolkadotXcm",
               "fields": [
                 {
                   "name": null,
@@ -28885,12 +28885,12 @@
               "docs": []
             },
             {
-              "name": "PezcumulusXcm",
+              "name": "CumulusXcm",
               "fields": [
                 {
                   "name": null,
                   "type": 324,
-                  "typeName": "pezcumulus_pallet_xcm::Origin",
+                  "typeName": "cumulus_pallet_xcm::Origin",
                   "docs": []
                 }
               ],
@@ -29018,7 +29018,7 @@
     "id": 324,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcm",
+        "cumulus_pallet_xcm",
         "pallet",
         "Origin"
       ],
@@ -29033,7 +29033,7 @@
               "docs": []
             },
             {
-              "name": "SiblingTeyrchain",
+              "name": "SiblingParachain",
               "fields": [
                 {
                   "name": null,
@@ -29055,7 +29055,7 @@
     "id": 325,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "governance",
         "origins",
         "pallet_custom_origins",
@@ -39534,7 +39534,7 @@
                 "Forcefully set the progress the running migration.",
                 "",
                 "This is only useful in one case: the next key to migrate is too big to be migrated with",
-                "a signed account, in a teyrchain context, and we simply want to skip it. A reasonable",
+                "a signed account, in a parachain context, and we simply want to skip it. A reasonable",
                 "example of this would be `:code:`, which is both very expensive to migrate, and commonly",
                 "used, so probably it is already migrated.",
                 "",
@@ -42002,7 +42002,7 @@
     "id": 417,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "staking",
         "NposCompactSolution16"
       ],
@@ -45858,7 +45858,7 @@
     "id": 515,
     "type": {
       "path": [
-        "pezkuwi_runtime_constants",
+        "polkadot_runtime_constants",
         "proxy",
         "ProxyType"
       ],
@@ -47674,7 +47674,7 @@
     "id": 570,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "ah_migration",
         "RcPalletsOrigin"
       ],
@@ -55113,7 +55113,7 @@
                   "type": 171,
                   "typeName": "ParaId",
                   "docs": [
-                    "The teyrchain ID that had its account migrated."
+                    "The parachain ID that had its account migrated."
                   ]
                 },
                 {
@@ -55143,7 +55143,7 @@
               ],
               "index": 2,
               "docs": [
-                "A sovereign teyrchain account has been migrated from its child to sibling",
+                "A sovereign parachain account has been migrated from its child to sibling",
                 "representation."
               ]
             }
@@ -55413,7 +55413,7 @@
               ]
             },
             {
-              "name": "AccountTranslatedTeyrchainSovereign",
+              "name": "AccountTranslatedParachainSovereign",
               "fields": [
                 {
                   "name": "from",
@@ -55432,7 +55432,7 @@
               "docs": []
             },
             {
-              "name": "AccountTranslatedTeyrchainSovereignDerived",
+              "name": "AccountTranslatedParachainSovereignDerived",
               "fields": [
                 {
                   "name": "from",
@@ -56351,7 +56351,7 @@
     "id": 715,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "unincluded_segment",
         "Ancestor"
       ],
@@ -56392,7 +56392,7 @@
     "id": 716,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "unincluded_segment",
         "UsedBandwidth"
       ],
@@ -56459,7 +56459,7 @@
     "id": 718,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "unincluded_segment",
         "HrmpChannelUpdate"
       ],
@@ -56556,7 +56556,7 @@
     "id": 722,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "UpgradeGoAhead"
       ],
@@ -56586,7 +56586,7 @@
     "id": 723,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "unincluded_segment",
         "SegmentTracker"
       ],
@@ -56667,7 +56667,7 @@
     "id": 725,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "UpgradeRestriction"
       ],
@@ -56691,7 +56691,7 @@
     "id": 726,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "relay_state_snapshot",
         "MessagingStateSnapshot"
       ],
@@ -56733,7 +56733,7 @@
     "id": 727,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "relay_state_snapshot",
         "RelayDispatchQueueRemainingCapacity"
       ],
@@ -56790,7 +56790,7 @@
     "id": 730,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "AbridgedHrmpChannel"
       ],
@@ -56844,7 +56844,7 @@
     "id": 731,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "AbridgedHostConfiguration"
       ],
@@ -56922,7 +56922,7 @@
     "id": 732,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v8",
         "async_backing",
         "AsyncBackingParams"
@@ -56953,7 +56953,7 @@
     "id": 733,
     "type": {
       "path": [
-        "pezcumulus_primitives_teyrchain_inherent",
+        "cumulus_primitives_parachain_inherent",
         "MessageQueueChain"
       ],
       "params": [],
@@ -57034,8 +57034,8 @@
     "id": 737,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
-        "teyrchain_inherent",
+        "cumulus_pallet_parachain_system",
+        "parachain_inherent",
         "InboundMessageId"
       ],
       "params": [],
@@ -57077,7 +57077,7 @@
     "id": 739,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "OutboundHrmpMessage"
       ],
       "params": [
@@ -57111,7 +57111,7 @@
     "id": 740,
     "type": {
       "path": [
-        "pezcumulus_pallet_teyrchain_system",
+        "cumulus_pallet_parachain_system",
         "pallet",
         "Error"
       ],
@@ -57133,11 +57133,11 @@
               ]
             },
             {
-              "name": "ProhibitedByPezkuwi",
+              "name": "ProhibitedByPolkadot",
               "fields": [],
               "index": 1,
               "docs": [
-                "Pezkuwi currently prohibits this teyrchain from upgrading its validation function."
+                "Polkadot currently prohibits this parachain from upgrading its validation function."
               ]
             },
             {
@@ -57145,7 +57145,7 @@
               "fields": [],
               "index": 2,
               "docs": [
-                "The supplied validation function has compiled into a blob larger than Pezkuwi is",
+                "The supplied validation function has compiled into a blob larger than Polkadot is",
                 "willing to run."
               ]
             },
@@ -58013,7 +58013,7 @@
     "id": 761,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeHoldReason"
       ],
       "params": [],
@@ -58047,7 +58047,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiXcm",
+              "name": "PolkadotXcm",
               "fields": [
                 {
                   "name": null,
@@ -58258,7 +58258,7 @@
     "id": 767,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeFreezeReason"
       ],
       "params": [],
@@ -58550,7 +58550,7 @@
     "id": 773,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Error"
@@ -59297,7 +59297,7 @@
     "id": 796,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "OutboundChannelDetails"
       ],
       "params": [],
@@ -59344,7 +59344,7 @@
     "id": 797,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "OutboundState"
       ],
       "params": [],
@@ -59433,7 +59433,7 @@
     "id": 801,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "QueueConfigData"
       ],
       "params": [],
@@ -59468,7 +59468,7 @@
     "id": 802,
     "type": {
       "path": [
-        "pezcumulus_pallet_xcmp_queue",
+        "cumulus_pallet_xcmp_queue",
         "pallet",
         "Error"
       ],
@@ -69922,7 +69922,7 @@
               "fields": [],
               "index": 7,
               "docs": [
-                "Account cannot be migrated since it is not a sovereign teyrchain account."
+                "Account cannot be migrated since it is not a sovereign parachain account."
               ]
             },
             {
@@ -73799,7 +73799,7 @@
     "id": 1014,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "Runtime"
       ],
       "params": [],
@@ -75878,7 +75878,7 @@
     "id": 1070,
     "type": {
       "path": [
-        "pezcumulus_primitives_core",
+        "cumulus_primitives_core",
         "CollationInfo"
       ],
       "params": [],
@@ -75971,7 +75971,7 @@
     "id": 1072,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "ValidationCode"
       ],
@@ -76167,7 +76167,7 @@
     "id": 1079,
     "type": {
       "path": [
-        "asset_hub_pezkuwi_runtime",
+        "asset_hub_polkadot_runtime",
         "RuntimeError"
       ],
       "params": [],
@@ -76188,12 +76188,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainSystem",
+              "name": "ParachainSystem",
               "fields": [
                 {
                   "name": null,
                   "type": 740,
-                  "typeName": "pezcumulus_pallet_teyrchain_system::Error<Runtime>",
+                  "typeName": "cumulus_pallet_parachain_system::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -76297,7 +76297,7 @@
                 {
                   "name": null,
                   "type": 802,
-                  "typeName": "pezcumulus_pallet_xcmp_queue::Error<Runtime>",
+                  "typeName": "cumulus_pallet_xcmp_queue::Error<Runtime>",
                   "docs": []
                 }
               ],
@@ -76305,7 +76305,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiXcm",
+              "name": "PolkadotXcm",
               "fields": [
                 {
                   "name": null,

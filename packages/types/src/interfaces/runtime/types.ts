@@ -7,6 +7,7 @@ import type { ITuple } from '@pezkuwi/types-codec/types';
 import type { AuthorityId } from '@pezkuwi/types/interfaces/consensus';
 import type { Signature } from '@pezkuwi/types/interfaces/extrinsics';
 import type { Event, SystemOrigin } from '@pezkuwi/types/interfaces/system';
+import type { TeyrchainsInherentData } from '@pezkuwi/types/interfaces/teyrchains';
 
 /** @name AccountId */
 export interface AccountId extends AccountId32 {}
@@ -253,6 +254,12 @@ export interface OriginCaller extends Enum {
   readonly asSystem: SystemOrigin;
   readonly type: 'System';
 }
+
+/** @name PalletId */
+export interface PalletId extends PezpalletId {}
+
+/** @name ParachainsInherentData */
+export interface ParachainsInherentData extends TeyrchainsInherentData {}
 
 /** @name Pays */
 export interface Pays extends Enum {

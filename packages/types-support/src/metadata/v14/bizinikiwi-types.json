@@ -34871,7 +34871,7 @@
                 "Forcefully set the progress the running migration.",
                 "",
                 "This is only useful in one case: the next key to migrate is too big to be migrated with",
-                "a signed account, in a teyrchain context, and we simply want to skip it. A reasonable",
+                "a signed account, in a parachain context, and we simply want to skip it. A reasonable",
                 "example of this would be `:code:`, which is both very expensive to migrate, and commonly",
                 "used, so probably it is already migrated.",
                 "",
@@ -45592,7 +45592,7 @@
                   "typeName": "CoreMaskBitCount",
                   "docs": [
                     "The amount of Coretime contributed to the Instantaneous Coretime Pool by the",
-                    "Pezkuwi System."
+                    "Polkadot System."
                   ]
                 }
               ],
@@ -45668,7 +45668,7 @@
                   "type": 6,
                   "typeName": "BalanceOf<T>",
                   "docs": [
-                    "The amount of revenue the Pezkuwi System has already taken."
+                    "The amount of revenue the Polkadot System has already taken."
                   ]
                 },
                 {
@@ -45909,7 +45909,7 @@
                 {
                   "name": null,
                   "type": 507,
-                  "typeName": "<dynamic_params::storage::Parameters as pezkuwi_sdk::frame_support::\ntraits::dynamic_params::AggregatedKeyValue>::Key",
+                  "typeName": "<dynamic_params::storage::Parameters as polkadot_sdk::frame_support::\ntraits::dynamic_params::AggregatedKeyValue>::Key",
                   "docs": []
                 }
               ],
@@ -46024,7 +46024,7 @@
                 {
                   "name": null,
                   "type": 510,
-                  "typeName": "<dynamic_params::storage::Parameters as pezkuwi_sdk::frame_support::\ntraits::dynamic_params::AggregatedKeyValue>::Value",
+                  "typeName": "<dynamic_params::storage::Parameters as polkadot_sdk::frame_support::\ntraits::dynamic_params::AggregatedKeyValue>::Value",
                   "docs": []
                 }
               ],

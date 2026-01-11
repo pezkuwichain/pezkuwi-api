@@ -536,7 +536,7 @@
     "id": 20,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "RuntimeEvent"
       ],
       "params": [],
@@ -900,7 +900,7 @@
                 {
                   "name": null,
                   "type": 501,
-                  "typeName": "teyrchains_inclusion::Event<Runtime>",
+                  "typeName": "parachains_inclusion::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -913,7 +913,7 @@
                 {
                   "name": null,
                   "type": 505,
-                  "typeName": "teyrchains_paras::Event",
+                  "typeName": "parachains_paras::Event",
                   "docs": []
                 }
               ],
@@ -926,7 +926,7 @@
                 {
                   "name": null,
                   "type": 506,
-                  "typeName": "teyrchains_hrmp::Event<Runtime>",
+                  "typeName": "parachains_hrmp::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -939,7 +939,7 @@
                 {
                   "name": null,
                   "type": 507,
-                  "typeName": "teyrchains_disputes::Event<Runtime>",
+                  "typeName": "parachains_disputes::Event<Runtime>",
                   "docs": []
                 }
               ],
@@ -3368,7 +3368,7 @@
     "id": 55,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "pallet_im_online",
         "pallet",
         "Event"
@@ -3426,7 +3426,7 @@
     "id": 56,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "pallet_im_online",
         "sr25519",
         "app_sr25519",
@@ -3929,7 +3929,7 @@
     "id": 65,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "impls",
         "VersionedLocatableAsset"
       ],
@@ -4323,7 +4323,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -4580,25 +4580,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -4635,7 +4635,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -5081,7 +5081,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -5325,25 +5325,25 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Westend",
               "fields": [],
               "index": 4,
               "docs": []
             },
             {
-              "name": "Pezkuwichain",
+              "name": "Rococo",
               "fields": [],
               "index": 5,
               "docs": []
@@ -5380,7 +5380,7 @@
               "docs": []
             },
             {
-              "name": "PezkuwiBulletin",
+              "name": "PolkadotBulletin",
               "fields": [],
               "index": 10,
               "docs": []
@@ -5912,7 +5912,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -6083,13 +6083,13 @@
               "docs": []
             },
             {
-              "name": "Pezkuwi",
+              "name": "Polkadot",
               "fields": [],
               "index": 2,
               "docs": []
             },
             {
-              "name": "Zagros",
+              "name": "Kusama",
               "fields": [],
               "index": 3,
               "docs": []
@@ -6921,7 +6921,7 @@
     "id": 102,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "RuntimeCall"
       ],
       "params": [],
@@ -10029,7 +10029,7 @@
     "id": 143,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "SessionKeys"
       ],
       "params": [],
@@ -10082,7 +10082,7 @@
     "id": 144,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "validator_app",
         "Public"
@@ -10107,7 +10107,7 @@
     "id": 145,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "assignment_app",
         "Public"
@@ -11463,7 +11463,7 @@
     "id": 170,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "OriginCaller"
       ],
       "params": [],
@@ -11497,12 +11497,12 @@
               "docs": []
             },
             {
-              "name": "TeyrchainsOrigin",
+              "name": "ParachainsOrigin",
               "fields": [
                 {
                   "name": null,
                   "type": 173,
-                  "typeName": "teyrchains_origin::Origin",
+                  "typeName": "parachains_origin::Origin",
                   "docs": []
                 }
               ],
@@ -11593,7 +11593,7 @@
     "id": 172,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "governance",
         "origins",
         "pallet_custom_origins",
@@ -11703,7 +11703,7 @@
     "id": 173,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "origin",
         "pallet",
         "Origin"
@@ -11713,7 +11713,7 @@
         "variant": {
           "variants": [
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [
                 {
                   "name": null,
@@ -11735,7 +11735,7 @@
     "id": 174,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "Id"
       ],
@@ -12006,7 +12006,7 @@
     "id": 180,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Call"
@@ -12155,7 +12155,7 @@
     "id": 181,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EcdsaSignature"
       ],
@@ -12193,7 +12193,7 @@
     "id": 183,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "EthereumAddress"
       ],
@@ -12312,7 +12312,7 @@
     "id": 187,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "StatementKind"
       ],
@@ -14770,7 +14770,7 @@
     "id": 238,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "ProxyType"
       ],
       "params": [],
@@ -15608,7 +15608,7 @@
     "id": 246,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "NposCompactSolution16"
       ],
       "params": [],
@@ -17755,7 +17755,7 @@
     "id": 320,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "pallet",
         "Call"
@@ -18220,7 +18220,7 @@
               ]
             },
             {
-              "name": "set_hrmp_max_teyrchain_inbound_channels",
+              "name": "set_hrmp_max_parachain_inbound_channels",
               "fields": [
                 {
                   "name": "new",
@@ -18231,7 +18231,7 @@
               ],
               "index": 34,
               "docs": [
-                "See [`Pallet::set_hrmp_max_teyrchain_inbound_channels`]."
+                "See [`Pallet::set_hrmp_max_parachain_inbound_channels`]."
               ]
             },
             {
@@ -18250,7 +18250,7 @@
               ]
             },
             {
-              "name": "set_hrmp_max_teyrchain_outbound_channels",
+              "name": "set_hrmp_max_parachain_outbound_channels",
               "fields": [
                 {
                   "name": "new",
@@ -18261,7 +18261,7 @@
               ],
               "index": 37,
               "docs": [
-                "See [`Pallet::set_hrmp_max_teyrchain_outbound_channels`]."
+                "See [`Pallet::set_hrmp_max_parachain_outbound_channels`]."
               ]
             },
             {
@@ -18492,7 +18492,7 @@
     "id": 321,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "async_backing",
         "AsyncBackingParams"
@@ -18523,7 +18523,7 @@
     "id": 322,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "executor_params",
         "ExecutorParams"
@@ -18561,7 +18561,7 @@
     "id": 324,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "executor_params",
         "ExecutorParam"
@@ -18676,7 +18676,7 @@
     "id": 325,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "PvfPrepKind"
       ],
@@ -18706,7 +18706,7 @@
     "id": 326,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "PvfExecKind"
       ],
@@ -18736,7 +18736,7 @@
     "id": 327,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "vstaging",
         "ApprovalVotingParams"
       ],
@@ -18760,7 +18760,7 @@
     "id": 328,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "shared",
         "pallet",
         "Call"
@@ -18785,7 +18785,7 @@
     "id": 329,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Call"
@@ -18810,7 +18810,7 @@
     "id": 330,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras_inherent",
         "pallet",
         "Call"
@@ -18830,7 +18830,7 @@
                 {
                   "name": "data",
                   "type": 331,
-                  "typeName": "TeyrchainsInherentData<HeaderFor<T>>",
+                  "typeName": "ParachainsInherentData<HeaderFor<T>>",
                   "docs": []
                 }
               ],
@@ -18851,7 +18851,7 @@
     "id": 331,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "InherentData"
       ],
@@ -18911,7 +18911,7 @@
     "id": 333,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "signed",
         "UncheckedSigned"
@@ -18957,7 +18957,7 @@
     "id": 334,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "AvailabilityBitfield"
       ],
@@ -19012,7 +19012,7 @@
     "id": 337,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "ValidatorIndex"
       ],
@@ -19036,7 +19036,7 @@
     "id": 338,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "validator_app",
         "Signature"
@@ -19074,7 +19074,7 @@
     "id": 340,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "BackedCandidate"
       ],
@@ -19115,7 +19115,7 @@
     "id": 341,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "CommittedCandidateReceipt"
       ],
@@ -19150,7 +19150,7 @@
     "id": 342,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "CandidateDescriptor"
       ],
@@ -19227,7 +19227,7 @@
     "id": 343,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "collator_app",
         "Public"
@@ -19252,7 +19252,7 @@
     "id": 344,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "collator_app",
         "Signature"
@@ -19277,7 +19277,7 @@
     "id": 345,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "ValidationCodeHash"
       ],
@@ -19301,7 +19301,7 @@
     "id": 346,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "CandidateCommitments"
       ],
@@ -19426,7 +19426,7 @@
     "id": 349,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "OutboundHrmpMessage"
       ],
       "params": [
@@ -19513,7 +19513,7 @@
     "id": 352,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "ValidationCode"
       ],
@@ -19537,7 +19537,7 @@
     "id": 353,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "HeadData"
       ],
@@ -19574,7 +19574,7 @@
     "id": 355,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "ValidityAttestation"
       ],
@@ -19631,7 +19631,7 @@
     "id": 357,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "DisputeStatementSet"
       ],
@@ -19667,7 +19667,7 @@
     "id": 358,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "CandidateHash"
       ],
       "params": [],
@@ -19718,7 +19718,7 @@
     "id": 361,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "DisputeStatement"
       ],
@@ -19762,7 +19762,7 @@
     "id": 362,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "ValidDisputeStatementKind"
       ],
@@ -19844,7 +19844,7 @@
     "id": 364,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "InvalidDisputeStatementKind"
       ],
@@ -19868,7 +19868,7 @@
     "id": 365,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Call"
@@ -20071,7 +20071,7 @@
     "id": 366,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "PvfCheckStatement"
       ],
@@ -20113,7 +20113,7 @@
     "id": 367,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "initializer",
         "pallet",
         "Call"
@@ -20154,7 +20154,7 @@
     "id": 368,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Call"
@@ -20405,7 +20405,7 @@
     "id": 369,
     "type": {
       "path": [
-        "pezkuwi_teyrchain_primitives",
+        "polkadot_parachain_primitives",
         "primitives",
         "HrmpChannelId"
       ],
@@ -20435,7 +20435,7 @@
     "id": 370,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Call"
@@ -20469,7 +20469,7 @@
     "id": 371,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "slashing",
         "pallet",
@@ -20517,7 +20517,7 @@
     "id": 372,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "slashing",
         "DisputeProof"
@@ -20560,7 +20560,7 @@
     "id": 373,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "slashing",
         "DisputesTimeSlot"
@@ -20591,7 +20591,7 @@
     "id": 374,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "slashing",
         "SlashingOffenceKind"
@@ -20622,7 +20622,7 @@
     "id": 375,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Call"
@@ -20830,7 +20830,7 @@
     "id": 376,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Call"
@@ -20925,7 +20925,7 @@
     "id": 377,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Call"
@@ -21032,7 +21032,7 @@
     "id": 379,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Call"
@@ -29705,7 +29705,7 @@
     "id": 466,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "AggregateMessageOrigin"
       ],
@@ -29736,7 +29736,7 @@
     "id": 467,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "UmpQueueId"
       ],
@@ -30481,7 +30481,7 @@
     "id": 486,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Event"
@@ -32683,7 +32683,7 @@
     "id": 501,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Event"
@@ -32823,7 +32823,7 @@
     "id": 502,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "CandidateReceipt"
       ],
@@ -32858,7 +32858,7 @@
     "id": 503,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "CoreIndex"
       ],
@@ -32882,7 +32882,7 @@
     "id": 504,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "GroupIndex"
       ],
@@ -32906,7 +32906,7 @@
     "id": 505,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Event"
@@ -33074,7 +33074,7 @@
     "id": 506,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Event"
@@ -33125,7 +33125,7 @@
               "name": "OpenChannelCanceled",
               "fields": [
                 {
-                  "name": "by_teyrchain",
+                  "name": "by_parachain",
                   "type": 174,
                   "typeName": "ParaId",
                   "docs": []
@@ -33167,7 +33167,7 @@
               "name": "ChannelClosed",
               "fields": [
                 {
-                  "name": "by_teyrchain",
+                  "name": "by_parachain",
                   "type": 174,
                   "typeName": "ParaId",
                   "docs": []
@@ -33283,7 +33283,7 @@
     "id": 507,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Event"
@@ -33370,7 +33370,7 @@
     "id": 508,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "DisputeLocation"
       ],
@@ -33400,7 +33400,7 @@
     "id": 509,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "DisputeResult"
       ],
@@ -33430,7 +33430,7 @@
     "id": 510,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Event"
@@ -33526,7 +33526,7 @@
     "id": 511,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Event"
@@ -33597,7 +33597,7 @@
               ],
               "index": 1,
               "docs": [
-                "A para has won the right to a continuous set of lease periods as a teyrchain.",
+                "A para has won the right to a continuous set of lease periods as a parachain.",
                 "First balance is any extra amount reserved on top of the para's existing deposit.",
                 "Second balance is the total amount reserved."
               ]
@@ -33614,7 +33614,7 @@
     "id": 512,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Event"
@@ -33744,8 +33744,8 @@
               ],
               "index": 4,
               "docs": [
-                "Someone attempted to lease the same slot twice for a teyrchain. The amount is held in",
-                "reserve but no teyrchain slot has been leased."
+                "Someone attempted to lease the same slot twice for a parachain. The amount is held in",
+                "reserve but no parachain slot has been leased."
               ]
             },
             {
@@ -33821,7 +33821,7 @@
     "id": 513,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Event"
@@ -34025,7 +34025,7 @@
               ],
               "index": 9,
               "docs": [
-                "A teyrchain has been moved to `NewRaise`"
+                "A parachain has been moved to `NewRaise`"
               ]
             }
           ]
@@ -37306,7 +37306,7 @@
     "id": 579,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "RuntimeHoldReason"
       ],
       "params": [],
@@ -37482,7 +37482,7 @@
     "id": 585,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "RuntimeFreezeReason"
       ],
       "params": [],
@@ -40935,7 +40935,7 @@
     "id": 664,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "pallet",
         "Error"
@@ -44598,7 +44598,7 @@
     "id": 742,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "HostConfiguration"
       ],
@@ -44684,7 +44684,7 @@
               "docs": []
             },
             {
-              "name": "hrmp_max_teyrchain_outbound_channels",
+              "name": "hrmp_max_parachain_outbound_channels",
               "type": 4,
               "typeName": "u32",
               "docs": []
@@ -44714,7 +44714,7 @@
               "docs": []
             },
             {
-              "name": "hrmp_max_teyrchain_inbound_channels",
+              "name": "hrmp_max_parachain_inbound_channels",
               "type": 4,
               "typeName": "u32",
               "docs": []
@@ -44918,7 +44918,7 @@
     "id": 745,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "configuration",
         "pallet",
         "Error"
@@ -44978,7 +44978,7 @@
     "id": 748,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "shared",
         "AllowedRelayParentsTracker"
       ],
@@ -45044,7 +45044,7 @@
     "id": 751,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "AvailabilityBitfieldRecord"
       ],
@@ -45079,7 +45079,7 @@
     "id": 752,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "CandidatePendingAvailability"
       ],
@@ -45154,7 +45154,7 @@
     "id": 753,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "inclusion",
         "pallet",
         "Error"
@@ -45294,7 +45294,7 @@
               "index": 15,
               "docs": [
                 "The candidate's relay-parent was not allowed. Either it was",
-                "not recent enough or it didn't advance based on the last teyrchain block."
+                "not recent enough or it didn't advance based on the last parachain block."
               ]
             },
             {
@@ -45417,7 +45417,7 @@
     "id": 754,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "ScrapedOnChainVotes"
       ],
@@ -45512,7 +45512,7 @@
     "id": 759,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras_inherent",
         "pallet",
         "Error"
@@ -45637,7 +45637,7 @@
     "id": 762,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "scheduler",
         "pallet",
         "CoreOccupied"
@@ -45680,7 +45680,7 @@
     "id": 763,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "scheduler",
         "pallet",
         "ParasEntry"
@@ -45722,7 +45722,7 @@
     "id": 764,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "scheduler",
         "common",
         "Assignment"
@@ -45844,7 +45844,7 @@
     "id": 769,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "PvfCheckActiveVoteState"
       ],
@@ -45910,7 +45910,7 @@
     "id": 771,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "PvfCheckCause"
       ],
@@ -45971,7 +45971,7 @@
     "id": 772,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "SetGoAhead"
       ],
@@ -46027,7 +46027,7 @@
     "id": 775,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaLifecycle"
       ],
@@ -46048,7 +46048,7 @@
               "docs": []
             },
             {
-              "name": "Teyrchain",
+              "name": "Parachain",
               "fields": [],
               "index": 2,
               "docs": []
@@ -46060,7 +46060,7 @@
               "docs": []
             },
             {
-              "name": "DowngradingTeyrchain",
+              "name": "DowngradingParachain",
               "fields": [],
               "index": 4,
               "docs": []
@@ -46072,7 +46072,7 @@
               "docs": []
             },
             {
-              "name": "OffboardingTeyrchain",
+              "name": "OffboardingParachain",
               "fields": [],
               "index": 6,
               "docs": []
@@ -46101,7 +46101,7 @@
     "id": 777,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaPastCodeMeta"
       ],
@@ -46149,7 +46149,7 @@
     "id": 779,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ReplacementTimes"
       ],
@@ -46197,7 +46197,7 @@
     "id": 781,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "UpgradeGoAhead"
       ],
@@ -46227,7 +46227,7 @@
     "id": 782,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "UpgradeRestriction"
       ],
@@ -46251,7 +46251,7 @@
     "id": 783,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "ParaGenesisArgs"
       ],
@@ -46287,7 +46287,7 @@
     "id": 784,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "paras",
         "pallet",
         "Error"
@@ -46330,7 +46330,7 @@
               "fields": [],
               "index": 3,
               "docs": [
-                "Para cannot be upgraded to a lease holding teyrchain."
+                "Para cannot be upgraded to a lease holding parachain."
               ]
             },
             {
@@ -46338,7 +46338,7 @@
               "fields": [],
               "index": 4,
               "docs": [
-                "Para cannot be downgraded to an on-demand teyrchain."
+                "Para cannot be downgraded to an on-demand parachain."
               ]
             },
             {
@@ -46394,7 +46394,7 @@
               "fields": [],
               "index": 11,
               "docs": [
-                "Teyrchain cannot currently schedule a code upgrade."
+                "Parachain cannot currently schedule a code upgrade."
               ]
             }
           ]
@@ -46422,7 +46422,7 @@
     "id": 786,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "initializer",
         "BufferedSessionChange"
       ],
@@ -46471,7 +46471,7 @@
     "id": 788,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundDownwardMessage"
       ],
       "params": [
@@ -46505,7 +46505,7 @@
     "id": 789,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "HrmpOpenChannelRequest"
       ],
@@ -46572,7 +46572,7 @@
     "id": 791,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "HrmpChannel"
       ],
@@ -46651,7 +46651,7 @@
     "id": 793,
     "type": {
       "path": [
-        "pezkuwi_core_primitives",
+        "polkadot_core_primitives",
         "InboundHrmpMessage"
       ],
       "params": [
@@ -46712,7 +46712,7 @@
     "id": 796,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "hrmp",
         "pallet",
         "Error"
@@ -46911,7 +46911,7 @@
     "id": 798,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "SessionInfo"
       ],
@@ -47007,7 +47007,7 @@
     "id": 799,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "IndexedVec"
       ],
@@ -47040,7 +47040,7 @@
     "id": 800,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "IndexedVec"
       ],
@@ -47087,7 +47087,7 @@
     "id": 802,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "DisputeState"
       ],
@@ -47161,7 +47161,7 @@
     "id": 804,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "pallet",
         "Error"
@@ -47259,7 +47259,7 @@
     "id": 805,
     "type": {
       "path": [
-        "pezkuwi_primitives",
+        "polkadot_primitives",
         "v6",
         "slashing",
         "PendingSlashes"
@@ -47348,7 +47348,7 @@
     "id": 809,
     "type": {
       "path": [
-        "pezkuwi_runtime_teyrchains",
+        "polkadot_runtime_parachains",
         "disputes",
         "slashing",
         "pallet",
@@ -47424,7 +47424,7 @@
     "id": 810,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "ParaInfo"
       ],
@@ -47509,7 +47509,7 @@
     "id": 812,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "paras_registrar",
         "pallet",
         "Error"
@@ -47564,11 +47564,11 @@
               ]
             },
             {
-              "name": "NotTeyrchain",
+              "name": "NotParachain",
               "fields": [],
               "index": 5,
               "docs": [
-                "Para is not a Teyrchain."
+                "Para is not a Parachain."
               ]
             },
             {
@@ -47576,7 +47576,7 @@
               "fields": [],
               "index": 6,
               "docs": [
-                "Para is not a Parathread (on-demand teyrchain)."
+                "Para is not a Parathread (on-demand parachain)."
               ]
             },
             {
@@ -47592,7 +47592,7 @@
               "fields": [],
               "index": 8,
               "docs": [
-                "Cannot schedule downgrade of lease holding teyrchain to on-demand teyrchain"
+                "Cannot schedule downgrade of lease holding parachain to on-demand parachain"
               ]
             },
             {
@@ -47600,7 +47600,7 @@
               "fields": [],
               "index": 9,
               "docs": [
-                "Cannot schedule upgrade of on-demand teyrchain to lease holding teyrchain"
+                "Cannot schedule upgrade of on-demand parachain to lease holding parachain"
               ]
             },
             {
@@ -47608,7 +47608,7 @@
               "fields": [],
               "index": 10,
               "docs": [
-                "Para is locked from manipulation by the manager. Must use teyrchain or relay chain",
+                "Para is locked from manipulation by the manager. Must use parachain or relay chain",
                 "governance."
               ]
             },
@@ -47625,7 +47625,7 @@
               "fields": [],
               "index": 12,
               "docs": [
-                "Registering teyrchain with empty code is not allowed."
+                "Registering parachain with empty code is not allowed."
               ]
             },
             {
@@ -47633,7 +47633,7 @@
               "fields": [],
               "index": 13,
               "docs": [
-                "Cannot perform a teyrchain slot / lifecycle swap. Check that the state of both paras",
+                "Cannot perform a parachain slot / lifecycle swap. Check that the state of both paras",
                 "are correct for the swap to work."
               ]
             }
@@ -47662,7 +47662,7 @@
     "id": 814,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "slots",
         "pallet",
         "Error"
@@ -47681,7 +47681,7 @@
               "fields": [],
               "index": 0,
               "docs": [
-                "The teyrchain ID is not onboarding."
+                "The parachain ID is not onboarding."
               ]
             },
             {
@@ -47787,7 +47787,7 @@
     "id": 819,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "auctions",
         "pallet",
         "Error"
@@ -47869,7 +47869,7 @@
     "id": 820,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "FundInfo"
       ],
@@ -47964,7 +47964,7 @@
     "id": 821,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "LastContribution"
       ],
@@ -48019,7 +48019,7 @@
     "id": 822,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "crowdloan",
         "pallet",
         "Error"
@@ -48130,11 +48130,11 @@
               ]
             },
             {
-              "name": "NotTeyrchain",
+              "name": "NotParachain",
               "fields": [],
               "index": 12,
               "docs": [
-                "This crowdloan does not correspond to a teyrchain."
+                "This crowdloan does not correspond to a parachain."
               ]
             },
             {
@@ -48142,7 +48142,7 @@
               "fields": [],
               "index": 13,
               "docs": [
-                "This teyrchain lease is still active and retirement cannot yet begin."
+                "This parachain lease is still active and retirement cannot yet begin."
               ]
             },
             {
@@ -48150,7 +48150,7 @@
               "fields": [],
               "index": 14,
               "docs": [
-                "This teyrchain's bid or lease is still active and withdraw cannot yet begin."
+                "This parachain's bid or lease is still active and withdraw cannot yet begin."
               ]
             },
             {
@@ -53200,7 +53200,7 @@
     "id": 867,
     "type": {
       "path": [
-        "pezkuwi_runtime_common",
+        "polkadot_runtime_common",
         "claims",
         "PrevalidateAttests"
       ],
@@ -53279,7 +53279,7 @@
     "id": 870,
     "type": {
       "path": [
-        "pezkuwi_runtime",
+        "polkadot_runtime",
         "Runtime"
       ],
       "params": [],
