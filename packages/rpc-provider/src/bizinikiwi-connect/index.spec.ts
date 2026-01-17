@@ -563,7 +563,7 @@ describe('ScProvider', () => {
       }, 0);
 
       const cb = jest.fn();
-      const token = await provider.subscribe(
+      await provider.subscribe(
         'foo',
         'chain_subscribeNewHeads',
         ['baz'],
