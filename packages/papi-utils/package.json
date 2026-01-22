@@ -1,0 +1,41 @@
+{
+  "name": "@pezkuwi/papi-utils",
+  "version": "1.0.0",
+  "author": "Dijital Kurdistan Tech Institute <info@pezkuwichain.io>",
+  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/papi-utils#readme",
+  "repository": {
+    "directory": "packages/papi-utils",
+    "type": "git",
+    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "node": {
+        "production": {
+          "import": "./dist/esm/index.mjs",
+          "require": "./dist/index.js",
+          "default": "./dist/index.js"
+        },
+        "import": "./dist/esm/index.mjs",
+        "require": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "module": "./dist/esm/index.mjs",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.mjs",
+  "browser": "./dist/esm/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}
