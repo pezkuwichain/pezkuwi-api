@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./index.d.ts",
-  "version": "16.5.19",
+  "version": "16.5.20",
   "main": "./cjs/index.js",
   "module": "./index.js",
   "exports": {
@@ -1142,9 +1142,9 @@
     }
   },
   "dependencies": {
-    "@pezkuwi/types": "16.5.19",
-    "@pezkuwi/types-augment": "16.5.19",
-    "@pezkuwi/types-support": "16.5.19",
+    "@pezkuwi/types": "16.5.20",
+    "@pezkuwi/types-augment": "16.5.20",
+    "@pezkuwi/types-support": "16.5.20",
     "@pezkuwi/util": "14.0.13",
     "@pezkuwi/util-crypto": "14.0.13",
     "@pezkuwi/x-bigint": "14.0.13",

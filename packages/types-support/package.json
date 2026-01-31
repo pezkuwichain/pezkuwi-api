@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./index.d.ts",
-  "version": "16.5.19",
+  "version": "16.5.20",
   "main": "./cjs/index.js",
   "module": "./index.js",
   "exports": {
