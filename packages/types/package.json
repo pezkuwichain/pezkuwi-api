@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./build/index.d.ts",
-  "version": "16.5.20",
+  "version": "16.5.21",
   "main": "./build/cjs/index.js",
   "module": "./build/index.js",
   "exports": {
@@ -5927,10 +5927,10 @@
   },
   "dependencies": {
     "@pezkuwi/keyring": "14.0.13",
-    "@pezkuwi/types-augment": "16.5.20",
-    "@pezkuwi/types-codec": "16.5.20",
-    "@pezkuwi/types-create": "16.5.20",
-    "@pezkuwi/types-support": "16.5.20",
+    "@pezkuwi/types-augment": "16.5.21",
+    "@pezkuwi/types-codec": "16.5.21",
+    "@pezkuwi/types-create": "16.5.21",
+    "@pezkuwi/types-support": "16.5.21",
     "@pezkuwi/util": "14.0.13",
     "@pezkuwi/util-crypto": "14.0.13",
     "rxjs": "^7.8.1",
