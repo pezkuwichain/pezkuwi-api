@@ -342,10 +342,10 @@ export class GenericExtrinsic<A extends AnyTuple = AnyTuple> extends ExtrinsicBa
    */
   public override get hash (): CodecHash {
     if (!this.#hashCache) {
-      this.#hashCache = super.hash;
+      this.#hashCache = super.hash as CodecHash;
     }
 
-    return this.#hashCache;
+    return this.#hashCache!;
   }
 
   /**

@@ -39,8 +39,8 @@
     "dist"
   ],
   "dependencies": {
-    "@pezkuwi/metadata-builders": "1.0.0",
     "@pezkuwi/bizinikiwi-bindings": "1.0.0",
+    "@pezkuwi/metadata-builders": "1.0.0",
     "@pezkuwi/papi-utils": "1.0.0"
   }
 }

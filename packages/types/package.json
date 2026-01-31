@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./build/index.d.ts",
-  "version": "16.5.9",
+  "version": "16.5.11",
   "main": "./build/cjs/index.js",
   "module": "./build/index.js",
   "exports": {

@@ -11,7 +11,7 @@ import { ApiPromise } from '@pezkuwi/api';
 import { BlueprintPromise, ContractPromise } from '@pezkuwi/api-contract';
 import { createTestPairs } from '@pezkuwi/keyring/testingPairs';
 
-import abiIncrementer from './test/contracts/ink/v0/incrementer.json' assert { type: 'json' };
+import abiIncrementer from './test/contracts/ink/v0/incrementer.json' with { type: 'json' };
 
 async function checkBlueprint (api: ApiPromise, pairs: TestKeyringMapBizinikiwi): Promise<void> {
   const blueprint = new BlueprintPromise(api, abiIncrementer as Record<string, unknown>, '0x1234');

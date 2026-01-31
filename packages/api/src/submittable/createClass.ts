@@ -54,7 +54,8 @@ function makeEraOptions (api: ApiInterfaceRx, registry: Registry, partialOptions
   }
 
   return makeSignOptions(api, partialOptions, {
-    blockHash: header.hash,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    blockHash: header.hash as any,
     era: registry.createTypeUnsafe<ExtrinsicEra>('ExtrinsicEra', [{
       current: header.number,
       period: partialOptions.era || mortalLength

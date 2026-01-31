@@ -40,8 +40,8 @@
   ],
   "dependencies": {
     "@noble/hashes": "^2.0.1",
+    "@pezkuwi/papi-utils": "1.0.0",
     "@scure/base": "^2.0.0",
-    "scale-ts": "^1.6.1",
-    "@pezkuwi/papi-utils": "1.0.0"
+    "scale-ts": "^1.6.1"
   }
 }

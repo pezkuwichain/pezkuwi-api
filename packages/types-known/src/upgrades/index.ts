@@ -16,7 +16,7 @@ const NET_EXTRA: Record<string, { genesisHash: HexString[] }> = {
     genesisHash: ['0xd9d3cd7c1e5d890d969b957f4c5b71a111bbeeabc968f1d0d4538c2663f080a7']
   },
   pezkuwi: {
-    genesisHash: ['0x41693961995d879073269a008d0a52832caa3e0ae73869f02127f3d5daa4934c']
+    genesisHash: ['0xbb4a61ab0c4b8c12f5eab71d0c86c482e03a275ecdafee678dea712474d33d75']
   },
   zagros: {
     genesisHash: ['0x297f5a4d105b4b28312586ff1915572ffe4ee015ff772b76399ecbff25a22026']

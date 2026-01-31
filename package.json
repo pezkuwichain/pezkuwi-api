@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "16.5.9",
+  "version": "16.5.10",
   "versions": {
     "git": "16.5.9",
     "npm": "16.5.9"
@@ -40,16 +40,17 @@
     "test:one": "pezkuwi-dev-run-test --env node"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "^0.85.3",
-    "@pezkuwi/dev-test": "^0.85.3",
-    "@pezkuwi/dev-ts": "^0.85.3",
+    "@pezkuwi/dev": "0.85.7",
+    "@pezkuwi/dev-test": "0.85.7",
+    "@pezkuwi/dev-ts": "0.85.7",
     "@pezkuwi/typegen": "workspace:*",
-    "@types/node": "^22.10.5"
+    "@types/node": "^22.10.5",
+    "@types/yargs": "^17.0.35"
   },
   "resolutions": {
-    "@pezkuwi/dev": "portal:../pezkuwi-dev/packages/dev",
-    "@pezkuwi/dev-test": "portal:../pezkuwi-dev/packages/dev-test",
-    "@pezkuwi/dev-ts": "portal:../pezkuwi-dev/packages/dev-ts",
+    "@pezkuwi/dev": "^0.85.7",
+    "@pezkuwi/dev-test": "^0.85.7",
+    "@pezkuwi/dev-ts": "^0.85.7",
     "@pezkuwi/hw-ledger": "14.0.11",
     "@pezkuwi/hw-ledger-transports": "14.0.11",
     "@pezkuwi/keyring": "14.0.11",
