@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./index.d.ts",
-  "version": "16.5.11",
+  "version": "16.5.18",
   "main": "./cjs/index.js",
   "module": "./index.js",
   "exports": {
@@ -200,9 +200,9 @@
   },
   "dependencies": {
     "@pezkuwi/keyring": "14.0.11",
-    "@pezkuwi/rpc-augment": "16.5.9",
-    "@pezkuwi/rpc-provider": "16.5.9",
-    "@pezkuwi/types": "16.5.9",
+    "@pezkuwi/rpc-augment": "16.5.18",
+    "@pezkuwi/rpc-provider": "16.5.18",
+    "@pezkuwi/types": "16.5.18",
     "@pezkuwi/util": "14.0.11",
     "rxjs": "^7.8.1",
     "tslib": "^2.8.1"
