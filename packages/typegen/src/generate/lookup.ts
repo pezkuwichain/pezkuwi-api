@@ -224,17 +224,53 @@ function generateLookupTypes (registry: Registry, filtered: [PortableType, TypeD
     ),
     interfaces: []
   };
-  const items = filtered
-    .map(([, typeDef]) => {
-      // Deep rebrand the type names (including nested sub types) before generating interfaces
-      const rebranded = deepRebrandTypeDef(typeDef);
+  // Special type mappings: PezkuwiChain types that should extend standard types
+  const TYPE_MAPPINGS: Record<string, string> = {
+    PezspCoreCryptoAccountId32: 'AccountId32',
+    PezspRuntimeMultiAddress: 'MultiAddress'
+  };
 
-      return rebranded.lookupNameRoot && rebranded.lookupName
-        ? exportInterface(rebranded.lookupIndex, rebranded.lookupName, rebranded.lookupNameRoot)
-        : typeEncoders[rebranded.info](registry, imports.definitions, rebranded, imports);
-    })
-    .filter((t): t is string => !!t)
-    .map((t) => t.replace(/\nexport /, '\n'));
+  // Add imports for AccountId32 and MultiAddress - needed for all lookup files that use TYPE_MAPPINGS
+  const runtimePath = '@pezkuwi/types/interfaces/runtime';
+  if (imports.localTypes[runtimePath]) {
+    imports.localTypes[runtimePath]['AccountId32'] = true;
+    imports.localTypes[runtimePath]['MultiAddress'] = true;
+  }
+
+  // For non-bizinikiwi files, add base type definitions at the start
+  const baseTypeDefs: string[] = [];
+  if (subPath && subPath !== 'bizinikiwi') {
+    // Add PezspCoreCryptoAccountId32 and PezspRuntimeMultiAddress definitions
+    // These extend the standard types and are needed in all lookup files
+    baseTypeDefs.push(
+      '  /** @name PezspCoreCryptoAccountId32 (0) */\n  interface PezspCoreCryptoAccountId32 extends AccountId32 {}',
+      '  /** @name PezspRuntimeMultiAddress (1) */\n  interface PezspRuntimeMultiAddress extends MultiAddress {}'
+    );
+  }
+
+  const items = [
+    ...baseTypeDefs,
+    ...filtered
+      .map(([, typeDef]) => {
+        // Deep rebrand the type names (including nested sub types) before generating interfaces
+        const rebranded = deepRebrandTypeDef(typeDef);
+
+        // Check for special type mappings first - skip if already in base types for this file
+        if (rebranded.lookupName && TYPE_MAPPINGS[rebranded.lookupName]) {
+          // For bizinikiwi, include the mapping; for others, skip (already in baseTypeDefs)
+          if (subPath === 'bizinikiwi') {
+            return exportInterface(rebranded.lookupIndex, rebranded.lookupName, TYPE_MAPPINGS[rebranded.lookupName]);
+          }
+          return null;
+        }
+
+        return rebranded.lookupNameRoot && rebranded.lookupName
+          ? exportInterface(rebranded.lookupIndex, rebranded.lookupName, rebranded.lookupNameRoot)
+          : typeEncoders[rebranded.info](registry, imports.definitions, rebranded, imports);
+      })
+      .filter((t): t is string => !!t)
+      .map((t) => t.replace(/\nexport /, '\n'))
+  ];
 
   writeFile(path.join(destDir, `types${subPath ? `-${subPath}` : ''}.ts`), () => generateLookupTypesTmpl({
     headerType: 'defs',

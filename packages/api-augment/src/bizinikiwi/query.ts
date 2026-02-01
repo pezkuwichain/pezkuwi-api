@@ -9,8 +9,8 @@ import type { ApiTypes, AugmentedQuery, QueryableStorageEntry } from '@pezkuwi/a
 import type { Data } from '@pezkuwi/types';
 import type { BTreeSet, Bytes, Null, Option, U8aFixed, Vec, bool, u128, u16, u32, u64, u8 } from '@pezkuwi/types-codec';
 import type { AnyNumber, ITuple } from '@pezkuwi/types-codec/types';
-import type { AccountId32, H160, H256, Perbill, Percent, RuntimeCall } from '@pezkuwi/types/interfaces/runtime';
-import type { KitchensinkRuntimeRuntimeParametersKey, KitchensinkRuntimeRuntimeParametersValue, KitchensinkRuntimeSessionKeys, PezframeSupportDispatchPerDispatchClassWeight, PezframeSupportPreimagesBounded, PezframeSupportTokensFungibleUnionOfNativeOrWithId, PezframeSupportTokensMiscIdAmountRuntimeFreezeReason, PezframeSupportTokensMiscIdAmountRuntimeHoldReason, PezframeSystemAccountInfo, PezframeSystemCodeUpgradeAuthorization, PezframeSystemEventRecord, PezframeSystemLastRuntimeUpgradeInfo, PezframeSystemPhase, PezpalletAllianceCid, PezpalletAllianceMemberRole, PezpalletAssetConversionPoolInfo, PezpalletAssetRewardsPoolInfo, PezpalletAssetRewardsPoolStakerInfo, PezpalletAssetsApproval, PezpalletAssetsAssetAccount, PezpalletAssetsAssetDetails, PezpalletAssetsAssetMetadata, PezpalletBagsListListBag, PezpalletBagsListListNode, PezpalletBalancesAccountData, PezpalletBalancesBalanceLock, PezpalletBalancesReserveData, PezpalletBountiesBounty, PezpalletBrokerAutoRenewalRecord, PezpalletBrokerConfigRecord, PezpalletBrokerContributionRecord, PezpalletBrokerInstaPoolHistoryRecord, PezpalletBrokerLeaseRecordItem, PezpalletBrokerOnDemandRevenueRecord, PezpalletBrokerPoolIoRecord, PezpalletBrokerPotentialRenewalId, PezpalletBrokerPotentialRenewalRecord, PezpalletBrokerRegionId, PezpalletBrokerRegionRecord, PezpalletBrokerSaleInfoRecord, PezpalletBrokerScheduleItem, PezpalletBrokerStatusRecord, PezpalletChildBountiesChildBounty, PezpalletCollectiveVotes, PezpalletContractsStorageContractInfo, PezpalletContractsStorageDeletionQueueManager, PezpalletContractsWasmCodeInfo, PezpalletConvictionVotingVoteVoting, PezpalletCoreFellowshipMemberStatus, PezpalletCoreFellowshipParamsTypeU128, PezpalletCoreFellowshipWish, PezpalletDelegatedStakingAgentLedger, PezpalletDelegatedStakingDelegation, PezpalletDemocracyMetadataOwner, PezpalletDemocracyReferendumInfo, PezpalletDemocracyVoteThreshold, PezpalletDemocracyVoteVoting, PezpalletElectionProviderMultiPhasePhase, PezpalletElectionProviderMultiPhaseReadySolution, PezpalletElectionProviderMultiPhaseRoundSnapshot, PezpalletElectionProviderMultiPhaseSignedSignedSubmission, PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize, PezpalletElectionsPhragmenSeatHolder, PezpalletElectionsPhragmenVoter, PezpalletFastUnstakeUnstakeRequest, PezpalletGrandpaStoredPendingChange, PezpalletGrandpaStoredState, PezpalletIdentityAuthorityProperties, PezpalletIdentityProvider, PezpalletIdentityRegistrarInfo, PezpalletIdentityRegistration, PezpalletIdentityUsernameInformation, PezpalletImOnlineSr25519AppSr25519Public, PezpalletLotteryLotteryConfig, PezpalletMessageQueueBookState, PezpalletMessageQueuePage, PezpalletMigrationsMigrationCursor, PezpalletMixnetBoundedMixnode, PezpalletMultisigMultisig, PezpalletNftFractionalizationDetails, PezpalletNftsAttributeDeposit, PezpalletNftsAttributeNamespace, PezpalletNftsCollectionConfig, PezpalletNftsCollectionDetails, PezpalletNftsCollectionMetadata, PezpalletNftsItemConfig, PezpalletNftsItemDetails, PezpalletNftsItemMetadata, PezpalletNftsPendingSwap, PezpalletNisBid, PezpalletNisReceiptRecord, PezpalletNisSummaryRecord, PezpalletNominationPoolsBondedPoolInner, PezpalletNominationPoolsClaimPermission, PezpalletNominationPoolsPoolMember, PezpalletNominationPoolsRewardPool, PezpalletNominationPoolsSubPools, PezpalletPreimageOldRequestStatus, PezpalletPreimageRequestStatus, PezpalletProxyAnnouncement, PezpalletProxyProxyDefinition, PezpalletRankedCollectiveMemberRecord, PezpalletRankedCollectiveVoteRecord, PezpalletRecoveryActiveRecovery, PezpalletRecoveryRecoveryConfig, PezpalletReferendaReferendumInfoConvictionVotingTally, PezpalletReferendaReferendumInfoRankedCollectiveTally, PezpalletReviveStorageContractInfo, PezpalletReviveStorageDeletionQueueManager, PezpalletReviveWasmCodeInfo, PezpalletSalaryClaimantStatus, PezpalletSalaryStatusType, PezpalletSchedulerRetryConfig, PezpalletSchedulerScheduled, PezpalletSocietyBid, PezpalletSocietyCandidacy, PezpalletSocietyGroupParams, PezpalletSocietyIntakeRecord, PezpalletSocietyMemberRecord, PezpalletSocietyPayoutRecord, PezpalletSocietyTally, PezpalletSocietyVote, PezpalletStakingActiveEraInfo, PezpalletStakingEraRewardPoints, PezpalletStakingForcing, PezpalletStakingNominations, PezpalletStakingRewardDestination, PezpalletStakingSlashingSlashingSpans, PezpalletStakingSlashingSpanRecord, PezpalletStakingStakingLedger, PezpalletStakingUnappliedSlash, PezpalletStakingValidatorPrefs, PezpalletStateTrieMigrationMigrationLimits, PezpalletStateTrieMigrationMigrationTask, PezpalletTipsOpenTip, PezpalletTransactionPaymentReleases, PezpalletTransactionStorageTransactionInfo, PezpalletTreasuryProposal, PezpalletTreasurySpendStatus, PezpalletUniquesCollectionDetails, PezpalletUniquesCollectionMetadata, PezpalletUniquesItemDetails, PezpalletUniquesItemMetadata, PezpalletVestingReleases, PezpalletVestingVestingInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeEpochConfiguration, PezspConsensusBabeDigestsNextConfigDescriptor, PezspConsensusBabeDigestsPreDigest, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyMmrBeefyAuthoritySet, PezspConsensusGrandpaAppPublic, PezspCoreCryptoKeyTypeId, PezspMixnetAppPublic, PezspNposElectionsElectionScore, PezspRuntimeDigest, PezspStakingExposure, PezspStakingExposurePage, PezspStakingOffenceOffenceDetails, PezspStakingPagedExposureMetadata, PezspWeightsWeightV2Weight } from '@pezkuwi/types/lookup';
+import type { H160, H256, RuntimeCall } from '@pezkuwi/types/interfaces/runtime';
+import type { KitchensinkRuntimeRuntimeParametersKey, KitchensinkRuntimeRuntimeParametersValue, KitchensinkRuntimeSessionKeys, PezframeSupportDispatchPerDispatchClassWeight, PezframeSupportPreimagesBounded, PezframeSupportTokensFungibleUnionOfNativeOrWithId, PezframeSupportTokensMiscIdAmountRuntimeFreezeReason, PezframeSupportTokensMiscIdAmountRuntimeHoldReason, PezframeSystemAccountInfo, PezframeSystemCodeUpgradeAuthorization, PezframeSystemEventRecord, PezframeSystemLastRuntimeUpgradeInfo, PezframeSystemPhase, PezpalletAllianceCid, PezpalletAllianceMemberRole, PezpalletAssetConversionPoolInfo, PezpalletAssetRewardsPoolInfo, PezpalletAssetRewardsPoolStakerInfo, PezpalletAssetsApproval, PezpalletAssetsAssetAccount, PezpalletAssetsAssetDetails, PezpalletAssetsAssetMetadata, PezpalletBagsListListBag, PezpalletBagsListListNode, PezpalletBalancesAccountData, PezpalletBalancesBalanceLock, PezpalletBalancesReserveData, PezpalletBountiesBounty, PezpalletBrokerAutoRenewalRecord, PezpalletBrokerConfigRecord, PezpalletBrokerContributionRecord, PezpalletBrokerInstaPoolHistoryRecord, PezpalletBrokerLeaseRecordItem, PezpalletBrokerOnDemandRevenueRecord, PezpalletBrokerPoolIoRecord, PezpalletBrokerPotentialRenewalId, PezpalletBrokerPotentialRenewalRecord, PezpalletBrokerRegionId, PezpalletBrokerRegionRecord, PezpalletBrokerSaleInfoRecord, PezpalletBrokerScheduleItem, PezpalletBrokerStatusRecord, PezpalletChildBountiesChildBounty, PezpalletCollectiveVotes, PezpalletContractsStorageContractInfo, PezpalletContractsStorageDeletionQueueManager, PezpalletContractsWasmCodeInfo, PezpalletConvictionVotingVoteVoting, PezpalletCoreFellowshipMemberStatus, PezpalletCoreFellowshipParamsTypeU128, PezpalletCoreFellowshipWish, PezpalletDelegatedStakingAgentLedger, PezpalletDelegatedStakingDelegation, PezpalletDemocracyMetadataOwner, PezpalletDemocracyReferendumInfo, PezpalletDemocracyVoteThreshold, PezpalletDemocracyVoteVoting, PezpalletElectionProviderMultiPhasePhase, PezpalletElectionProviderMultiPhaseReadySolution, PezpalletElectionProviderMultiPhaseRoundSnapshot, PezpalletElectionProviderMultiPhaseSignedSignedSubmission, PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize, PezpalletElectionsPhragmenSeatHolder, PezpalletElectionsPhragmenVoter, PezpalletFastUnstakeUnstakeRequest, PezpalletGrandpaStoredPendingChange, PezpalletGrandpaStoredState, PezpalletIdentityAuthorityProperties, PezpalletIdentityProvider, PezpalletIdentityRegistrarInfo, PezpalletIdentityRegistration, PezpalletIdentityUsernameInformation, PezpalletImOnlineSr25519AppSr25519Public, PezpalletLotteryLotteryConfig, PezpalletMessageQueueBookState, PezpalletMessageQueuePage, PezpalletMigrationsMigrationCursor, PezpalletMixnetBoundedMixnode, PezpalletMultisigMultisig, PezpalletNftFractionalizationDetails, PezpalletNftsAttributeDeposit, PezpalletNftsAttributeNamespace, PezpalletNftsCollectionConfig, PezpalletNftsCollectionDetails, PezpalletNftsCollectionMetadata, PezpalletNftsItemConfig, PezpalletNftsItemDetails, PezpalletNftsItemMetadata, PezpalletNftsPendingSwap, PezpalletNisBid, PezpalletNisReceiptRecord, PezpalletNisSummaryRecord, PezpalletNominationPoolsBondedPoolInner, PezpalletNominationPoolsClaimPermission, PezpalletNominationPoolsPoolMember, PezpalletNominationPoolsRewardPool, PezpalletNominationPoolsSubPools, PezpalletPreimageOldRequestStatus, PezpalletPreimageRequestStatus, PezpalletProxyAnnouncement, PezpalletProxyProxyDefinition, PezpalletRankedCollectiveMemberRecord, PezpalletRankedCollectiveVoteRecord, PezpalletRecoveryActiveRecovery, PezpalletRecoveryRecoveryConfig, PezpalletReferendaReferendumInfoConvictionVotingTally, PezpalletReferendaReferendumInfoRankedCollectiveTally, PezpalletReviveStorageContractInfo, PezpalletReviveStorageDeletionQueueManager, PezpalletReviveWasmCodeInfo, PezpalletSalaryClaimantStatus, PezpalletSalaryStatusType, PezpalletSchedulerRetryConfig, PezpalletSchedulerScheduled, PezpalletSocietyBid, PezpalletSocietyCandidacy, PezpalletSocietyGroupParams, PezpalletSocietyIntakeRecord, PezpalletSocietyMemberRecord, PezpalletSocietyPayoutRecord, PezpalletSocietyTally, PezpalletSocietyVote, PezpalletStakingActiveEraInfo, PezpalletStakingEraRewardPoints, PezpalletStakingForcing, PezpalletStakingNominations, PezpalletStakingRewardDestination, PezpalletStakingSlashingSlashingSpans, PezpalletStakingSlashingSpanRecord, PezpalletStakingStakingLedger, PezpalletStakingUnappliedSlash, PezpalletStakingValidatorPrefs, PezpalletStateTrieMigrationMigrationLimits, PezpalletStateTrieMigrationMigrationTask, PezpalletTipsOpenTip, PezpalletTransactionPaymentReleases, PezpalletTransactionStorageTransactionInfo, PezpalletTreasuryProposal, PezpalletTreasurySpendStatus, PezpalletUniquesCollectionDetails, PezpalletUniquesCollectionMetadata, PezpalletUniquesItemDetails, PezpalletUniquesItemMetadata, PezpalletVestingReleases, PezpalletVestingVestingInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeEpochConfiguration, PezspConsensusBabeDigestsNextConfigDescriptor, PezspConsensusBabeDigestsPreDigest, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyMmrBeefyAuthoritySet, PezspConsensusGrandpaAppPublic, PezspCoreCryptoAccountId32, PezspCoreCryptoKeyTypeId, PezspMixnetAppPublic, PezspNposElectionsElectionScore, PezspRuntimeDigest, PezspStakingExposure, PezspStakingExposurePage, PezspStakingOffenceOffenceDetails, PezspStakingPagedExposureMetadata, PezspWeightsWeightV2Weight } from '@pezkuwi/types/lookup';
 import type { Observable } from '@pezkuwi/types/types';
 
 export type __AugmentedQuery<ApiType extends ApiTypes> = AugmentedQuery<ApiType, () => unknown>;
@@ -26,16 +26,16 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Maps members to their candidacy deposit.
        **/
-      depositOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u128>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      depositOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u128>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Maps member type to members of each type.
        **/
-      members: AugmentedQuery<ApiType, (arg: PezpalletAllianceMemberRole | 'Fellow' | 'Ally' | 'Retiring' | number | Uint8Array) => Observable<Vec<AccountId32>>, [PezpalletAllianceMemberRole]> & QueryableStorageEntry<ApiType, [PezpalletAllianceMemberRole]>;
+      members: AugmentedQuery<ApiType, (arg: PezpalletAllianceMemberRole | 'Fellow' | 'Ally' | 'Retiring' | number | Uint8Array) => Observable<Vec<PezspCoreCryptoAccountId32>>, [PezpalletAllianceMemberRole]> & QueryableStorageEntry<ApiType, [PezpalletAllianceMemberRole]>;
       /**
        * A set of members who gave a retirement notice. They can retire after the end of retirement
        * period stored as a future block number.
        **/
-      retiringMembers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      retiringMembers: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The IPFS CID of the alliance rule.
        * Fellows can propose a new rule with a super-majority.
@@ -45,7 +45,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The current list of accounts deemed unscrupulous. These accounts non grata cannot submit
        * candidacy.
        **/
-      unscrupulousAccounts: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      unscrupulousAccounts: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The current list of websites deemed unscrupulous.
        **/
@@ -62,15 +62,15 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
        * the proposal count at the time of creation was below threshold N).
        **/
-      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[AccountId32, Null]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
+      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, Null]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
       /**
        * The current members of the collective. This is stored sorted (just by value).
        **/
-      members: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      members: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The prime member that helps determine the default vote behavior in case of abstentions.
        **/
-      prime: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      prime: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Proposals so far.
        **/
@@ -133,7 +133,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * This cost may be [`None`], as determined by [`Config::Consideration`].
        **/
-      poolCost: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[AccountId32, u128]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
+      poolCost: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, u128]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * State and configuration of each staking pool.
        **/
@@ -141,7 +141,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * State of pool stakers.
        **/
-      poolStakers: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetRewardsPoolStakerInfo>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      poolStakers: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetRewardsPoolStakerInfo>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -151,13 +151,13 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The holdings of a specific account for a specific asset.
        **/
-      account: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsAssetAccount>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      account: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsAssetAccount>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Approved balance transfers. First balance is the amount approved for transfer. Second
        * is the amount of `T::Currency` reserved for storing this.
        * First key is the asset ID, second key is the owner and third key is the delegate.
        **/
-      approvals: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array, arg3: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsApproval>>, [u32, AccountId32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32, AccountId32]>;
+      approvals: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array, arg3: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsApproval>>, [u32, PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
       /**
        * Details of an asset.
        **/
@@ -187,11 +187,11 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * A map that stores freezes applied on an account for a given AssetId.
        **/
-      freezes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeFreezeReason>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      freezes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeFreezeReason>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * A map that stores the current total frozen balance for every account on a given AssetId.
        **/
-      frozenBalances: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<u128>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      frozenBalances: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u128>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -215,7 +215,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Author of current block.
        **/
-      author: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      author: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/
@@ -361,15 +361,15 @@ declare module '@pezkuwi/api-base/types/storage' {
        * `Balances` pallet, which uses a `StorageMap` to store balances data only.
        * NOTE: This is only used in the case that this pallet is used to store balances.
        **/
-      account: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletBalancesAccountData>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      account: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletBalancesAccountData>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Freeze locks on account balances.
        **/
-      freezes: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeFreezeReason>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      freezes: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeFreezeReason>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Holds on account balances.
        **/
-      holds: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeHoldReason>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      holds: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<PezframeSupportTokensMiscIdAmountRuntimeHoldReason>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The total units of outstanding deactivated balance in the system.
        **/
@@ -380,13 +380,13 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
        **/
-      locks: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Vec<PezpalletBalancesBalanceLock>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      locks: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<PezpalletBalancesBalanceLock>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Named reserves on some account balances.
        * 
        * Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
        **/
-      reserves: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Vec<PezpalletBalancesReserveData>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      reserves: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<PezpalletBalancesReserveData>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The total units issued in the system.
        **/
@@ -577,7 +577,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      contractInfoOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletContractsStorageContractInfo>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      contractInfoOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletContractsStorageContractInfo>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Evicted contracts that await child trie deletion.
        * 
@@ -635,12 +635,12 @@ declare module '@pezkuwi/api-base/types/storage' {
        * require. The actual amount locked on behalf of this pallet should always be the maximum of
        * this list.
        **/
-      classLocksFor: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Vec<ITuple<[u16, u128]>>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      classLocksFor: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<ITuple<[u16, u128]>>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * All voting for a particular voter in a particular voting class. We store the balance for the
        * number of votes that we have recorded.
        **/
-      votingFor: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u16 | AnyNumber | Uint8Array) => Observable<PezpalletConvictionVotingVoteVoting>, [AccountId32, u16]> & QueryableStorageEntry<ApiType, [AccountId32, u16]>;
+      votingFor: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u16 | AnyNumber | Uint8Array) => Observable<PezpalletConvictionVotingVoteVoting>, [PezspCoreCryptoAccountId32, u16]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u16]>;
       /**
        * Generic query
        **/
@@ -650,11 +650,11 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The status of a claimant.
        **/
-      member: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletCoreFellowshipMemberStatus>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      member: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletCoreFellowshipMemberStatus>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Some evidence together with the desired outcome for which it was presented.
        **/
-      memberEvidence: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<ITuple<[PezpalletCoreFellowshipWish, Bytes]>>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      memberEvidence: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<ITuple<[PezpalletCoreFellowshipWish, Bytes]>>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The overall status of the system.
        **/
@@ -671,15 +671,15 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
        * the proposal count at the time of creation was below threshold N).
        **/
-      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[AccountId32, u128]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
+      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, u128]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
       /**
        * The current members of the collective. This is stored sorted (just by value).
        **/
-      members: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      members: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The prime member that helps determine the default vote behavior in case of abstentions.
        **/
-      prime: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      prime: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Proposals so far.
        **/
@@ -705,7 +705,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Map of `Agent` to their `Ledger`.
        **/
-      agents: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletDelegatedStakingAgentLedger>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      agents: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletDelegatedStakingAgentLedger>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Counter for the related counted storage map
        **/
@@ -720,7 +720,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Implementation note: We are not using a double map with `delegator` and `agent` account
        * as keys since we want to restrict delegators to delegate only to one account at a time.
        **/
-      delegators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletDelegatedStakingDelegation>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      delegators: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletDelegatedStakingDelegation>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -731,7 +731,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * A record of who vetoed what. Maps proposal hash to a possible existent block number
        * (until when it may not be resubmitted) and who vetoed it.
        **/
-      blacklist: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[u32, Vec<AccountId32>]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
+      blacklist: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[u32, Vec<PezspCoreCryptoAccountId32>]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
       /**
        * Record of all proposals that have been subject to emergency cancellation.
        **/
@@ -741,7 +741,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: Safe, as increasing integer keys are safe.
        **/
-      depositOf: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[Vec<AccountId32>, u128]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
+      depositOf: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[Vec<PezspCoreCryptoAccountId32>, u128]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * True if the last referendum tabled was submitted externally. False if it was a public
        * proposal.
@@ -775,7 +775,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The public proposals. Unsorted. The second item is the proposal.
        **/
-      publicProps: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[u32, PezframeSupportPreimagesBounded, AccountId32]>>>, []> & QueryableStorageEntry<ApiType, []>;
+      publicProps: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[u32, PezframeSupportPreimagesBounded, PezspCoreCryptoAccountId32]>>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The next free referendum index, aka the number of referenda started so far.
        **/
@@ -792,7 +792,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE as `AccountId`s are crypto hashes anyway.
        **/
-      votingOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletDemocracyVoteVoting>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      votingOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletDemocracyVoteVoting>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -891,7 +891,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Invariant: Always sorted based on account id.
        **/
-      candidates: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[AccountId32, u128]>>>, []> & QueryableStorageEntry<ApiType, []>;
+      candidates: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[PezspCoreCryptoAccountId32, u128]>>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The total number of vote rounds that have happened, excluding the upcoming one.
        **/
@@ -914,7 +914,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE as `AccountId` is a crypto hash.
        **/
-      voting: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletElectionsPhragmenVoter>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      voting: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletElectionsPhragmenVoter>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -947,7 +947,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Keeps track of `AccountId` wishing to unstake and it's corresponding deposit.
        **/
-      queue: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u128>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      queue: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u128>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -1064,7 +1064,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: OK ― `AccountId` is a secure hash.
        **/
-      identityOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletIdentityRegistration>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      identityOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletIdentityRegistration>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Usernames that an authority has granted, but that the account controller has not confirmed
        * that they want it. Used primarily in cases where the `AccountId` cannot provide a signature
@@ -1073,7 +1073,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * First tuple item is the account and second is the acceptance deadline.
        **/
-      pendingUsernames: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<ITuple<[AccountId32, u32, PezpalletIdentityProvider]>>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      pendingUsernames: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, u32, PezpalletIdentityProvider]>>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
       /**
        * The set of registrars. Not expected to get very big as can only be added through a
        * special origin (likely a council motion).
@@ -1088,12 +1088,12 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: OK ― `AccountId` is a secure hash.
        **/
-      subsOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<ITuple<[u128, Vec<AccountId32>]>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      subsOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<ITuple<[u128, Vec<PezspCoreCryptoAccountId32>]>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The super-identity of an alternative "sub" identity together with its name, within that
        * context. If the account is not some other account's sub-identity, then just `None`.
        **/
-      superOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<ITuple<[AccountId32, Data]>>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      superOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, Data]>>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Usernames for which the authority that granted them has started the removal process by
        * unbinding them. Each unbinding username maps to its grace period expiry, which is the first
@@ -1113,7 +1113,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Identifies the primary username of an account.
        **/
-      usernameOf: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<Bytes>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      usernameOf: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<Bytes>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -1124,7 +1124,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * For each session index, we keep a mapping of `ValidatorId<T>` to the
        * number of blocks authored by the given authority.
        **/
-      authoredBlocks: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<u32>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      authoredBlocks: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<u32>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * The block number after which it's ok to send heartbeats in the current
        * session.
@@ -1156,7 +1156,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The lookup from index to account.
        **/
-      accounts: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[AccountId32, u128, bool]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
+      accounts: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, u128, bool]>>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * Generic query
        **/
@@ -1176,14 +1176,14 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
        **/
-      participants: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<ITuple<[u32, Vec<ITuple<[u8, u8]>>]>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      participants: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<ITuple<[u32, Vec<ITuple<[u8, u8]>>]>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Each ticket's owner.
        * 
        * May have residual storage from previous lotteries. Use `TicketsCount` to see which ones
        * are actually valid ticket mappings.
        **/
-      tickets: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<AccountId32>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
+      tickets: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * Total number of tickets sold.
        **/
@@ -1299,7 +1299,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The set of open multisig operations.
        **/
-      multisigs: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: U8aFixed | string | Uint8Array) => Observable<Option<PezpalletMultisigMultisig>>, [AccountId32, U8aFixed]> & QueryableStorageEntry<ApiType, [AccountId32, U8aFixed]>;
+      multisigs: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: U8aFixed | string | Uint8Array) => Observable<Option<PezpalletMultisigMultisig>>, [PezspCoreCryptoAccountId32, U8aFixed]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, U8aFixed]>;
       /**
        * Generic query
        **/
@@ -1320,7 +1320,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The items held by any given account; set out this way so that items owned by a single
        * account can be enumerated.
        **/
-      account: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [AccountId32, u32, u32]> & QueryableStorageEntry<ApiType, [AccountId32, u32, u32]>;
+      account: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [PezspCoreCryptoAccountId32, u32, u32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u32, u32]>;
       /**
        * Attributes of a collection.
        **/
@@ -1333,7 +1333,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The collections owned by any given account; set out this way so that collections owned by
        * a single account can be enumerated.
        **/
-      collectionAccount: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [AccountId32, u32]> & QueryableStorageEntry<ApiType, [AccountId32, u32]>;
+      collectionAccount: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [PezspCoreCryptoAccountId32, u32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u32]>;
       /**
        * Config of a collection.
        **/
@@ -1346,7 +1346,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The items in existence and their ownership details.
        * Stores collection roles as per account.
        **/
-      collectionRoleOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<u8>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      collectionRoleOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u8>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * The items in existence and their ownership details.
        **/
@@ -1354,7 +1354,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Item attribute approvals.
        **/
-      itemAttributesApprovalsOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<BTreeSet<AccountId32>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
+      itemAttributesApprovalsOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<BTreeSet<PezspCoreCryptoAccountId32>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
       /**
        * Config of an item.
        **/
@@ -1366,7 +1366,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * A price of an item.
        **/
-      itemPriceOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[u128, Option<AccountId32>]>>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
+      itemPriceOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[u128, Option<PezspCoreCryptoAccountId32>]>>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
       /**
        * Stores the `CollectionId` that is going to be used for the next collection.
        * This gets incremented whenever a new collection is created.
@@ -1375,7 +1375,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The collection, if any, of which an account is willing to take ownership.
        **/
-      ownershipAcceptance: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      ownershipAcceptance: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Handles all the pending swaps.
        **/
@@ -1419,7 +1419,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Map from a pool member account to their opted claim permission.
        **/
-      claimPermissions: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletNominationPoolsClaimPermission>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      claimPermissions: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletNominationPoolsClaimPermission>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Counter for the related counted storage map
        **/
@@ -1449,7 +1449,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * pool commissions that are > `GlobalMaxCommission`, necessary if a future
        * `GlobalMaxCommission` is lower than some current pool commissions.
        **/
-      globalMaxCommission: AugmentedQuery<ApiType, () => Observable<Option<Perbill>>, []> & QueryableStorageEntry<ApiType, []>;
+      globalMaxCommission: AugmentedQuery<ApiType, () => Observable<Option<u32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Ever increasing number of all pools created so far.
        **/
@@ -1492,14 +1492,14 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      poolMembers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletNominationPoolsPoolMember>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      poolMembers: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletNominationPoolsPoolMember>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * A reverse lookup from the pool's account id to its id.
        * 
        * This is only used for slashing and on automatic withdraw update. In all other instances, the
        * pool id is used, and the accounts are deterministically derived from it.
        **/
-      reversePoolIdLookup: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      reversePoolIdLookup: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Reward pools. This is where there rewards for each pool accumulate. When a members payout is
        * claimed, the balance comes out of the reward pool. Keyed by the bonded pools account.
@@ -1561,13 +1561,13 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The holdings of a specific account for a specific asset.
        **/
-      account: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsAssetAccount>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      account: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsAssetAccount>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Approved balance transfers. First balance is the amount approved for transfer. Second
        * is the amount of `T::Currency` reserved for storing this.
        * First key is the asset ID, second key is the owner and third key is the delegate.
        **/
-      approvals: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array, arg3: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsApproval>>, [u32, AccountId32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32, AccountId32]>;
+      approvals: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array, arg3: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletAssetsApproval>>, [u32, PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
       /**
        * Details of an asset.
        **/
@@ -1645,12 +1645,12 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The announcements made by the proxy (key).
        **/
-      announcements: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<ITuple<[Vec<PezpalletProxyAnnouncement>, u128]>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      announcements: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<ITuple<[Vec<PezpalletProxyAnnouncement>, u128]>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The set of account proxies. Maps the account which has delegated to the accounts
        * which are being delegated to, together with the amount held on deposit.
        **/
-      proxies: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<ITuple<[Vec<PezpalletProxyProxyDefinition>, u128]>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      proxies: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<ITuple<[Vec<PezpalletProxyProxyDefinition>, u128]>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -1672,12 +1672,12 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The index of each ranks's member into the group of members who have at least that rank.
        **/
-      idToIndex: AugmentedQuery<ApiType, (arg1: u16 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<u32>>, [u16, AccountId32]> & QueryableStorageEntry<ApiType, [u16, AccountId32]>;
+      idToIndex: AugmentedQuery<ApiType, (arg1: u16 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u32>>, [u16, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u16, PezspCoreCryptoAccountId32]>;
       /**
        * The members in the collective by index. All indices in the range `0..MemberCount` will
        * return `Some`, however a member's index is not guaranteed to remain unchanged over time.
        **/
-      indexToId: AugmentedQuery<ApiType, (arg1: u16 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<AccountId32>>, [u16, u32]> & QueryableStorageEntry<ApiType, [u16, u32]>;
+      indexToId: AugmentedQuery<ApiType, (arg1: u16 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [u16, u32]> & QueryableStorageEntry<ApiType, [u16, u32]>;
       /**
        * The number of members in the collective who have at least the rank according to the index
        * of the vec.
@@ -1686,11 +1686,11 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The current members of the collective.
        **/
-      members: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletRankedCollectiveMemberRecord>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      members: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletRankedCollectiveMemberRecord>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Votes on a given proposal, if it is ongoing.
        **/
-      voting: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletRankedCollectiveVoteRecord>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      voting: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletRankedCollectiveVoteRecord>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       votingCleanup: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<Bytes>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * Generic query
@@ -1738,17 +1738,17 @@ declare module '@pezkuwi/api-base/types/storage' {
        * First account is the account to be recovered, and the second account
        * is the user trying to recover the account.
        **/
-      activeRecoveries: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletRecoveryActiveRecovery>>, [AccountId32, AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32, AccountId32]>;
+      activeRecoveries: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletRecoveryActiveRecovery>>, [PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
       /**
        * The list of allowed proxy accounts.
        * 
        * Map from the user who can access it to the recovered account.
        **/
-      proxy: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AccountId32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      proxy: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The set of recoverable accounts and their recovery configuration.
        **/
-      recoverable: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletRecoveryRecoveryConfig>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      recoverable: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletRecoveryRecoveryConfig>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -1821,7 +1821,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Register your `AccountId32` using [`Pallet::map_account`] in order to
        * use it with this pallet.
        **/
-      originalAccount: AugmentedQuery<ApiType, (arg: H160 | string | Uint8Array) => Observable<Option<AccountId32>>, [H160]> & QueryableStorageEntry<ApiType, [H160]>;
+      originalAccount: AugmentedQuery<ApiType, (arg: H160 | string | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [H160]> & QueryableStorageEntry<ApiType, [H160]>;
       /**
        * A mapping from a contract's code hash to its code.
        **/
@@ -1838,7 +1838,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * This helps governance to have an overview of outstanding deposits that should be returned or
        * slashed.
        **/
-      deposits: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<u128>>, [AccountId32, u32]> & QueryableStorageEntry<ApiType, [AccountId32, u32]>;
+      deposits: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<u128>>, [PezspCoreCryptoAccountId32, u32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u32]>;
       /**
        * Contains the last block number that the safe-mode will remain entered in.
        * 
@@ -1856,7 +1856,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The status of a claimant.
        **/
-      claimant: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSalaryClaimantStatus>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      claimant: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSalaryClaimantStatus>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The overall status of the system.
        **/
@@ -1903,15 +1903,15 @@ declare module '@pezkuwi/api-base/types/storage' {
        * disabled using binary search. It gets cleared when `on_session_ending` returns
        * a new set of identities.
        **/
-      disabledValidators: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[u32, Perbill]>>>, []> & QueryableStorageEntry<ApiType, []>;
+      disabledValidators: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[u32, u32]>>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The owner of a key. The key is the `KeyTypeId` + the encoded key.
        **/
-      keyOwner: AugmentedQuery<ApiType, (arg: ITuple<[PezspCoreCryptoKeyTypeId, Bytes]> | [PezspCoreCryptoKeyTypeId | string | Uint8Array, Bytes | string | Uint8Array]) => Observable<Option<AccountId32>>, [ITuple<[PezspCoreCryptoKeyTypeId, Bytes]>]> & QueryableStorageEntry<ApiType, [ITuple<[PezspCoreCryptoKeyTypeId, Bytes]>]>;
+      keyOwner: AugmentedQuery<ApiType, (arg: ITuple<[PezspCoreCryptoKeyTypeId, Bytes]> | [PezspCoreCryptoKeyTypeId | string | Uint8Array, Bytes | string | Uint8Array]) => Observable<Option<PezspCoreCryptoAccountId32>>, [ITuple<[PezspCoreCryptoKeyTypeId, Bytes]>]> & QueryableStorageEntry<ApiType, [ITuple<[PezspCoreCryptoKeyTypeId, Bytes]>]>;
       /**
        * The next session keys for a validator.
        **/
-      nextKeys: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<KitchensinkRuntimeSessionKeys>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      nextKeys: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<KitchensinkRuntimeSessionKeys>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * True if the underlying economic identities or weighting behind the validators
        * has changed in the queued validator set.
@@ -1921,11 +1921,11 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The queued keys for the next session. When the next session begins, these keys
        * will be used to determine the validator's session keys.
        **/
-      queuedKeys: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[AccountId32, KitchensinkRuntimeSessionKeys]>>>, []> & QueryableStorageEntry<ApiType, []>;
+      queuedKeys: AugmentedQuery<ApiType, () => Observable<Vec<ITuple<[PezspCoreCryptoAccountId32, KitchensinkRuntimeSessionKeys]>>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The current set of validators.
        **/
-      validators: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      validators: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/
@@ -1936,7 +1936,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The current bids, stored ordered by the value of the bid.
        **/
       bids: AugmentedQuery<ApiType, () => Observable<Vec<PezpalletSocietyBid>>, []> & QueryableStorageEntry<ApiType, []>;
-      candidates: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyCandidacy>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      candidates: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyCandidacy>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The number of challenge rounds there have been. Used to identify stale DefenderVotes.
        **/
@@ -1944,24 +1944,24 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Votes for the defender, keyed by challenge round.
        **/
-      defenderVotes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyVote>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      defenderVotes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyVote>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * The defending member currently being challenged, along with a running tally of votes.
        **/
-      defending: AugmentedQuery<ApiType, () => Observable<Option<ITuple<[AccountId32, AccountId32, PezpalletSocietyTally]>>>, []> & QueryableStorageEntry<ApiType, []>;
+      defending: AugmentedQuery<ApiType, () => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32, PezpalletSocietyTally]>>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The first member.
        **/
-      founder: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      founder: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The most primary from the most recently approved rank 0 members in the society.
        **/
-      head: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      head: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The current items in `Members` keyed by their unique index. Keys are densely populated
        * `0..MemberCount` (does not include `MemberCount`).
        **/
-      memberByIndex: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<AccountId32>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
+      memberByIndex: AugmentedQuery<ApiType, (arg: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [u32]> & QueryableStorageEntry<ApiType, [u32]>;
       /**
        * The number of items in `Members` currently. (Doesn't include `SuspendedMembers`.)
        **/
@@ -1969,7 +1969,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The current members and their rank. Doesn't include `SuspendedMembers`.
        **/
-      members: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyMemberRecord>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      members: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyMemberRecord>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * At the end of the claim period, this contains the most recently approved members (along with
        * their bid and round ID) who is from the most recent round with the lowest bid. They will
@@ -1983,7 +1983,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Information regarding rank-0 payouts, past and future.
        **/
-      payouts: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletSocietyPayoutRecord>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      payouts: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletSocietyPayoutRecord>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Amount of our account balance that is specifically for the next round's bid(s).
        **/
@@ -2000,19 +2000,19 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The current skeptic.
        **/
-      skeptic: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      skeptic: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The set of suspended members, with their old membership record.
        **/
-      suspendedMembers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyMemberRecord>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      suspendedMembers: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyMemberRecord>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Clear-cursor for Vote, map from Candidate -> (Maybe) Cursor.
        **/
-      voteClearCursor: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<Bytes>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      voteClearCursor: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<Bytes>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Double map from Candidate -> Voter -> (Maybe) Vote.
        **/
-      votes: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyVote>>, [AccountId32, AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32, AccountId32]>;
+      votes: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletSocietyVote>>, [PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -2031,7 +2031,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      bonded: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AccountId32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      bonded: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * A mapping from still-bonded eras to the first session index of that era.
        * 
@@ -2049,7 +2049,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * nominators. The threshold is compared to the actual number of validators / nominators
        * (`CountFor*`) in the system compared to the configured max (`Max*Count`).
        **/
-      chillThreshold: AugmentedQuery<ApiType, () => Observable<Option<Percent>>, []> & QueryableStorageEntry<ApiType, []>;
+      chillThreshold: AugmentedQuery<ApiType, () => Observable<Option<u8>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * History of claimed paged rewards by era and validator.
        * 
@@ -2058,7 +2058,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * It is removed after [`Config::HistoryDepth`] eras.
        **/
-      claimedRewards: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Vec<u32>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      claimedRewards: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Vec<u32>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Counter for the related counted storage map
        **/
@@ -2099,7 +2099,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Note: Deprecated since v14. Use `EraInfo` instead to work with exposures.
        **/
-      erasStakers: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<PezspStakingExposure>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      erasStakers: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezspStakingExposure>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Clipped Exposure of validator at era.
        * 
@@ -2118,7 +2118,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Note: Deprecated since v14. Use `EraInfo` instead to work with exposures.
        **/
-      erasStakersClipped: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<PezspStakingExposure>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      erasStakersClipped: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezspStakingExposure>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Summary of validator exposure at a given era.
        * 
@@ -2133,7 +2133,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Is it removed after [`Config::HistoryDepth`] eras.
        * If stakers hasn't been set or has been removed then empty overview is returned.
        **/
-      erasStakersOverview: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<PezspStakingPagedExposureMetadata>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      erasStakersOverview: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezspStakingPagedExposureMetadata>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Paginated exposure of a validator at given era.
        * 
@@ -2142,7 +2142,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * This is cleared after [`Config::HistoryDepth`] eras.
        **/
-      erasStakersPaged: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspStakingExposurePage>>, [u32, AccountId32, u32]> & QueryableStorageEntry<ApiType, [u32, AccountId32, u32]>;
+      erasStakersPaged: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspStakingExposurePage>>, [u32, PezspCoreCryptoAccountId32, u32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32, u32]>;
       /**
        * The session index at which the era start for the last [`Config::HistoryDepth`] eras.
        * 
@@ -2162,7 +2162,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Is it removed after [`Config::HistoryDepth`] eras.
        **/
-      erasValidatorPrefs: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<PezpalletStakingValidatorPrefs>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      erasValidatorPrefs: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletStakingValidatorPrefs>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * The total validator era payout for the last [`Config::HistoryDepth`] eras.
        * 
@@ -2178,14 +2178,14 @@ declare module '@pezkuwi/api-base/types/storage' {
        * easy to initialize and the performance hit is minimal (we expect no more than four
        * invulnerables) and restricted to testnets.
        **/
-      invulnerables: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      invulnerables: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Map from all (unlocked) "controller" accounts to the info regarding the staking.
        * 
        * Note: All the reads and mutations to this storage *MUST* be done through the methods exposed
        * by [`StakingLedger`] to ensure data and lock consistency.
        **/
-      ledger: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingStakingLedger>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      ledger: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingStakingLedger>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The maximum nominator count before we stop allowing new validators to join.
        * 
@@ -2197,7 +2197,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * is used for stake rewards.
        * See [Era payout](./index.html#era-payout).
        **/
-      maxStakedRewards: AugmentedQuery<ApiType, () => Observable<Option<Percent>>, []> & QueryableStorageEntry<ApiType, []>;
+      maxStakedRewards: AugmentedQuery<ApiType, () => Observable<Option<u8>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The maximum validator count before we stop allowing new validators to join.
        * 
@@ -2209,7 +2209,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * If set to `0`, no limit exists.
        **/
-      minCommission: AugmentedQuery<ApiType, () => Observable<Perbill>, []> & QueryableStorageEntry<ApiType, []>;
+      minCommission: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The minimum active nominator stake of the last successful election.
        **/
@@ -2247,32 +2247,32 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      nominators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingNominations>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      nominators: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingNominations>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * All slashing events on nominators, mapped by era to the highest slash value of the era.
        **/
-      nominatorSlashInEra: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<u128>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      nominatorSlashInEra: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u128>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Where the reward payment should be made. Keyed by stash.
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      payee: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingRewardDestination>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      payee: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingRewardDestination>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Slashing spans for stash accounts.
        **/
-      slashingSpans: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingSlashingSlashingSpans>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      slashingSpans: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletStakingSlashingSlashingSpans>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * The percentage of the slash that is distributed to reporters.
        * 
        * The rest of the slashed value is handled by the `Slash`.
        **/
-      slashRewardFraction: AugmentedQuery<ApiType, () => Observable<Perbill>, []> & QueryableStorageEntry<ApiType, []>;
+      slashRewardFraction: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Records information about the maximum slash of a stash within a slashing span,
        * as well as how much reward has been paid out.
        **/
-      spanSlash: AugmentedQuery<ApiType, (arg: ITuple<[AccountId32, u32]> | [AccountId32 | string | Uint8Array, u32 | AnyNumber | Uint8Array]) => Observable<PezpalletStakingSlashingSpanRecord>, [ITuple<[AccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[AccountId32, u32]>]>;
+      spanSlash: AugmentedQuery<ApiType, (arg: ITuple<[PezspCoreCryptoAccountId32, u32]> | string | Uint8Array) => Observable<PezpalletStakingSlashingSpanRecord>, [ITuple<[PezspCoreCryptoAccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[PezspCoreCryptoAccountId32, u32]>]>;
       /**
        * All unapplied slashes that are queued for later.
        **/
@@ -2286,12 +2286,12 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * TWOX-NOTE: SAFE since `AccountId` is a secure hash.
        **/
-      validators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezpalletStakingValidatorPrefs>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      validators: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezpalletStakingValidatorPrefs>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * All slashing events on validators, mapped by era to the highest slash proportion
        * and slash value of the era.
        **/
-      validatorSlashInEra: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<ITuple<[Perbill, u128]>>>, [u32, AccountId32]> & QueryableStorageEntry<ApiType, [u32, AccountId32]>;
+      validatorSlashInEra: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<ITuple<[u32, u128]>>>, [u32, PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [u32, PezspCoreCryptoAccountId32]>;
       /**
        * Stakers whose funds are managed by other pallets.
        * 
@@ -2300,7 +2300,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * directly via this pallet. Instead, these accounts are managed by other pallets and accessed
        * via low level apis. We keep track of them to do minimal integrity checks.
        **/
-      virtualStakers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<Null>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      virtualStakers: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<Null>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -2335,7 +2335,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The `AccountId` of the sudo key.
        **/
-      key: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      key: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/
@@ -2345,7 +2345,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The full account information for a particular account ID.
        **/
-      account: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<PezframeSystemAccountInfo>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      account: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<PezframeSystemAccountInfo>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Total length (in bytes) for all extrinsics put together, for the current block.
        **/
@@ -2466,15 +2466,15 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
        * the proposal count at the time of creation was below threshold N).
        **/
-      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[AccountId32, Null]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
+      costOf: AugmentedQuery<ApiType, (arg: H256 | string | Uint8Array) => Observable<Option<ITuple<[PezspCoreCryptoAccountId32, Null]>>>, [H256]> & QueryableStorageEntry<ApiType, [H256]>;
       /**
        * The current members of the collective. This is stored sorted (just by value).
        **/
-      members: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      members: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The prime member that helps determine the default vote behavior in case of abstentions.
        **/
-      prime: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      prime: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Proposals so far.
        **/
@@ -2500,11 +2500,11 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * The current membership, stored as an ordered Vec.
        **/
-      members: AugmentedQuery<ApiType, () => Observable<Vec<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      members: AugmentedQuery<ApiType, () => Observable<Vec<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * The current prime member, if one exists.
        **/
-      prime: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
+      prime: AugmentedQuery<ApiType, () => Observable<Option<PezspCoreCryptoAccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/
@@ -2642,7 +2642,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The items held by any given account; set out this way so that items owned by a single
        * account can be enumerated.
        **/
-      account: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [AccountId32, u32, u32]> & QueryableStorageEntry<ApiType, [AccountId32, u32, u32]>;
+      account: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array, arg3: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [PezspCoreCryptoAccountId32, u32, u32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u32, u32]>;
       /**
        * The items in existence and their ownership details.
        **/
@@ -2659,7 +2659,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * The collections owned by any given account; set out this way so that collections owned by
        * a single account can be enumerated.
        **/
-      classAccount: AugmentedQuery<ApiType, (arg1: AccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [AccountId32, u32]> & QueryableStorageEntry<ApiType, [AccountId32, u32]>;
+      classAccount: AugmentedQuery<ApiType, (arg1: PezspCoreCryptoAccountId32 | string | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<Null>>, [PezspCoreCryptoAccountId32, u32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32, u32]>;
       /**
        * Metadata of a collection.
        **/
@@ -2675,11 +2675,11 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Price of an asset instance.
        **/
-      itemPriceOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[u128, Option<AccountId32>]>>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
+      itemPriceOf: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: u32 | AnyNumber | Uint8Array) => Observable<Option<ITuple<[u128, Option<PezspCoreCryptoAccountId32>]>>>, [u32, u32]> & QueryableStorageEntry<ApiType, [u32, u32]>;
       /**
        * The collection, if any, of which an account is willing to take ownership.
        **/
-      ownershipAcceptance: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<u32>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      ownershipAcceptance: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<u32>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -2695,7 +2695,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * Information regarding the vesting of a given account.
        **/
-      vesting: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<Vec<PezpalletVestingVestingInfo>>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      vesting: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<Vec<PezpalletVestingVestingInfo>>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/
@@ -2717,7 +2717,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * 
        * Nodes store links forward and back within their respective bags.
        **/
-      listNodes: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<PezpalletBagsListListNode>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      listNodes: AugmentedQuery<ApiType, (arg: PezspCoreCryptoAccountId32 | string | Uint8Array) => Observable<Option<PezpalletBagsListListNode>>, [PezspCoreCryptoAccountId32]> & QueryableStorageEntry<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * Generic query
        **/

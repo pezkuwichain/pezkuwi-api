@@ -1,5 +1,5 @@
 {
-  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "author": "PezkuwiChain <dev@pezkuwichain.io>",
   "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
   "description": "Transport providers for the API",
   "engines": {
@@ -19,7 +19,7 @@
   ],
   "type": "module",
   "types": "./index.d.ts",
-  "version": "16.5.22",
+  "version": "16.5.34",
   "main": "./cjs/index.js",
   "module": "./index.js",
   "exports": {
@@ -325,14 +325,14 @@
     }
   },
   "dependencies": {
-    "@pezkuwi/keyring": "14.0.13",
-    "@pezkuwi/types": "16.5.22",
-    "@pezkuwi/types-support": "16.5.22",
-    "@pezkuwi/util": "14.0.13",
-    "@pezkuwi/util-crypto": "14.0.13",
-    "@pezkuwi/x-fetch": "14.0.13",
-    "@pezkuwi/x-global": "14.0.13",
-    "@pezkuwi/x-ws": "14.0.13",
+    "@pezkuwi/keyring": "14.0.23",
+    "@pezkuwi/types": "16.5.34",
+    "@pezkuwi/types-support": "16.5.34",
+    "@pezkuwi/util": "14.0.23",
+    "@pezkuwi/util-crypto": "14.0.23",
+    "@pezkuwi/x-fetch": "14.0.23",
+    "@pezkuwi/x-global": "14.0.23",
+    "@pezkuwi/x-ws": "14.0.23",
     "eventemitter3": "^5.0.1",
     "mock-socket": "^9.3.1",
     "nock": "^13.5.5",

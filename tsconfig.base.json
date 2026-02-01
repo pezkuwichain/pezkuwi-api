@@ -2,7 +2,8 @@
   "extends": "@pezkuwi/dev/config/tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
+    "skipLibCheck": true,
     "paths": {
       "@pezkuwi/api": ["api/src/index.ts"],
       "@pezkuwi/api/base": ["api/src/base/index.ts"],

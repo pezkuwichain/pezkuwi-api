@@ -6,7 +6,7 @@ import type { UInt } from '@pezkuwi/types-codec';
 import type { TypeDef } from '@pezkuwi/types-create/types';
 import type { ModuleTypes, TypeImports } from './imports.js';
 
-import { GenericAccountId, GenericCall, GenericLookupSource, GenericVote } from '@pezkuwi/types/generic';
+import { GenericAccountId, GenericCall, GenericLookupSource, GenericMultiAddress, GenericVote } from '@pezkuwi/types/generic';
 import { AllConvictions } from '@pezkuwi/types/interfaces/democracy/definitions';
 import { AbstractInt, bool, Compact, Enum, Null, Option, Struct, Tuple, Vec, WrapperKeepOpaque, WrapperOpaque } from '@pezkuwi/types-codec';
 import { getTypeDef, TypeDefInfo } from '@pezkuwi/types-create';
@@ -44,6 +44,18 @@ export function getSimilarTypes (registry: Registry, definitions: Record<string,
     return ['null'];
   }
 
+  // Handle lookup types by name pattern before class-based checks
+  // Lookup types like PezspRuntimeMultiAddress may not be properly registered as children of GenericMultiAddress
+  if (type.includes('MultiAddress') || type.endsWith('RuntimeMultiAddress')) {
+    possibleTypes.push('AccountId', 'AccountIndex', 'Address', 'LookupSource', 'string', 'Uint8Array');
+
+    return possibleTypes;
+  } else if (type.includes('AccountId32') || type.endsWith('CryptoAccountId32')) {
+    possibleTypes.push('string', 'Uint8Array');
+
+    return possibleTypes;
+  }
+
   const Clazz = registry.createClass(type);
 
   if (isChildClass(Vec, Clazz)) {
@@ -68,6 +80,10 @@ export function getSimilarTypes (registry: Registry, definitions: Record<string,
         throw new Error(`Unhandled subtype in Vec, ${stringify(subDef)}`);
       }
     }
+  } else if (isChildClass(GenericMultiAddress, Clazz)) {
+    // MultiAddress can accept string addresses, Uint8Array, or various address variants
+    // Check before Enum since GenericMultiAddress extends Enum
+    possibleTypes.push('AccountId', 'AccountIndex', 'Address', 'LookupSource', 'string', 'Uint8Array');
   } else if (isChildClass(Enum, Clazz)) {
     const { defKeys, isBasic } = new (Clazz as CodecClass)(registry) as Enum;
     const keys = defKeys.filter((v) => !v.startsWith('__Unused'));

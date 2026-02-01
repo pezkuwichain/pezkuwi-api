@@ -1,5 +1,5 @@
 {
-  "author": "Jaco Greeff <jacogr@gmail.com>",
+  "author": "PezkuwiChain <dev@pezkuwichain.io>",
   "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
   "engines": {
     "node": ">=18.14"
@@ -14,7 +14,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "16.5.18",
+  "version": "16.5.24",
   "versions": {
     "git": "16.5.18",
     "npm": "16.5.22"
@@ -40,7 +40,7 @@
     "test:one": "pezkuwi-dev-run-test --env node"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "0.85.7",
+    "@pezkuwi/dev": "^0.85.11",
     "@pezkuwi/dev-test": "0.85.7",
     "@pezkuwi/dev-ts": "0.85.7",
     "@pezkuwi/typegen": "workspace:*",
@@ -48,7 +48,7 @@
     "@types/yargs": "^17.0.35"
   },
   "resolutions": {
-    "@pezkuwi/dev": "^0.85.7",
+    "@pezkuwi/dev": "^0.85.11",
     "@pezkuwi/dev-test": "^0.85.7",
     "@pezkuwi/dev-ts": "^0.85.7",
     "@pezkuwi/hw-ledger": "14.0.11",

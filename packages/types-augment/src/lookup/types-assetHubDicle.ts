@@ -7,9 +7,15 @@ import '@pezkuwi/types/lookup';
 
 import type { BTreeMap, Bytes, Compact, Enum, Null, Option, Struct, U256, U8aFixed, Vec, bool, u128, u16, u32, u64 } from '@pezkuwi/types-codec';
 import type { ITuple } from '@pezkuwi/types-codec/types';
-import type { AccountId32, H160, H256, MultiAddress, PerU16, Permill, Perquintill, RuntimeCall } from '@pezkuwi/types/interfaces/runtime';
+import type { AccountId32, H160, H256, MultiAddress, RuntimeCall } from '@pezkuwi/types/interfaces/runtime';
 
 declare module '@pezkuwi/types/lookup' {
+    /** @name PezspCoreCryptoAccountId32 (0) */
+    interface PezspCoreCryptoAccountId32 extends AccountId32 {}
+
+    /** @name PezspRuntimeMultiAddress (1) */
+    interface PezspRuntimeMultiAddress extends MultiAddress {}
+
   /** @name AssetHubDicleRuntimeRuntimeTask (32) */
   type AssetHubDicleRuntimeRuntimeTask = Null;
 
@@ -139,27 +145,27 @@ declare module '@pezkuwi/types/lookup' {
   /** @name AssetHubDicleRuntimeDynamicParamsIssuanceParametersValue (68) */
   interface AssetHubDicleRuntimeDynamicParamsIssuanceParametersValue extends Enum {
     readonly isMinInflation: boolean;
-    readonly asMinInflation: Perquintill;
+    readonly asMinInflation: u64;
     readonly isMaxInflation: boolean;
-    readonly asMaxInflation: Perquintill;
+    readonly asMaxInflation: u64;
     readonly isIdealStake: boolean;
-    readonly asIdealStake: Perquintill;
+    readonly asIdealStake: u64;
     readonly isFalloff: boolean;
-    readonly asFalloff: Perquintill;
+    readonly asFalloff: u64;
     readonly type: 'MinInflation' | 'MaxInflation' | 'IdealStake' | 'Falloff';
   }
 
   /** @name AssetHubDicleRuntimeDynamicParamsTreasuryParametersValue (70) */
   interface AssetHubDicleRuntimeDynamicParamsTreasuryParametersValue extends Enum {
     readonly isBurnPortion: boolean;
-    readonly asBurnPortion: Permill;
+    readonly asBurnPortion: u32;
     readonly isBurnDestination: boolean;
     readonly asBurnDestination: AssetHubDicleRuntimeTreasuryBurnDestinationAccount;
     readonly type: 'BurnPortion' | 'BurnDestination';
   }
 
   /** @name AssetHubDicleRuntimeTreasuryBurnDestinationAccount (72) */
-  interface AssetHubDicleRuntimeTreasuryBurnDestinationAccount extends Option<AccountId32> {}
+  interface AssetHubDicleRuntimeTreasuryBurnDestinationAccount extends Option<PezspCoreCryptoAccountId32> {}
 
   /** @name AssetHubDicleRuntimeDynamicParamsStakingElectionParametersValue (74) */
   interface AssetHubDicleRuntimeDynamicParamsStakingElectionParametersValue extends Enum {
@@ -238,20 +244,20 @@ declare module '@pezkuwi/types/lookup' {
   /** @name AssetHubDicleRuntimeDynamicParamsIssuanceParameters (309) */
   interface AssetHubDicleRuntimeDynamicParamsIssuanceParameters extends Enum {
     readonly isMinInflation: boolean;
-    readonly asMinInflation: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceMinInflation, Option<Perquintill>]>;
+    readonly asMinInflation: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceMinInflation, Option<u64>]>;
     readonly isMaxInflation: boolean;
-    readonly asMaxInflation: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceMaxInflation, Option<Perquintill>]>;
+    readonly asMaxInflation: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceMaxInflation, Option<u64>]>;
     readonly isIdealStake: boolean;
-    readonly asIdealStake: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceIdealStake, Option<Perquintill>]>;
+    readonly asIdealStake: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceIdealStake, Option<u64>]>;
     readonly isFalloff: boolean;
-    readonly asFalloff: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceFalloff, Option<Perquintill>]>;
+    readonly asFalloff: ITuple<[AssetHubDicleRuntimeDynamicParamsIssuanceFalloff, Option<u64>]>;
     readonly type: 'MinInflation' | 'MaxInflation' | 'IdealStake' | 'Falloff';
   }
 
   /** @name AssetHubDicleRuntimeDynamicParamsTreasuryParameters (311) */
   interface AssetHubDicleRuntimeDynamicParamsTreasuryParameters extends Enum {
     readonly isBurnPortion: boolean;
-    readonly asBurnPortion: ITuple<[AssetHubDicleRuntimeDynamicParamsTreasuryBurnPortion, Option<Permill>]>;
+    readonly asBurnPortion: ITuple<[AssetHubDicleRuntimeDynamicParamsTreasuryBurnPortion, Option<u32>]>;
     readonly isBurnDestination: boolean;
     readonly asBurnDestination: ITuple<[AssetHubDicleRuntimeDynamicParamsTreasuryBurnDestination, Option<AssetHubDicleRuntimeTreasuryBurnDestinationAccount>]>;
     readonly type: 'BurnPortion' | 'BurnDestination';
@@ -352,7 +358,7 @@ declare module '@pezkuwi/types/lookup' {
   interface PezpalletRemoteProxyCall extends Enum {
     readonly isRemoteProxy: boolean;
     readonly asRemoteProxy: {
-      readonly real: MultiAddress;
+      readonly real: PezspRuntimeMultiAddress;
       readonly forceProxyType: Option<AssetHubDicleRuntimeProxyType>;
       readonly call: RuntimeCall;
       readonly proof: PezpalletRemoteProxyRemoteProxyProof;
@@ -363,7 +369,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isRemoteProxyWithRegisteredProof: boolean;
     readonly asRemoteProxyWithRegisteredProof: {
-      readonly real: MultiAddress;
+      readonly real: PezspRuntimeMultiAddress;
       readonly forceProxyType: Option<AssetHubDicleRuntimeProxyType>;
       readonly call: RuntimeCall;
     } & Struct;
@@ -383,34 +389,34 @@ declare module '@pezkuwi/types/lookup' {
   /** @name AssetHubDicleRuntimeStakingNposCompactSolution24 (466) */
   interface AssetHubDicleRuntimeStakingNposCompactSolution24 extends Struct {
     readonly votes1: Vec<ITuple<[Compact<u32>, Compact<u16>]>>;
-    readonly votes2: Vec<ITuple<[Compact<u32>, ITuple<[Compact<u16>, Compact<PerU16>]>, Compact<u16>]>>;
-    readonly votes3: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes4: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes5: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes6: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes7: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes8: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes9: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes10: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes11: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes12: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes13: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes14: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes15: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes16: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes17: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes18: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes19: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes20: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes21: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes22: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes23: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes24: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
+    readonly votes2: Vec<ITuple<[Compact<u32>, ITuple<[Compact<u16>, Compact<u16>]>, Compact<u16>]>>;
+    readonly votes3: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes4: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes5: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes6: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes7: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes8: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes9: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes10: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes11: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes12: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes13: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes14: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes15: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes16: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes17: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes18: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes19: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes20: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes21: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes22: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes23: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes24: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
   }
 
   /** @name PezpalletProxyProxyDefinitionDicleRuntimeConstantsProxyProxyType (598) */
   interface PezpalletProxyProxyDefinitionDicleRuntimeConstantsProxyProxyType extends Struct {
-    readonly delegate: AccountId32;
+    readonly delegate: PezspCoreCryptoAccountId32;
     readonly proxyType: DicleRuntimeConstantsProxyProxyType;
     readonly delay: u32;
   }
@@ -427,11 +433,11 @@ declare module '@pezkuwi/types/lookup' {
   /** @name PezpalletRcMigratorRecoveryPortableRecoveryMessage (746) */
   interface PezpalletRcMigratorRecoveryPortableRecoveryMessage extends Enum {
     readonly isRecoverable: boolean;
-    readonly asRecoverable: ITuple<[AccountId32, PezpalletRcMigratorRecoveryPortableRecoveryConfig]>;
+    readonly asRecoverable: ITuple<[PezspCoreCryptoAccountId32, PezpalletRcMigratorRecoveryPortableRecoveryConfig]>;
     readonly isActiveRecoveries: boolean;
-    readonly asActiveRecoveries: ITuple<[AccountId32, AccountId32, PezpalletRcMigratorRecoveryPortableActiveRecovery]>;
+    readonly asActiveRecoveries: ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32, PezpalletRcMigratorRecoveryPortableActiveRecovery]>;
     readonly isProxy: boolean;
-    readonly asProxy: ITuple<[AccountId32, AccountId32]>;
+    readonly asProxy: ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
     readonly type: 'Recoverable' | 'ActiveRecoveries' | 'Proxy';
   }
 
@@ -445,7 +451,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezpalletRcMigratorRecoveryPortableRecoveryFriends (749) */
   interface PezpalletRcMigratorRecoveryPortableRecoveryFriends extends Struct {
-    readonly friends: Vec<AccountId32>;
+    readonly friends: Vec<PezspCoreCryptoAccountId32>;
   }
 
   /** @name PezpalletRcMigratorRecoveryPortableActiveRecovery (752) */
@@ -460,21 +466,21 @@ declare module '@pezkuwi/types/lookup' {
     readonly isValues: boolean;
     readonly asValues: PezpalletRcMigratorSocietySocietyValues;
     readonly isMember: boolean;
-    readonly asMember: ITuple<[AccountId32, PezpalletRcMigratorSocietyPortableMemberRecord]>;
+    readonly asMember: ITuple<[PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableMemberRecord]>;
     readonly isPayout: boolean;
-    readonly asPayout: ITuple<[AccountId32, PezpalletRcMigratorSocietyPortablePayoutRecord]>;
+    readonly asPayout: ITuple<[PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortablePayoutRecord]>;
     readonly isMemberByIndex: boolean;
-    readonly asMemberByIndex: ITuple<[u32, AccountId32]>;
+    readonly asMemberByIndex: ITuple<[u32, PezspCoreCryptoAccountId32]>;
     readonly isSuspendedMembers: boolean;
-    readonly asSuspendedMembers: ITuple<[AccountId32, PezpalletRcMigratorSocietyPortableMemberRecord]>;
+    readonly asSuspendedMembers: ITuple<[PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableMemberRecord]>;
     readonly isCandidates: boolean;
-    readonly asCandidates: ITuple<[AccountId32, PezpalletRcMigratorSocietyPortableCandidacy]>;
+    readonly asCandidates: ITuple<[PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableCandidacy]>;
     readonly isVotes: boolean;
-    readonly asVotes: ITuple<[AccountId32, AccountId32, PezpalletRcMigratorSocietyPortableVote]>;
+    readonly asVotes: ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableVote]>;
     readonly isVoteClearCursor: boolean;
-    readonly asVoteClearCursor: ITuple<[AccountId32, Bytes]>;
+    readonly asVoteClearCursor: ITuple<[PezspCoreCryptoAccountId32, Bytes]>;
     readonly isDefenderVotes: boolean;
-    readonly asDefenderVotes: ITuple<[u32, AccountId32, PezpalletRcMigratorSocietyPortableVote]>;
+    readonly asDefenderVotes: ITuple<[u32, PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableVote]>;
     readonly type: 'Values' | 'Member' | 'Payout' | 'MemberByIndex' | 'SuspendedMembers' | 'Candidates' | 'Votes' | 'VoteClearCursor' | 'DefenderVotes';
   }
 
@@ -482,16 +488,16 @@ declare module '@pezkuwi/types/lookup' {
   interface PezpalletRcMigratorSocietySocietyValues extends Struct {
     readonly parameters: Option<PezpalletRcMigratorSocietyPortableGroupParams>;
     readonly pot: Option<u128>;
-    readonly founder: Option<AccountId32>;
-    readonly head: Option<AccountId32>;
+    readonly founder: Option<PezspCoreCryptoAccountId32>;
+    readonly head: Option<PezspCoreCryptoAccountId32>;
     readonly rules: Option<H256>;
     readonly memberCount: Option<u32>;
     readonly roundCount: Option<u32>;
     readonly bids: Option<Vec<PezpalletRcMigratorSocietyPortableBid>>;
-    readonly sceptic: Option<AccountId32>;
+    readonly sceptic: Option<PezspCoreCryptoAccountId32>;
     readonly nextHead: Option<PezpalletRcMigratorSocietyPortableIntakeRecord>;
     readonly challengeRoundCount: Option<u32>;
-    readonly defending: Option<ITuple<[AccountId32, AccountId32, PezpalletRcMigratorSocietyPortableTally]>>;
+    readonly defending: Option<ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32, PezpalletRcMigratorSocietyPortableTally]>>;
     readonly nextIntakeAt: Option<u32>;
     readonly nextChallengeAt: Option<u32>;
   }
@@ -506,7 +512,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezpalletRcMigratorSocietyPortableBid (761) */
   interface PezpalletRcMigratorSocietyPortableBid extends Struct {
-    readonly who: AccountId32;
+    readonly who: PezspCoreCryptoAccountId32;
     readonly kind: PezpalletRcMigratorSocietyPortableBidKind;
     readonly value: u128;
   }
@@ -516,13 +522,13 @@ declare module '@pezkuwi/types/lookup' {
     readonly isDeposit: boolean;
     readonly asDeposit: u128;
     readonly isVouch: boolean;
-    readonly asVouch: ITuple<[AccountId32, u128]>;
+    readonly asVouch: ITuple<[PezspCoreCryptoAccountId32, u128]>;
     readonly type: 'Deposit' | 'Vouch';
   }
 
   /** @name PezpalletRcMigratorSocietyPortableIntakeRecord (764) */
   interface PezpalletRcMigratorSocietyPortableIntakeRecord extends Struct {
-    readonly who: AccountId32;
+    readonly who: PezspCoreCryptoAccountId32;
     readonly bid: u128;
     readonly round: u32;
   }
@@ -601,7 +607,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezpalletProxyProxyDefinitionAssetHubDicleRuntimeProxyType (939) */
   interface PezpalletProxyProxyDefinitionAssetHubDicleRuntimeProxyType extends Struct {
-    readonly delegate: AccountId32;
+    readonly delegate: PezspCoreCryptoAccountId32;
     readonly proxyType: AssetHubDicleRuntimeProxyType;
     readonly delay: u32;
   }
@@ -620,7 +626,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezpalletReviveVmCodeInfo (1023) */
   interface PezpalletReviveVmCodeInfo extends Struct {
-    readonly owner: AccountId32;
+    readonly owner: PezspCoreCryptoAccountId32;
     readonly deposit: Compact<u128>;
     readonly refcount: Compact<u64>;
     readonly codeLen: u32;

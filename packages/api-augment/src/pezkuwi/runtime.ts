@@ -13,7 +13,7 @@ import type { Extrinsic } from '@pezkuwi/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@pezkuwi/types/interfaces/metadata';
 import type { AccountId32, H256, RuntimeCall, Slot } from '@pezkuwi/types/interfaces/runtime';
 import type { ParaId, ValidationCodeHash } from '@pezkuwi/types/interfaces/teyrchains';
-import type { PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezkuwiCorePrimitivesInboundDownwardMessage, PezkuwiCorePrimitivesInboundHrmpMessage, PezkuwiPrimitivesV8ApprovalVotingParams, PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams, PezkuwiPrimitivesV8CandidateCommitments, PezkuwiPrimitivesV8DisputeState, PezkuwiPrimitivesV8ExecutorParams, PezkuwiPrimitivesV8GroupRotationInfo, PezkuwiPrimitivesV8OccupiedCoreAssumption, PezkuwiPrimitivesV8PersistedValidationData, PezkuwiPrimitivesV8PvfCheckStatement, PezkuwiPrimitivesV8SessionInfo, PezkuwiPrimitivesV8SlashingDisputeProof, PezkuwiPrimitivesV8SlashingPendingSlashes, PezkuwiPrimitivesV8ValidatorAppPublic, PezkuwiPrimitivesV8ValidatorAppSignature, PezkuwiPrimitivesVstagingAsyncBackingBackingState, PezkuwiPrimitivesVstagingAsyncBackingConstraints, PezkuwiPrimitivesVstagingCandidateEvent, PezkuwiPrimitivesVstagingCommittedCandidateReceiptV2, PezkuwiPrimitivesVstagingCoreState, PezkuwiPrimitivesVstagingScrapedOnChainVotes, PezkuwiRuntimeOriginCaller, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeConfiguration, PezspConsensusBabeEpoch, PezspConsensusBeefyDoubleVotingProof, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyForkVotingProofOpaqueValue, PezspConsensusBeefyFutureBlockVotingProof, PezspConsensusBeefyMmrBeefyAuthoritySet, PezspConsensusBeefyValidatorSet, PezspConsensusGrandpaAppPublic, PezspConsensusGrandpaEquivocationProof, PezspConsensusSlotsEquivocationProof, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspMmrPrimitivesError, PezspMmrPrimitivesLeafProof, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight, RelayCommonApisInflationInfo, XcmRuntimeApisConversionsError, XcmRuntimeApisDryRunCallDryRunEffects, XcmRuntimeApisDryRunError, XcmRuntimeApisDryRunXcmDryRunEffects, XcmRuntimeApisFeesError, XcmVersionedAssetId, XcmVersionedAssets, XcmVersionedLocation, XcmVersionedXcm } from '@pezkuwi/types/lookup';
+import type { PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezkuwiCorePrimitivesInboundDownwardMessage, PezkuwiCorePrimitivesInboundHrmpMessage, PezkuwiPrimitivesV8ApprovalVotingParams, PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams, PezkuwiPrimitivesV8CandidateCommitments, PezkuwiPrimitivesV8DisputeState, PezkuwiPrimitivesV8ExecutorParams, PezkuwiPrimitivesV8GroupRotationInfo, PezkuwiPrimitivesV8OccupiedCoreAssumption, PezkuwiPrimitivesV8PersistedValidationData, PezkuwiPrimitivesV8PvfCheckStatement, PezkuwiPrimitivesV8SessionInfo, PezkuwiPrimitivesV8SlashingDisputeProof, PezkuwiPrimitivesV8SlashingPendingSlashes, PezkuwiPrimitivesV8ValidatorAppPublic, PezkuwiPrimitivesV8ValidatorAppSignature, PezkuwiPrimitivesVstagingAsyncBackingBackingState, PezkuwiPrimitivesVstagingAsyncBackingConstraints, PezkuwiPrimitivesVstagingCandidateEvent, PezkuwiPrimitivesVstagingCommittedCandidateReceiptV2, PezkuwiPrimitivesVstagingCoreState, PezkuwiPrimitivesVstagingScrapedOnChainVotes, PezkuwiRuntimeOriginCaller, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeConfiguration, PezspConsensusBabeEpoch, PezspConsensusBeefyDoubleVotingProof, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyForkVotingProofOpaqueValue, PezspConsensusBeefyFutureBlockVotingProof, PezspConsensusBeefyMmrBeefyAuthoritySet, PezspConsensusBeefyValidatorSet, PezspConsensusGrandpaAppPublic, PezspConsensusGrandpaEquivocationProof, PezspConsensusSlotsEquivocationProof, PezspCoreCryptoAccountId32, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspMmrPrimitivesError, PezspMmrPrimitivesLeafProof, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight, RelayCommonApisInflationInfo, XcmRuntimeApisConversionsError, XcmRuntimeApisDryRunCallDryRunEffects, XcmRuntimeApisDryRunError, XcmRuntimeApisDryRunXcmDryRunEffects, XcmRuntimeApisFeesError, XcmVersionedAssetId, XcmVersionedAssets, XcmVersionedLocation, XcmVersionedXcm } from '@pezkuwi/types/lookup';
 import type { IExtrinsic, Observable } from '@pezkuwi/types/types';
 
 export type __AugmentedCall<ApiType extends ApiTypes> = AugmentedCall<ApiType>;
@@ -239,7 +239,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Converts `Location` to `AccountId`.
        **/
-      convertLocation: AugmentedCall<ApiType, (location: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array) => Observable<Result<AccountId32, XcmRuntimeApisConversionsError>>>;
+      convertLocation: AugmentedCall<ApiType, (location: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array) => Observable<Result<PezspCoreCryptoAccountId32, XcmRuntimeApisConversionsError>>>;
       /**
        * Generic call
        **/
@@ -254,7 +254,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the metadata at a given version.,, If the given `version` isn't supported, this will return `None`., Use [`Self::metadata_versions`] to find out about supported metadata version of the runtime.
        **/
-      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<OpaqueMetadata>>>;
+      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<Bytes>>>;
       /**
        * Returns the supported metadata versions.,, This can be used to call `metadata_at_version`.
        **/
@@ -320,7 +320,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the bonded account and reward account associated with the pool_id.
        **/
-      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[AccountId32, AccountId32]>>>;
+      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>>>;
       /**
        * Total balance contributed to the pool.
        **/

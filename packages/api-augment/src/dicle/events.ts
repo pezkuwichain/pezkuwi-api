@@ -8,8 +8,8 @@ import '@pezkuwi/api-base/types/events';
 import type { ApiTypes, AugmentedEvent } from '@pezkuwi/api-base/types';
 import type { Bytes, Null, Option, Result, U8aFixed, Vec, bool, u128, u16, u32, u64, u8 } from '@pezkuwi/types-codec';
 import type { ITuple } from '@pezkuwi/types-codec/types';
-import type { AccountId32, H256, Perbill } from '@pezkuwi/types/interfaces/runtime';
-import type { DicleRuntimeConstantsProxyProxyType, PezframeSupportDispatchPostDispatchInfo, PezframeSupportMessagesProcessMessageError, PezframeSupportPreimagesBounded, PezframeSupportTokensMiscBalanceStatus, PezframeSystemDispatchEventInfo, PezkuwiPrimitivesVstagingCandidateReceiptV2, PezkuwiRuntimeCommonClaimsEthereumAddress, PezkuwiRuntimeCommonImplsVersionedLocatableAsset, PezkuwiRuntimeTeyrchainsDisputesDisputeLocation, PezkuwiRuntimeTeyrchainsDisputesDisputeResult, PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId, PezpalletBalancesUnexpectedKind, PezpalletConvictionVotingTally, PezpalletConvictionVotingVoteAccountVote, PezpalletElectionProviderMultiPhaseElectionCompute, PezpalletElectionProviderMultiPhasePhase, PezpalletMultisigTimepoint, PezpalletNominationPoolsClaimPermission, PezpalletNominationPoolsCommissionChangeRate, PezpalletNominationPoolsCommissionClaimPermission, PezpalletNominationPoolsPoolState, PezpalletProxyDepositKind, PezpalletRankedCollectiveTally, PezpalletRankedCollectiveVoteRecord, PezpalletRcMigratorMigrationStage, PezpalletRcMigratorQueuePriority, PezpalletRecoveryDepositKind, PezpalletSocietyGroupParams, PezpalletStakingAsyncAhClientUnexpectedKind, PezpalletStakingForcing, PezpalletStakingRewardDestination, PezpalletStakingValidatorPrefs, PezspConsensusGrandpaAppPublic, PezspNposElectionsElectionScore, PezspRuntimeDispatchError, PezspRuntimeDispatchErrorWithPostInfo, PezspWeightsWeightV2Weight, StagingDicleRuntimeRuntimeParametersKey, StagingDicleRuntimeRuntimeParametersValue, StagingXcmV5AssetAssets, StagingXcmV5Location, StagingXcmV5Response, StagingXcmV5TraitsOutcome, StagingXcmV5Xcm, XcmV3MaybeErrorCode, XcmV3TraitsSendError, XcmV5TraitsError, XcmVersionedAssets, XcmVersionedLocation } from '@pezkuwi/types/lookup';
+import type { H256 } from '@pezkuwi/types/interfaces/runtime';
+import type { DicleRuntimeConstantsProxyProxyType, PezframeSupportDispatchPostDispatchInfo, PezframeSupportMessagesProcessMessageError, PezframeSupportPreimagesBounded, PezframeSupportTokensMiscBalanceStatus, PezframeSystemDispatchEventInfo, PezkuwiPrimitivesVstagingCandidateReceiptV2, PezkuwiRuntimeCommonClaimsEthereumAddress, PezkuwiRuntimeCommonImplsVersionedLocatableAsset, PezkuwiRuntimeTeyrchainsDisputesDisputeLocation, PezkuwiRuntimeTeyrchainsDisputesDisputeResult, PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId, PezpalletBalancesUnexpectedKind, PezpalletConvictionVotingTally, PezpalletConvictionVotingVoteAccountVote, PezpalletElectionProviderMultiPhaseElectionCompute, PezpalletElectionProviderMultiPhasePhase, PezpalletMultisigTimepoint, PezpalletNominationPoolsClaimPermission, PezpalletNominationPoolsCommissionChangeRate, PezpalletNominationPoolsCommissionClaimPermission, PezpalletNominationPoolsPoolState, PezpalletProxyDepositKind, PezpalletRankedCollectiveTally, PezpalletRankedCollectiveVoteRecord, PezpalletRcMigratorMigrationStage, PezpalletRcMigratorQueuePriority, PezpalletRecoveryDepositKind, PezpalletSocietyGroupParams, PezpalletStakingAsyncAhClientUnexpectedKind, PezpalletStakingForcing, PezpalletStakingRewardDestination, PezpalletStakingValidatorPrefs, PezspConsensusGrandpaAppPublic, PezspCoreCryptoAccountId32, PezspNposElectionsElectionScore, PezspRuntimeDispatchError, PezspRuntimeDispatchErrorWithPostInfo, PezspWeightsWeightV2Weight, StagingDicleRuntimeRuntimeParametersKey, StagingDicleRuntimeRuntimeParametersValue, StagingXcmV5AssetAssets, StagingXcmV5Location, StagingXcmV5Response, StagingXcmV5TraitsOutcome, StagingXcmV5Xcm, XcmV3MaybeErrorCode, XcmV3TraitsSendError, XcmV5TraitsError, XcmVersionedAssets, XcmVersionedLocation } from '@pezkuwi/types/lookup';
 
 export type __AugmentedEvent<ApiType extends ApiTypes> = AugmentedEvent<ApiType>;
 
@@ -37,21 +37,21 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A new bid has been accepted as the current winner.
        **/
-      BidAccepted: AugmentedEvent<ApiType, [bidder: AccountId32, paraId: u32, amount: u128, firstSlot: u32, lastSlot: u32], { bidder: AccountId32, paraId: u32, amount: u128, firstSlot: u32, lastSlot: u32 }>;
+      BidAccepted: AugmentedEvent<ApiType, [bidder: PezspCoreCryptoAccountId32, paraId: u32, amount: u128, firstSlot: u32, lastSlot: u32], { bidder: PezspCoreCryptoAccountId32, paraId: u32, amount: u128, firstSlot: u32, lastSlot: u32 }>;
       /**
        * Someone attempted to lease the same slot twice for a parachain. The amount is held in
        * reserve but no parachain slot has been leased.
        **/
-      ReserveConfiscated: AugmentedEvent<ApiType, [paraId: u32, leaser: AccountId32, amount: u128], { paraId: u32, leaser: AccountId32, amount: u128 }>;
+      ReserveConfiscated: AugmentedEvent<ApiType, [paraId: u32, leaser: PezspCoreCryptoAccountId32, amount: u128], { paraId: u32, leaser: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Funds were reserved for a winning bid. First balance is the extra amount reserved.
        * Second is the total.
        **/
-      Reserved: AugmentedEvent<ApiType, [bidder: AccountId32, extraReserved: u128, totalAmount: u128], { bidder: AccountId32, extraReserved: u128, totalAmount: u128 }>;
+      Reserved: AugmentedEvent<ApiType, [bidder: PezspCoreCryptoAccountId32, extraReserved: u128, totalAmount: u128], { bidder: PezspCoreCryptoAccountId32, extraReserved: u128, totalAmount: u128 }>;
       /**
        * Funds were unreserved since bidder is no longer active. `[bidder, amount]`
        **/
-      Unreserved: AugmentedEvent<ApiType, [bidder: AccountId32, amount: u128], { bidder: AccountId32, amount: u128 }>;
+      Unreserved: AugmentedEvent<ApiType, [bidder: PezspCoreCryptoAccountId32, amount: u128], { bidder: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * The winning offset was chosen for an auction. This will map into the `Winning` storage
        * map.
@@ -66,28 +66,28 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A balance was set by root.
        **/
-      BalanceSet: AugmentedEvent<ApiType, [who: AccountId32, free: u128], { who: AccountId32, free: u128 }>;
+      BalanceSet: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, free: u128], { who: PezspCoreCryptoAccountId32, free: u128 }>;
       /**
        * Some amount was burned from an account.
        **/
-      Burned: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Burned: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some amount was deposited (e.g. for transaction fees).
        **/
-      Deposit: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Deposit: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An account was removed whose balance was non-zero but below ExistentialDeposit,
        * resulting in an outright loss.
        **/
-      DustLost: AugmentedEvent<ApiType, [account: AccountId32, amount: u128], { account: AccountId32, amount: u128 }>;
+      DustLost: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, amount: u128], { account: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An account was created with some free balance.
        **/
-      Endowed: AugmentedEvent<ApiType, [account: AccountId32, freeBalance: u128], { account: AccountId32, freeBalance: u128 }>;
+      Endowed: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, freeBalance: u128], { account: PezspCoreCryptoAccountId32, freeBalance: u128 }>;
       /**
        * Some balance was frozen.
        **/
-      Frozen: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Frozen: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Total issuance was increased by `amount`, creating a credit to be balanced.
        **/
@@ -95,11 +95,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Some balance was locked.
        **/
-      Locked: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Locked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some amount was minted into an account.
        **/
-      Minted: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Minted: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Total issuance was decreased by `amount`, creating a debt to be balanced.
        **/
@@ -107,28 +107,28 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Some balance was reserved (moved from free to reserved).
        **/
-      Reserved: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Reserved: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some balance was moved from the reserve of the first account to the second account.
        * Final argument indicates the destination balance type.
        **/
-      ReserveRepatriated: AugmentedEvent<ApiType, [from: AccountId32, to: AccountId32, amount: u128, destinationStatus: PezframeSupportTokensMiscBalanceStatus], { from: AccountId32, to: AccountId32, amount: u128, destinationStatus: PezframeSupportTokensMiscBalanceStatus }>;
+      ReserveRepatriated: AugmentedEvent<ApiType, [from: PezspCoreCryptoAccountId32, to: PezspCoreCryptoAccountId32, amount: u128, destinationStatus: PezframeSupportTokensMiscBalanceStatus], { from: PezspCoreCryptoAccountId32, to: PezspCoreCryptoAccountId32, amount: u128, destinationStatus: PezframeSupportTokensMiscBalanceStatus }>;
       /**
        * Some amount was restored into an account.
        **/
-      Restored: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Restored: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some amount was removed from the account (e.g. for misbehavior).
        **/
-      Slashed: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Slashed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some amount was suspended from an account (it can be restored later).
        **/
-      Suspended: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Suspended: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some balance was thawed.
        **/
-      Thawed: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Thawed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * The `TotalIssuance` was forcefully changed.
        **/
@@ -136,7 +136,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Transfer succeeded.
        **/
-      Transfer: AugmentedEvent<ApiType, [from: AccountId32, to: AccountId32, amount: u128], { from: AccountId32, to: AccountId32, amount: u128 }>;
+      Transfer: AugmentedEvent<ApiType, [from: PezspCoreCryptoAccountId32, to: PezspCoreCryptoAccountId32, amount: u128], { from: PezspCoreCryptoAccountId32, to: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An unexpected/defensive event was triggered.
        **/
@@ -144,19 +144,19 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Some balance was unlocked.
        **/
-      Unlocked: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Unlocked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Some balance was unreserved (moved from reserved to free).
        **/
-      Unreserved: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Unreserved: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An account was upgraded.
        **/
-      Upgraded: AugmentedEvent<ApiType, [who: AccountId32], { who: AccountId32 }>;
+      Upgraded: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32], { who: PezspCoreCryptoAccountId32 }>;
       /**
        * Some amount was withdrawn from the account (e.g. for transaction fees).
        **/
-      Withdraw: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      Withdraw: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Generic event
        **/
@@ -170,7 +170,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A bounty is awarded to a beneficiary.
        **/
-      BountyAwarded: AugmentedEvent<ApiType, [index: u32, beneficiary: AccountId32], { index: u32, beneficiary: AccountId32 }>;
+      BountyAwarded: AugmentedEvent<ApiType, [index: u32, beneficiary: PezspCoreCryptoAccountId32], { index: u32, beneficiary: PezspCoreCryptoAccountId32 }>;
       /**
        * A bounty proposal is funded and became active.
        **/
@@ -182,7 +182,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A bounty is claimed by beneficiary.
        **/
-      BountyClaimed: AugmentedEvent<ApiType, [index: u32, payout: u128, beneficiary: AccountId32], { index: u32, payout: u128, beneficiary: AccountId32 }>;
+      BountyClaimed: AugmentedEvent<ApiType, [index: u32, payout: u128, beneficiary: PezspCoreCryptoAccountId32], { index: u32, payout: u128, beneficiary: PezspCoreCryptoAccountId32 }>;
       /**
        * A bounty expiry is extended.
        **/
@@ -198,11 +198,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A bounty curator is accepted.
        **/
-      CuratorAccepted: AugmentedEvent<ApiType, [bountyId: u32, curator: AccountId32], { bountyId: u32, curator: AccountId32 }>;
+      CuratorAccepted: AugmentedEvent<ApiType, [bountyId: u32, curator: PezspCoreCryptoAccountId32], { bountyId: u32, curator: PezspCoreCryptoAccountId32 }>;
       /**
        * A bounty curator is proposed.
        **/
-      CuratorProposed: AugmentedEvent<ApiType, [bountyId: u32, curator: AccountId32], { bountyId: u32, curator: AccountId32 }>;
+      CuratorProposed: AugmentedEvent<ApiType, [bountyId: u32, curator: PezspCoreCryptoAccountId32], { bountyId: u32, curator: PezspCoreCryptoAccountId32 }>;
       /**
        * A bounty curator is unassigned.
        **/
@@ -210,7 +210,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A bounty deposit has been poked.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [bountyId: u32, proposer: AccountId32, oldDeposit: u128, newDeposit: u128], { bountyId: u32, proposer: AccountId32, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [bountyId: u32, proposer: PezspCoreCryptoAccountId32, oldDeposit: u128, newDeposit: u128], { bountyId: u32, proposer: PezspCoreCryptoAccountId32, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * Generic event
        **/
@@ -224,7 +224,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A child-bounty is awarded to a beneficiary.
        **/
-      Awarded: AugmentedEvent<ApiType, [index: u32, childIndex: u32, beneficiary: AccountId32], { index: u32, childIndex: u32, beneficiary: AccountId32 }>;
+      Awarded: AugmentedEvent<ApiType, [index: u32, childIndex: u32, beneficiary: PezspCoreCryptoAccountId32], { index: u32, childIndex: u32, beneficiary: PezspCoreCryptoAccountId32 }>;
       /**
        * A child-bounty is cancelled.
        **/
@@ -232,7 +232,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A child-bounty is claimed by beneficiary.
        **/
-      Claimed: AugmentedEvent<ApiType, [index: u32, childIndex: u32, payout: u128, beneficiary: AccountId32], { index: u32, childIndex: u32, payout: u128, beneficiary: AccountId32 }>;
+      Claimed: AugmentedEvent<ApiType, [index: u32, childIndex: u32, payout: u128, beneficiary: PezspCoreCryptoAccountId32], { index: u32, childIndex: u32, payout: u128, beneficiary: PezspCoreCryptoAccountId32 }>;
       /**
        * Generic event
        **/
@@ -242,7 +242,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Someone claimed some DOTs.
        **/
-      Claimed: AugmentedEvent<ApiType, [who: AccountId32, ethereumAddress: PezkuwiRuntimeCommonClaimsEthereumAddress, amount: u128], { who: AccountId32, ethereumAddress: PezkuwiRuntimeCommonClaimsEthereumAddress, amount: u128 }>;
+      Claimed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, ethereumAddress: PezkuwiRuntimeCommonClaimsEthereumAddress, amount: u128], { who: PezspCoreCryptoAccountId32, ethereumAddress: PezkuwiRuntimeCommonClaimsEthereumAddress, amount: u128 }>;
       /**
        * Generic event
        **/
@@ -252,23 +252,23 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An account has delegated their vote to another account. \[who, target\]
        **/
-      Delegated: AugmentedEvent<ApiType, [AccountId32, AccountId32]>;
+      Delegated: AugmentedEvent<ApiType, [PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>;
       /**
        * An \[account\] has cancelled a previous delegation operation.
        **/
-      Undelegated: AugmentedEvent<ApiType, [AccountId32]>;
+      Undelegated: AugmentedEvent<ApiType, [PezspCoreCryptoAccountId32]>;
       /**
        * An account has voted
        **/
-      Voted: AugmentedEvent<ApiType, [who: AccountId32, vote: PezpalletConvictionVotingVoteAccountVote], { who: AccountId32, vote: PezpalletConvictionVotingVoteAccountVote }>;
+      Voted: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, vote: PezpalletConvictionVotingVoteAccountVote], { who: PezspCoreCryptoAccountId32, vote: PezpalletConvictionVotingVoteAccountVote }>;
       /**
        * A vote has been removed
        **/
-      VoteRemoved: AugmentedEvent<ApiType, [who: AccountId32, vote: PezpalletConvictionVotingVoteAccountVote], { who: AccountId32, vote: PezpalletConvictionVotingVoteAccountVote }>;
+      VoteRemoved: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, vote: PezpalletConvictionVotingVoteAccountVote], { who: PezspCoreCryptoAccountId32, vote: PezpalletConvictionVotingVoteAccountVote }>;
       /**
        * The lockup period of a conviction vote expired, and the funds have been unlocked.
        **/
-      VoteUnlocked: AugmentedEvent<ApiType, [who: AccountId32, class_: u16], { who: AccountId32, class: u16 }>;
+      VoteUnlocked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, class_: u16], { who: PezspCoreCryptoAccountId32, class: u16 }>;
       /**
        * Generic event
        **/
@@ -300,7 +300,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Contributed to a crowd sale.
        **/
-      Contributed: AugmentedEvent<ApiType, [who: AccountId32, fundIndex: u32, amount: u128], { who: AccountId32, fundIndex: u32, amount: u128 }>;
+      Contributed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, fundIndex: u32, amount: u128], { who: PezspCoreCryptoAccountId32, fundIndex: u32, amount: u128 }>;
       /**
        * Create a new crowdloaning campaign.
        **/
@@ -320,7 +320,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A memo has been updated.
        **/
-      MemoUpdated: AugmentedEvent<ApiType, [who: AccountId32, paraId: u32, memo: Bytes], { who: AccountId32, paraId: u32, memo: Bytes }>;
+      MemoUpdated: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, paraId: u32, memo: Bytes], { who: PezspCoreCryptoAccountId32, paraId: u32, memo: Bytes }>;
       /**
        * The loans in a fund have been partially dissolved, i.e. there are some left
        * over child keys that still need to be killed.
@@ -329,7 +329,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Withdrew full balance of a contributor.
        **/
-      Withdrew: AugmentedEvent<ApiType, [who: AccountId32, fundIndex: u32, amount: u128], { who: AccountId32, fundIndex: u32, amount: u128 }>;
+      Withdrew: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, fundIndex: u32, amount: u128], { who: PezspCoreCryptoAccountId32, fundIndex: u32, amount: u128 }>;
       /**
        * Generic event
        **/
@@ -339,19 +339,19 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Funds delegated by a delegator.
        **/
-      Delegated: AugmentedEvent<ApiType, [agent: AccountId32, delegator: AccountId32, amount: u128], { agent: AccountId32, delegator: AccountId32, amount: u128 }>;
+      Delegated: AugmentedEvent<ApiType, [agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128], { agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Unclaimed delegation funds migrated to delegator.
        **/
-      MigratedDelegation: AugmentedEvent<ApiType, [agent: AccountId32, delegator: AccountId32, amount: u128], { agent: AccountId32, delegator: AccountId32, amount: u128 }>;
+      MigratedDelegation: AugmentedEvent<ApiType, [agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128], { agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Funds released to a delegator.
        **/
-      Released: AugmentedEvent<ApiType, [agent: AccountId32, delegator: AccountId32, amount: u128], { agent: AccountId32, delegator: AccountId32, amount: u128 }>;
+      Released: AugmentedEvent<ApiType, [agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128], { agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Funds slashed from a delegator.
        **/
-      Slashed: AugmentedEvent<ApiType, [agent: AccountId32, delegator: AccountId32, amount: u128], { agent: AccountId32, delegator: AccountId32, amount: u128 }>;
+      Slashed: AugmentedEvent<ApiType, [agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128], { agent: PezspCoreCryptoAccountId32, delegator: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Generic event
        **/
@@ -375,11 +375,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An account has been rewarded for their signed submission being finalized.
        **/
-      Rewarded: AugmentedEvent<ApiType, [account: AccountId32, value: u128], { account: AccountId32, value: u128 }>;
+      Rewarded: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, value: u128], { account: PezspCoreCryptoAccountId32, value: u128 }>;
       /**
        * An account has been slashed for submitting an invalid signed submission.
        **/
-      Slashed: AugmentedEvent<ApiType, [account: AccountId32, value: u128], { account: AccountId32, value: u128 }>;
+      Slashed: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, value: u128], { account: PezspCoreCryptoAccountId32, value: u128 }>;
       /**
        * A solution was stored with the given compute.
        * 
@@ -389,7 +389,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * `T::ForceOrigin`. The `bool` is `true` when a previous solution was ejected to make
        * room for this one.
        **/
-      SolutionStored: AugmentedEvent<ApiType, [compute: PezpalletElectionProviderMultiPhaseElectionCompute, origin: Option<AccountId32>, prevEjected: bool], { compute: PezpalletElectionProviderMultiPhaseElectionCompute, origin: Option<AccountId32>, prevEjected: bool }>;
+      SolutionStored: AugmentedEvent<ApiType, [compute: PezpalletElectionProviderMultiPhaseElectionCompute, origin: Option<PezspCoreCryptoAccountId32>, prevEjected: bool], { compute: PezpalletElectionProviderMultiPhaseElectionCompute, origin: Option<PezspCoreCryptoAccountId32>, prevEjected: bool }>;
       /**
        * Generic event
        **/
@@ -414,11 +414,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A staker was slashed for requesting fast-unstake whilst being exposed.
        **/
-      Slashed: AugmentedEvent<ApiType, [stash: AccountId32, amount: u128], { stash: AccountId32, amount: u128 }>;
+      Slashed: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, amount: u128], { stash: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A staker was unstaked.
        **/
-      Unstaked: AugmentedEvent<ApiType, [stash: AccountId32, result: Result<Null, PezspRuntimeDispatchError>], { stash: AccountId32, result: Result<Null, PezspRuntimeDispatchError> }>;
+      Unstaked: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, result: Result<Null, PezspRuntimeDispatchError>], { stash: PezspCoreCryptoAccountId32, result: Result<Null, PezspRuntimeDispatchError> }>;
       /**
        * Generic event
        **/
@@ -428,24 +428,24 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A member `who` has been added.
        **/
-      MemberAdded: AugmentedEvent<ApiType, [who: AccountId32], { who: AccountId32 }>;
+      MemberAdded: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32], { who: PezspCoreCryptoAccountId32 }>;
       /**
        * The member `who` had their `AccountId` changed to `new_who`.
        **/
-      MemberExchanged: AugmentedEvent<ApiType, [who: AccountId32, newWho: AccountId32], { who: AccountId32, newWho: AccountId32 }>;
+      MemberExchanged: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, newWho: PezspCoreCryptoAccountId32], { who: PezspCoreCryptoAccountId32, newWho: PezspCoreCryptoAccountId32 }>;
       /**
        * The member `who` of given `rank` has been removed from the collective.
        **/
-      MemberRemoved: AugmentedEvent<ApiType, [who: AccountId32, rank: u16], { who: AccountId32, rank: u16 }>;
+      MemberRemoved: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, rank: u16], { who: PezspCoreCryptoAccountId32, rank: u16 }>;
       /**
        * The member `who`se rank has been changed to the given `rank`.
        **/
-      RankChanged: AugmentedEvent<ApiType, [who: AccountId32, rank: u16], { who: AccountId32, rank: u16 }>;
+      RankChanged: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, rank: u16], { who: PezspCoreCryptoAccountId32, rank: u16 }>;
       /**
        * The member `who` has voted for the `poll` with the given `vote` leading to an updated
        * `tally`.
        **/
-      Voted: AugmentedEvent<ApiType, [who: AccountId32, poll: u32, vote: PezpalletRankedCollectiveVoteRecord, tally: PezpalletRankedCollectiveTally], { who: AccountId32, poll: u32, vote: PezpalletRankedCollectiveVoteRecord, tally: PezpalletRankedCollectiveTally }>;
+      Voted: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, poll: u32, vote: PezpalletRankedCollectiveVoteRecord, tally: PezpalletRankedCollectiveTally], { who: PezspCoreCryptoAccountId32, poll: u32, vote: PezpalletRankedCollectiveVoteRecord, tally: PezpalletRankedCollectiveTally }>;
       /**
        * Generic event
        **/
@@ -469,11 +469,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The decision deposit has been placed.
        **/
-      DecisionDepositPlaced: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      DecisionDepositPlaced: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * The decision deposit has been refunded.
        **/
-      DecisionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      DecisionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has moved into the deciding phase.
        **/
@@ -481,7 +481,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A deposit has been slashed.
        **/
-      DepositSlashed: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      DepositSlashed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has been killed.
        **/
@@ -501,7 +501,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The submission deposit has been refunded.
        **/
-      SubmissionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      SubmissionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has been submitted.
        **/
@@ -585,11 +585,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A deposit to reserve an index has been poked/reconsidered.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [who: AccountId32, index: u32, oldDeposit: u128, newDeposit: u128], { who: AccountId32, index: u32, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, index: u32, oldDeposit: u128, newDeposit: u128], { who: PezspCoreCryptoAccountId32, index: u32, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * A account index was assigned.
        **/
-      IndexAssigned: AugmentedEvent<ApiType, [who: AccountId32, index: u32], { who: AccountId32, index: u32 }>;
+      IndexAssigned: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, index: u32], { who: PezspCoreCryptoAccountId32, index: u32 }>;
       /**
        * A account index has been freed up (unassigned).
        **/
@@ -597,7 +597,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A account index has been frozen to its current account ID.
        **/
-      IndexFrozen: AugmentedEvent<ApiType, [index: u32, who: AccountId32], { index: u32, who: AccountId32 }>;
+      IndexFrozen: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32], { index: u32, who: PezspCoreCryptoAccountId32 }>;
       /**
        * Generic event
        **/
@@ -629,23 +629,23 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The deposit for a multisig operation has been updated/poked.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [who: AccountId32, callHash: U8aFixed, oldDeposit: u128, newDeposit: u128], { who: AccountId32, callHash: U8aFixed, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, callHash: U8aFixed, oldDeposit: u128, newDeposit: u128], { who: PezspCoreCryptoAccountId32, callHash: U8aFixed, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * A multisig operation has been approved by someone.
        **/
-      MultisigApproval: AugmentedEvent<ApiType, [approving: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed], { approving: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed }>;
+      MultisigApproval: AugmentedEvent<ApiType, [approving: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed], { approving: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed }>;
       /**
        * A multisig operation has been cancelled.
        **/
-      MultisigCancelled: AugmentedEvent<ApiType, [cancelling: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed], { cancelling: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed }>;
+      MultisigCancelled: AugmentedEvent<ApiType, [cancelling: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed], { cancelling: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed }>;
       /**
        * A multisig operation has been executed.
        **/
-      MultisigExecuted: AugmentedEvent<ApiType, [approving: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed, result: Result<Null, PezspRuntimeDispatchError>], { approving: AccountId32, timepoint: PezpalletMultisigTimepoint, multisig: AccountId32, callHash: U8aFixed, result: Result<Null, PezspRuntimeDispatchError> }>;
+      MultisigExecuted: AugmentedEvent<ApiType, [approving: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed, result: Result<Null, PezspRuntimeDispatchError>], { approving: PezspCoreCryptoAccountId32, timepoint: PezpalletMultisigTimepoint, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed, result: Result<Null, PezspRuntimeDispatchError> }>;
       /**
        * A new multisig operation has begun.
        **/
-      NewMultisig: AugmentedEvent<ApiType, [approving: AccountId32, multisig: AccountId32, callHash: U8aFixed], { approving: AccountId32, multisig: AccountId32, callHash: U8aFixed }>;
+      NewMultisig: AugmentedEvent<ApiType, [approving: PezspCoreCryptoAccountId32, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed], { approving: PezspCoreCryptoAccountId32, multisig: PezspCoreCryptoAccountId32, callHash: U8aFixed }>;
       /**
        * Generic event
        **/
@@ -655,11 +655,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A member has became bonded in a pool.
        **/
-      Bonded: AugmentedEvent<ApiType, [member: AccountId32, poolId: u32, bonded: u128, joined: bool], { member: AccountId32, poolId: u32, bonded: u128, joined: bool }>;
+      Bonded: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, poolId: u32, bonded: u128, joined: bool], { member: PezspCoreCryptoAccountId32, poolId: u32, bonded: u128, joined: bool }>;
       /**
        * A pool has been created.
        **/
-      Created: AugmentedEvent<ApiType, [depositor: AccountId32, poolId: u32], { depositor: AccountId32, poolId: u32 }>;
+      Created: AugmentedEvent<ApiType, [depositor: PezspCoreCryptoAccountId32, poolId: u32], { depositor: PezspCoreCryptoAccountId32, poolId: u32 }>;
       /**
        * A pool has been destroyed.
        **/
@@ -667,11 +667,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Global parameters regulating nomination pools have been updated.
        **/
-      GlobalParamsUpdated: AugmentedEvent<ApiType, [minJoinBond: u128, minCreateBond: u128, maxPools: Option<u32>, maxMembers: Option<u32>, maxMembersPerPool: Option<u32>, globalMaxCommission: Option<Perbill>], { minJoinBond: u128, minCreateBond: u128, maxPools: Option<u32>, maxMembers: Option<u32>, maxMembersPerPool: Option<u32>, globalMaxCommission: Option<Perbill> }>;
+      GlobalParamsUpdated: AugmentedEvent<ApiType, [minJoinBond: u128, minCreateBond: u128, maxPools: Option<u32>, maxMembers: Option<u32>, maxMembersPerPool: Option<u32>, globalMaxCommission: Option<u32>], { minJoinBond: u128, minCreateBond: u128, maxPools: Option<u32>, maxMembers: Option<u32>, maxMembersPerPool: Option<u32>, globalMaxCommission: Option<u32> }>;
       /**
        * A pool member's claim permission has been updated.
        **/
-      MemberClaimPermissionUpdated: AugmentedEvent<ApiType, [member: AccountId32, permission: PezpalletNominationPoolsClaimPermission], { member: AccountId32, permission: PezpalletNominationPoolsClaimPermission }>;
+      MemberClaimPermissionUpdated: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, permission: PezpalletNominationPoolsClaimPermission], { member: PezspCoreCryptoAccountId32, permission: PezpalletNominationPoolsClaimPermission }>;
       /**
        * A member has been removed from a pool.
        * 
@@ -679,11 +679,11 @@ declare module '@pezkuwi/api-base/types/events' {
        * Any funds that are still delegated (i.e. dangling delegation) are released and are
        * represented by `released_balance`.
        **/
-      MemberRemoved: AugmentedEvent<ApiType, [poolId: u32, member: AccountId32, releasedBalance: u128], { poolId: u32, member: AccountId32, releasedBalance: u128 }>;
+      MemberRemoved: AugmentedEvent<ApiType, [poolId: u32, member: PezspCoreCryptoAccountId32, releasedBalance: u128], { poolId: u32, member: PezspCoreCryptoAccountId32, releasedBalance: u128 }>;
       /**
        * A pool's metadata was updated.
        **/
-      MetadataUpdated: AugmentedEvent<ApiType, [poolId: u32, caller: AccountId32], { poolId: u32, caller: AccountId32 }>;
+      MetadataUpdated: AugmentedEvent<ApiType, [poolId: u32, caller: PezspCoreCryptoAccountId32], { poolId: u32, caller: PezspCoreCryptoAccountId32 }>;
       /**
        * Topped up deficit in frozen ED of the reward pool.
        **/
@@ -695,7 +695,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A payout has been made to a member.
        **/
-      PaidOut: AugmentedEvent<ApiType, [member: AccountId32, poolId: u32, payout: u128], { member: AccountId32, poolId: u32, payout: u128 }>;
+      PaidOut: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, poolId: u32, payout: u128], { member: PezspCoreCryptoAccountId32, poolId: u32, payout: u128 }>;
       /**
        * A pool's commission `change_rate` has been changed.
        **/
@@ -711,20 +711,20 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A pool's commission setting has been changed.
        **/
-      PoolCommissionUpdated: AugmentedEvent<ApiType, [poolId: u32, current: Option<ITuple<[Perbill, AccountId32]>>], { poolId: u32, current: Option<ITuple<[Perbill, AccountId32]>> }>;
+      PoolCommissionUpdated: AugmentedEvent<ApiType, [poolId: u32, current: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>], { poolId: u32, current: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>> }>;
       /**
        * A pool's maximum commission setting has been changed.
        **/
-      PoolMaxCommissionUpdated: AugmentedEvent<ApiType, [poolId: u32, maxCommission: Perbill], { poolId: u32, maxCommission: Perbill }>;
+      PoolMaxCommissionUpdated: AugmentedEvent<ApiType, [poolId: u32, maxCommission: u32], { poolId: u32, maxCommission: u32 }>;
       /**
        * A pool's nominating account (or the pool's root account) has nominated a validator set
        * on behalf of the pool.
        **/
-      PoolNominationMade: AugmentedEvent<ApiType, [poolId: u32, caller: AccountId32], { poolId: u32, caller: AccountId32 }>;
+      PoolNominationMade: AugmentedEvent<ApiType, [poolId: u32, caller: PezspCoreCryptoAccountId32], { poolId: u32, caller: PezspCoreCryptoAccountId32 }>;
       /**
        * The pool is chilled i.e. no longer nominating.
        **/
-      PoolNominatorChilled: AugmentedEvent<ApiType, [poolId: u32, caller: AccountId32], { poolId: u32, caller: AccountId32 }>;
+      PoolNominatorChilled: AugmentedEvent<ApiType, [poolId: u32, caller: PezspCoreCryptoAccountId32], { poolId: u32, caller: PezspCoreCryptoAccountId32 }>;
       /**
        * The active balance of pool `pool_id` has been slashed to `balance`.
        **/
@@ -733,7 +733,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * The roles of a pool have been updated to the given new roles. Note that the depositor
        * can never change.
        **/
-      RolesUpdated: AugmentedEvent<ApiType, [root: Option<AccountId32>, bouncer: Option<AccountId32>, nominator: Option<AccountId32>], { root: Option<AccountId32>, bouncer: Option<AccountId32>, nominator: Option<AccountId32> }>;
+      RolesUpdated: AugmentedEvent<ApiType, [root: Option<PezspCoreCryptoAccountId32>, bouncer: Option<PezspCoreCryptoAccountId32>, nominator: Option<PezspCoreCryptoAccountId32>], { root: Option<PezspCoreCryptoAccountId32>, bouncer: Option<PezspCoreCryptoAccountId32>, nominator: Option<PezspCoreCryptoAccountId32> }>;
       /**
        * The state of a pool has changed
        **/
@@ -751,7 +751,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * number of points that are issued in the unbonding pool will be less than the amount
        * requested to be unbonded.
        **/
-      Unbonded: AugmentedEvent<ApiType, [member: AccountId32, poolId: u32, balance: u128, points: u128, era: u32], { member: AccountId32, poolId: u32, balance: u128, points: u128, era: u32 }>;
+      Unbonded: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, poolId: u32, balance: u128, points: u128, era: u32], { member: PezspCoreCryptoAccountId32, poolId: u32, balance: u128, points: u128, era: u32 }>;
       /**
        * The unbond pool at `era` of pool `pool_id` has been slashed to `balance`.
        **/
@@ -764,7 +764,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * Similar to `Unbonded` event, in the absence of slashing, the ratio of point to balance
        * will be 1.
        **/
-      Withdrawn: AugmentedEvent<ApiType, [member: AccountId32, poolId: u32, balance: u128, points: u128], { member: AccountId32, poolId: u32, balance: u128, points: u128 }>;
+      Withdrawn: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, poolId: u32, balance: u128, points: u128], { member: PezspCoreCryptoAccountId32, poolId: u32, balance: u128, points: u128 }>;
       /**
        * Generic event
        **/
@@ -786,11 +786,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An account was given credits.
        **/
-      AccountCredited: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      AccountCredited: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An order was placed at some spot price amount by orderer ordered_by
        **/
-      OnDemandOrderPlaced: AugmentedEvent<ApiType, [paraId: u32, spotPrice: u128, orderedBy: AccountId32], { paraId: u32, spotPrice: u128, orderedBy: AccountId32 }>;
+      OnDemandOrderPlaced: AugmentedEvent<ApiType, [paraId: u32, spotPrice: u128, orderedBy: PezspCoreCryptoAccountId32], { paraId: u32, spotPrice: u128, orderedBy: PezspCoreCryptoAccountId32 }>;
       /**
        * The value of the spot price has likely changed
        **/
@@ -927,15 +927,15 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An announcement was placed to make a call in the future.
        **/
-      Announced: AugmentedEvent<ApiType, [real: AccountId32, proxy: AccountId32, callHash: H256], { real: AccountId32, proxy: AccountId32, callHash: H256 }>;
+      Announced: AugmentedEvent<ApiType, [real: PezspCoreCryptoAccountId32, proxy: PezspCoreCryptoAccountId32, callHash: H256], { real: PezspCoreCryptoAccountId32, proxy: PezspCoreCryptoAccountId32, callHash: H256 }>;
       /**
        * A deposit stored for proxies or announcements was poked / updated.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [who: AccountId32, kind: PezpalletProxyDepositKind, oldDeposit: u128, newDeposit: u128], { who: AccountId32, kind: PezpalletProxyDepositKind, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, kind: PezpalletProxyDepositKind, oldDeposit: u128, newDeposit: u128], { who: PezspCoreCryptoAccountId32, kind: PezpalletProxyDepositKind, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * A proxy was added.
        **/
-      ProxyAdded: AugmentedEvent<ApiType, [delegator: AccountId32, delegatee: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32], { delegator: AccountId32, delegatee: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 }>;
+      ProxyAdded: AugmentedEvent<ApiType, [delegator: PezspCoreCryptoAccountId32, delegatee: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32], { delegator: PezspCoreCryptoAccountId32, delegatee: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 }>;
       /**
        * A proxy was executed correctly, with the given.
        **/
@@ -943,16 +943,16 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A proxy was removed.
        **/
-      ProxyRemoved: AugmentedEvent<ApiType, [delegator: AccountId32, delegatee: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32], { delegator: AccountId32, delegatee: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 }>;
+      ProxyRemoved: AugmentedEvent<ApiType, [delegator: PezspCoreCryptoAccountId32, delegatee: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32], { delegator: PezspCoreCryptoAccountId32, delegatee: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 }>;
       /**
        * A pure account has been created by new proxy with given
        * disambiguation index and proxy type.
        **/
-      PureCreated: AugmentedEvent<ApiType, [pure: AccountId32, who: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16], { pure: AccountId32, who: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16 }>;
+      PureCreated: AugmentedEvent<ApiType, [pure: PezspCoreCryptoAccountId32, who: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16], { pure: PezspCoreCryptoAccountId32, who: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16 }>;
       /**
        * A pure proxy was killed by its spawner.
        **/
-      PureKilled: AugmentedEvent<ApiType, [pure: AccountId32, spawner: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16], { pure: AccountId32, spawner: AccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16 }>;
+      PureKilled: AugmentedEvent<ApiType, [pure: PezspCoreCryptoAccountId32, spawner: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16], { pure: PezspCoreCryptoAccountId32, spawner: PezspCoreCryptoAccountId32, proxyType: DicleRuntimeConstantsProxyProxyType, disambiguationIndex: u16 }>;
       /**
        * Generic event
        **/
@@ -962,7 +962,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The accounts to be preserved on Relay Chain were set.
        **/
-      AccountsPreserved: AugmentedEvent<ApiType, [accounts: Vec<AccountId32>], { accounts: Vec<AccountId32> }>;
+      AccountsPreserved: AugmentedEvent<ApiType, [accounts: Vec<PezspCoreCryptoAccountId32>], { accounts: Vec<PezspCoreCryptoAccountId32> }>;
       /**
        * The AH UMP queue priority config was set.
        **/
@@ -991,7 +991,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The canceller account id was set.
        **/
-      CancellerSet: AugmentedEvent<ApiType, [old: Option<AccountId32>, new_: Option<AccountId32>], { old: Option<AccountId32>, new_: Option<AccountId32> }>;
+      CancellerSet: AugmentedEvent<ApiType, [old: Option<PezspCoreCryptoAccountId32>, new_: Option<PezspCoreCryptoAccountId32>], { old: Option<PezspCoreCryptoAccountId32>, new_: Option<PezspCoreCryptoAccountId32> }>;
       /**
        * The manager multisig dispatched something.
        **/
@@ -1003,7 +1003,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The manager account id was set.
        **/
-      ManagerSet: AugmentedEvent<ApiType, [old: Option<AccountId32>, new_: Option<AccountId32>], { old: Option<AccountId32>, new_: Option<AccountId32> }>;
+      ManagerSet: AugmentedEvent<ApiType, [old: Option<PezspCoreCryptoAccountId32>, new_: Option<PezspCoreCryptoAccountId32>], { old: Option<PezspCoreCryptoAccountId32>, new_: Option<PezspCoreCryptoAccountId32> }>;
       /**
        * The RC kept balance was consumed.
        **/
@@ -1057,31 +1057,31 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Lost account has been successfully recovered by rescuer account.
        **/
-      AccountRecovered: AugmentedEvent<ApiType, [lostAccount: AccountId32, rescuerAccount: AccountId32], { lostAccount: AccountId32, rescuerAccount: AccountId32 }>;
+      AccountRecovered: AugmentedEvent<ApiType, [lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32], { lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32 }>;
       /**
        * A deposit has been updated.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [who: AccountId32, kind: PezpalletRecoveryDepositKind, oldDeposit: u128, newDeposit: u128], { who: AccountId32, kind: PezpalletRecoveryDepositKind, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, kind: PezpalletRecoveryDepositKind, oldDeposit: u128, newDeposit: u128], { who: PezspCoreCryptoAccountId32, kind: PezpalletRecoveryDepositKind, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * A recovery process for lost account by rescuer account has been closed.
        **/
-      RecoveryClosed: AugmentedEvent<ApiType, [lostAccount: AccountId32, rescuerAccount: AccountId32], { lostAccount: AccountId32, rescuerAccount: AccountId32 }>;
+      RecoveryClosed: AugmentedEvent<ApiType, [lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32], { lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32 }>;
       /**
        * A recovery process has been set up for an account.
        **/
-      RecoveryCreated: AugmentedEvent<ApiType, [account: AccountId32], { account: AccountId32 }>;
+      RecoveryCreated: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32], { account: PezspCoreCryptoAccountId32 }>;
       /**
        * A recovery process has been initiated for lost account by rescuer account.
        **/
-      RecoveryInitiated: AugmentedEvent<ApiType, [lostAccount: AccountId32, rescuerAccount: AccountId32], { lostAccount: AccountId32, rescuerAccount: AccountId32 }>;
+      RecoveryInitiated: AugmentedEvent<ApiType, [lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32], { lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32 }>;
       /**
        * A recovery process has been removed for an account.
        **/
-      RecoveryRemoved: AugmentedEvent<ApiType, [lostAccount: AccountId32], { lostAccount: AccountId32 }>;
+      RecoveryRemoved: AugmentedEvent<ApiType, [lostAccount: PezspCoreCryptoAccountId32], { lostAccount: PezspCoreCryptoAccountId32 }>;
       /**
        * A recovery process for lost account by rescuer account has been vouched for by sender.
        **/
-      RecoveryVouched: AugmentedEvent<ApiType, [lostAccount: AccountId32, rescuerAccount: AccountId32, sender: AccountId32], { lostAccount: AccountId32, rescuerAccount: AccountId32, sender: AccountId32 }>;
+      RecoveryVouched: AugmentedEvent<ApiType, [lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32, sender: PezspCoreCryptoAccountId32], { lostAccount: PezspCoreCryptoAccountId32, rescuerAccount: PezspCoreCryptoAccountId32, sender: PezspCoreCryptoAccountId32 }>;
       /**
        * Generic event
        **/
@@ -1105,11 +1105,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The decision deposit has been placed.
        **/
-      DecisionDepositPlaced: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      DecisionDepositPlaced: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * The decision deposit has been refunded.
        **/
-      DecisionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      DecisionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has moved into the deciding phase.
        **/
@@ -1117,7 +1117,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A deposit has been slashed.
        **/
-      DepositSlashed: AugmentedEvent<ApiType, [who: AccountId32, amount: u128], { who: AccountId32, amount: u128 }>;
+      DepositSlashed: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, amount: u128], { who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has been killed.
        **/
@@ -1137,7 +1137,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * The submission deposit has been refunded.
        **/
-      SubmissionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: AccountId32, amount: u128], { index: u32, who: AccountId32, amount: u128 }>;
+      SubmissionDepositRefunded: AugmentedEvent<ApiType, [index: u32, who: PezspCoreCryptoAccountId32, amount: u128], { index: u32, who: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A referendum has been submitted.
        **/
@@ -1153,8 +1153,8 @@ declare module '@pezkuwi/api-base/types/events' {
     };
     registrar: {
       Deregistered: AugmentedEvent<ApiType, [paraId: u32], { paraId: u32 }>;
-      Registered: AugmentedEvent<ApiType, [paraId: u32, manager: AccountId32], { paraId: u32, manager: AccountId32 }>;
-      Reserved: AugmentedEvent<ApiType, [paraId: u32, who: AccountId32], { paraId: u32, who: AccountId32 }>;
+      Registered: AugmentedEvent<ApiType, [paraId: u32, manager: PezspCoreCryptoAccountId32], { paraId: u32, manager: PezspCoreCryptoAccountId32 }>;
+      Reserved: AugmentedEvent<ApiType, [paraId: u32, who: PezspCoreCryptoAccountId32], { paraId: u32, who: PezspCoreCryptoAccountId32 }>;
       Swapped: AugmentedEvent<ApiType, [paraId: u32, otherId: u32], { paraId: u32, otherId: u32 }>;
       /**
        * Generic event
@@ -1222,11 +1222,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Validator has been disabled.
        **/
-      ValidatorDisabled: AugmentedEvent<ApiType, [validator: AccountId32], { validator: AccountId32 }>;
+      ValidatorDisabled: AugmentedEvent<ApiType, [validator: PezspCoreCryptoAccountId32], { validator: PezspCoreCryptoAccountId32 }>;
       /**
        * Validator has been re-enabled.
        **/
-      ValidatorReenabled: AugmentedEvent<ApiType, [validator: AccountId32], { validator: AccountId32 }>;
+      ValidatorReenabled: AugmentedEvent<ApiType, [validator: PezspCoreCryptoAccountId32], { validator: PezspCoreCryptoAccountId32 }>;
       /**
        * Generic event
        **/
@@ -1238,7 +1238,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * First balance is any extra amount reserved on top of the para's existing deposit.
        * Second balance is the total amount reserved.
        **/
-      Leased: AugmentedEvent<ApiType, [paraId: u32, leaser: AccountId32, periodBegin: u32, periodCount: u32, extraReserved: u128, totalAmount: u128], { paraId: u32, leaser: AccountId32, periodBegin: u32, periodCount: u32, extraReserved: u128, totalAmount: u128 }>;
+      Leased: AugmentedEvent<ApiType, [paraId: u32, leaser: PezspCoreCryptoAccountId32, periodBegin: u32, periodCount: u32, extraReserved: u128, totalAmount: u128], { paraId: u32, leaser: PezspCoreCryptoAccountId32, periodBegin: u32, periodCount: u32, extraReserved: u128, totalAmount: u128 }>;
       /**
        * A new `[lease_period]` is beginning.
        **/
@@ -1252,24 +1252,24 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A candidate was dropped (due to an excess of bids in the system).
        **/
-      AutoUnbid: AugmentedEvent<ApiType, [candidate: AccountId32], { candidate: AccountId32 }>;
+      AutoUnbid: AugmentedEvent<ApiType, [candidate: PezspCoreCryptoAccountId32], { candidate: PezspCoreCryptoAccountId32 }>;
       /**
        * A membership bid just happened. The given account is the candidate's ID and their offer
        * is the second.
        **/
-      Bid: AugmentedEvent<ApiType, [candidateId: AccountId32, offer: u128], { candidateId: AccountId32, offer: u128 }>;
+      Bid: AugmentedEvent<ApiType, [candidateId: PezspCoreCryptoAccountId32, offer: u128], { candidateId: PezspCoreCryptoAccountId32, offer: u128 }>;
       /**
        * A candidate has been suspended
        **/
-      CandidateSuspended: AugmentedEvent<ApiType, [candidate: AccountId32], { candidate: AccountId32 }>;
+      CandidateSuspended: AugmentedEvent<ApiType, [candidate: PezspCoreCryptoAccountId32], { candidate: PezspCoreCryptoAccountId32 }>;
       /**
        * A member has been challenged
        **/
-      Challenged: AugmentedEvent<ApiType, [member: AccountId32], { member: AccountId32 }>;
+      Challenged: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32], { member: PezspCoreCryptoAccountId32 }>;
       /**
        * A vote has been placed for a defending member
        **/
-      DefenderVote: AugmentedEvent<ApiType, [voter: AccountId32, vote: bool], { voter: AccountId32, vote: bool }>;
+      DefenderVote: AugmentedEvent<ApiType, [voter: PezspCoreCryptoAccountId32, vote: bool], { voter: PezspCoreCryptoAccountId32, vote: bool }>;
       /**
        * Some funds were deposited into the society account.
        **/
@@ -1277,24 +1277,24 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A deposit was poked / adjusted.
        **/
-      DepositPoked: AugmentedEvent<ApiType, [who: AccountId32, oldDeposit: u128, newDeposit: u128], { who: AccountId32, oldDeposit: u128, newDeposit: u128 }>;
+      DepositPoked: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, oldDeposit: u128, newDeposit: u128], { who: PezspCoreCryptoAccountId32, oldDeposit: u128, newDeposit: u128 }>;
       /**
        * A \[member\] got elevated to \[rank\].
        **/
-      Elevated: AugmentedEvent<ApiType, [member: AccountId32, rank: u32], { member: AccountId32, rank: u32 }>;
+      Elevated: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32, rank: u32], { member: PezspCoreCryptoAccountId32, rank: u32 }>;
       /**
        * The society is founded by the given identity.
        **/
-      Founded: AugmentedEvent<ApiType, [founder: AccountId32], { founder: AccountId32 }>;
+      Founded: AugmentedEvent<ApiType, [founder: PezspCoreCryptoAccountId32], { founder: PezspCoreCryptoAccountId32 }>;
       /**
        * A group of candidates have been inducted. The batch's primary is the first value, the
        * batch in full is the second.
        **/
-      Inducted: AugmentedEvent<ApiType, [primary: AccountId32, candidates: Vec<AccountId32>], { primary: AccountId32, candidates: Vec<AccountId32> }>;
+      Inducted: AugmentedEvent<ApiType, [primary: PezspCoreCryptoAccountId32, candidates: Vec<PezspCoreCryptoAccountId32>], { primary: PezspCoreCryptoAccountId32, candidates: Vec<PezspCoreCryptoAccountId32> }>;
       /**
        * A member has been suspended
        **/
-      MemberSuspended: AugmentedEvent<ApiType, [member: AccountId32], { member: AccountId32 }>;
+      MemberSuspended: AugmentedEvent<ApiType, [member: PezspCoreCryptoAccountId32], { member: PezspCoreCryptoAccountId32 }>;
       /**
        * A new set of \[params\] has been set for the group.
        **/
@@ -1302,28 +1302,28 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A suspended member has been judged.
        **/
-      SuspendedMemberJudgement: AugmentedEvent<ApiType, [who: AccountId32, judged: bool], { who: AccountId32, judged: bool }>;
+      SuspendedMemberJudgement: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, judged: bool], { who: PezspCoreCryptoAccountId32, judged: bool }>;
       /**
        * A candidate was dropped (by their request).
        **/
-      Unbid: AugmentedEvent<ApiType, [candidate: AccountId32], { candidate: AccountId32 }>;
+      Unbid: AugmentedEvent<ApiType, [candidate: PezspCoreCryptoAccountId32], { candidate: PezspCoreCryptoAccountId32 }>;
       /**
        * Society is unfounded.
        **/
-      Unfounded: AugmentedEvent<ApiType, [founder: AccountId32], { founder: AccountId32 }>;
+      Unfounded: AugmentedEvent<ApiType, [founder: PezspCoreCryptoAccountId32], { founder: PezspCoreCryptoAccountId32 }>;
       /**
        * A candidate was dropped (by request of who vouched for them).
        **/
-      Unvouch: AugmentedEvent<ApiType, [candidate: AccountId32], { candidate: AccountId32 }>;
+      Unvouch: AugmentedEvent<ApiType, [candidate: PezspCoreCryptoAccountId32], { candidate: PezspCoreCryptoAccountId32 }>;
       /**
        * A vote has been placed
        **/
-      Vote: AugmentedEvent<ApiType, [candidate: AccountId32, voter: AccountId32, vote: bool], { candidate: AccountId32, voter: AccountId32, vote: bool }>;
+      Vote: AugmentedEvent<ApiType, [candidate: PezspCoreCryptoAccountId32, voter: PezspCoreCryptoAccountId32, vote: bool], { candidate: PezspCoreCryptoAccountId32, voter: PezspCoreCryptoAccountId32, vote: bool }>;
       /**
        * A membership bid just happened by vouching. The given account is the candidate's ID and
        * their offer is the second. The vouching party is the third.
        **/
-      Vouch: AugmentedEvent<ApiType, [candidateId: AccountId32, offer: u128, vouching: AccountId32], { candidateId: AccountId32, offer: u128, vouching: AccountId32 }>;
+      Vouch: AugmentedEvent<ApiType, [candidateId: PezspCoreCryptoAccountId32, offer: u128, vouching: PezspCoreCryptoAccountId32], { candidateId: PezspCoreCryptoAccountId32, offer: u128, vouching: PezspCoreCryptoAccountId32 }>;
       /**
        * Generic event
        **/
@@ -1336,11 +1336,11 @@ declare module '@pezkuwi/api-base/types/events' {
        * NOTE: This event is only emitted when funds are bonded via a dispatchable. Notably,
        * it will not be emitted for staking rewards when they are added to stake.
        **/
-      Bonded: AugmentedEvent<ApiType, [stash: AccountId32, amount: u128], { stash: AccountId32, amount: u128 }>;
+      Bonded: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, amount: u128], { stash: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * An account has stopped participating as either a validator or nominator.
        **/
-      Chilled: AugmentedEvent<ApiType, [stash: AccountId32], { stash: AccountId32 }>;
+      Chilled: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32], { stash: PezspCoreCryptoAccountId32 }>;
       /**
        * Report of a controller batch deprecation.
        **/
@@ -1349,7 +1349,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * Staking balance migrated from locks to holds, with any balance that could not be held
        * is force withdrawn.
        **/
-      CurrencyMigrated: AugmentedEvent<ApiType, [stash: AccountId32, forceWithdraw: u128], { stash: AccountId32, forceWithdraw: u128 }>;
+      CurrencyMigrated: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, forceWithdraw: u128], { stash: PezspCoreCryptoAccountId32, forceWithdraw: u128 }>;
       /**
        * The era payout has been set; the first balance is the validator-payout; the second is
        * the remainder from the maximum amount of reward.
@@ -1362,7 +1362,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A nominator has been kicked from a validator.
        **/
-      Kicked: AugmentedEvent<ApiType, [nominator: AccountId32, stash: AccountId32], { nominator: AccountId32, stash: AccountId32 }>;
+      Kicked: AugmentedEvent<ApiType, [nominator: PezspCoreCryptoAccountId32, stash: PezspCoreCryptoAccountId32], { nominator: PezspCoreCryptoAccountId32, stash: PezspCoreCryptoAccountId32 }>;
       /**
        * An old slashing report from a prior era was discarded because it could
        * not be processed.
@@ -1371,20 +1371,20 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A Page of stakers rewards are getting paid. `next` is `None` if all pages are claimed.
        **/
-      PayoutStarted: AugmentedEvent<ApiType, [eraIndex: u32, validatorStash: AccountId32, page: u32, next: Option<u32>], { eraIndex: u32, validatorStash: AccountId32, page: u32, next: Option<u32> }>;
+      PayoutStarted: AugmentedEvent<ApiType, [eraIndex: u32, validatorStash: PezspCoreCryptoAccountId32, page: u32, next: Option<u32>], { eraIndex: u32, validatorStash: PezspCoreCryptoAccountId32, page: u32, next: Option<u32> }>;
       /**
        * The nominator has been rewarded by this amount to this destination.
        **/
-      Rewarded: AugmentedEvent<ApiType, [stash: AccountId32, dest: PezpalletStakingRewardDestination, amount: u128], { stash: AccountId32, dest: PezpalletStakingRewardDestination, amount: u128 }>;
+      Rewarded: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, dest: PezpalletStakingRewardDestination, amount: u128], { stash: PezspCoreCryptoAccountId32, dest: PezpalletStakingRewardDestination, amount: u128 }>;
       /**
        * A staker (validator or nominator) has been slashed by the given amount.
        **/
-      Slashed: AugmentedEvent<ApiType, [staker: AccountId32, amount: u128], { staker: AccountId32, amount: u128 }>;
+      Slashed: AugmentedEvent<ApiType, [staker: PezspCoreCryptoAccountId32, amount: u128], { staker: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A slash for the given validator, for the given percentage of their stake, at the given
        * era as been reported.
        **/
-      SlashReported: AugmentedEvent<ApiType, [validator: AccountId32, fraction: Perbill, slashEra: u32], { validator: AccountId32, fraction: Perbill, slashEra: u32 }>;
+      SlashReported: AugmentedEvent<ApiType, [validator: PezspCoreCryptoAccountId32, fraction: u32, slashEra: u32], { validator: PezspCoreCryptoAccountId32, fraction: u32, slashEra: u32 }>;
       /**
        * Targets size limit reached.
        **/
@@ -1404,16 +1404,16 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An account has unbonded this amount.
        **/
-      Unbonded: AugmentedEvent<ApiType, [stash: AccountId32, amount: u128], { stash: AccountId32, amount: u128 }>;
+      Unbonded: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, amount: u128], { stash: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * A validator has set their preferences.
        **/
-      ValidatorPrefsSet: AugmentedEvent<ApiType, [stash: AccountId32, prefs: PezpalletStakingValidatorPrefs], { stash: AccountId32, prefs: PezpalletStakingValidatorPrefs }>;
+      ValidatorPrefsSet: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, prefs: PezpalletStakingValidatorPrefs], { stash: PezspCoreCryptoAccountId32, prefs: PezpalletStakingValidatorPrefs }>;
       /**
        * An account has called `withdraw_unbonded` and removed unbonding chunks worth `Balance`
        * from the unlocking queue.
        **/
-      Withdrawn: AugmentedEvent<ApiType, [stash: AccountId32, amount: u128], { stash: AccountId32, amount: u128 }>;
+      Withdrawn: AugmentedEvent<ApiType, [stash: PezspCoreCryptoAccountId32, amount: u128], { stash: PezspCoreCryptoAccountId32, amount: u128 }>;
       /**
        * Generic event
        **/
@@ -1462,11 +1462,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An account was reaped.
        **/
-      KilledAccount: AugmentedEvent<ApiType, [account: AccountId32], { account: AccountId32 }>;
+      KilledAccount: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32], { account: PezspCoreCryptoAccountId32 }>;
       /**
        * A new account was created.
        **/
-      NewAccount: AugmentedEvent<ApiType, [account: AccountId32], { account: AccountId32 }>;
+      NewAccount: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32], { account: PezspCoreCryptoAccountId32 }>;
       /**
        * An invalid authorized upgrade was rejected while trying to apply it.
        **/
@@ -1474,7 +1474,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * On on-chain remark happened.
        **/
-      Remarked: AugmentedEvent<ApiType, [sender: AccountId32, hash_: H256], { sender: AccountId32, hash_: H256 }>;
+      Remarked: AugmentedEvent<ApiType, [sender: PezspCoreCryptoAccountId32, hash_: H256], { sender: PezspCoreCryptoAccountId32, hash_: H256 }>;
       /**
        * An upgrade was authorized.
        **/
@@ -1489,7 +1489,7 @@ declare module '@pezkuwi/api-base/types/events' {
        * A transaction fee `actual_fee`, of which `tip` was added to the minimum inclusion fee,
        * has been paid by `who`.
        **/
-      TransactionFeePaid: AugmentedEvent<ApiType, [who: AccountId32, actualFee: u128, tip: u128], { who: AccountId32, actualFee: u128, tip: u128 }>;
+      TransactionFeePaid: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, actualFee: u128, tip: u128], { who: PezspCoreCryptoAccountId32, actualFee: u128, tip: u128 }>;
       /**
        * Generic event
        **/
@@ -1507,7 +1507,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Some funds have been allocated.
        **/
-      Awarded: AugmentedEvent<ApiType, [proposalIndex: u32, award: u128, account: AccountId32], { proposalIndex: u32, award: u128, account: AccountId32 }>;
+      Awarded: AugmentedEvent<ApiType, [proposalIndex: u32, award: u128, account: PezspCoreCryptoAccountId32], { proposalIndex: u32, award: u128, account: PezspCoreCryptoAccountId32 }>;
       /**
        * Some of our funds have been burnt.
        **/
@@ -1531,7 +1531,7 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * A new spend proposal has been approved.
        **/
-      SpendApproved: AugmentedEvent<ApiType, [proposalIndex: u32, amount: u128, beneficiary: AccountId32], { proposalIndex: u32, amount: u128, beneficiary: AccountId32 }>;
+      SpendApproved: AugmentedEvent<ApiType, [proposalIndex: u32, amount: u128, beneficiary: PezspCoreCryptoAccountId32], { proposalIndex: u32, amount: u128, beneficiary: PezspCoreCryptoAccountId32 }>;
       /**
        * We have ended a spend period and will now allocate funds.
        **/
@@ -1593,16 +1593,16 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * An \[account\] has become fully vested.
        **/
-      VestingCompleted: AugmentedEvent<ApiType, [account: AccountId32], { account: AccountId32 }>;
+      VestingCompleted: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32], { account: PezspCoreCryptoAccountId32 }>;
       /**
        * A vesting schedule has been created.
        **/
-      VestingCreated: AugmentedEvent<ApiType, [account: AccountId32, scheduleIndex: u32], { account: AccountId32, scheduleIndex: u32 }>;
+      VestingCreated: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, scheduleIndex: u32], { account: PezspCoreCryptoAccountId32, scheduleIndex: u32 }>;
       /**
        * The amount vested has been updated. This could indicate a change in funds available.
        * The balance given is the amount which is left unvested (and thus locked).
        **/
-      VestingUpdated: AugmentedEvent<ApiType, [account: AccountId32, unvested: u128], { account: AccountId32, unvested: u128 }>;
+      VestingUpdated: AugmentedEvent<ApiType, [account: PezspCoreCryptoAccountId32, unvested: u128], { account: PezspCoreCryptoAccountId32, unvested: u128 }>;
       /**
        * Generic event
        **/
@@ -1612,11 +1612,11 @@ declare module '@pezkuwi/api-base/types/events' {
       /**
        * Moved an account from one bag to another.
        **/
-      Rebagged: AugmentedEvent<ApiType, [who: AccountId32, from: u64, to: u64], { who: AccountId32, from: u64, to: u64 }>;
+      Rebagged: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, from: u64, to: u64], { who: PezspCoreCryptoAccountId32, from: u64, to: u64 }>;
       /**
        * Updated the score of some account to the given amount.
        **/
-      ScoreUpdated: AugmentedEvent<ApiType, [who: AccountId32, newScore: u64], { who: AccountId32, newScore: u64 }>;
+      ScoreUpdated: AugmentedEvent<ApiType, [who: PezspCoreCryptoAccountId32, newScore: u64], { who: PezspCoreCryptoAccountId32, newScore: u64 }>;
       /**
        * Generic event
        **/

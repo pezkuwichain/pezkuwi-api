@@ -7,9 +7,15 @@ import '@pezkuwi/types/lookup';
 
 import type { BTreeMap, BTreeSet, BitVec, Bytes, Compact, Enum, Null, Option, Result, Struct, U8aFixed, Vec, bool, u128, u16, u32, u64, u8 } from '@pezkuwi/types-codec';
 import type { ITuple } from '@pezkuwi/types-codec/types';
-import type { AccountId32, H256, PerU16, Perbill, Perquintill, RuntimeCall, RuntimeEvent } from '@pezkuwi/types/interfaces/runtime';
+import type { AccountId32, H256, MultiAddress, RuntimeCall, RuntimeEvent } from '@pezkuwi/types/interfaces/runtime';
 
 declare module '@pezkuwi/types/lookup' {
+    /** @name PezspCoreCryptoAccountId32 (0) */
+    interface PezspCoreCryptoAccountId32 extends AccountId32 {}
+
+    /** @name PezspRuntimeMultiAddress (1) */
+    interface PezspRuntimeMultiAddress extends MultiAddress {}
+
   /** @name PezpalletBalancesUnexpectedKind (41) */
   interface PezpalletBalancesUnexpectedKind extends Enum {
     readonly isBalanceUpdated: boolean;
@@ -457,7 +463,7 @@ declare module '@pezkuwi/types/lookup' {
   interface PezkuwiRuntimeCommonClaimsPezpalletCall extends Enum {
     readonly isClaim: boolean;
     readonly asClaim: {
-      readonly dest: AccountId32;
+      readonly dest: PezspCoreCryptoAccountId32;
       readonly ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature;
     } & Struct;
     readonly isMintClaim: boolean;
@@ -469,7 +475,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isClaimAttest: boolean;
     readonly asClaimAttest: {
-      readonly dest: AccountId32;
+      readonly dest: PezspCoreCryptoAccountId32;
       readonly ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature;
       readonly statement: Bytes;
     } & Struct;
@@ -481,7 +487,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly asMoveClaim: {
       readonly old: PezkuwiRuntimeCommonClaimsEthereumAddress;
       readonly new_: PezkuwiRuntimeCommonClaimsEthereumAddress;
-      readonly maybePreclaim: Option<AccountId32>;
+      readonly maybePreclaim: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly type: 'Claim' | 'MintClaim' | 'ClaimAttest' | 'Attest' | 'MoveClaim';
   }
@@ -515,21 +521,21 @@ declare module '@pezkuwi/types/lookup' {
   /** @name PezkuwiRuntimeNposCompactSolution16 (200) */
   interface PezkuwiRuntimeNposCompactSolution16 extends Struct {
     readonly votes1: Vec<ITuple<[Compact<u32>, Compact<u16>]>>;
-    readonly votes2: Vec<ITuple<[Compact<u32>, ITuple<[Compact<u16>, Compact<PerU16>]>, Compact<u16>]>>;
-    readonly votes3: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes4: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes5: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes6: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes7: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes8: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes9: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes10: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes11: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes12: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes13: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes14: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes15: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
-    readonly votes16: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<PerU16>]>>, Compact<u16>]>>;
+    readonly votes2: Vec<ITuple<[Compact<u32>, ITuple<[Compact<u16>, Compact<u16>]>, Compact<u16>]>>;
+    readonly votes3: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes4: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes5: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes6: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes7: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes8: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes9: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes10: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes11: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes12: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes13: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes14: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes15: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
+    readonly votes16: Vec<ITuple<[Compact<u32>, Vec<ITuple<[Compact<u16>, Compact<u16>]>>, Compact<u16>]>>;
   }
 
   /** @name PezpalletStakingAsyncAhClientCall (274) */
@@ -548,7 +554,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezpalletStakingAsyncRcClientValidatorSetReport (275) */
   interface PezpalletStakingAsyncRcClientValidatorSetReport extends Struct {
-    readonly newValidatorSet: Vec<AccountId32>;
+    readonly newValidatorSet: Vec<PezspCoreCryptoAccountId32>;
     readonly id: u32;
     readonly pruneUpTo: Option<u32>;
     readonly leftover: bool;
@@ -722,7 +728,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isSetOnDemandFeeVariability: boolean;
     readonly asSetOnDemandFeeVariability: {
-      readonly new_: Perbill;
+      readonly new_: u32;
     } & Struct;
     readonly isSetOnDemandQueueMaxSize: boolean;
     readonly asSetOnDemandQueueMaxSize: {
@@ -730,7 +736,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isSetOnDemandTargetQueueUtilization: boolean;
     readonly asSetOnDemandTargetQueueUtilization: {
-      readonly new_: Perbill;
+      readonly new_: u32;
     } & Struct;
     readonly isSetMinimumBackingVotes: boolean;
     readonly asSetMinimumBackingVotes: {
@@ -807,8 +813,8 @@ declare module '@pezkuwi/types/lookup' {
     readonly numCores: u32;
     readonly maxAvailabilityTimeouts: u32;
     readonly onDemandQueueMaxSize: u32;
-    readonly onDemandTargetQueueUtilization: Perbill;
-    readonly onDemandFeeVariability: Perbill;
+    readonly onDemandTargetQueueUtilization: u32;
+    readonly onDemandFeeVariability: u32;
     readonly onDemandBaseFee: u128;
     readonly ttl: u32;
   }
@@ -1151,7 +1157,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isForceRegister: boolean;
     readonly asForceRegister: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly deposit: u128;
       readonly id: u32;
       readonly genesisHead: Bytes;
@@ -1193,7 +1199,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isForceLease: boolean;
     readonly asForceLease: {
       readonly para: u32;
-      readonly leaser: AccountId32;
+      readonly leaser: PezspCoreCryptoAccountId32;
       readonly amount: u128;
       readonly periodBegin: u32;
       readonly periodCount: u32;
@@ -1247,7 +1253,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isWithdraw: boolean;
     readonly asWithdraw: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly index: Compact<u32>;
     } & Struct;
     readonly isRefund: boolean;
@@ -1307,7 +1313,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isCreditAccount: boolean;
     readonly asCreditAccount: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly amount: u128;
     } & Struct;
     readonly isAssignCore: boolean;
@@ -2538,7 +2544,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isSetManager: boolean;
     readonly asSetManager: {
-      readonly new_: Option<AccountId32>;
+      readonly new_: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isSendXcmMessage: boolean;
     readonly asSendXcmMessage: {
@@ -2547,11 +2553,11 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isPreserveAccounts: boolean;
     readonly asPreserveAccounts: {
-      readonly accounts: Vec<AccountId32>;
+      readonly accounts: Vec<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isSetCanceller: boolean;
     readonly asSetCanceller: {
-      readonly new_: Option<AccountId32>;
+      readonly new_: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isPauseMigration: boolean;
     readonly isCancelMigration: boolean;
@@ -2585,13 +2591,13 @@ declare module '@pezkuwi/types/lookup' {
     readonly isAccountsMigrationInit: boolean;
     readonly isAccountsMigrationOngoing: boolean;
     readonly asAccountsMigrationOngoing: {
-      readonly lastKey: Option<AccountId32>;
+      readonly lastKey: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isAccountsMigrationDone: boolean;
     readonly isMultisigMigrationInit: boolean;
     readonly isMultisigMigrationOngoing: boolean;
     readonly asMultisigMigrationOngoing: {
-      readonly lastKey: Option<ITuple<[AccountId32, U8aFixed]>>;
+      readonly lastKey: Option<ITuple<[PezspCoreCryptoAccountId32, U8aFixed]>>;
     } & Struct;
     readonly isMultisigMigrationDone: boolean;
     readonly isClaimsMigrationInit: boolean;
@@ -2603,11 +2609,11 @@ declare module '@pezkuwi/types/lookup' {
     readonly isProxyMigrationInit: boolean;
     readonly isProxyMigrationProxies: boolean;
     readonly asProxyMigrationProxies: {
-      readonly lastKey: Option<AccountId32>;
+      readonly lastKey: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isProxyMigrationAnnouncements: boolean;
     readonly asProxyMigrationAnnouncements: {
-      readonly lastKey: Option<AccountId32>;
+      readonly lastKey: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isProxyMigrationDone: boolean;
     readonly isPreimageMigrationInit: boolean;
@@ -2637,7 +2643,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isVestingMigrationInit: boolean;
     readonly isVestingMigrationOngoing: boolean;
     readonly asVestingMigrationOngoing: {
-      readonly nextKey: Option<AccountId32>;
+      readonly nextKey: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isVestingMigrationDone: boolean;
     readonly isDelegatedStakingMigrationInit: boolean;
@@ -2735,7 +2741,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isSigning: boolean;
     readonly asSigning: Option<PezkuwiRuntimeCommonClaimsEthereumAddress>;
     readonly isPreclaims: boolean;
-    readonly asPreclaims: Option<AccountId32>;
+    readonly asPreclaims: Option<PezspCoreCryptoAccountId32>;
     readonly isFinished: boolean;
     readonly type: 'StorageValues' | 'Claims' | 'Vesting' | 'Signing' | 'Preclaims' | 'Finished';
   }
@@ -2744,7 +2750,7 @@ declare module '@pezkuwi/types/lookup' {
   interface PezpalletRcMigratorStakingNomPoolsNomPoolsStage extends Enum {
     readonly isStorageValues: boolean;
     readonly isPoolMembers: boolean;
-    readonly asPoolMembers: Option<AccountId32>;
+    readonly asPoolMembers: Option<PezspCoreCryptoAccountId32>;
     readonly isBondedPools: boolean;
     readonly asBondedPools: Option<u32>;
     readonly isRewardPools: boolean;
@@ -2754,9 +2760,9 @@ declare module '@pezkuwi/types/lookup' {
     readonly isMetadata: boolean;
     readonly asMetadata: Option<u32>;
     readonly isReversePoolIdLookup: boolean;
-    readonly asReversePoolIdLookup: Option<AccountId32>;
+    readonly asReversePoolIdLookup: Option<PezspCoreCryptoAccountId32>;
     readonly isClaimPermissions: boolean;
-    readonly asClaimPermissions: Option<AccountId32>;
+    readonly asClaimPermissions: Option<PezspCoreCryptoAccountId32>;
     readonly isFinished: boolean;
     readonly type: 'StorageValues' | 'PoolMembers' | 'BondedPools' | 'RewardPools' | 'SubPoolsStorage' | 'Metadata' | 'ReversePoolIdLookup' | 'ClaimPermissions' | 'Finished';
   }
@@ -2764,9 +2770,9 @@ declare module '@pezkuwi/types/lookup' {
   /** @name PezpalletRcMigratorStakingDelegatedStakingDelegatedStakingStage (478) */
   interface PezpalletRcMigratorStakingDelegatedStakingDelegatedStakingStage extends Enum {
     readonly isDelegators: boolean;
-    readonly asDelegators: Option<AccountId32>;
+    readonly asDelegators: Option<PezspCoreCryptoAccountId32>;
     readonly isAgents: boolean;
-    readonly asAgents: Option<AccountId32>;
+    readonly asAgents: Option<PezspCoreCryptoAccountId32>;
     readonly isFinished: boolean;
     readonly type: 'Delegators' | 'Agents' | 'Finished';
   }
@@ -2784,7 +2790,7 @@ declare module '@pezkuwi/types/lookup' {
   /** @name PezpalletRcMigratorStakingBagsListBagsListStage (483) */
   interface PezpalletRcMigratorStakingBagsListBagsListStage extends Enum {
     readonly isListNodes: boolean;
-    readonly asListNodes: Option<AccountId32>;
+    readonly asListNodes: Option<PezspCoreCryptoAccountId32>;
     readonly isListBags: boolean;
     readonly asListBags: Option<u64>;
     readonly isFinished: boolean;
@@ -2805,9 +2811,9 @@ declare module '@pezkuwi/types/lookup' {
   /** @name PezpalletRcMigratorConvictionVotingConvictionVotingStage (487) */
   interface PezpalletRcMigratorConvictionVotingConvictionVotingStage extends Enum {
     readonly isVotingFor: boolean;
-    readonly asVotingFor: Option<ITuple<[AccountId32, u16]>>;
+    readonly asVotingFor: Option<ITuple<[PezspCoreCryptoAccountId32, u16]>>;
     readonly isClassLocksFor: boolean;
-    readonly asClassLocksFor: Option<AccountId32>;
+    readonly asClassLocksFor: Option<PezspCoreCryptoAccountId32>;
     readonly isFinished: boolean;
     readonly type: 'VotingFor' | 'ClassLocksFor' | 'Finished';
   }
@@ -2895,25 +2901,25 @@ declare module '@pezkuwi/types/lookup' {
     readonly isValues: boolean;
     readonly isInvulnerables: boolean;
     readonly isBonded: boolean;
-    readonly asBonded: Option<AccountId32>;
+    readonly asBonded: Option<PezspCoreCryptoAccountId32>;
     readonly isLedger: boolean;
-    readonly asLedger: Option<AccountId32>;
+    readonly asLedger: Option<PezspCoreCryptoAccountId32>;
     readonly isPayee: boolean;
-    readonly asPayee: Option<AccountId32>;
+    readonly asPayee: Option<PezspCoreCryptoAccountId32>;
     readonly isValidators: boolean;
-    readonly asValidators: Option<AccountId32>;
+    readonly asValidators: Option<PezspCoreCryptoAccountId32>;
     readonly isNominators: boolean;
-    readonly asNominators: Option<AccountId32>;
+    readonly asNominators: Option<PezspCoreCryptoAccountId32>;
     readonly isVirtualStakers: boolean;
-    readonly asVirtualStakers: Option<AccountId32>;
+    readonly asVirtualStakers: Option<PezspCoreCryptoAccountId32>;
     readonly isErasStakersOverview: boolean;
-    readonly asErasStakersOverview: Option<ITuple<[u32, AccountId32]>>;
+    readonly asErasStakersOverview: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>;
     readonly isErasStakersPaged: boolean;
-    readonly asErasStakersPaged: Option<ITuple<[u32, AccountId32, u32]>>;
+    readonly asErasStakersPaged: Option<ITuple<[u32, PezspCoreCryptoAccountId32, u32]>>;
     readonly isClaimedRewards: boolean;
-    readonly asClaimedRewards: Option<ITuple<[u32, AccountId32]>>;
+    readonly asClaimedRewards: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>;
     readonly isErasValidatorPrefs: boolean;
-    readonly asErasValidatorPrefs: Option<ITuple<[u32, AccountId32]>>;
+    readonly asErasValidatorPrefs: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>;
     readonly isErasValidatorReward: boolean;
     readonly asErasValidatorReward: Option<u32>;
     readonly isErasRewardPoints: boolean;
@@ -2924,13 +2930,13 @@ declare module '@pezkuwi/types/lookup' {
     readonly asUnappliedSlashes: Option<u32>;
     readonly isBondedEras: boolean;
     readonly isValidatorSlashInEra: boolean;
-    readonly asValidatorSlashInEra: Option<ITuple<[u32, AccountId32]>>;
+    readonly asValidatorSlashInEra: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>;
     readonly isNominatorSlashInEra: boolean;
-    readonly asNominatorSlashInEra: Option<ITuple<[u32, AccountId32]>>;
+    readonly asNominatorSlashInEra: Option<ITuple<[u32, PezspCoreCryptoAccountId32]>>;
     readonly isSlashingSpans: boolean;
-    readonly asSlashingSpans: Option<AccountId32>;
+    readonly asSlashingSpans: Option<PezspCoreCryptoAccountId32>;
     readonly isSpanSlash: boolean;
-    readonly asSpanSlash: Option<ITuple<[AccountId32, u32]>>;
+    readonly asSpanSlash: Option<ITuple<[PezspCoreCryptoAccountId32, u32]>>;
     readonly isFinished: boolean;
     readonly type: 'Values' | 'Invulnerables' | 'Bonded' | 'Ledger' | 'Payee' | 'Validators' | 'Nominators' | 'VirtualStakers' | 'ErasStakersOverview' | 'ErasStakersPaged' | 'ClaimedRewards' | 'ErasValidatorPrefs' | 'ErasValidatorReward' | 'ErasRewardPoints' | 'ErasTotalStake' | 'UnappliedSlashes' | 'BondedEras' | 'ValidatorSlashInEra' | 'NominatorSlashInEra' | 'SlashingSpans' | 'SpanSlash' | 'Finished';
   }
@@ -2961,7 +2967,7 @@ declare module '@pezkuwi/types/lookup' {
   interface PezkuwiRuntimeCommonClaimsPezpalletEvent extends Enum {
     readonly isClaimed: boolean;
     readonly asClaimed: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly ethereumAddress: PezkuwiRuntimeCommonClaimsEthereumAddress;
       readonly amount: u128;
     } & Struct;
@@ -3125,7 +3131,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly asOnDemandOrderPlaced: {
       readonly paraId: u32;
       readonly spotPrice: u128;
-      readonly orderedBy: AccountId32;
+      readonly orderedBy: PezspCoreCryptoAccountId32;
     } & Struct;
     readonly isSpotPriceSet: boolean;
     readonly asSpotPriceSet: {
@@ -3133,7 +3139,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isAccountCredited: boolean;
     readonly asAccountCredited: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly amount: u128;
     } & Struct;
     readonly type: 'OnDemandOrderPlaced' | 'SpotPriceSet' | 'AccountCredited';
@@ -3144,7 +3150,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isRegistered: boolean;
     readonly asRegistered: {
       readonly paraId: u32;
-      readonly manager: AccountId32;
+      readonly manager: PezspCoreCryptoAccountId32;
     } & Struct;
     readonly isDeregistered: boolean;
     readonly asDeregistered: {
@@ -3153,7 +3159,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isReserved: boolean;
     readonly asReserved: {
       readonly paraId: u32;
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
     } & Struct;
     readonly isSwapped: boolean;
     readonly asSwapped: {
@@ -3172,7 +3178,7 @@ declare module '@pezkuwi/types/lookup' {
     readonly isLeased: boolean;
     readonly asLeased: {
       readonly paraId: u32;
-      readonly leaser: AccountId32;
+      readonly leaser: PezspCoreCryptoAccountId32;
       readonly periodBegin: u32;
       readonly periodCount: u32;
       readonly extraReserved: u128;
@@ -3195,24 +3201,24 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isReserved: boolean;
     readonly asReserved: {
-      readonly bidder: AccountId32;
+      readonly bidder: PezspCoreCryptoAccountId32;
       readonly extraReserved: u128;
       readonly totalAmount: u128;
     } & Struct;
     readonly isUnreserved: boolean;
     readonly asUnreserved: {
-      readonly bidder: AccountId32;
+      readonly bidder: PezspCoreCryptoAccountId32;
       readonly amount: u128;
     } & Struct;
     readonly isReserveConfiscated: boolean;
     readonly asReserveConfiscated: {
       readonly paraId: u32;
-      readonly leaser: AccountId32;
+      readonly leaser: PezspCoreCryptoAccountId32;
       readonly amount: u128;
     } & Struct;
     readonly isBidAccepted: boolean;
     readonly asBidAccepted: {
-      readonly bidder: AccountId32;
+      readonly bidder: PezspCoreCryptoAccountId32;
       readonly paraId: u32;
       readonly amount: u128;
       readonly firstSlot: u32;
@@ -3234,13 +3240,13 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isContributed: boolean;
     readonly asContributed: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly fundIndex: u32;
       readonly amount: u128;
     } & Struct;
     readonly isWithdrew: boolean;
     readonly asWithdrew: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly fundIndex: u32;
       readonly amount: u128;
     } & Struct;
@@ -3267,7 +3273,7 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isMemoUpdated: boolean;
     readonly asMemoUpdated: {
-      readonly who: AccountId32;
+      readonly who: PezspCoreCryptoAccountId32;
       readonly paraId: u32;
       readonly memo: Bytes;
     } & Struct;
@@ -3541,8 +3547,8 @@ declare module '@pezkuwi/types/lookup' {
     } & Struct;
     readonly isManagerSet: boolean;
     readonly asManagerSet: {
-      readonly old: Option<AccountId32>;
-      readonly new_: Option<AccountId32>;
+      readonly old: Option<PezspCoreCryptoAccountId32>;
+      readonly new_: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isXcmSent: boolean;
     readonly asXcmSent: {
@@ -3554,12 +3560,12 @@ declare module '@pezkuwi/types/lookup' {
     readonly isStakingElectionsPaused: boolean;
     readonly isAccountsPreserved: boolean;
     readonly asAccountsPreserved: {
-      readonly accounts: Vec<AccountId32>;
+      readonly accounts: Vec<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isCancellerSet: boolean;
     readonly asCancellerSet: {
-      readonly old: Option<AccountId32>;
-      readonly new_: Option<AccountId32>;
+      readonly old: Option<PezspCoreCryptoAccountId32>;
+      readonly new_: Option<PezspCoreCryptoAccountId32>;
     } & Struct;
     readonly isMigrationPaused: boolean;
     readonly asMigrationPaused: {
@@ -3666,27 +3672,27 @@ declare module '@pezkuwi/types/lookup' {
   }
 
   /** @name PezframeElectionProviderSupportBoundedSupports (738) */
-  interface PezframeElectionProviderSupportBoundedSupports extends Vec<ITuple<[AccountId32, PezframeElectionProviderSupportBoundedSupport]>> {}
+  interface PezframeElectionProviderSupportBoundedSupports extends Vec<ITuple<[PezspCoreCryptoAccountId32, PezframeElectionProviderSupportBoundedSupport]>> {}
 
   /** @name PezframeElectionProviderSupportBoundedSupport (741) */
   interface PezframeElectionProviderSupportBoundedSupport extends Struct {
     readonly total: u128;
-    readonly voters: Vec<ITuple<[AccountId32, u128]>>;
+    readonly voters: Vec<ITuple<[PezspCoreCryptoAccountId32, u128]>>;
   }
 
   /** @name PezpalletStakingAsyncRcClientSessionReport (783) */
   interface PezpalletStakingAsyncRcClientSessionReport extends Struct {
     readonly endIndex: u32;
-    readonly validatorPoints: Vec<ITuple<[AccountId32, u32]>>;
+    readonly validatorPoints: Vec<ITuple<[PezspCoreCryptoAccountId32, u32]>>;
     readonly activationTimestamp: Option<ITuple<[u64, u32]>>;
     readonly leftover: bool;
   }
 
   /** @name PezpalletStakingAsyncRcClientOffence (787) */
   interface PezpalletStakingAsyncRcClientOffence extends Struct {
-    readonly offender: AccountId32;
-    readonly reporters: Vec<AccountId32>;
-    readonly slashFraction: Perbill;
+    readonly offender: PezspCoreCryptoAccountId32;
+    readonly reporters: Vec<PezspCoreCryptoAccountId32>;
+    readonly slashFraction: u32;
   }
 
   /** @name PezpalletStakingAsyncAhClientError (789) */
@@ -4120,7 +4126,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezkuwiRuntimeCommonParasRegistrarParaInfo (887) */
   interface PezkuwiRuntimeCommonParasRegistrarParaInfo extends Struct {
-    readonly manager: AccountId32;
+    readonly manager: PezspCoreCryptoAccountId32;
     readonly deposit: u128;
     readonly locked: Option<bool>;
   }
@@ -4165,7 +4171,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name PezkuwiRuntimeCommonCrowdloanFundInfo (897) */
   interface PezkuwiRuntimeCommonCrowdloanFundInfo extends Struct {
-    readonly depositor: AccountId32;
+    readonly depositor: PezspCoreCryptoAccountId32;
     readonly verifier: Option<PezspRuntimeMultiSigner>;
     readonly deposit: u128;
     readonly raised: u128;
@@ -4429,7 +4435,7 @@ declare module '@pezkuwi/types/lookup' {
 
   /** @name RelayCommonApisInflationInfo (958) */
   interface RelayCommonApisInflationInfo extends Struct {
-    readonly inflation: Perquintill;
+    readonly inflation: u64;
     readonly nextMint: ITuple<[u128, u128]>;
   }
 

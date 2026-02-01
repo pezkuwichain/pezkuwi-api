@@ -8,8 +8,7 @@ import '@pezkuwi/api-base/types/consts';
 import type { ApiTypes, AugmentedConst } from '@pezkuwi/api-base/types';
 import type { Bytes, Option, Vec, u128, u16, u32, u64, u8 } from '@pezkuwi/types-codec';
 import type { Codec, ITuple } from '@pezkuwi/types-codec/types';
-import type { AccountId32, Perbill, Permill } from '@pezkuwi/types/interfaces/runtime';
-import type { PezframeSupportPezpalletId, PezframeSystemLimitsBlockLength, PezframeSystemLimitsBlockWeights, PezpalletReferendaTrackDetails, PezspVersionRuntimeVersion, PezspWeightsRuntimeDbWeight, PezspWeightsWeightV2Weight, StagingXcmV5Junctions, StagingXcmV5Location } from '@pezkuwi/types/lookup';
+import type { PezframeSupportPezpalletId, PezframeSystemLimitsBlockLength, PezframeSystemLimitsBlockWeights, PezpalletReferendaTrackDetails, PezspCoreCryptoAccountId32, PezspVersionRuntimeVersion, PezspWeightsRuntimeDbWeight, PezspWeightsWeightV2Weight, StagingXcmV5Junctions, StagingXcmV5Location } from '@pezkuwi/types/lookup';
 
 export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>;
 
@@ -19,7 +18,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * A fee to withdraw the liquidity.
        **/
-      liquidityWithdrawalFee: Permill & AugmentedConst<ApiType>;
+      liquidityWithdrawalFee: u32 & AugmentedConst<ApiType>;
       /**
        * A % the liquidity providers will take of every swap. Represents 10ths of a percent.
        **/
@@ -170,7 +169,7 @@ declare module '@pezkuwi/api-base/types/consts' {
        * This deposit has optional upper and lower bounds with `CuratorDepositMax` and
        * `CuratorDepositMin`.
        **/
-      curatorDepositMultiplier: Permill & AugmentedConst<ApiType>;
+      curatorDepositMultiplier: u32 & AugmentedConst<ApiType>;
       /**
        * The amount held on deposit per byte within the tip report reason or bounty description.
        **/
@@ -228,7 +227,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Gets this pallet's derived pot account.
        **/
-      potAccount: AccountId32 & AugmentedConst<ApiType>;
+      potAccount: PezspCoreCryptoAccountId32 & AugmentedConst<ApiType>;
       /**
        * Account Identifier from which the internal Pot is generated.
        **/
@@ -266,7 +265,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Fraction of the slash that is rewarded to the caller of pending slash to the agent.
        **/
-      slashRewardFraction: Perbill & AugmentedConst<ApiType>;
+      slashRewardFraction: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -418,7 +417,7 @@ declare module '@pezkuwi/api-base/types/consts' {
        * The minimum amount of improvement to the solution score that defines a solution as
        * "better".
        **/
-      solutionImprovementThreshold: Perbill & AugmentedConst<ApiType>;
+      solutionImprovementThreshold: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -938,7 +937,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Percentage of spare funds (if any) that are burnt per spend period.
        **/
-      burn: Permill & AugmentedConst<ApiType>;
+      burn: u32 & AugmentedConst<ApiType>;
       /**
        * DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
        * Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
@@ -959,7 +958,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Gets this pallet's derived pot account.
        **/
-      potAccount: AccountId32 & AugmentedConst<ApiType>;
+      potAccount: PezspCoreCryptoAccountId32 & AugmentedConst<ApiType>;
       /**
        * Period between successive spends.
        **/

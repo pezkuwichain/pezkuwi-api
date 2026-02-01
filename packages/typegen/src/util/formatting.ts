@@ -257,6 +257,12 @@ const formatters: Record<TypeDefInfo, (registry: Registry, typeDef: TypeDef, def
     const sub = (typeDef.sub as TypeDef);
 
     if (sub.type === 'u8') {
+      // Use lookupName if available (e.g., PezspCoreCryptoAccountId32) instead of generic U8aFixed
+      if (typeDef.lookupName) {
+        setImports(definitions, imports, [rebrandTypeName(typeDef.lookupName)]);
+
+        return rebrandTypeName(typeDef.lookupName);
+      }
       setImports(definitions, imports, ['U8aFixed']);
 
       return 'U8aFixed';

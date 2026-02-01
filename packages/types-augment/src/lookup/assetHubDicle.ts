@@ -135,10 +135,10 @@ export default {
    **/
   AssetHubDicleRuntimeDynamicParamsIssuanceParametersValue: {
     _enum: {
-      MinInflation: 'Perquintill',
-      MaxInflation: 'Perquintill',
-      IdealStake: 'Perquintill',
-      Falloff: 'Perquintill'
+      MinInflation: 'u64',
+      MaxInflation: 'u64',
+      IdealStake: 'u64',
+      Falloff: 'u64'
     }
   },
   /**
@@ -146,14 +146,14 @@ export default {
    **/
   AssetHubDicleRuntimeDynamicParamsTreasuryParametersValue: {
     _enum: {
-      BurnPortion: 'Permill',
+      BurnPortion: 'u32',
       BurnDestination: 'AssetHubDicleRuntimeTreasuryBurnDestinationAccount'
     }
   },
   /**
    * Lookup72: asset_hub_kusama_runtime::treasury::BurnDestinationAccount
    **/
-  AssetHubDicleRuntimeTreasuryBurnDestinationAccount: 'Option<AccountId32>',
+  AssetHubDicleRuntimeTreasuryBurnDestinationAccount: 'Option<PezspCoreCryptoAccountId32>',
   /**
    * Lookup74: asset_hub_kusama_runtime::dynamic_params::staking_election::ParametersValue
    **/
@@ -213,10 +213,10 @@ export default {
    **/
   AssetHubDicleRuntimeDynamicParamsIssuanceParameters: {
     _enum: {
-      MinInflation: '(AssetHubDicleRuntimeDynamicParamsIssuanceMinInflation,Option<Perquintill>)',
-      MaxInflation: '(AssetHubDicleRuntimeDynamicParamsIssuanceMaxInflation,Option<Perquintill>)',
-      IdealStake: '(AssetHubDicleRuntimeDynamicParamsIssuanceIdealStake,Option<Perquintill>)',
-      Falloff: '(AssetHubDicleRuntimeDynamicParamsIssuanceFalloff,Option<Perquintill>)'
+      MinInflation: '(AssetHubDicleRuntimeDynamicParamsIssuanceMinInflation,Option<u64>)',
+      MaxInflation: '(AssetHubDicleRuntimeDynamicParamsIssuanceMaxInflation,Option<u64>)',
+      IdealStake: '(AssetHubDicleRuntimeDynamicParamsIssuanceIdealStake,Option<u64>)',
+      Falloff: '(AssetHubDicleRuntimeDynamicParamsIssuanceFalloff,Option<u64>)'
     }
   },
   /**
@@ -224,7 +224,7 @@ export default {
    **/
   AssetHubDicleRuntimeDynamicParamsTreasuryParameters: {
     _enum: {
-      BurnPortion: '(AssetHubDicleRuntimeDynamicParamsTreasuryBurnPortion,Option<Permill>)',
+      BurnPortion: '(AssetHubDicleRuntimeDynamicParamsTreasuryBurnPortion,Option<u32>)',
       BurnDestination: '(AssetHubDicleRuntimeDynamicParamsTreasuryBurnDestination,Option<AssetHubDicleRuntimeTreasuryBurnDestinationAccount>)'
     }
   },
@@ -383,7 +383,7 @@ export default {
   PezpalletRemoteProxyCall: {
     _enum: {
       remote_proxy: {
-        real: 'MultiAddress',
+        real: 'PezspRuntimeMultiAddress',
         forceProxyType: 'Option<AssetHubDicleRuntimeProxyType>',
         call: 'RuntimeCall',
         proof: 'PezpalletRemoteProxyRemoteProxyProof',
@@ -392,7 +392,7 @@ export default {
         proof: 'PezpalletRemoteProxyRemoteProxyProof',
       },
       remote_proxy_with_registered_proof: {
-        real: 'MultiAddress',
+        real: 'PezspRuntimeMultiAddress',
         forceProxyType: 'Option<AssetHubDicleRuntimeProxyType>',
         call: 'RuntimeCall'
       }
@@ -414,35 +414,35 @@ export default {
    **/
   AssetHubDicleRuntimeStakingNposCompactSolution24: {
     votes1: 'Vec<(Compact<u32>,Compact<u16>)>',
-    votes2: 'Vec<(Compact<u32>,(Compact<u16>,Compact<PerU16>),Compact<u16>)>',
-    votes3: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);2],Compact<u16>)>',
-    votes4: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);3],Compact<u16>)>',
-    votes5: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);4],Compact<u16>)>',
-    votes6: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);5],Compact<u16>)>',
-    votes7: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);6],Compact<u16>)>',
-    votes8: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);7],Compact<u16>)>',
-    votes9: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);8],Compact<u16>)>',
-    votes10: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);9],Compact<u16>)>',
-    votes11: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);10],Compact<u16>)>',
-    votes12: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);11],Compact<u16>)>',
-    votes13: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);12],Compact<u16>)>',
-    votes14: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);13],Compact<u16>)>',
-    votes15: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);14],Compact<u16>)>',
-    votes16: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);15],Compact<u16>)>',
-    votes17: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);16],Compact<u16>)>',
-    votes18: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);17],Compact<u16>)>',
-    votes19: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);18],Compact<u16>)>',
-    votes20: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);19],Compact<u16>)>',
-    votes21: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);20],Compact<u16>)>',
-    votes22: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);21],Compact<u16>)>',
-    votes23: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);22],Compact<u16>)>',
-    votes24: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);23],Compact<u16>)>'
+    votes2: 'Vec<(Compact<u32>,(Compact<u16>,Compact<u16>),Compact<u16>)>',
+    votes3: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);2],Compact<u16>)>',
+    votes4: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);3],Compact<u16>)>',
+    votes5: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);4],Compact<u16>)>',
+    votes6: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);5],Compact<u16>)>',
+    votes7: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);6],Compact<u16>)>',
+    votes8: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);7],Compact<u16>)>',
+    votes9: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);8],Compact<u16>)>',
+    votes10: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);9],Compact<u16>)>',
+    votes11: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);10],Compact<u16>)>',
+    votes12: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);11],Compact<u16>)>',
+    votes13: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);12],Compact<u16>)>',
+    votes14: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);13],Compact<u16>)>',
+    votes15: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);14],Compact<u16>)>',
+    votes16: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);15],Compact<u16>)>',
+    votes17: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);16],Compact<u16>)>',
+    votes18: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);17],Compact<u16>)>',
+    votes19: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);18],Compact<u16>)>',
+    votes20: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);19],Compact<u16>)>',
+    votes21: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);20],Compact<u16>)>',
+    votes22: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);21],Compact<u16>)>',
+    votes23: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);22],Compact<u16>)>',
+    votes24: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);23],Compact<u16>)>'
   },
   /**
    * Lookup598: pallet_proxy::ProxyDefinition<sp_core::crypto::AccountId32, kusama_runtime_constants::proxy::ProxyType, BlockNumber>
    **/
   PezpalletProxyProxyDefinitionDicleRuntimeConstantsProxyProxyType: {
-    delegate: 'AccountId32',
+    delegate: 'PezspCoreCryptoAccountId32',
     proxyType: 'DicleRuntimeConstantsProxyProxyType',
     delay: 'u32'
   },
@@ -502,9 +502,9 @@ export default {
    **/
   PezpalletRcMigratorRecoveryPortableRecoveryMessage: {
     _enum: {
-      Recoverable: '(AccountId32,PezpalletRcMigratorRecoveryPortableRecoveryConfig)',
-      ActiveRecoveries: '(AccountId32,AccountId32,PezpalletRcMigratorRecoveryPortableActiveRecovery)',
-      Proxy: '(AccountId32,AccountId32)'
+      Recoverable: '(PezspCoreCryptoAccountId32,PezpalletRcMigratorRecoveryPortableRecoveryConfig)',
+      ActiveRecoveries: '(PezspCoreCryptoAccountId32,PezspCoreCryptoAccountId32,PezpalletRcMigratorRecoveryPortableActiveRecovery)',
+      Proxy: '(PezspCoreCryptoAccountId32,PezspCoreCryptoAccountId32)'
     }
   },
   /**
@@ -520,7 +520,7 @@ export default {
    * Lookup749: pallet_rc_migrator::recovery::PortableRecoveryFriends
    **/
   PezpalletRcMigratorRecoveryPortableRecoveryFriends: {
-    friends: 'Vec<AccountId32>'
+    friends: 'Vec<PezspCoreCryptoAccountId32>'
   },
   /**
    * Lookup752: pallet_rc_migrator::recovery::PortableActiveRecovery
@@ -536,14 +536,14 @@ export default {
   PezpalletRcMigratorSocietyPortableSocietyMessage: {
     _enum: {
       Values: 'PezpalletRcMigratorSocietySocietyValues',
-      Member: '(AccountId32,PezpalletRcMigratorSocietyPortableMemberRecord)',
-      Payout: '(AccountId32,PezpalletRcMigratorSocietyPortablePayoutRecord)',
-      MemberByIndex: '(u32,AccountId32)',
-      SuspendedMembers: '(AccountId32,PezpalletRcMigratorSocietyPortableMemberRecord)',
-      Candidates: '(AccountId32,PezpalletRcMigratorSocietyPortableCandidacy)',
-      Votes: '(AccountId32,AccountId32,PezpalletRcMigratorSocietyPortableVote)',
-      VoteClearCursor: '(AccountId32,Bytes)',
-      DefenderVotes: '(u32,AccountId32,PezpalletRcMigratorSocietyPortableVote)'
+      Member: '(PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableMemberRecord)',
+      Payout: '(PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortablePayoutRecord)',
+      MemberByIndex: '(u32,PezspCoreCryptoAccountId32)',
+      SuspendedMembers: '(PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableMemberRecord)',
+      Candidates: '(PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableCandidacy)',
+      Votes: '(PezspCoreCryptoAccountId32,PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableVote)',
+      VoteClearCursor: '(PezspCoreCryptoAccountId32,Bytes)',
+      DefenderVotes: '(u32,PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableVote)'
     }
   },
   /**
@@ -552,16 +552,16 @@ export default {
   PezpalletRcMigratorSocietySocietyValues: {
     parameters: 'Option<PezpalletRcMigratorSocietyPortableGroupParams>',
     pot: 'Option<u128>',
-    founder: 'Option<AccountId32>',
-    head: 'Option<AccountId32>',
+    founder: 'Option<PezspCoreCryptoAccountId32>',
+    head: 'Option<PezspCoreCryptoAccountId32>',
     rules: 'Option<H256>',
     memberCount: 'Option<u32>',
     roundCount: 'Option<u32>',
     bids: 'Option<Vec<PezpalletRcMigratorSocietyPortableBid>>',
-    sceptic: 'Option<AccountId32>',
+    sceptic: 'Option<PezspCoreCryptoAccountId32>',
     nextHead: 'Option<PezpalletRcMigratorSocietyPortableIntakeRecord>',
     challengeRoundCount: 'Option<u32>',
-    defending: 'Option<(AccountId32,AccountId32,PezpalletRcMigratorSocietyPortableTally)>',
+    defending: 'Option<(PezspCoreCryptoAccountId32,PezspCoreCryptoAccountId32,PezpalletRcMigratorSocietyPortableTally)>',
     nextIntakeAt: 'Option<u32>',
     nextChallengeAt: 'Option<u32>'
   },
@@ -578,7 +578,7 @@ export default {
    * Lookup761: pallet_rc_migrator::society::PortableBid
    **/
   PezpalletRcMigratorSocietyPortableBid: {
-    who: 'AccountId32',
+    who: 'PezspCoreCryptoAccountId32',
     kind: 'PezpalletRcMigratorSocietyPortableBidKind',
     value: 'u128'
   },
@@ -588,14 +588,14 @@ export default {
   PezpalletRcMigratorSocietyPortableBidKind: {
     _enum: {
       Deposit: 'u128',
-      Vouch: '(AccountId32,u128)'
+      Vouch: '(PezspCoreCryptoAccountId32,u128)'
     }
   },
   /**
    * Lookup764: pallet_rc_migrator::society::PortableIntakeRecord
    **/
   PezpalletRcMigratorSocietyPortableIntakeRecord: {
-    who: 'AccountId32',
+    who: 'PezspCoreCryptoAccountId32',
     bid: 'u128',
     round: 'u32'
   },
@@ -834,7 +834,7 @@ export default {
    * Lookup939: pallet_proxy::ProxyDefinition<sp_core::crypto::AccountId32, asset_hub_kusama_runtime::ProxyType, BlockNumber>
    **/
   PezpalletProxyProxyDefinitionAssetHubDicleRuntimeProxyType: {
-    delegate: 'AccountId32',
+    delegate: 'PezspCoreCryptoAccountId32',
     proxyType: 'AssetHubDicleRuntimeProxyType',
     delay: 'u32'
   },
@@ -848,7 +848,7 @@ export default {
    * Lookup1023: pallet_revive::vm::CodeInfo<T>
    **/
   PezpalletReviveVmCodeInfo: {
-    owner: 'AccountId32',
+    owner: 'PezspCoreCryptoAccountId32',
     deposit: 'Compact<u128>',
     refcount: 'Compact<u64>',
     codeLen: 'u32',

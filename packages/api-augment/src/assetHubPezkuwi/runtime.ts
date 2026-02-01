@@ -12,7 +12,7 @@ import type { Extrinsic } from '@pezkuwi/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@pezkuwi/types/interfaces/metadata';
 import type { AccountId32, H256, RuntimeCall, Slot, SlotDuration } from '@pezkuwi/types/interfaces/runtime';
 import type { ParaId } from '@pezkuwi/types/interfaces/teyrchains';
-import type { AssetHubPezkuwiRuntimeOriginCaller, AssetsCommonRuntimeApiFungiblesAccessError, PezcumulusPrimitivesCoreCollationInfo, PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspConsensusAuraEd25519AppEd25519Public, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight, StagingXcmV5Location, XcmRuntimeApisAuthorizedAliasesError, XcmRuntimeApisAuthorizedAliasesOriginAliaser, XcmRuntimeApisConversionsError, XcmRuntimeApisDryRunCallDryRunEffects, XcmRuntimeApisDryRunError, XcmRuntimeApisDryRunXcmDryRunEffects, XcmRuntimeApisFeesError, XcmRuntimeApisTrustedQueryError, XcmVersionedAsset, XcmVersionedAssetId, XcmVersionedAssets, XcmVersionedLocation, XcmVersionedXcm } from '@pezkuwi/types/lookup';
+import type { AssetHubPezkuwiRuntimeOriginCaller, AssetsCommonRuntimeApiFungiblesAccessError, PezcumulusPrimitivesCoreCollationInfo, PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspConsensusAuraEd25519AppEd25519Public, PezspCoreCryptoAccountId32, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight, StagingXcmV5Location, XcmRuntimeApisAuthorizedAliasesError, XcmRuntimeApisAuthorizedAliasesOriginAliaser, XcmRuntimeApisConversionsError, XcmRuntimeApisDryRunCallDryRunEffects, XcmRuntimeApisDryRunError, XcmRuntimeApisDryRunXcmDryRunEffects, XcmRuntimeApisFeesError, XcmRuntimeApisTrustedQueryError, XcmVersionedAsset, XcmVersionedAssetId, XcmVersionedAssets, XcmVersionedLocation, XcmVersionedXcm } from '@pezkuwi/types/lookup';
 import type { IExtrinsic, Observable } from '@pezkuwi/types/types';
 
 export type __AugmentedCall<ApiType extends ApiTypes> = AugmentedCall<ApiType>;
@@ -205,7 +205,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Converts `Location` to `AccountId`.
        **/
-      convertLocation: AugmentedCall<ApiType, (location: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array) => Observable<Result<AccountId32, XcmRuntimeApisConversionsError>>>;
+      convertLocation: AugmentedCall<ApiType, (location: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array) => Observable<Result<PezspCoreCryptoAccountId32, XcmRuntimeApisConversionsError>>>;
       /**
        * Generic call
        **/
@@ -220,7 +220,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the metadata at a given version.,, If the given `version` isn't supported, this will return `None`., Use [`Self::metadata_versions`] to find out about supported metadata version of the runtime.
        **/
-      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<OpaqueMetadata>>>;
+      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<Bytes>>>;
       /**
        * Returns the supported metadata versions.,, This can be used to call `metadata_at_version`.
        **/
@@ -259,7 +259,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the bonded account and reward account associated with the pool_id.
        **/
-      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[AccountId32, AccountId32]>>>;
+      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>>>;
       /**
        * Total balance contributed to the pool.
        **/

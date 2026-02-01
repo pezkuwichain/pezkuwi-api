@@ -54,11 +54,8 @@ const PATHS_ALIAS = splitNamespace([
   // full matching on exact names...
   // these are well-known types with additional encoding
   'pezsp_core::crypto::AccountId32',
-  'sp_core::crypto::AccountId32',  // upstream compatibility
   'pezsp_runtime::generic::era::Era',
-  'sp_runtime::generic::era::Era',  // upstream compatibility
   'pezsp_runtime::multiaddress::MultiAddress',
-  'sp_runtime::multiaddress::MultiAddress',  // upstream compatibility
   // ethereum overrides (Frontier, Moonbeam, Pezkuwi claims)
   'fp_account::AccountId20',
   'account::AccountId20',
@@ -66,9 +63,7 @@ const PATHS_ALIAS = splitNamespace([
   // weights 2 is a structure, however for 1.5. with a single field it
   // should be flatenned (can appear in Compact<Weight> extrinsics)
   'pezframe_support::weights::weight_v2::Weight',
-  'frame_support::weights::weight_v2::Weight',  // upstream compatibility
   'pezsp_weights::weight_v2::Weight',
-  'sp_weights::weight_v2::Weight',  // upstream compatibility
   // wildcard matching in place...
   // these have a specific encoding or logic, use a wildcard for {pallet, darwinia}_democracy
   '*_democracy::vote::Vote',
@@ -76,15 +71,11 @@ const PATHS_ALIAS = splitNamespace([
   '*_identity::types::Data',
   // these are opaque Vec<u8> wrappers
   'pezsp_core::OpaqueMetadata',
-  'sp_core::OpaqueMetadata',  // upstream compatibility
   'pezsp_core::OpaquePeerId',
-  'sp_core::OpaquePeerId',  // upstream compatibility
   'pezsp_core::offchain::OpaqueMultiaddr',
-  'sp_core::offchain::OpaqueMultiaddr',  // upstream compatibility
   // shorten some well-known types
   'primitive_types::*',
   'pezsp_arithmetic::per_things::*',
-  'sp_arithmetic::per_things::*',  // upstream compatibility
   // runtime
   '*_runtime::RuntimeCall',
   '*_runtime::RuntimeEvent',
@@ -182,7 +173,7 @@ function matchParts (first: string[], second: (string | Text)[]): boolean {
 function getAliasPath ({ def, path }: SiType): string | null {
   // specific logic for weights - we override when non-complex struct
   // (as applied in Weight 1.5 where we also have `Compact<{ refTime: u64 }>)
-  if (['pezframe_support::weights::weight_v2::Weight', 'frame_support::weights::weight_v2::Weight', 'pezsp_weights::weight_v2::Weight', 'sp_weights::weight_v2::Weight'].includes(path.join('::'))) {
+  if (['pezframe_support::weights::weight_v2::Weight', 'pezsp_weights::weight_v2::Weight'].includes(path.join('::'))) {
     return !def.isComposite || def.asComposite.fields.length === 1
       ? 'WeightV1'
       : null;
@@ -228,8 +219,8 @@ function extractNameFlat (portable: PortableType[], lookupIndex: number, params:
 
     // Remove ::{generic, misc, pallet, traits, types}::
     if (i !== 1 || !PATH_RM_INDEX_1.includes(l)) {
-      // sp_runtime::generic::digest::Digest -> sp_runtime::generic::Digest
-      // sp_runtime::multiaddress::MultiAddress -> sp_runtime::MultiAddress
+      // pezsp_runtime::generic::digest::Digest -> pezsp_runtime::generic::Digest
+      // pezsp_runtime::multiaddress::MultiAddress -> pezsp_runtime::MultiAddress
       if (l !== lowers[i + 1]) {
         name += camels[i];
       }
@@ -428,7 +419,7 @@ function registerTypes (lookup: PortableRegistry, lookups: Record<string, string
     const siSignature = lookup.getSiType(sigParam.type.unwrap());
     const nsSignature = siSignature.path.join('::');
     let nsAccountId = siAddress.path.join('::');
-    const isMultiAddress = nsAccountId === 'pezsp_runtime::multiaddress::MultiAddress' || nsAccountId === 'sp_runtime::multiaddress::MultiAddress';
+    const isMultiAddress = nsAccountId === 'pezsp_runtime::multiaddress::MultiAddress';
 
     // With multiaddress, we check the first type param again
     if (isMultiAddress) {
@@ -446,7 +437,7 @@ function registerTypes (lookup: PortableRegistry, lookups: Record<string, string
       Address: isMultiAddress
         ? 'MultiAddress'
         : 'AccountId',
-      ExtrinsicSignature: ['pezsp_runtime::MultiSignature', 'sp_runtime::MultiSignature'].includes(nsSignature)
+      ExtrinsicSignature: nsSignature === 'pezsp_runtime::MultiSignature'
         ? 'MultiSignature'
         : names[sigParam.type.unwrap().toNumber()] || 'MultiSignature'
     });
@@ -467,7 +458,7 @@ function extractAliases (params: TypeInfoParams, isContract?: boolean): Record<n
 
     alias[type.unwrap().toNumber()] = 'Call';
   } else if (hasParams && !isContract) {
-    l.warn('Unable to determine runtime Call type, cannot inspect sp_runtime::generic::unchecked_extrinsic::UncheckedExtrinsic');
+    l.warn('Unable to determine runtime Call type, cannot inspect pezsp_runtime::generic::unchecked_extrinsic::UncheckedExtrinsic');
   }
 
   if (params.PezframeSystemEventRecord) {

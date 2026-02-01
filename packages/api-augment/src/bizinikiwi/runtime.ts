@@ -12,7 +12,7 @@ import type { OpaqueKeyOwnershipProof } from '@pezkuwi/types/interfaces/babe';
 import type { Extrinsic } from '@pezkuwi/types/interfaces/extrinsics';
 import type { OpaqueMetadata } from '@pezkuwi/types/interfaces/metadata';
 import type { AccountId32, H160, H256, RuntimeCall, Slot } from '@pezkuwi/types/interfaces/runtime';
-import type { PezframeSupportTokensFungibleUnionOfNativeOrWithId, PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezframeSystemEventRecord, PezpalletContractsPrimitivesCode, PezpalletContractsPrimitivesCodeUploadReturnValue, PezpalletContractsPrimitivesContractAccessError, PezpalletContractsPrimitivesContractResult, PezpalletContractsPrimitivesExecReturnValue, PezpalletContractsPrimitivesStorageDeposit, PezpalletContractsWasmDeterminism, PezpalletReviveEvmApiDebugRpcTypesTrace, PezpalletReviveEvmApiDebugRpcTypesTracerType, PezpalletReviveEvmApiRpcTypesGenGenericTransaction, PezpalletRevivePrimitivesCode, PezpalletRevivePrimitivesCodeUploadReturnValue, PezpalletRevivePrimitivesContractAccessError, PezpalletRevivePrimitivesContractResultExecReturnValue, PezpalletRevivePrimitivesContractResultInstantiateReturnValue, PezpalletRevivePrimitivesEthTransactError, PezpalletRevivePrimitivesEthTransactInfo, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeConfiguration, PezspConsensusBabeEpoch, PezspConsensusBeefyDoubleVotingProof, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyForkVotingProofOpaqueValue, PezspConsensusBeefyFutureBlockVotingProof, PezspConsensusBeefyValidatorSet, PezspConsensusGrandpaAppPublic, PezspConsensusGrandpaEquivocationProof, PezspConsensusSlotsEquivocationProof, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspMixnetMixnode, PezspMixnetMixnodesErr, PezspMixnetSessionStatus, PezspMmrPrimitivesError, PezspMmrPrimitivesLeafProof, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspStatementStoreRuntimeApiInvalidStatement, PezspStatementStoreRuntimeApiStatementSource, PezspStatementStoreRuntimeApiValidStatement, PezspStatementStoreStatement, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight } from '@pezkuwi/types/lookup';
+import type { PezframeSupportTokensFungibleUnionOfNativeOrWithId, PezframeSupportViewFunctionsViewFunctionDispatchError, PezframeSupportViewFunctionsViewFunctionId, PezframeSystemEventRecord, PezpalletContractsPrimitivesCode, PezpalletContractsPrimitivesCodeUploadReturnValue, PezpalletContractsPrimitivesContractAccessError, PezpalletContractsPrimitivesContractResult, PezpalletContractsPrimitivesExecReturnValue, PezpalletContractsPrimitivesStorageDeposit, PezpalletContractsWasmDeterminism, PezpalletReviveEvmApiDebugRpcTypesTrace, PezpalletReviveEvmApiDebugRpcTypesTracerType, PezpalletReviveEvmApiRpcTypesGenGenericTransaction, PezpalletRevivePrimitivesCode, PezpalletRevivePrimitivesCodeUploadReturnValue, PezpalletRevivePrimitivesContractAccessError, PezpalletRevivePrimitivesContractResultExecReturnValue, PezpalletRevivePrimitivesContractResultInstantiateReturnValue, PezpalletRevivePrimitivesEthTransactError, PezpalletRevivePrimitivesEthTransactInfo, PezpalletTransactionPaymentFeeDetails, PezpalletTransactionPaymentRuntimeDispatchInfo, PezspAuthorityDiscoveryAppPublic, PezspConsensusBabeAppPublic, PezspConsensusBabeBabeConfiguration, PezspConsensusBabeEpoch, PezspConsensusBeefyDoubleVotingProof, PezspConsensusBeefyEcdsaCryptoPublic, PezspConsensusBeefyForkVotingProofOpaqueValue, PezspConsensusBeefyFutureBlockVotingProof, PezspConsensusBeefyValidatorSet, PezspConsensusGrandpaAppPublic, PezspConsensusGrandpaEquivocationProof, PezspConsensusSlotsEquivocationProof, PezspCoreCryptoAccountId32, PezspCoreCryptoKeyTypeId, PezspInherentsCheckInherentsResult, PezspInherentsInherentData, PezspMixnetMixnode, PezspMixnetMixnodesErr, PezspMixnetSessionStatus, PezspMmrPrimitivesError, PezspMmrPrimitivesLeafProof, PezspRuntimeBlock, PezspRuntimeDispatchError, PezspRuntimeExtrinsicInclusionMode, PezspRuntimeHeader, PezspRuntimeTransactionValidityTransactionSource, PezspRuntimeTransactionValidityTransactionValidityError, PezspRuntimeTransactionValidityValidTransaction, PezspStatementStoreRuntimeApiInvalidStatement, PezspStatementStoreRuntimeApiStatementSource, PezspStatementStoreRuntimeApiValidStatement, PezspStatementStoreStatement, PezspVersionRuntimeVersion, PezspWeightsWeightV2Weight } from '@pezkuwi/types/lookup';
 import type { IExtrinsic, Observable } from '@pezkuwi/types/types';
 
 export type __AugmentedCall<ApiType extends ApiTypes> = AugmentedCall<ApiType>;
@@ -272,7 +272,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the metadata at a given version.,, If the given `version` isn't supported, this will return `None`., Use [`Self::metadata_versions`] to find out about supported metadata version of the runtime.
        **/
-      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<OpaqueMetadata>>>;
+      metadataAtVersion: AugmentedCall<ApiType, (version: u32 | AnyNumber | Uint8Array) => Observable<Option<Bytes>>>;
       /**
        * Returns the supported metadata versions.,, This can be used to call `metadata_at_version`.
        **/
@@ -345,7 +345,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * 
        **/
-      collectionOwner: AugmentedCall<ApiType, (collection: u32 | AnyNumber | Uint8Array) => Observable<Option<AccountId32>>>;
+      collectionOwner: AugmentedCall<ApiType, (collection: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>>;
       /**
        * 
        **/
@@ -353,7 +353,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * 
        **/
-      owner: AugmentedCall<ApiType, (collection: u32 | AnyNumber | Uint8Array, item: u32 | AnyNumber | Uint8Array) => Observable<Option<AccountId32>>>;
+      owner: AugmentedCall<ApiType, (collection: u32 | AnyNumber | Uint8Array, item: u32 | AnyNumber | Uint8Array) => Observable<Option<PezspCoreCryptoAccountId32>>>;
       /**
        * 
        **/
@@ -392,7 +392,7 @@ declare module '@pezkuwi/api-base/types/calls' {
       /**
        * Returns the bonded account and reward account associated with the pool_id.
        **/
-      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[AccountId32, AccountId32]>>>;
+      poolAccounts: AugmentedCall<ApiType, (pool_id: u32 | AnyNumber | Uint8Array) => Observable<ITuple<[PezspCoreCryptoAccountId32, PezspCoreCryptoAccountId32]>>>;
       /**
        * Total balance contributed to the pool.
        **/

@@ -31,6 +31,7 @@ const ChargeTransactionPayment: ExtInfo = {
 };
 
 export const bizinikiwi: ExtDef = {
+  AuthorizeCall: emptyCheck,
   ChargeTransactionPayment,
   CheckBlockGasLimit: emptyCheck,
   CheckEra: CheckMortality,

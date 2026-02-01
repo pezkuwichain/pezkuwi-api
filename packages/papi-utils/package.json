@@ -1,7 +1,7 @@
 {
   "name": "@pezkuwi/papi-utils",
-  "version": "16.5.22",
-  "author": "Dijital Kurdistan Tech Institute <info@pezkuwichain.io>",
+  "version": "16.5.34",
+  "author": "PezkuwiChain <dev@pezkuwichain.io>",
   "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
   "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/papi-utils#readme",
   "repository": {
