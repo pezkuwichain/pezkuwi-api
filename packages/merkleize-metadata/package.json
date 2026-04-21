@@ -2,12 +2,12 @@
   "name": "@pezkuwi/merkleize-metadata",
   "version": "16.5.36",
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/merkleize-metadata#readme",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/merkleize-metadata#readme",
   "repository": {
     "directory": "packages/merkleize-metadata",
     "type": "git",
-    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "license": "MIT",
   "sideEffects": false,

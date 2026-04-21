@@ -2,12 +2,12 @@
   "name": "@pezkuwi/papi-utils",
   "version": "16.5.36",
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/papi-utils#readme",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/papi-utils#readme",
   "repository": {
     "directory": "packages/papi-utils",
     "type": "git",
-    "url": "git+https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "git+https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "license": "MIT",
   "sideEffects": false,

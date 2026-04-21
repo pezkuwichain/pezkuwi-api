@@ -1,17 +1,17 @@
 {
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
   "description": "API generated augmentation",
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/api-augment#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/api-augment#readme",
   "license": "Apache-2.0",
   "name": "@pezkuwi/api-augment",
   "repository": {
     "directory": "packages/api-augment",
     "type": "git",
-    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "sideEffects": [
     "./packageDetect.js",

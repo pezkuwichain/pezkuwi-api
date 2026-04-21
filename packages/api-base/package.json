@@ -1,17 +1,17 @@
 {
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
   "description": "Interfaces for interacting with contracts and contract ABIs",
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/api-base#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/api-base#readme",
   "license": "Apache-2.0",
   "name": "@pezkuwi/api-base",
   "repository": {
     "directory": "packages/api-base",
     "type": "git",
-    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "sideEffects": [
     "./packageDetect.js",

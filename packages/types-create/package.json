@@ -1,17 +1,17 @@
 {
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
   "description": "Type creator helpers",
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/types-create#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/types-create#readme",
   "license": "Apache-2.0",
   "name": "@pezkuwi/types-create",
   "repository": {
     "directory": "packages/types-create",
     "type": "git",
-    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "sideEffects": [
     "./packageDetect.js",

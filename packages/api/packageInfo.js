@@ -1,0 +1,1 @@
+build/packageInfo.js

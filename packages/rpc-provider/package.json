@@ -1,17 +1,17 @@
 {
   "author": "PezkuwiChain <dev@pezkuwichain.io>",
-  "bugs": "https://github.com/pezkuwichain/pezkuwi-api/issues",
+  "bugs": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/issues",
   "description": "Transport providers for the API",
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/pezkuwichain/pezkuwi-api/tree/master/packages/rpc-provider#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/rpc-provider#readme",
   "license": "Apache-2.0",
   "name": "@pezkuwi/rpc-provider",
   "repository": {
     "directory": "packages/rpc-provider",
     "type": "git",
-    "url": "https://github.com/pezkuwichain/pezkuwi-api.git"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api.git"
   },
   "sideEffects": [
     "./packageDetect.js",
