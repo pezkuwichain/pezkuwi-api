@@ -15,59 +15,23 @@
   },
   "sideEffects": [
     "./packageDetect.js",
-    "./cjs/packageDetect.js"
+    "./packageDetect.cjs"
   ],
   "type": "module",
-  "types": "./index.d.ts",
-  "version": "16.5.36",
-  "main": "./cjs/index.js",
-  "module": "./index.js",
+  "version": "16.5.37",
+  "main": "index.js",
   "dependencies": {
-    "@pezkuwi/api": "16.5.36",
-    "@pezkuwi/api-augment": "16.5.36",
-    "@pezkuwi/api-base": "16.5.36",
-    "@pezkuwi/rpc-core": "16.5.36",
-    "@pezkuwi/rpc-provider": "16.5.36",
-    "@pezkuwi/types": "16.5.36",
-    "@pezkuwi/types-codec": "16.5.36",
-    "@pezkuwi/types-support": "16.5.36",
-    "@pezkuwi/util": "14.0.25",
-    "@pezkuwi/util-crypto": "14.0.25",
+    "@pezkuwi/api": "16.5.37",
+    "@pezkuwi/api-augment": "16.5.37",
+    "@pezkuwi/api-base": "16.5.37",
+    "@pezkuwi/rpc-core": "16.5.37",
+    "@pezkuwi/rpc-provider": "16.5.37",
+    "@pezkuwi/types": "16.5.37",
+    "@pezkuwi/types-codec": "16.5.37",
+    "@pezkuwi/types-support": "16.5.37",
+    "@pezkuwi/util": "14.0.26",
+    "@pezkuwi/util-crypto": "14.0.26",
     "rxjs": "^7.8.1",
     "tslib": "^2.8.1"
-  },
-  "exports": {
-    ".": {
-      "module": "./build/index.js",
-      "default": "./build/index.js"
-    },
-    "./*": {
-      "module": "./build/*.js",
-      "default": "./build/*.js"
-    },
-    "./packageInfo": {
-      "module": "./build/packageInfo.js",
-      "default": "./build/packageInfo.js"
-    },
-    "./types": {
-      "module": "./build/types.js",
-      "default": "./build/types.js"
-    },
-    "./index": {
-      "module": "./build/index.js",
-      "default": "./build/index.js"
-    },
-    "./augment": {
-      "module": "./build/augment.js",
-      "default": "./build/augment.js"
-    },
-    "./packageDetect": {
-      "module": "./build/packageDetect.js",
-      "default": "./build/packageDetect.js"
-    },
-    "./derive": {
-      "module": "./build/derive.js",
-      "default": "./build/derive.js"
-    }
   }
 }
