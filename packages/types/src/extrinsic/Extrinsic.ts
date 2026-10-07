@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// Copyright 2017-2026 @pezkuwi/types authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { AnyJson, AnyTuple, AnyU8a, ArgsDef, IMethod, Inspect, IOption } from '@pezkuwi/types-codec/types';
@@ -345,7 +345,7 @@ export class GenericExtrinsic<A extends AnyTuple = AnyTuple> extends ExtrinsicBa
       this.#hashCache = super.hash as CodecHash;
     }
 
-    return this.#hashCache!;
+    return this.#hashCache;
   }
 
   /**

@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// Copyright 2017-2026 @pezkuwi/types authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
@@ -16,15 +16,15 @@ import { TypeRegistry } from '../create/index.js';
 import { Metadata } from './Metadata.js';
 
 const allData: Record<string, HexString> = {
+  bizinikiwi,
   dicle,
-  pezkuwi,
-  bizinikiwi
+  pezkuwi
 };
 
 const allDataV14: Record<string, HexString> = {
+  bizinikiwi: bizinikiwiV14,
   dicle: dicleV14,
-  pezkuwi: pezkuwiV14,
-  bizinikiwi: bizinikiwiV14
+  pezkuwi: pezkuwiV14
 };
 
 for (const type of ['dicle', 'pezkuwi', 'bizinikiwi'] as const) {

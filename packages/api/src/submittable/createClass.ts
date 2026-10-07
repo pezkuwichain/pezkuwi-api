@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/api authors & contributors
+// Copyright 2017-2026 @pezkuwi/api authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 /* eslint-disable no-dupe-class-members */
@@ -54,8 +54,7 @@ function makeEraOptions (api: ApiInterfaceRx, registry: Registry, partialOptions
   }
 
   return makeSignOptions(api, partialOptions, {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    blockHash: header.hash as any,
+    blockHash: header.hash,
     era: registry.createTypeUnsafe<ExtrinsicEra>('ExtrinsicEra', [{
       current: header.number,
       period: partialOptions.era || mortalLength

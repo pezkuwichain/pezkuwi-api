@@ -1,18 +1,18 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import fs from 'node:fs';
 
 import { fetch } from '@pezkuwi/x-fetch';
 
-const PREAMBLE = '// Copyright 2017-2025 @pezkuwi/types-support authors & contributors\n// SPDX-License-Identifier: Apache-2.0\n\n/* eslint-disable */\n\n';
+const PREAMBLE = '// Copyright 2017-2026 @pezkuwi/types-support authors & contributors\n// SPDX-License-Identifier: Apache-2.0\n\n/* eslint-disable */\n\n';
 const CMD = {
-  'asset-hub-zagros': `${PREAMBLE}//To run a asset-hub-zagros node please refer to types-support/src/metadata/README.md\n\nexport default`,
   'asset-hub-pezkuwi': `${PREAMBLE}//To run a asset-hub-pezkuwi node please refer to types-support/src/metadata/README.md\n\nexport default`,
-  zagros: `${PREAMBLE}// cargo run --release -- purge-chain -y --chain zagros-dev  && cargo run --release -- --chain zagros-dev --alice --force-authoring\n\nexport default`,
-  pezkuwi: `${PREAMBLE}// cargo run --release -- purge-chain -y --dev  && cargo run --release -- --dev\n\nexport default`,
+  'asset-hub-zagros': `${PREAMBLE}//To run a asset-hub-zagros node please refer to types-support/src/metadata/README.md\n\nexport default`,
   bizinikiwi: `${PREAMBLE}// cargo run --release -- purge-chain -y --dev  && cargo run --release -- --dev\n\nexport default`,
-  'bizinikiwi-contracts-node': `${PREAMBLE}// cargo run --release -- purge-chain -y --dev  && cargo run --release -- --dev\n\nexport default`
+  'bizinikiwi-contracts-node': `${PREAMBLE}// cargo run --release -- purge-chain -y --dev  && cargo run --release -- --dev\n\nexport default`,
+  pezkuwi: `${PREAMBLE}// cargo run --release -- purge-chain -y --dev  && cargo run --release -- --dev\n\nexport default`,
+  zagros: `${PREAMBLE}// cargo run --release -- purge-chain -y --chain zagros-dev  && cargo run --release -- --chain zagros-dev --alice --force-authoring\n\nexport default`
 };
 
 // V15

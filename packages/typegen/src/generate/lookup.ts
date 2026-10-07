@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { PortableType, SiLookupTypeId, SiPath, SiTypeParameter } from '@pezkuwi/types/interfaces';
@@ -28,12 +28,12 @@ function deepRebrandTypeDef (typeDef: TypeDef, isTopLevel = true): TypeDef {
 
   const rebranded: TypeDef = {
     ...typeDef,
-    type: rebrandTypeName(typeDef.type),
+    lookupName: rebrandedLookupName,
+    lookupNameRoot: typeDef.lookupNameRoot ? rebrandTypeName(typeDef.lookupNameRoot) : typeDef.lookupNameRoot,
     // For top-level types: set name from lookupName (mimics original: typeDef.name = typeDef.lookupName)
     // For sub types (enum variants, struct fields): preserve the original name (field/variant name)
     name: isTopLevel ? (rebrandedLookupName || typeDef.name) : typeDef.name,
-    lookupName: rebrandedLookupName,
-    lookupNameRoot: typeDef.lookupNameRoot ? rebrandTypeName(typeDef.lookupNameRoot) : typeDef.lookupNameRoot
+    type: rebrandTypeName(typeDef.type)
   };
 
   // Recursively rebrand sub types (mark as not top-level)
@@ -232,6 +232,7 @@ function generateLookupTypes (registry: Registry, filtered: [PortableType, TypeD
 
   // Add imports for AccountId32 and MultiAddress - needed for all lookup files that use TYPE_MAPPINGS
   const runtimePath = '@pezkuwi/types/interfaces/runtime';
+
   if (imports.localTypes[runtimePath]) {
     imports.localTypes[runtimePath]['AccountId32'] = true;
     imports.localTypes[runtimePath]['MultiAddress'] = true;
@@ -239,6 +240,7 @@ function generateLookupTypes (registry: Registry, filtered: [PortableType, TypeD
 
   // For non-bizinikiwi files, add base type definitions at the start
   const baseTypeDefs: string[] = [];
+
   if (subPath && subPath !== 'bizinikiwi') {
     // Add PezspCoreCryptoAccountId32 and PezspRuntimeMultiAddress definitions
     // These extend the standard types and are needed in all lookup files
@@ -261,6 +263,7 @@ function generateLookupTypes (registry: Registry, filtered: [PortableType, TypeD
           if (subPath === 'bizinikiwi') {
             return exportInterface(rebranded.lookupIndex, rebranded.lookupName, TYPE_MAPPINGS[rebranded.lookupName]);
           }
+
           return null;
         }
 

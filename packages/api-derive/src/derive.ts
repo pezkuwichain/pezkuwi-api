@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/api-derive authors & contributors
+// Copyright 2017-2026 @pezkuwi/api-derive authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { AnyFunction } from '@pezkuwi/types/types';
@@ -24,7 +24,7 @@ import * as teyrchains from './teyrchains/index.js';
 import * as treasury from './treasury/index.js';
 import * as tx from './tx/index.js';
 
-export const derive = { accounts, alliance, bagsList, balances, bounties, chain, contracts, council, crowdloan, democracy, elections, imOnline, membership, teyrchains, session, society, staking, technicalCommittee, treasury, tx };
+export const derive = { accounts, alliance, bagsList, balances, bounties, chain, contracts, council, crowdloan, democracy, elections, imOnline, membership, session, society, staking, technicalCommittee, teyrchains, treasury, tx };
 
 type DeriveSection<Section> = {
   [M in keyof Section]: Section[M] extends AnyFunction

@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types-known authors & contributors
+// Copyright 2017-2026 @pezkuwi/types-known authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { OverrideVersionedType } from '@pezkuwi/types/types';
@@ -26,6 +26,6 @@ export const typesSpec: Record<string, OverrideVersionedType[]> = {
   shell,
   statemine,
   statemint,
-  zagros,
-  westmint
+  westmint,
+  zagros
 };

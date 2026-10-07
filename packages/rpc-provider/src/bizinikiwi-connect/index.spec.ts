@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/rpc-provider authors & contributors
+// Copyright 2017-2026 @pezkuwi/rpc-provider authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
@@ -103,8 +103,10 @@ function getFakeChain (spec: string): MockChain {
   };
 
   const nextJsonRpcResponse = (): Promise<string> => {
-    if (_pendingResponses.length > 0) {
-      return Promise.resolve(_pendingResponses.shift()!);
+    const pending = _pendingResponses.shift();
+
+    if (pending !== undefined) {
+      return Promise.resolve(pending);
     }
 
     return new Promise((resolve) => {
@@ -141,6 +143,8 @@ function getFakeChain (spec: string): MockChain {
     _triggerCallback: triggerCallback,
     addChain: (chainSpec) =>
       Promise.resolve(getFakeChain(chainSpec)),
+    jsonRpcResponses,
+    nextJsonRpcResponse,
     remove: () => {
       terminateInterceptor();
       _isTerminated = true;
@@ -148,9 +152,7 @@ function getFakeChain (spec: string): MockChain {
     sendJsonRpc: (rpc) => {
       sendJsonRpcInterceptor(rpc);
       _receivedRequests.push(rpc);
-    },
-    nextJsonRpcResponse,
-    jsonRpcResponses
+    }
   };
 }
 
@@ -563,6 +565,7 @@ describe('ScProvider', () => {
       }, 0);
 
       const cb = jest.fn();
+
       await provider.subscribe(
         'foo',
         'chain_subscribeNewHeads',
