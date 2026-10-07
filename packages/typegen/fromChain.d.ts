@@ -1,1 +1,0 @@
-build/fromChain.d.ts

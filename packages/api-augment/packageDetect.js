@@ -1,1 +1,0 @@
-build/packageDetect.js
