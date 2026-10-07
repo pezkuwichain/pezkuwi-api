@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/api authors & contributors
+// Copyright 2017-2026 @pezkuwi/api authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 // These are augmented, do an augmentation export

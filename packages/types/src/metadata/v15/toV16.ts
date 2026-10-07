@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// Copyright 2017-2026 @pezkuwi/types authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { ExtrinsicMetadataV15, ExtrinsicMetadataV16, ItemDeprecationInfoV16, MetadataV15, MetadataV16, PezpalletAssociatedTypeMetadataV16, PezpalletCallMetadataV14, PezpalletCallMetadataV16, PezpalletConstantMetadataV14, PezpalletConstantMetadataV16, PezpalletErrorMetadataV14, PezpalletErrorMetadataV16, PezpalletEventMetadataV14, PezpalletEventMetadataV16, PezpalletMetadataV15, PezpalletMetadataV16, PezpalletStorageMetadataV14, PezpalletStorageMetadataV16, RuntimeApiMetadataV15, RuntimeApiMetadataV16, StorageEntryMetadataV16, TransactionExtensionMetadataV16 } from '../../interfaces/metadata/index.js';
