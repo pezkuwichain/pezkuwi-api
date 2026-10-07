@@ -302,6 +302,19 @@ const formatters: Record<TypeDefInfo, (registry: Registry, typeDef: TypeDef, def
 };
 
 /**
+ * `{ name: Type }` written inline: an opening brace, a colon and then a closing
+ * brace on the first line. This is what /^{.+:.+}/ matched, without the
+ * quadratic backtracking that regex has on input like '{{a:a:a:...'.
+ */
+/** @internal */
+export function isInlineStruct (type: string): boolean {
+  const line = type.split(/[\n\r\u2028\u2029]/, 1)[0];
+  const colon = line.indexOf(':', 2);
+
+  return line.startsWith('{') && colon !== -1 && line.includes('}', colon + 2);
+}
+
+/**
  * Correctly format a given type
  */
 /** @internal */
@@ -314,7 +327,7 @@ export function formatType (registry: Registry, definitions: Record<string, Modu
 
     // If type is "unorthodox" (i.e. `{ something: any }` for an Enum input or `[a | b | c, d | e | f]` for a Tuple's similar types),
     // we return it as-is
-    if (withShortcut && /(^{.+:.+})|^\([^,]+\)|^\(.+\)\[\]|^\[.+\]/.exec(_type) && !/\[\w+;\w+\]/.exec(_type)) {
+    if (withShortcut && (isInlineStruct(_type) || /^\([^,]+\)|^\(.+\)\[\]|^\[.+\]/.exec(_type)) && !/\[\w+;\w+\]/.exec(_type)) {
       return rebrandTypeName(_type);
     }
 
