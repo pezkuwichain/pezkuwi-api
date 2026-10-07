@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types-known authors & contributors
+// Copyright 2017-2026 @pezkuwi/types-known authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { OverrideModuleType, Registry } from '../types/index.js';
@@ -60,9 +60,6 @@ const typesAlias: Record<string, OverrideModuleType> = {
   paraShared: {
     ValidatorIndex: 'ParaValidatorIndex'
   },
-  teyrchains: {
-    Id: 'ParaId'
-  },
   parasDisputes: {
     ValidatorIndex: 'ParaValidatorIndex'
   },
@@ -93,6 +90,9 @@ const typesAlias: Record<string, OverrideModuleType> = {
   },
   staking: {
     Compact: 'CompactAssignments'
+  },
+  teyrchains: {
+    Id: 'ParaId'
   },
   treasury: {
     Proposal: 'TreasuryProposal'

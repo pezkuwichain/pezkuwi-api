@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { RuntimeApiMethodMetadataV16, SiLookupTypeId } from '@pezkuwi/types/interfaces';
@@ -23,22 +23,19 @@ const generateCallsTypesTemplate = Handlebars.compile(readTemplate('calls'));
 
 // This works similar to the PATHS_ALIAS set from the PortableRegistry
 const aliases: Record<string, string> = {
-  AssetHubZagrosRuntimeRuntimeCall: 'RuntimeCall',
-  AssetHubPezkuwiRuntimeRuntimeCall: 'RuntimeCall',
   AssetHubDicleRuntimeOriginCaller: 'OriginCaller',
   AssetHubDicleRuntimeRuntimeCall: 'RuntimeCall',
+  AssetHubPezkuwiRuntimeRuntimeCall: 'RuntimeCall',
+  AssetHubZagrosRuntimeRuntimeCall: 'RuntimeCall',
   DicleRuntimeConstantsProxyProxyType: 'ProxyType',
   KitchensinkRuntimeRuntimeCall: 'RuntimeCall',
   KitchensinkRuntimeRuntimeParametersKey: 'RuntimeParametersKey',
   OpaqueValue: 'Bytes',
-  PezkuwiTeyrchainPrimitivesPrimitivesId: 'ParaId',
-  PezkuwiTeyrchainPrimitivesPrimitivesValidationCodeHash: 'ValidationCodeHash',
   PezkuwiPrimitivesV7SlashingOpaqueKeyOwnershipProof: 'OpaqueKeyOwnershipProof',
   PezkuwiPrimitivesV8SlashingOpaqueKeyOwnershipProof: 'OpaqueKeyOwnershipProof',
   PezkuwiRuntimeRuntimeCall: 'RuntimeCall',
-  PrimitiveTypesH160: 'H160',
-  PrimitiveTypesH256: 'H256',
-  PrimitiveTypesU256: 'U256',
+  PezkuwiTeyrchainPrimitivesPrimitivesId: 'ParaId',
+  PezkuwiTeyrchainPrimitivesPrimitivesValidationCodeHash: 'ValidationCodeHash',
   PezspConsensusBabeOpaqueKeyOwnershipProof: 'OpaqueKeyOwnershipProof',
   PezspConsensusSlotsSlot: 'Slot',
   PezspConsensusSlotsSlotDuration: 'SlotDuration',
@@ -46,6 +43,9 @@ const aliases: Record<string, string> = {
   PezspCoreOpaqueMetadata: 'OpaqueMetadata',
   PezspRuntimeOpaqueValue: 'Bytes',
   PezspRuntimeUncheckedExtrinsic: 'Extrinsic',
+  PrimitiveTypesH160: 'H160',
+  PrimitiveTypesH256: 'H256',
+  PrimitiveTypesU256: 'U256',
   StagingDicleRuntimeOriginCaller: 'OriginCaller',
   StagingDicleRuntimeRuntimeCall: 'RuntimeCall',
   StagingDicleRuntimeRuntimeParameters: 'RuntimeParameters',

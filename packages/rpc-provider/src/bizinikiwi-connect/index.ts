@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/rpc-provider authors & contributors
+// Copyright 2017-2026 @pezkuwi/rpc-provider authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type * as ScType from '@bizinikiwi/connect';
@@ -53,7 +53,7 @@ interface ActiveSubs {
 export class ScProvider implements ProviderInterface {
   readonly #Sc: BizinikiwiConnect;
   readonly #coder: RpcCoder = new RpcCoder();
-  readonly #spec: string | ScType.WellKnownChain;
+  readonly #spec: string;
   readonly #sharedSandbox?: ScProvider | undefined;
   readonly #subscriptions = new Map<string, [ResponseCallback, { unsubscribeMethod: string; id: string | number }]>();
   readonly #resubscribeMethods = new Map<string, ActiveSubs>();
@@ -64,7 +64,7 @@ export class ScProvider implements ProviderInterface {
   #chain: Promise<ScType.Chain> | null = null;
   #isChainReady = false;
 
-  public constructor (Sc: BizinikiwiConnect, spec: string | ScType.WellKnownChain, sharedSandbox?: ScProvider) {
+  public constructor (Sc: BizinikiwiConnect, spec: string, sharedSandbox?: ScProvider) {
     if (!isObject(Sc) || !isObject(Sc.WellKnownChain) || !isFunction(Sc.createScClient)) {
       throw new Error('Expected an @bizinikiwi/connect interface as first parameter to ScProvider');
     }
@@ -171,15 +171,15 @@ export class ScProvider implements ProviderInterface {
 
       // Start async response processing loop
       // This replaces the callback-based API from older @substrate/connect versions
-      (async () => {
-        try {
-          for await (const res of chain.jsonRpcResponses) {
-            onResponse(res);
-          }
-        } catch {
-          // Chain was removed or connection closed - this is expected
+      const processResponses = async (): Promise<void> => {
+        for await (const res of chain.jsonRpcResponses) {
+          onResponse(res);
         }
-      })();
+      };
+
+      processResponses().catch(() => {
+        // Chain was removed or connection closed - this is expected
+      });
 
       this.#isChainReady = false;
 

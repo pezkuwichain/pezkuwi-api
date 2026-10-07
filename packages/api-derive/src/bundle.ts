@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/api-derive authors & contributors
+// Copyright 2017-2026 @pezkuwi/api-derive authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DeriveCustom } from '@pezkuwi/api-base/types';
@@ -61,10 +61,6 @@ const checks: Record<string, Avail> = {
     instances: ['membership'],
     methods: []
   },
-  teyrchains: {
-    instances: ['teyrchains', 'registrar'],
-    methods: []
-  },
   session: {
     instances: ['session'],
     methods: []
@@ -81,6 +77,10 @@ const checks: Record<string, Avail> = {
     instances: ['technicalCommittee'],
     methods: [],
     withDetect: true
+  },
+  teyrchains: {
+    instances: ['teyrchains', 'registrar'],
+    methods: []
   },
   treasury: {
     instances: ['treasury'],

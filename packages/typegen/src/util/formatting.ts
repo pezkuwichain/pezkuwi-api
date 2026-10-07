@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { AnyString, Registry } from '@pezkuwi/types/types';
@@ -263,6 +263,7 @@ const formatters: Record<TypeDefInfo, (registry: Registry, typeDef: TypeDef, def
 
         return rebrandTypeName(typeDef.lookupName);
       }
+
       setImports(definitions, imports, ['U8aFixed']);
 
       return 'U8aFixed';

@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { HexString } from '@pezkuwi/util/types';
@@ -13,7 +13,7 @@ import pezkuwi from '@pezkuwi/types-support/metadata/v15/pezkuwi-hex';
 import { generateDefaultConsts, generateDefaultErrors, generateDefaultEvents, generateDefaultInterface, generateDefaultLookup, generateDefaultQuery, generateDefaultRpc, generateDefaultRuntime, generateDefaultTsDef, generateDefaultTx } from './generate/index.js';
 
 const BASE = 'packages/api-augment/src';
-const METAS = Object.entries<HexString>({ assetHubDicle, assetHubPezkuwi, dicle, pezkuwi, bizinikiwi });
+const METAS = Object.entries<HexString>({ assetHubDicle, assetHubPezkuwi, bizinikiwi, dicle, pezkuwi });
 
 export function main (): void {
   generateDefaultInterface();

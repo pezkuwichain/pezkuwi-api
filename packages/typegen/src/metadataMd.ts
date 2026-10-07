@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/typegen authors & contributors
+// Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { MetadataLatest, RuntimeApiMethodMetadataV16, SiLookupTypeId } from '@pezkuwi/types/interfaces';
@@ -92,6 +92,9 @@ const ALL_STATIC: Record<string, StaticDef> = {
     rpc: assetHubPezkuwiRpc,
     ver: assetHubPezkuwiVer as unknown as { apis: ApiDef[] }
   },
+  bizinikiwi: {
+    meta: bizinikiwiMeta
+  },
   dicle: {
     meta: dicleMeta,
     rpc: dicleRpc,
@@ -101,9 +104,6 @@ const ALL_STATIC: Record<string, StaticDef> = {
     meta: pezkuwiMeta,
     rpc: pezkuwiRpc,
     ver: pezkuwiVer as unknown as { apis: ApiDef[] }
-  },
-  bizinikiwi: {
-    meta: bizinikiwiMeta
   }
 };
 

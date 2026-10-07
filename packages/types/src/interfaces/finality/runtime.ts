@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// Copyright 2017-2026 @pezkuwi/types authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { DefinitionsCall } from '../../types/index.js';
@@ -17,7 +17,7 @@ const finalityV1 = {
 
 export const runtime: DefinitionsCall = {
   DicleFinalityApi: [finalityV1],
-  ZagrosFinalityApi: [finalityV1],
   PezkuwiFinalityApi: [finalityV1],
-  PezkuwichainFinalityApi: [finalityV1]
+  PezkuwichainFinalityApi: [finalityV1],
+  ZagrosFinalityApi: [finalityV1]
 };
