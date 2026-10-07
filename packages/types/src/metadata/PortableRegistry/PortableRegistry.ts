@@ -537,7 +537,7 @@ export class PortableRegistry extends Struct implements ILookup {
   #lookups: Record<string, LookupString>;
   #names: Record<number, string>;
   #params: TypeInfoParams;
-  #typeDefs: Record<number, TypeDef> = {};
+  readonly #typeDefs = new Map<number, TypeDef>();
   #types: Record<number, PortableType>;
 
   constructor (registry: Registry, value?: Uint8Array, isContract?: boolean) {
@@ -613,43 +613,46 @@ export class PortableRegistry extends Struct implements ILookup {
    */
   public getTypeDef (lookupId: SiLookupTypeId | LookupString | number): TypeDef {
     const lookupIndex = this.#getLookupId(lookupId);
+    const cached = this.#typeDefs.get(lookupIndex);
 
-    if (!this.#typeDefs[lookupIndex]) {
-      const lookupName = this.#names[lookupIndex];
-      const empty = {
-        info: TypeDefInfo.DoNotConstruct,
-        lookupIndex,
-        lookupName,
-        type: this.registry.createLookupType(lookupIndex)
-      };
-
-      // Set named items since we will get into circular lookups along the way
-      if (lookupName) {
-        this.#typeDefs[lookupIndex] = empty;
-      }
-
-      const extracted = this.#extract(this.getSiType(lookupId), lookupIndex);
-
-      // For non-named items, we only set this right at the end
-      if (!lookupName) {
-        this.#typeDefs[lookupIndex] = empty;
-      }
-
-      Object.keys(extracted).forEach((k): void => {
-        if (k !== 'lookupName' || extracted[k]) {
-          // these are safe since we are looking through the keys as set
-          this.#typeDefs[lookupIndex][k as 'info'] = extracted[k as 'info'];
-        }
-      });
-
-      // don't set lookupName on lower-level, we want to always direct to the type
-      if (extracted.info === TypeDefInfo.Plain) {
-        this.#typeDefs[lookupIndex].lookupNameRoot = this.#typeDefs[lookupIndex].lookupName;
-        delete this.#typeDefs[lookupIndex].lookupName;
-      }
+    if (cached) {
+      return cached;
     }
 
-    return this.#typeDefs[lookupIndex];
+    const lookupName = this.#names[lookupIndex];
+    const typeDef: TypeDef = {
+      info: TypeDefInfo.DoNotConstruct,
+      lookupIndex,
+      lookupName,
+      type: this.registry.createLookupType(lookupIndex)
+    };
+
+    // Set named items since we will get into circular lookups along the way
+    if (lookupName) {
+      this.#typeDefs.set(lookupIndex, typeDef);
+    }
+
+    const extracted = this.#extract(this.getSiType(lookupId), lookupIndex);
+
+    // For non-named items, we only set this right at the end
+    if (!lookupName) {
+      this.#typeDefs.set(lookupIndex, typeDef);
+    }
+
+    Object.keys(extracted).forEach((k): void => {
+      if (k !== 'lookupName' || extracted[k]) {
+        // these are safe since we are looking through the keys as set
+        typeDef[k as 'info'] = extracted[k as 'info'];
+      }
+    });
+
+    // don't set lookupName on lower-level, we want to always direct to the type
+    if (extracted.info === TypeDefInfo.Plain) {
+      typeDef.lookupNameRoot = typeDef.lookupName;
+      delete typeDef.lookupName;
+    }
+
+    return typeDef;
   }
 
   /**
