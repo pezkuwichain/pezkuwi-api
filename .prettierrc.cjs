@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @polkadot/api authors & contributors
+// Copyright 2017-2026 @pezkuwi/api authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-module.exports = require('@polkadot/dev/config/prettier.cjs');
+module.exports = require('@pezkuwi/dev/config/prettier.cjs');
