@@ -17,7 +17,7 @@
     "**/node_modules/**/*",
     // We exclude these since it creates some issues with the
     // @typescript-eslint/dot-notation rules
-    "packages/api-augment/src/zagros/*.ts",
+    "packages/api-augment/src/dicle/*.ts",
     "packages/api-augment/src/pezkuwi/*.ts"
   ]
 }
