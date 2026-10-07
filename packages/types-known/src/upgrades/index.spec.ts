@@ -1,40 +1,15 @@
-// Copyright 2017-2025 @pezkuwi/types-known authors & contributors
+// Copyright 2017-2026 @pezkuwi/types-known authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
 import type { ChainUpgradesExpanded, ChainUpgradesRaw } from './types.js';
 
-import { stringify, u8aEq } from '@pezkuwi/util';
+import { stringify } from '@pezkuwi/util';
 
 import * as allGen from './e2e/index.js';
 import * as allMan from './manual/index.js';
 import { upgrades } from './index.js';
-
-interface TestDef {
-  genesisHash: string;
-  network: string;
-  versions: [number, [number, number]][];
-}
-
-const TESTS: TestDef[] = [
-  {
-    genesisHash: '0xd9d3cd7c1e5d890d969b957f4c5b71a111bbeeabc968f1d0d4538c2663f080a7',
-    network: 'dicle',
-    versions: [
-      [0, [214356, 4]],
-      [23, [4207800, 48]]
-    ]
-  },
-  {
-    genesisHash: '0x41693961995d879073269a008d0a52832caa3e0ae73869f02127f3d5daa4934c',
-    network: 'pezkuwi',
-    versions: [
-      [0, [0, 0]],
-      [19, [2436698, 26]]
-    ]
-  }
-];
 
 function checkOrder (network: string, versions: [number, number, ...unknown[]][]): void {
   const ooo = versions.filter((curr, index): boolean => {
@@ -85,26 +60,10 @@ describe('generated', (): void => {
 });
 
 describe('upgrades', (): void => {
-  TESTS.forEach(({ genesisHash, network, versions }): void => {
-    describe(`${network}`, (): void => {
-      const chain = upgrades.find((n) => n.network === network);
-
-      if (!chain) {
-        throw new Error(`Unable to find the entry for ${network}`);
-      }
-
-      it('has a valid genesisHash', (): void => {
-        expect(u8aEq(chain.genesisHash, genesisHash)).toBe(true);
-      });
-
-      versions.forEach(([index, [blockNumber, specVersion]]): void => {
-        it(`has a valid entry at index ${index}`, (): void => {
-          const version = chain.versions[index];
-
-          expect(version.blockNumber.eqn(blockNumber)).toBe(true);
-          expect(version.specVersion.eqn(specVersion)).toBe(true);
-        });
-      });
-    });
+  // The tables that stood here for pezkuwi, dicle and zagros were Polkadot's
+  // and Kusama's upgrade histories under placeholder genesis hashes. Until the
+  // e2e generator reads ours from the live chains, none is listed.
+  it('lists no upgrade history that is not one of our chains', (): void => {
+    expect(upgrades).toEqual([]);
   });
 });

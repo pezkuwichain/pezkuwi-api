@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types-known authors & contributors
+// Copyright 2017-2026 @pezkuwi/types-known authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
@@ -14,12 +14,10 @@ import { stringify } from '@pezkuwi/util';
 import * as allMan from '../manual/index.js';
 import * as allGen from './index.js';
 
-const keys = ['dicle', 'pezkuwi'] as const;
+const keys = ['pezkuwi', 'zagros'] as const;
 const urls = {
-  'asset-hub-dicle': 'wss://dicle-asset-hub-rpc.pezkuwichain.io',
-  'asset-hub-pezkuwi': 'wss://pezkuwi-asset-hub-rpc.pezkuwichain.io',
-  dicle: 'wss://dicle-rpc.pezkuwichain.io',
-  pezkuwi: 'wss://rpc.pezkuwichain.io'
+  pezkuwi: 'wss://rpc.pezkuwichain.io',
+  zagros: 'wss://zagros-rpc.pezkuwichain.io'
 };
 
 for (const chain of keys) {
