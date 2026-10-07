@@ -8,7 +8,8 @@ import '@pezkuwi/api-base/types/consts';
 import type { ApiTypes, AugmentedConst } from '@pezkuwi/api-base/types';
 import type { Bytes, Option, Vec, u128, u16, u32, u64, u8 } from '@pezkuwi/types-codec';
 import type { Codec, ITuple } from '@pezkuwi/types-codec/types';
-import type { PezframeSupportPezpalletId, PezframeSystemLimitsBlockLength, PezframeSystemLimitsBlockWeights, PezpalletReferendaTrackDetails, PezspCoreCryptoAccountId32, PezspVersionRuntimeVersion, PezspWeightsRuntimeDbWeight, PezspWeightsWeightV2Weight, StagingXcmV5Junctions } from '@pezkuwi/types/lookup';
+import type { AccountId32, Perbill, Permill } from '@pezkuwi/types/interfaces/runtime';
+import type { PezframeSupportPezpalletId, PezframeSystemLimitsBlockLength, PezframeSystemLimitsBlockWeights, PezpalletReferendaTrackDetails, PezspVersionRuntimeVersion, PezspWeightsRuntimeDbWeight, PezspWeightsWeightV2Weight, StagingXcmV5Junctions } from '@pezkuwi/types/lookup';
 
 export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>;
 
@@ -153,7 +154,7 @@ declare module '@pezkuwi/api-base/types/consts' {
        * This deposit has optional upper and lower bounds with `CuratorDepositMax` and
        * `CuratorDepositMin`.
        **/
-      curatorDepositMultiplier: u32 & AugmentedConst<ApiType>;
+      curatorDepositMultiplier: Permill & AugmentedConst<ApiType>;
       /**
        * The amount held on deposit per byte within the tip report reason or bounty description.
        **/
@@ -252,7 +253,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Fraction of the slash that is rewarded to the caller of pending slash to the agent.
        **/
-      slashRewardFraction: u32 & AugmentedConst<ApiType>;
+      slashRewardFraction: Perbill & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -263,7 +264,7 @@ declare module '@pezkuwi/api-base/types/consts' {
        * The minimum amount of improvement to the solution score that defines a solution as
        * "better" in the Signed phase.
        **/
-      betterSignedThreshold: u32 & AugmentedConst<ApiType>;
+      betterSignedThreshold: Perbill & AugmentedConst<ApiType>;
       /**
        * Maximum number of voters that can support a winner in an election solution.
        * 
@@ -810,7 +811,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Percentage of spare funds (if any) that are burnt per spend period.
        **/
-      burn: u32 & AugmentedConst<ApiType>;
+      burn: Permill & AugmentedConst<ApiType>;
       /**
        * DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
        * Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
@@ -831,7 +832,7 @@ declare module '@pezkuwi/api-base/types/consts' {
       /**
        * Gets this pallet's derived pot account.
        **/
-      potAccount: PezspCoreCryptoAccountId32 & AugmentedConst<ApiType>;
+      potAccount: AccountId32 & AugmentedConst<ApiType>;
       /**
        * Period between successive spends.
        **/

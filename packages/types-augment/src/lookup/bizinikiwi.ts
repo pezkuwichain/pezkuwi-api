@@ -5,10 +5,6 @@
 
 export default {
   /**
-   * Lookup0: sp_core::crypto::AccountId32
-   **/
-  PezspCoreCryptoAccountId32: '[u8;32]',
-  /**
    * Lookup3: frame_system::AccountInfo<Nonce, pallet_balances::types::AccountData<Balance>>
    **/
   PezframeSystemAccountInfo: {
@@ -69,7 +65,7 @@ export default {
    **/
   PezframeSystemEventRecord: {
     phase: 'PezframeSystemPhase',
-    event: 'RuntimeEvent',
+    event: 'Event',
     topics: 'Vec<H256>'
   },
   /**
@@ -86,16 +82,16 @@ export default {
       },
       CodeUpdated: 'Null',
       NewAccount: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       KilledAccount: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       Remarked: {
         _alias: {
           hash_: 'hash',
         },
-        sender: 'PezspCoreCryptoAccountId32',
+        sender: 'AccountId32',
         hash_: 'H256',
       },
       UpgradeAuthorized: {
@@ -211,7 +207,7 @@ export default {
   PezpalletIndicesEvent: {
     _enum: {
       IndexAssigned: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         index: 'u32',
       },
       IndexFreed: {
@@ -219,10 +215,10 @@ export default {
       },
       IndexFrozen: {
         index: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       DepositPoked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         index: 'u32',
         oldDeposit: 'u128',
         newDeposit: 'u128'
@@ -235,66 +231,66 @@ export default {
   PezpalletBalancesEvent: {
     _enum: {
       Endowed: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         freeBalance: 'u128',
       },
       DustLost: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         amount: 'u128',
       },
       Transfer: {
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         amount: 'u128',
       },
       BalanceSet: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         free: 'u128',
       },
       Reserved: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Unreserved: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       ReserveRepatriated: {
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         amount: 'u128',
         destinationStatus: 'PezframeSupportTokensMiscBalanceStatus',
       },
       Deposit: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Withdraw: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Slashed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Minted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Burned: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Suspended: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Restored: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Upgraded: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Issued: {
         amount: 'u128',
@@ -303,19 +299,19 @@ export default {
         amount: 'u128',
       },
       Locked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Unlocked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Frozen: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Thawed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       TotalIssuanceForced: {
@@ -339,7 +335,7 @@ export default {
   PezpalletTransactionPaymentEvent: {
     _enum: {
       TransactionFeePaid: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         actualFee: 'u128',
         tip: 'u128'
       }
@@ -351,7 +347,7 @@ export default {
   PezpalletAssetConversionTxPaymentEvent: {
     _enum: {
       AssetTxFeePaid: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         actualFee: 'u128',
         tip: 'u128',
         assetId: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
@@ -377,7 +373,7 @@ export default {
     _enum: {
       SolutionStored: {
         compute: 'PezpalletElectionProviderMultiPhaseElectionCompute',
-        origin: 'Option<PezspCoreCryptoAccountId32>',
+        origin: 'Option<AccountId32>',
         prevEjected: 'bool',
       },
       ElectionFinalized: {
@@ -386,11 +382,11 @@ export default {
       },
       ElectionFailed: 'Null',
       Rewarded: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         value: 'u128',
       },
       Slashed: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         value: 'u128',
       },
       PhaseTransitioned: {
@@ -436,17 +432,17 @@ export default {
         remainder: 'u128',
       },
       Rewarded: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         dest: 'PezpalletStakingRewardDestination',
         amount: 'u128',
       },
       Slashed: {
-        staker: 'PezspCoreCryptoAccountId32',
+        staker: 'AccountId32',
         amount: 'u128',
       },
       SlashReported: {
-        validator: 'PezspCoreCryptoAccountId32',
-        fraction: 'u32',
+        validator: 'AccountId32',
+        fraction: 'Perbill',
         slashEra: 'u32',
       },
       OldSlashingReportDiscarded: {
@@ -454,33 +450,33 @@ export default {
       },
       StakersElected: 'Null',
       Bonded: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         amount: 'u128',
       },
       Unbonded: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         amount: 'u128',
       },
       Withdrawn: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         amount: 'u128',
       },
       Kicked: {
-        nominator: 'PezspCoreCryptoAccountId32',
-        stash: 'PezspCoreCryptoAccountId32',
+        nominator: 'AccountId32',
+        stash: 'AccountId32',
       },
       StakingElectionFailed: 'Null',
       Chilled: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
       },
       PayoutStarted: {
         eraIndex: 'u32',
-        validatorStash: 'PezspCoreCryptoAccountId32',
+        validatorStash: 'AccountId32',
         page: 'u32',
         next: 'Option<u32>',
       },
       ValidatorPrefsSet: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         prefs: 'PezpalletStakingValidatorPrefs',
       },
       SnapshotVotersSizeExceeded: {
@@ -502,7 +498,7 @@ export default {
         failures: 'u32',
       },
       CurrencyMigrated: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         forceWithdraw: 'u128'
       }
     }
@@ -515,7 +511,7 @@ export default {
       Staked: 'Null',
       Stash: 'Null',
       Controller: 'Null',
-      Account: 'PezspCoreCryptoAccountId32',
+      Account: 'AccountId32',
       None: 'Null'
     }
   },
@@ -523,7 +519,7 @@ export default {
    * Lookup51: pallet_staking::ValidatorPrefs
    **/
   PezpalletStakingValidatorPrefs: {
-    commission: 'Compact<u32>',
+    commission: 'Compact<Perbill>',
     blocked: 'bool'
   },
   /**
@@ -541,10 +537,10 @@ export default {
         sessionIndex: 'u32',
       },
       ValidatorDisabled: {
-        validator: 'PezspCoreCryptoAccountId32',
+        validator: 'AccountId32',
       },
       ValidatorReenabled: {
-        validator: 'PezspCoreCryptoAccountId32'
+        validator: 'AccountId32'
       }
     }
   },
@@ -576,14 +572,14 @@ export default {
         refIndex: 'u32',
       },
       Delegated: {
-        who: 'PezspCoreCryptoAccountId32',
-        target: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        target: 'AccountId32',
       },
       Undelegated: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       Vetoed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         proposalHash: 'H256',
         until: 'u32',
       },
@@ -591,12 +587,12 @@ export default {
         proposalHash: 'H256',
       },
       Voted: {
-        voter: 'PezspCoreCryptoAccountId32',
+        voter: 'AccountId32',
         refIndex: 'u32',
         vote: 'PezpalletDemocracyVoteAccountVote',
       },
       Seconded: {
-        seconder: 'PezspCoreCryptoAccountId32',
+        seconder: 'AccountId32',
         propIndex: 'u32',
       },
       ProposalCanceled: {
@@ -663,13 +659,13 @@ export default {
   PezpalletCollectiveEvent: {
     _enum: {
       Proposed: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         proposalIndex: 'u32',
         proposalHash: 'H256',
         threshold: 'u32',
       },
       Voted: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         proposalHash: 'H256',
         voted: 'bool',
         yes: 'u32',
@@ -699,11 +695,11 @@ export default {
       },
       ProposalCostBurned: {
         proposalHash: 'H256',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       ProposalCostReleased: {
         proposalHash: 'H256',
-        who: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32'
       }
     }
   },
@@ -713,22 +709,22 @@ export default {
   PezpalletElectionsPhragmenEvent: {
     _enum: {
       NewTerm: {
-        newMembers: 'Vec<(PezspCoreCryptoAccountId32,u128)>',
+        newMembers: 'Vec<(AccountId32,u128)>',
       },
       EmptyTerm: 'Null',
       ElectionError: 'Null',
       MemberKicked: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
       },
       Renounced: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       CandidateSlashed: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
         amount: 'u128',
       },
       SeatHolderSlashed: {
-        seatHolder: 'PezspCoreCryptoAccountId32',
+        seatHolder: 'AccountId32',
         amount: 'u128'
       }
     }
@@ -766,7 +762,7 @@ export default {
       Awarded: {
         proposalIndex: 'u32',
         award: 'u128',
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       Burnt: {
         burntFunds: 'u128',
@@ -780,7 +776,7 @@ export default {
       SpendApproved: {
         proposalIndex: 'u32',
         amount: 'u128',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       UpdatedInactive: {
         reactivated: 'u128',
@@ -790,7 +786,7 @@ export default {
         index: 'u32',
         assetKind: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
         amount: 'u128',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
         validFrom: 'u32',
         expireAt: 'u32',
       },
@@ -838,48 +834,48 @@ export default {
   PezpalletContractsEvent: {
     _enum: {
       Instantiated: {
-        deployer: 'PezspCoreCryptoAccountId32',
-        contract: 'PezspCoreCryptoAccountId32',
+        deployer: 'AccountId32',
+        contract: 'AccountId32',
       },
       Terminated: {
-        contract: 'PezspCoreCryptoAccountId32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        contract: 'AccountId32',
+        beneficiary: 'AccountId32',
       },
       CodeStored: {
         codeHash: 'H256',
         depositHeld: 'u128',
-        uploader: 'PezspCoreCryptoAccountId32',
+        uploader: 'AccountId32',
       },
       ContractEmitted: {
-        contract: 'PezspCoreCryptoAccountId32',
+        contract: 'AccountId32',
         data: 'Bytes',
       },
       CodeRemoved: {
         codeHash: 'H256',
         depositReleased: 'u128',
-        remover: 'PezspCoreCryptoAccountId32',
+        remover: 'AccountId32',
       },
       ContractCodeUpdated: {
-        contract: 'PezspCoreCryptoAccountId32',
+        contract: 'AccountId32',
         newCodeHash: 'H256',
         oldCodeHash: 'H256',
       },
       Called: {
         caller: 'PezpalletContractsOrigin',
-        contract: 'PezspCoreCryptoAccountId32',
+        contract: 'AccountId32',
       },
       DelegateCalled: {
-        contract: 'PezspCoreCryptoAccountId32',
+        contract: 'AccountId32',
         codeHash: 'H256',
       },
       StorageDepositTransferredAndHeld: {
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         amount: 'u128',
       },
       StorageDepositTransferredAndReleased: {
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         amount: 'u128'
       }
     }
@@ -890,7 +886,7 @@ export default {
   PezpalletContractsOrigin: {
     _enum: {
       Root: 'Null',
-      Signed: 'PezspCoreCryptoAccountId32'
+      Signed: 'AccountId32'
     }
   },
   /**
@@ -909,8 +905,8 @@ export default {
         _alias: {
           new_: 'new',
         },
-        old: 'Option<PezspCoreCryptoAccountId32>',
-        new_: 'PezspCoreCryptoAccountId32',
+        old: 'Option<AccountId32>',
+        new_: 'AccountId32',
       },
       KeyRemoved: 'Null',
       SudoAsDone: {
@@ -928,7 +924,7 @@ export default {
       },
       AllGood: 'Null',
       SomeOffline: {
-        offline: 'Vec<(PezspCoreCryptoAccountId32,Null)>'
+        offline: 'Vec<(AccountId32,Null)>'
       }
     }
   },
@@ -953,79 +949,79 @@ export default {
   PezpalletIdentityEvent: {
     _enum: {
       IdentitySet: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       IdentityCleared: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         deposit: 'u128',
       },
       IdentityKilled: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         deposit: 'u128',
       },
       JudgementRequested: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         registrarIndex: 'u32',
       },
       JudgementUnrequested: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         registrarIndex: 'u32',
       },
       JudgementGiven: {
-        target: 'PezspCoreCryptoAccountId32',
+        target: 'AccountId32',
         registrarIndex: 'u32',
       },
       RegistrarAdded: {
         registrarIndex: 'u32',
       },
       SubIdentityAdded: {
-        sub: 'PezspCoreCryptoAccountId32',
-        main: 'PezspCoreCryptoAccountId32',
+        sub: 'AccountId32',
+        main: 'AccountId32',
         deposit: 'u128',
       },
       SubIdentitiesSet: {
-        main: 'PezspCoreCryptoAccountId32',
+        main: 'AccountId32',
         numberOfSubs: 'u32',
         newDeposit: 'u128',
       },
       SubIdentityRenamed: {
-        sub: 'PezspCoreCryptoAccountId32',
-        main: 'PezspCoreCryptoAccountId32',
+        sub: 'AccountId32',
+        main: 'AccountId32',
       },
       SubIdentityRemoved: {
-        sub: 'PezspCoreCryptoAccountId32',
-        main: 'PezspCoreCryptoAccountId32',
+        sub: 'AccountId32',
+        main: 'AccountId32',
         deposit: 'u128',
       },
       SubIdentityRevoked: {
-        sub: 'PezspCoreCryptoAccountId32',
-        main: 'PezspCoreCryptoAccountId32',
+        sub: 'AccountId32',
+        main: 'AccountId32',
         deposit: 'u128',
       },
       AuthorityAdded: {
-        authority: 'PezspCoreCryptoAccountId32',
+        authority: 'AccountId32',
       },
       AuthorityRemoved: {
-        authority: 'PezspCoreCryptoAccountId32',
+        authority: 'AccountId32',
       },
       UsernameSet: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         username: 'Bytes',
       },
       UsernameQueued: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         username: 'Bytes',
         expiration: 'u32',
       },
       PreapprovalExpired: {
-        whose: 'PezspCoreCryptoAccountId32',
+        whose: 'AccountId32',
       },
       PrimaryUsernameSet: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         username: 'Bytes',
       },
       DanglingUsernameRemoved: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         username: 'Bytes',
       },
       UsernameUnbound: {
@@ -1045,63 +1041,63 @@ export default {
   PezpalletSocietyEvent: {
     _enum: {
       Founded: {
-        founder: 'PezspCoreCryptoAccountId32',
+        founder: 'AccountId32',
       },
       Bid: {
-        candidateId: 'PezspCoreCryptoAccountId32',
+        candidateId: 'AccountId32',
         offer: 'u128',
       },
       Vouch: {
-        candidateId: 'PezspCoreCryptoAccountId32',
+        candidateId: 'AccountId32',
         offer: 'u128',
-        vouching: 'PezspCoreCryptoAccountId32',
+        vouching: 'AccountId32',
       },
       AutoUnbid: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       Unbid: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       Unvouch: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       Inducted: {
-        primary: 'PezspCoreCryptoAccountId32',
-        candidates: 'Vec<PezspCoreCryptoAccountId32>',
+        primary: 'AccountId32',
+        candidates: 'Vec<AccountId32>',
       },
       SuspendedMemberJudgement: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         judged: 'bool',
       },
       CandidateSuspended: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       MemberSuspended: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
       },
       Challenged: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
       },
       Vote: {
-        candidate: 'PezspCoreCryptoAccountId32',
-        voter: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
+        voter: 'AccountId32',
         vote: 'bool',
       },
       DefenderVote: {
-        voter: 'PezspCoreCryptoAccountId32',
+        voter: 'AccountId32',
         vote: 'bool',
       },
       NewParams: {
         params: 'PezpalletSocietyGroupParams',
       },
       Unfounded: {
-        founder: 'PezspCoreCryptoAccountId32',
+        founder: 'AccountId32',
       },
       Deposit: {
         value: 'u128',
       },
       Elevated: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         rank: 'u32'
       }
     }
@@ -1121,27 +1117,27 @@ export default {
   PezpalletRecoveryEvent: {
     _enum: {
       RecoveryCreated: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       RecoveryInitiated: {
-        lostAccount: 'PezspCoreCryptoAccountId32',
-        rescuerAccount: 'PezspCoreCryptoAccountId32',
+        lostAccount: 'AccountId32',
+        rescuerAccount: 'AccountId32',
       },
       RecoveryVouched: {
-        lostAccount: 'PezspCoreCryptoAccountId32',
-        rescuerAccount: 'PezspCoreCryptoAccountId32',
-        sender: 'PezspCoreCryptoAccountId32',
+        lostAccount: 'AccountId32',
+        rescuerAccount: 'AccountId32',
+        sender: 'AccountId32',
       },
       RecoveryClosed: {
-        lostAccount: 'PezspCoreCryptoAccountId32',
-        rescuerAccount: 'PezspCoreCryptoAccountId32',
+        lostAccount: 'AccountId32',
+        rescuerAccount: 'AccountId32',
       },
       AccountRecovered: {
-        lostAccount: 'PezspCoreCryptoAccountId32',
-        rescuerAccount: 'PezspCoreCryptoAccountId32',
+        lostAccount: 'AccountId32',
+        rescuerAccount: 'AccountId32',
       },
       RecoveryRemoved: {
-        lostAccount: 'PezspCoreCryptoAccountId32'
+        lostAccount: 'AccountId32'
       }
     }
   },
@@ -1151,11 +1147,11 @@ export default {
   PezpalletVestingEvent: {
     _enum: {
       VestingUpdated: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         unvested: 'u128',
       },
       VestingCompleted: {
-        account: 'PezspCoreCryptoAccountId32'
+        account: 'AccountId32'
       }
     }
   },
@@ -1261,30 +1257,30 @@ export default {
         result: 'Result<Null, PezspRuntimeDispatchError>',
       },
       PureCreated: {
-        pure: 'PezspCoreCryptoAccountId32',
-        who: 'PezspCoreCryptoAccountId32',
+        pure: 'AccountId32',
+        who: 'AccountId32',
         proxyType: 'KitchensinkRuntimeProxyType',
         disambiguationIndex: 'u16',
       },
       Announced: {
-        real: 'PezspCoreCryptoAccountId32',
-        proxy: 'PezspCoreCryptoAccountId32',
+        real: 'AccountId32',
+        proxy: 'AccountId32',
         callHash: 'H256',
       },
       ProxyAdded: {
-        delegator: 'PezspCoreCryptoAccountId32',
-        delegatee: 'PezspCoreCryptoAccountId32',
+        delegator: 'AccountId32',
+        delegatee: 'AccountId32',
         proxyType: 'KitchensinkRuntimeProxyType',
         delay: 'u32',
       },
       ProxyRemoved: {
-        delegator: 'PezspCoreCryptoAccountId32',
-        delegatee: 'PezspCoreCryptoAccountId32',
+        delegator: 'AccountId32',
+        delegatee: 'AccountId32',
         proxyType: 'KitchensinkRuntimeProxyType',
         delay: 'u32',
       },
       DepositPoked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         kind: 'PezpalletProxyDepositKind',
         oldDeposit: 'u128',
         newDeposit: 'u128'
@@ -1309,31 +1305,31 @@ export default {
   PezpalletMultisigEvent: {
     _enum: {
       NewMultisig: {
-        approving: 'PezspCoreCryptoAccountId32',
-        multisig: 'PezspCoreCryptoAccountId32',
+        approving: 'AccountId32',
+        multisig: 'AccountId32',
         callHash: '[u8;32]',
       },
       MultisigApproval: {
-        approving: 'PezspCoreCryptoAccountId32',
+        approving: 'AccountId32',
         timepoint: 'PezpalletMultisigTimepoint',
-        multisig: 'PezspCoreCryptoAccountId32',
+        multisig: 'AccountId32',
         callHash: '[u8;32]',
       },
       MultisigExecuted: {
-        approving: 'PezspCoreCryptoAccountId32',
+        approving: 'AccountId32',
         timepoint: 'PezpalletMultisigTimepoint',
-        multisig: 'PezspCoreCryptoAccountId32',
+        multisig: 'AccountId32',
         callHash: '[u8;32]',
         result: 'Result<Null, PezspRuntimeDispatchError>',
       },
       MultisigCancelled: {
-        cancelling: 'PezspCoreCryptoAccountId32',
+        cancelling: 'AccountId32',
         timepoint: 'PezpalletMultisigTimepoint',
-        multisig: 'PezspCoreCryptoAccountId32',
+        multisig: 'AccountId32',
         callHash: '[u8;32]',
       },
       DepositPoked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         callHash: '[u8;32]',
         oldDeposit: 'u128',
         newDeposit: 'u128'
@@ -1364,12 +1360,12 @@ export default {
       },
       BountyAwarded: {
         index: 'u32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       BountyClaimed: {
         index: 'u32',
         payout: 'u128',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       BountyCanceled: {
         index: 'u32',
@@ -1382,14 +1378,14 @@ export default {
       },
       CuratorProposed: {
         bountyId: 'u32',
-        curator: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
       },
       CuratorUnassigned: {
         bountyId: 'u32',
       },
       CuratorAccepted: {
         bountyId: 'u32',
-        curator: 'PezspCoreCryptoAccountId32'
+        curator: 'AccountId32'
       }
     }
   },
@@ -1406,7 +1402,7 @@ export default {
       },
       TipClosed: {
         tipHash: 'H256',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         payout: 'u128',
       },
       TipRetracted: {
@@ -1414,7 +1410,7 @@ export default {
       },
       TipSlashed: {
         tipHash: 'H256',
-        finder: 'PezspCoreCryptoAccountId32',
+        finder: 'AccountId32',
         deposit: 'u128'
       }
     }
@@ -1426,42 +1422,42 @@ export default {
     _enum: {
       Created: {
         assetId: 'u32',
-        creator: 'PezspCoreCryptoAccountId32',
-        owner: 'PezspCoreCryptoAccountId32',
+        creator: 'AccountId32',
+        owner: 'AccountId32',
       },
       Issued: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
         amount: 'u128',
       },
       Transferred: {
         assetId: 'u32',
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         amount: 'u128',
       },
       Burned: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
         balance: 'u128',
       },
       TeamChanged: {
         assetId: 'u32',
-        issuer: 'PezspCoreCryptoAccountId32',
-        admin: 'PezspCoreCryptoAccountId32',
-        freezer: 'PezspCoreCryptoAccountId32',
+        issuer: 'AccountId32',
+        admin: 'AccountId32',
+        freezer: 'AccountId32',
       },
       OwnerChanged: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Frozen: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Thawed: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       AssetFrozen: {
         assetId: 'u32',
@@ -1487,7 +1483,7 @@ export default {
       },
       ForceCreated: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       MetadataSet: {
         assetId: 'u32',
@@ -1501,20 +1497,20 @@ export default {
       },
       ApprovedTransfer: {
         assetId: 'u32',
-        source: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        source: 'AccountId32',
+        delegate: 'AccountId32',
         amount: 'u128',
       },
       ApprovalCancelled: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
       },
       TransferredApproved: {
         assetId: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
-        destination: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
+        destination: 'AccountId32',
         amount: 'u128',
       },
       AssetStatusChanged: {
@@ -1526,21 +1522,21 @@ export default {
       },
       Touched: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
-        depositor: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        depositor: 'AccountId32',
       },
       Blocked: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Deposited: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Withdrawn: {
         assetId: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128'
       }
     }
@@ -1553,11 +1549,11 @@ export default {
       LotteryStarted: 'Null',
       CallsUpdated: 'Null',
       Winner: {
-        winner: 'PezspCoreCryptoAccountId32',
+        winner: 'AccountId32',
         lotteryBalance: 'u128',
       },
       TicketBought: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         callIndex: '(u8,u8)'
       }
     }
@@ -1568,31 +1564,31 @@ export default {
   PezpalletNisEvent: {
     _enum: {
       BidPlaced: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
         duration: 'u32',
       },
       BidRetracted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
         duration: 'u32',
       },
       BidDropped: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
         duration: 'u32',
       },
       Issued: {
         index: 'u32',
         expiry: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
-        proportion: 'u64',
+        who: 'AccountId32',
+        proportion: 'Perquintill',
         amount: 'u128',
       },
       Thawed: {
         index: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
-        proportion: 'u64',
+        who: 'AccountId32',
+        proportion: 'Perquintill',
         amount: 'u128',
         dropped: 'bool',
       },
@@ -1600,8 +1596,8 @@ export default {
         deficit: 'u128',
       },
       Transferred: {
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
         index: 'u32'
       }
     }
@@ -1613,12 +1609,12 @@ export default {
     _enum: {
       Created: {
         collection: 'u32',
-        creator: 'PezspCoreCryptoAccountId32',
-        owner: 'PezspCoreCryptoAccountId32',
+        creator: 'AccountId32',
+        owner: 'AccountId32',
       },
       ForceCreated: {
         collection: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Destroyed: {
         collection: 'u32',
@@ -1626,18 +1622,18 @@ export default {
       Issued: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Transferred: {
         collection: 'u32',
         item: 'u32',
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
       },
       Burned: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Frozen: {
         collection: 'u32',
@@ -1655,25 +1651,25 @@ export default {
       },
       OwnerChanged: {
         collection: 'u32',
-        newOwner: 'PezspCoreCryptoAccountId32',
+        newOwner: 'AccountId32',
       },
       TeamChanged: {
         collection: 'u32',
-        issuer: 'PezspCoreCryptoAccountId32',
-        admin: 'PezspCoreCryptoAccountId32',
-        freezer: 'PezspCoreCryptoAccountId32',
+        issuer: 'AccountId32',
+        admin: 'AccountId32',
+        freezer: 'AccountId32',
       },
       ApprovedTransfer: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
       },
       ApprovalCancelled: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
       },
       ItemStatusChanged: {
         collection: 'u32',
@@ -1712,7 +1708,7 @@ export default {
         key: 'Bytes',
       },
       OwnershipAcceptanceChanged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         maybeCollection: 'Option<u32>',
       },
       CollectionMaxSupplySet: {
@@ -1723,7 +1719,7 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'u128',
-        whitelistedBuyer: 'Option<PezspCoreCryptoAccountId32>',
+        whitelistedBuyer: 'Option<AccountId32>',
       },
       ItemPriceRemoved: {
         collection: 'u32',
@@ -1733,8 +1729,8 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'u128',
-        seller: 'PezspCoreCryptoAccountId32',
-        buyer: 'PezspCoreCryptoAccountId32'
+        seller: 'AccountId32',
+        buyer: 'AccountId32'
       }
     }
   },
@@ -1745,12 +1741,12 @@ export default {
     _enum: {
       Created: {
         collection: 'u32',
-        creator: 'PezspCoreCryptoAccountId32',
-        owner: 'PezspCoreCryptoAccountId32',
+        creator: 'AccountId32',
+        owner: 'AccountId32',
       },
       ForceCreated: {
         collection: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Destroyed: {
         collection: 'u32',
@@ -1758,18 +1754,18 @@ export default {
       Issued: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       Transferred: {
         collection: 'u32',
         item: 'u32',
-        from: 'PezspCoreCryptoAccountId32',
-        to: 'PezspCoreCryptoAccountId32',
+        from: 'AccountId32',
+        to: 'AccountId32',
       },
       Burned: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       ItemTransferLocked: {
         collection: 'u32',
@@ -1790,31 +1786,31 @@ export default {
       },
       OwnerChanged: {
         collection: 'u32',
-        newOwner: 'PezspCoreCryptoAccountId32',
+        newOwner: 'AccountId32',
       },
       TeamChanged: {
         collection: 'u32',
-        issuer: 'Option<PezspCoreCryptoAccountId32>',
-        admin: 'Option<PezspCoreCryptoAccountId32>',
-        freezer: 'Option<PezspCoreCryptoAccountId32>',
+        issuer: 'Option<AccountId32>',
+        admin: 'Option<AccountId32>',
+        freezer: 'Option<AccountId32>',
       },
       TransferApproved: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
         deadline: 'Option<u32>',
       },
       ApprovalCancelled: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
+        delegate: 'AccountId32',
       },
       AllApprovalsCancelled: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspCoreCryptoAccountId32',
+        owner: 'AccountId32',
       },
       CollectionConfigChanged: {
         collection: 'u32',
@@ -1855,15 +1851,15 @@ export default {
       ItemAttributesApprovalAdded: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        delegate: 'AccountId32',
       },
       ItemAttributesApprovalRemoved: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspCoreCryptoAccountId32',
+        delegate: 'AccountId32',
       },
       OwnershipAcceptanceChanged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         maybeCollection: 'Option<u32>',
       },
       CollectionMaxSupplySet: {
@@ -1880,7 +1876,7 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'u128',
-        whitelistedBuyer: 'Option<PezspCoreCryptoAccountId32>',
+        whitelistedBuyer: 'Option<AccountId32>',
       },
       ItemPriceRemoved: {
         collection: 'u32',
@@ -1890,14 +1886,14 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'u128',
-        seller: 'PezspCoreCryptoAccountId32',
-        buyer: 'PezspCoreCryptoAccountId32',
+        seller: 'AccountId32',
+        buyer: 'AccountId32',
       },
       TipSent: {
         collection: 'u32',
         item: 'u32',
-        sender: 'PezspCoreCryptoAccountId32',
-        receiver: 'PezspCoreCryptoAccountId32',
+        sender: 'AccountId32',
+        receiver: 'AccountId32',
         amount: 'u128',
       },
       SwapCreated: {
@@ -1919,10 +1915,10 @@ export default {
       SwapClaimed: {
         sentCollection: 'u32',
         sentItem: 'u32',
-        sentItemOwner: 'PezspCoreCryptoAccountId32',
+        sentItemOwner: 'AccountId32',
         receivedCollection: 'u32',
         receivedItem: 'u32',
-        receivedItemOwner: 'PezspCoreCryptoAccountId32',
+        receivedItemOwner: 'AccountId32',
         price: 'Option<PezpalletNftsPriceWithDirection>',
         deadline: 'u32',
       },
@@ -1947,7 +1943,7 @@ export default {
       Pallet: 'Null',
       CollectionOwner: 'Null',
       ItemOwner: 'Null',
-      Account: 'PezspCoreCryptoAccountId32'
+      Account: 'AccountId32'
     }
   },
   /**
@@ -1982,13 +1978,13 @@ export default {
         nft: 'u32',
         fractions: 'u128',
         asset: 'u32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       NftUnified: {
         nftCollection: 'u32',
         nft: 'u32',
         asset: 'u32',
-        beneficiary: 'PezspCoreCryptoAccountId32'
+        beneficiary: 'AccountId32'
       }
     }
   },
@@ -1998,15 +1994,15 @@ export default {
   PezpalletSalaryEvent: {
     _enum: {
       Inducted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Registered: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       Paid: {
-        who: 'PezspCoreCryptoAccountId32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        beneficiary: 'AccountId32',
         amount: 'u128',
         id: 'Null',
       },
@@ -2014,8 +2010,8 @@ export default {
         index: 'u32',
       },
       Swapped: {
-        who: 'PezspCoreCryptoAccountId32',
-        newWho: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32',
+        newWho: 'AccountId32'
       }
     }
   },
@@ -2028,45 +2024,45 @@ export default {
         params: 'PezpalletCoreFellowshipParamsTypeU128',
       },
       ActiveChanged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         isActive: 'bool',
       },
       Inducted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Offboarded: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       Promoted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         toRank: 'u16',
       },
       Demoted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         toRank: 'u16',
       },
       Proven: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         atRank: 'u16',
       },
       Requested: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         wish: 'PezpalletCoreFellowshipWish',
       },
       EvidenceJudged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         wish: 'PezpalletCoreFellowshipWish',
         evidence: 'Bytes',
         oldRank: 'u16',
         newRank: 'Option<u16>',
       },
       Imported: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         rank: 'u16',
       },
       Swapped: {
-        who: 'PezspCoreCryptoAccountId32',
-        newWho: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32',
+        newWho: 'AccountId32'
       }
     }
   },
@@ -2106,12 +2102,12 @@ export default {
   PezpalletBagsListEvent: {
     _enum: {
       Rebagged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         from: 'u64',
         to: 'u64',
       },
       ScoreUpdated: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         newScore: 'u64'
       }
     }
@@ -2127,7 +2123,7 @@ export default {
         compute: 'PezpalletStateTrieMigrationMigrationCompute',
       },
       Slashed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       AutoMigrationFinished: 'Null',
@@ -2160,13 +2156,13 @@ export default {
       Awarded: {
         index: 'u32',
         childIndex: 'u32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       Claimed: {
         index: 'u32',
         childIndex: 'u32',
         payout: 'u128',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       Canceled: {
         index: 'u32',
@@ -2186,16 +2182,16 @@ export default {
       },
       DecisionDepositPlaced: {
         index: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       DecisionDepositRefunded: {
         index: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       DepositSlashed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       DecisionStarted: {
@@ -2235,7 +2231,7 @@ export default {
       },
       SubmissionDepositRefunded: {
         index: 'u32',
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
       },
       MetadataSet: {
@@ -2326,33 +2322,33 @@ export default {
   PezpalletUtilityCall: {
     _enum: {
       batch: {
-        calls: 'Vec<RuntimeCall>',
+        calls: 'Vec<Call>',
       },
       as_derivative: {
         index: 'u16',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       batch_all: {
-        calls: 'Vec<RuntimeCall>',
+        calls: 'Vec<Call>',
       },
       dispatch_as: {
         asOrigin: 'KitchensinkRuntimeOriginCaller',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       force_batch: {
-        calls: 'Vec<RuntimeCall>',
+        calls: 'Vec<Call>',
       },
       with_weight: {
-        call: 'RuntimeCall',
+        call: 'Call',
         weight: 'PezspWeightsWeightV2Weight',
       },
       if_else: {
-        main: 'RuntimeCall',
-        fallback: 'RuntimeCall',
+        main: 'Call',
+        fallback: 'Call',
       },
       dispatch_as_fallible: {
         asOrigin: 'KitchensinkRuntimeOriginCaller',
-        call: 'RuntimeCall'
+        call: 'Call'
       }
     }
   },
@@ -2430,7 +2426,7 @@ export default {
   PezframeSupportDispatchRawOrigin: {
     _enum: {
       Root: 'Null',
-      Signed: 'PezspCoreCryptoAccountId32',
+      Signed: 'AccountId32',
       None: 'Null'
     }
   },
@@ -2440,7 +2436,7 @@ export default {
   PezpalletCollectiveRawOrigin: {
     _enum: {
       Members: '(u32,u32)',
-      Member: 'PezspCoreCryptoAccountId32',
+      Member: 'AccountId32',
       _Phantom: 'Null'
     }
   },
@@ -2533,7 +2529,7 @@ export default {
         _alias: {
           new_: 'new',
         },
-        new_: 'PezspRuntimeMultiAddress',
+        new_: 'MultiAddress',
         index: 'u32',
       },
       free: {
@@ -2543,7 +2539,7 @@ export default {
         _alias: {
           new_: 'new',
         },
-        new_: 'PezspRuntimeMultiAddress',
+        new_: 'MultiAddress',
         index: 'u32',
         freeze: 'bool',
       },
@@ -2556,50 +2552,38 @@ export default {
     }
   },
   /**
-   * Lookup163: sp_runtime::multiaddress::MultiAddress<sp_core::crypto::AccountId32, AccountIndex>
-   **/
-  PezspRuntimeMultiAddress: {
-    _enum: {
-      Id: 'PezspCoreCryptoAccountId32',
-      Index: 'Compact<u32>',
-      Raw: 'Bytes',
-      Address32: '[u8;32]',
-      Address20: '[u8;20]'
-    }
-  },
-  /**
    * Lookup165: pallet_balances::pallet::Call<T, I>
    **/
   PezpalletBalancesCall: {
     _enum: {
       transfer_allow_death: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         value: 'Compact<u128>',
       },
       __Unused1: 'Null',
       force_transfer: {
-        source: 'PezspRuntimeMultiAddress',
-        dest: 'PezspRuntimeMultiAddress',
+        source: 'MultiAddress',
+        dest: 'MultiAddress',
         value: 'Compact<u128>',
       },
       transfer_keep_alive: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         value: 'Compact<u128>',
       },
       transfer_all: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         keepAlive: 'bool',
       },
       force_unreserve: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         amount: 'u128',
       },
       upgrade_accounts: {
-        who: 'Vec<PezspCoreCryptoAccountId32>',
+        who: 'Vec<AccountId32>',
       },
       __Unused7: 'Null',
       force_set_balance: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         newFree: 'Compact<u128>',
       },
       force_adjust_total_issuance: {
@@ -2631,7 +2615,7 @@ export default {
         maybeNextScore: 'Option<PezspNposElectionsElectionScore>',
       },
       set_emergency_election_result: {
-        supports: 'Vec<(PezspCoreCryptoAccountId32,PezspNposElectionsSupport)>',
+        supports: 'Vec<(AccountId32,PezspNposElectionsSupport)>',
       },
       submit: {
         rawSolution: 'PezpalletElectionProviderMultiPhaseRawSolution',
@@ -2655,21 +2639,21 @@ export default {
    **/
   KitchensinkRuntimeNposSolution16: {
     votes1: 'Vec<(Compact<u32>,Compact<u16>)>',
-    votes2: 'Vec<(Compact<u32>,(Compact<u16>,Compact<u16>),Compact<u16>)>',
-    votes3: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);2],Compact<u16>)>',
-    votes4: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);3],Compact<u16>)>',
-    votes5: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);4],Compact<u16>)>',
-    votes6: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);5],Compact<u16>)>',
-    votes7: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);6],Compact<u16>)>',
-    votes8: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);7],Compact<u16>)>',
-    votes9: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);8],Compact<u16>)>',
-    votes10: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);9],Compact<u16>)>',
-    votes11: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);10],Compact<u16>)>',
-    votes12: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);11],Compact<u16>)>',
-    votes13: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);12],Compact<u16>)>',
-    votes14: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);13],Compact<u16>)>',
-    votes15: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);14],Compact<u16>)>',
-    votes16: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<u16>);15],Compact<u16>)>'
+    votes2: 'Vec<(Compact<u32>,(Compact<u16>,Compact<PerU16>),Compact<u16>)>',
+    votes3: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);2],Compact<u16>)>',
+    votes4: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);3],Compact<u16>)>',
+    votes5: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);4],Compact<u16>)>',
+    votes6: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);5],Compact<u16>)>',
+    votes7: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);6],Compact<u16>)>',
+    votes8: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);7],Compact<u16>)>',
+    votes9: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);8],Compact<u16>)>',
+    votes10: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);9],Compact<u16>)>',
+    votes11: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);10],Compact<u16>)>',
+    votes12: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);11],Compact<u16>)>',
+    votes13: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);12],Compact<u16>)>',
+    votes14: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);13],Compact<u16>)>',
+    votes15: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);14],Compact<u16>)>',
+    votes16: 'Vec<(Compact<u32>,[(Compact<u16>,Compact<PerU16>);15],Compact<u16>)>'
   },
   /**
    * Lookup221: pallet_election_provider_multi_phase::SolutionOrSnapshotSize
@@ -2683,7 +2667,7 @@ export default {
    **/
   PezspNposElectionsSupport: {
     total: 'u128',
-    voters: 'Vec<(PezspCoreCryptoAccountId32,u128)>'
+    voters: 'Vec<(AccountId32,u128)>'
   },
   /**
    * Lookup226: pallet_staking::pallet::pallet::Call<T>
@@ -2707,7 +2691,7 @@ export default {
         prefs: 'PezpalletStakingValidatorPrefs',
       },
       nominate: {
-        targets: 'Vec<PezspRuntimeMultiAddress>',
+        targets: 'Vec<MultiAddress>',
       },
       chill: 'Null',
       set_payee: {
@@ -2724,15 +2708,15 @@ export default {
         additional: 'Compact<u32>',
       },
       scale_validator_count: {
-        factor: 'u8',
+        factor: 'Percent',
       },
       force_no_eras: 'Null',
       force_new_era: 'Null',
       set_invulnerables: {
-        invulnerables: 'Vec<PezspCoreCryptoAccountId32>',
+        invulnerables: 'Vec<AccountId32>',
       },
       force_unstake: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         numSlashingSpans: 'u32',
       },
       force_new_era_always: 'Null',
@@ -2741,18 +2725,18 @@ export default {
         slashIndices: 'Vec<u32>',
       },
       payout_stakers: {
-        validatorStash: 'PezspCoreCryptoAccountId32',
+        validatorStash: 'AccountId32',
         era: 'u32',
       },
       rebond: {
         value: 'Compact<u128>',
       },
       reap_stash: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         numSlashingSpans: 'u32',
       },
       kick: {
-        who: 'Vec<PezspRuntimeMultiAddress>',
+        who: 'Vec<MultiAddress>',
       },
       set_staking_configs: {
         minNominatorBond: 'PezpalletStakingPezpalletConfigOpU128',
@@ -2764,43 +2748,43 @@ export default {
         maxStakedRewards: 'PezpalletStakingPezpalletConfigOpPercent',
       },
       chill_other: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
       },
       force_apply_min_commission: {
-        validatorStash: 'PezspCoreCryptoAccountId32',
+        validatorStash: 'AccountId32',
       },
       set_min_commission: {
         _alias: {
           new_: 'new',
         },
-        new_: 'u32',
+        new_: 'Perbill',
       },
       payout_stakers_by_page: {
-        validatorStash: 'PezspCoreCryptoAccountId32',
+        validatorStash: 'AccountId32',
         era: 'u32',
         page: 'u32',
       },
       update_payee: {
-        controller: 'PezspCoreCryptoAccountId32',
+        controller: 'AccountId32',
       },
       deprecate_controller_batch: {
-        controllers: 'Vec<PezspCoreCryptoAccountId32>',
+        controllers: 'Vec<AccountId32>',
       },
       restore_ledger: {
-        stash: 'PezspCoreCryptoAccountId32',
-        maybeController: 'Option<PezspCoreCryptoAccountId32>',
+        stash: 'AccountId32',
+        maybeController: 'Option<AccountId32>',
         maybeTotal: 'Option<u128>',
         maybeUnlocking: 'Option<Vec<PezpalletStakingUnlockChunk>>',
       },
       migrate_currency: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
       },
       __Unused31: 'Null',
       __Unused32: 'Null',
       manual_slash: {
-        validatorStash: 'PezspCoreCryptoAccountId32',
+        validatorStash: 'AccountId32',
         era: 'u32',
-        slashFraction: 'u32'
+        slashFraction: 'Perbill'
       }
     }
   },
@@ -2830,7 +2814,7 @@ export default {
   PezpalletStakingPezpalletConfigOpPercent: {
     _enum: {
       Noop: 'Null',
-      Set: 'u8',
+      Set: 'Percent',
       Remove: 'Null'
     }
   },
@@ -2840,7 +2824,7 @@ export default {
   PezpalletStakingPezpalletConfigOpPerbill: {
     _enum: {
       Noop: 'Null',
-      Set: 'u32',
+      Set: 'Perbill',
       Remove: 'Null'
     }
   },
@@ -2929,20 +2913,20 @@ export default {
         refIndex: 'Compact<u32>',
       },
       delegate: {
-        to: 'PezspRuntimeMultiAddress',
+        to: 'MultiAddress',
         conviction: 'PezpalletDemocracyConviction',
         balance: 'u128',
       },
       undelegate: 'Null',
       clear_public_proposals: 'Null',
       unlock: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
       },
       remove_vote: {
         index: 'u32',
       },
       remove_other_vote: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         index: 'u32',
       },
       blacklist: {
@@ -2970,17 +2954,17 @@ export default {
   PezpalletCollectiveCall: {
     _enum: {
       set_members: {
-        newMembers: 'Vec<PezspCoreCryptoAccountId32>',
-        prime: 'Option<PezspCoreCryptoAccountId32>',
+        newMembers: 'Vec<AccountId32>',
+        prime: 'Option<AccountId32>',
         oldCount: 'u32',
       },
       execute: {
-        proposal: 'RuntimeCall',
+        proposal: 'Call',
         lengthBound: 'Compact<u32>',
       },
       propose: {
         threshold: 'Compact<u32>',
-        proposal: 'RuntimeCall',
+        proposal: 'Call',
         lengthBound: 'Compact<u32>',
       },
       vote: {
@@ -3012,7 +2996,7 @@ export default {
   PezpalletElectionsPhragmenCall: {
     _enum: {
       vote: {
-        votes: 'Vec<PezspCoreCryptoAccountId32>',
+        votes: 'Vec<AccountId32>',
         value: 'Compact<u128>',
       },
       remove_voter: 'Null',
@@ -3023,7 +3007,7 @@ export default {
         renouncing: 'PezpalletElectionsPhragmenRenouncing',
       },
       remove_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         slashBond: 'bool',
         rerunElection: 'bool',
       },
@@ -3049,26 +3033,26 @@ export default {
   PezpalletMembershipCall: {
     _enum: {
       add_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       remove_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       swap_member: {
-        remove: 'PezspRuntimeMultiAddress',
-        add: 'PezspRuntimeMultiAddress',
+        remove: 'MultiAddress',
+        add: 'MultiAddress',
       },
       reset_members: {
-        members: 'Vec<PezspCoreCryptoAccountId32>',
+        members: 'Vec<AccountId32>',
       },
       change_key: {
         _alias: {
           new_: 'new',
         },
-        new_: 'PezspRuntimeMultiAddress',
+        new_: 'MultiAddress',
       },
       set_prime: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       clear_prime: 'Null'
     }
@@ -3154,7 +3138,7 @@ export default {
       __Unused2: 'Null',
       spend_local: {
         amount: 'Compact<u128>',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
       },
       remove_approval: {
         proposalId: 'Compact<u32>',
@@ -3162,7 +3146,7 @@ export default {
       spend: {
         assetKind: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
         amount: 'Compact<u128>',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
         validFrom: 'Option<u32>',
       },
       payout: {
@@ -3200,7 +3184,7 @@ export default {
   PezpalletContractsCall: {
     _enum: {
       call_old_weight: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         value: 'Compact<u128>',
         gasLimit: 'Compact<u64>',
         storageDepositLimit: 'Option<Compact<u128>>',
@@ -3231,11 +3215,11 @@ export default {
         codeHash: 'H256',
       },
       set_code: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         codeHash: 'H256',
       },
       call: {
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         value: 'Compact<u128>',
         gasLimit: 'PezspWeightsWeightV2Weight',
         storageDepositLimit: 'Option<Compact<u128>>',
@@ -3274,21 +3258,21 @@ export default {
   PezpalletSudoCall: {
     _enum: {
       sudo: {
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       sudo_unchecked_weight: {
-        call: 'RuntimeCall',
+        call: 'Call',
         weight: 'PezspWeightsWeightV2Weight',
       },
       set_key: {
         _alias: {
           new_: 'new',
         },
-        new_: 'PezspRuntimeMultiAddress',
+        new_: 'MultiAddress',
       },
       sudo_as: {
-        who: 'PezspRuntimeMultiAddress',
-        call: 'RuntimeCall',
+        who: 'MultiAddress',
+        call: 'Call',
       },
       remove_key: 'Null'
     }
@@ -3323,13 +3307,13 @@ export default {
   PezpalletIdentityCall: {
     _enum: {
       add_registrar: {
-        account: 'PezspRuntimeMultiAddress',
+        account: 'MultiAddress',
       },
       set_identity: {
         info: 'PezpalletIdentityLegacyIdentityInfo',
       },
       set_subs: {
-        subs: 'Vec<(PezspCoreCryptoAccountId32,Data)>',
+        subs: 'Vec<(AccountId32,Data)>',
       },
       clear_identity: 'Null',
       request_judgement: {
@@ -3348,7 +3332,7 @@ export default {
           new_: 'new',
         },
         index: 'Compact<u32>',
-        new_: 'PezspRuntimeMultiAddress',
+        new_: 'MultiAddress',
       },
       set_fields: {
         index: 'Compact<u32>',
@@ -3356,36 +3340,36 @@ export default {
       },
       provide_judgement: {
         regIndex: 'Compact<u32>',
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         judgement: 'PezpalletIdentityJudgement',
         identity: 'H256',
       },
       kill_identity: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
       },
       add_sub: {
-        sub: 'PezspRuntimeMultiAddress',
+        sub: 'MultiAddress',
         data: 'Data',
       },
       rename_sub: {
-        sub: 'PezspRuntimeMultiAddress',
+        sub: 'MultiAddress',
         data: 'Data',
       },
       remove_sub: {
-        sub: 'PezspRuntimeMultiAddress',
+        sub: 'MultiAddress',
       },
       quit_sub: 'Null',
       add_username_authority: {
-        authority: 'PezspRuntimeMultiAddress',
+        authority: 'MultiAddress',
         suffix: 'Bytes',
         allocation: 'u32',
       },
       remove_username_authority: {
         suffix: 'Bytes',
-        authority: 'PezspRuntimeMultiAddress',
+        authority: 'MultiAddress',
       },
       set_username_for: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         username: 'Bytes',
         signature: 'Option<PezspRuntimeMultiSignature>',
         useAllocation: 'bool',
@@ -3458,13 +3442,13 @@ export default {
       },
       unbid: 'Null',
       vouch: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         value: 'u128',
         tip: 'u128',
       },
       unvouch: 'Null',
       vote: {
-        candidate: 'PezspRuntimeMultiAddress',
+        candidate: 'MultiAddress',
         approve: 'bool',
       },
       defender_vote: {
@@ -3475,7 +3459,7 @@ export default {
         amount: 'u128',
       },
       found_society: {
-        founder: 'PezspRuntimeMultiAddress',
+        founder: 'MultiAddress',
         maxMembers: 'u32',
         maxIntake: 'u32',
         maxStrikes: 'u32',
@@ -3484,7 +3468,7 @@ export default {
       },
       dissolve: 'Null',
       judge_suspended_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         forgive: 'bool',
       },
       set_parameters: {
@@ -3496,17 +3480,17 @@ export default {
       punish_skeptic: 'Null',
       claim_membership: 'Null',
       bestow_membership: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       kick_candidate: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       resign_candidacy: 'Null',
       drop_candidate: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
       },
       cleanup_candidacy: {
-        candidate: 'PezspCoreCryptoAccountId32',
+        candidate: 'AccountId32',
         max: 'u32',
       },
       cleanup_challenge: {
@@ -3521,34 +3505,34 @@ export default {
   PezpalletRecoveryCall: {
     _enum: {
       as_recovered: {
-        account: 'PezspRuntimeMultiAddress',
-        call: 'RuntimeCall',
+        account: 'MultiAddress',
+        call: 'Call',
       },
       set_recovered: {
-        lost: 'PezspRuntimeMultiAddress',
-        rescuer: 'PezspRuntimeMultiAddress',
+        lost: 'MultiAddress',
+        rescuer: 'MultiAddress',
       },
       create_recovery: {
-        friends: 'Vec<PezspCoreCryptoAccountId32>',
+        friends: 'Vec<AccountId32>',
         threshold: 'u16',
         delayPeriod: 'u32',
       },
       initiate_recovery: {
-        account: 'PezspRuntimeMultiAddress',
+        account: 'MultiAddress',
       },
       vouch_recovery: {
-        lost: 'PezspRuntimeMultiAddress',
-        rescuer: 'PezspRuntimeMultiAddress',
+        lost: 'MultiAddress',
+        rescuer: 'MultiAddress',
       },
       claim_recovery: {
-        account: 'PezspRuntimeMultiAddress',
+        account: 'MultiAddress',
       },
       close_recovery: {
-        rescuer: 'PezspRuntimeMultiAddress',
+        rescuer: 'MultiAddress',
       },
       remove_recovery: 'Null',
       cancel_recovered: {
-        account: 'PezspRuntimeMultiAddress'
+        account: 'MultiAddress'
       }
     }
   },
@@ -3559,15 +3543,15 @@ export default {
     _enum: {
       vest: 'Null',
       vest_other: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
       },
       vested_transfer: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         schedule: 'PezpalletVestingVestingInfo',
       },
       force_vested_transfer: {
-        source: 'PezspRuntimeMultiAddress',
-        target: 'PezspRuntimeMultiAddress',
+        source: 'MultiAddress',
+        target: 'MultiAddress',
         schedule: 'PezpalletVestingVestingInfo',
       },
       merge_schedules: {
@@ -3575,7 +3559,7 @@ export default {
         schedule2Index: 'u32',
       },
       force_remove_vesting_schedule: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         scheduleIndex: 'u32'
       }
     }
@@ -3597,7 +3581,7 @@ export default {
         when: 'u32',
         maybePeriodic: 'Option<(u32,u32)>',
         priority: 'u8',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       cancel: {
         when: 'u32',
@@ -3608,7 +3592,7 @@ export default {
         when: 'u32',
         maybePeriodic: 'Option<(u32,u32)>',
         priority: 'u8',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       cancel_named: {
         id: '[u8;32]',
@@ -3617,14 +3601,14 @@ export default {
         after: 'u32',
         maybePeriodic: 'Option<(u32,u32)>',
         priority: 'u8',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       schedule_named_after: {
         id: '[u8;32]',
         after: 'u32',
         maybePeriodic: 'Option<(u32,u32)>',
         priority: 'u8',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       set_retry: {
         task: '(u32,u32)',
@@ -3704,17 +3688,17 @@ export default {
   PezpalletProxyCall: {
     _enum: {
       proxy: {
-        real: 'PezspRuntimeMultiAddress',
+        real: 'MultiAddress',
         forceProxyType: 'Option<KitchensinkRuntimeProxyType>',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       add_proxy: {
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         proxyType: 'KitchensinkRuntimeProxyType',
         delay: 'u32',
       },
       remove_proxy: {
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         proxyType: 'KitchensinkRuntimeProxyType',
         delay: 'u32',
       },
@@ -3725,29 +3709,29 @@ export default {
         index: 'u16',
       },
       kill_pure: {
-        spawner: 'PezspRuntimeMultiAddress',
+        spawner: 'MultiAddress',
         proxyType: 'KitchensinkRuntimeProxyType',
         index: 'u16',
         height: 'Compact<u32>',
         extIndex: 'Compact<u32>',
       },
       announce: {
-        real: 'PezspRuntimeMultiAddress',
+        real: 'MultiAddress',
         callHash: 'H256',
       },
       remove_announcement: {
-        real: 'PezspRuntimeMultiAddress',
+        real: 'MultiAddress',
         callHash: 'H256',
       },
       reject_announcement: {
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         callHash: 'H256',
       },
       proxy_announced: {
-        delegate: 'PezspRuntimeMultiAddress',
-        real: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
+        real: 'MultiAddress',
         forceProxyType: 'Option<KitchensinkRuntimeProxyType>',
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       poke_deposit: 'Null'
     }
@@ -3758,32 +3742,32 @@ export default {
   PezpalletMultisigCall: {
     _enum: {
       as_multi_threshold_1: {
-        otherSignatories: 'Vec<PezspCoreCryptoAccountId32>',
-        call: 'RuntimeCall',
+        otherSignatories: 'Vec<AccountId32>',
+        call: 'Call',
       },
       as_multi: {
         threshold: 'u16',
-        otherSignatories: 'Vec<PezspCoreCryptoAccountId32>',
+        otherSignatories: 'Vec<AccountId32>',
         maybeTimepoint: 'Option<PezpalletMultisigTimepoint>',
-        call: 'RuntimeCall',
+        call: 'Call',
         maxWeight: 'PezspWeightsWeightV2Weight',
       },
       approve_as_multi: {
         threshold: 'u16',
-        otherSignatories: 'Vec<PezspCoreCryptoAccountId32>',
+        otherSignatories: 'Vec<AccountId32>',
         maybeTimepoint: 'Option<PezpalletMultisigTimepoint>',
         callHash: '[u8;32]',
         maxWeight: 'PezspWeightsWeightV2Weight',
       },
       cancel_as_multi: {
         threshold: 'u16',
-        otherSignatories: 'Vec<PezspCoreCryptoAccountId32>',
+        otherSignatories: 'Vec<AccountId32>',
         timepoint: 'PezpalletMultisigTimepoint',
         callHash: '[u8;32]',
       },
       poke_deposit: {
         threshold: 'u16',
-        otherSignatories: 'Vec<PezspCoreCryptoAccountId32>',
+        otherSignatories: 'Vec<AccountId32>',
         callHash: '[u8;32]'
       }
     }
@@ -3802,7 +3786,7 @@ export default {
       },
       propose_curator: {
         bountyId: 'Compact<u32>',
-        curator: 'PezspRuntimeMultiAddress',
+        curator: 'MultiAddress',
         fee: 'Compact<u128>',
       },
       unassign_curator: {
@@ -3813,7 +3797,7 @@ export default {
       },
       award_bounty: {
         bountyId: 'Compact<u32>',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
       },
       claim_bounty: {
         bountyId: 'Compact<u32>',
@@ -3827,7 +3811,7 @@ export default {
       },
       approve_bounty_with_curator: {
         bountyId: 'Compact<u32>',
-        curator: 'PezspRuntimeMultiAddress',
+        curator: 'MultiAddress',
         fee: 'Compact<u128>'
       }
     }
@@ -3839,7 +3823,7 @@ export default {
     _enum: {
       report_awesome: {
         reason: 'Bytes',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       retract_tip: {
         _alias: {
@@ -3849,7 +3833,7 @@ export default {
       },
       tip_new: {
         reason: 'Bytes',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         tipValue: 'Compact<u128>',
       },
       tip: {
@@ -3880,12 +3864,12 @@ export default {
     _enum: {
       create: {
         id: 'Compact<u32>',
-        admin: 'PezspRuntimeMultiAddress',
+        admin: 'MultiAddress',
         minBalance: 'u128',
       },
       force_create: {
         id: 'Compact<u32>',
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
         isSufficient: 'bool',
         minBalance: 'Compact<u128>',
       },
@@ -3903,37 +3887,37 @@ export default {
       },
       mint: {
         id: 'Compact<u32>',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       burn: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       transfer: {
         id: 'Compact<u32>',
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       transfer_keep_alive: {
         id: 'Compact<u32>',
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       force_transfer: {
         id: 'Compact<u32>',
-        source: 'PezspRuntimeMultiAddress',
-        dest: 'PezspRuntimeMultiAddress',
+        source: 'MultiAddress',
+        dest: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       freeze: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       thaw: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       freeze_asset: {
         id: 'Compact<u32>',
@@ -3943,13 +3927,13 @@ export default {
       },
       transfer_ownership: {
         id: 'Compact<u32>',
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
       },
       set_team: {
         id: 'Compact<u32>',
-        issuer: 'PezspRuntimeMultiAddress',
-        admin: 'PezspRuntimeMultiAddress',
-        freezer: 'PezspRuntimeMultiAddress',
+        issuer: 'MultiAddress',
+        admin: 'MultiAddress',
+        freezer: 'MultiAddress',
       },
       set_metadata: {
         id: 'Compact<u32>',
@@ -3972,32 +3956,32 @@ export default {
       },
       force_asset_status: {
         id: 'Compact<u32>',
-        owner: 'PezspRuntimeMultiAddress',
-        issuer: 'PezspRuntimeMultiAddress',
-        admin: 'PezspRuntimeMultiAddress',
-        freezer: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
+        issuer: 'MultiAddress',
+        admin: 'MultiAddress',
+        freezer: 'MultiAddress',
         minBalance: 'Compact<u128>',
         isSufficient: 'bool',
         isFrozen: 'bool',
       },
       approve_transfer: {
         id: 'Compact<u32>',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       cancel_approval: {
         id: 'Compact<u32>',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
       },
       force_cancel_approval: {
         id: 'Compact<u32>',
-        owner: 'PezspRuntimeMultiAddress',
-        delegate: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
+        delegate: 'MultiAddress',
       },
       transfer_approved: {
         id: 'Compact<u32>',
-        owner: 'PezspRuntimeMultiAddress',
-        destination: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
+        destination: 'MultiAddress',
         amount: 'Compact<u128>',
       },
       touch: {
@@ -4013,19 +3997,19 @@ export default {
       },
       touch_other: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       refund_other: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       block: {
         id: 'Compact<u32>',
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       transfer_all: {
         id: 'Compact<u32>',
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
         keepAlive: 'bool'
       }
     }
@@ -4124,10 +4108,10 @@ export default {
   PezpalletLotteryCall: {
     _enum: {
       buy_ticket: {
-        call: 'RuntimeCall',
+        call: 'Call',
       },
       set_calls: {
-        calls: 'Vec<RuntimeCall>',
+        calls: 'Vec<Call>',
       },
       start_lottery: {
         price: 'u128',
@@ -4154,7 +4138,7 @@ export default {
       fund_deficit: 'Null',
       thaw_private: {
         index: 'Compact<u32>',
-        maybeProportion: 'Option<u64>',
+        maybeProportion: 'Option<Perquintill>',
       },
       thaw_communal: {
         index: 'Compact<u32>',
@@ -4174,11 +4158,11 @@ export default {
     _enum: {
       create: {
         collection: 'u32',
-        admin: 'PezspRuntimeMultiAddress',
+        admin: 'MultiAddress',
       },
       force_create: {
         collection: 'u32',
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
         freeHolding: 'bool',
       },
       destroy: {
@@ -4188,17 +4172,17 @@ export default {
       mint: {
         collection: 'u32',
         item: 'u32',
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
       },
       burn: {
         collection: 'u32',
         item: 'u32',
-        checkOwner: 'Option<PezspRuntimeMultiAddress>',
+        checkOwner: 'Option<MultiAddress>',
       },
       transfer: {
         collection: 'u32',
         item: 'u32',
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
       },
       redeposit: {
         collection: 'u32',
@@ -4220,30 +4204,30 @@ export default {
       },
       transfer_ownership: {
         collection: 'u32',
-        newOwner: 'PezspRuntimeMultiAddress',
+        newOwner: 'MultiAddress',
       },
       set_team: {
         collection: 'u32',
-        issuer: 'PezspRuntimeMultiAddress',
-        admin: 'PezspRuntimeMultiAddress',
-        freezer: 'PezspRuntimeMultiAddress',
+        issuer: 'MultiAddress',
+        admin: 'MultiAddress',
+        freezer: 'MultiAddress',
       },
       approve_transfer: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
       },
       cancel_approval: {
         collection: 'u32',
         item: 'u32',
-        maybeCheckDelegate: 'Option<PezspRuntimeMultiAddress>',
+        maybeCheckDelegate: 'Option<MultiAddress>',
       },
       force_item_status: {
         collection: 'u32',
-        owner: 'PezspRuntimeMultiAddress',
-        issuer: 'PezspRuntimeMultiAddress',
-        admin: 'PezspRuntimeMultiAddress',
-        freezer: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
+        issuer: 'MultiAddress',
+        admin: 'MultiAddress',
+        freezer: 'MultiAddress',
         freeHolding: 'bool',
         isFrozen: 'bool',
       },
@@ -4287,7 +4271,7 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'Option<u128>',
-        whitelistedBuyer: 'Option<PezspRuntimeMultiAddress>',
+        whitelistedBuyer: 'Option<MultiAddress>',
       },
       buy_item: {
         collection: 'u32',
@@ -4310,11 +4294,11 @@ export default {
   PezpalletNftsCall: {
     _enum: {
       create: {
-        admin: 'PezspRuntimeMultiAddress',
+        admin: 'MultiAddress',
         config: 'PezpalletNftsCollectionConfig',
       },
       force_create: {
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
         config: 'PezpalletNftsCollectionConfig',
       },
       destroy: {
@@ -4324,13 +4308,13 @@ export default {
       mint: {
         collection: 'u32',
         item: 'u32',
-        mintTo: 'PezspRuntimeMultiAddress',
+        mintTo: 'MultiAddress',
         witnessData: 'Option<PezpalletNftsMintWitness>',
       },
       force_mint: {
         collection: 'u32',
         item: 'u32',
-        mintTo: 'PezspRuntimeMultiAddress',
+        mintTo: 'MultiAddress',
         itemConfig: 'PezpalletNftsItemConfig',
       },
       burn: {
@@ -4340,7 +4324,7 @@ export default {
       transfer: {
         collection: 'u32',
         item: 'u32',
-        dest: 'PezspRuntimeMultiAddress',
+        dest: 'MultiAddress',
       },
       redeposit: {
         collection: 'u32',
@@ -4360,17 +4344,17 @@ export default {
       },
       transfer_ownership: {
         collection: 'u32',
-        newOwner: 'PezspRuntimeMultiAddress',
+        newOwner: 'MultiAddress',
       },
       set_team: {
         collection: 'u32',
-        issuer: 'Option<PezspRuntimeMultiAddress>',
-        admin: 'Option<PezspRuntimeMultiAddress>',
-        freezer: 'Option<PezspRuntimeMultiAddress>',
+        issuer: 'Option<MultiAddress>',
+        admin: 'Option<MultiAddress>',
+        freezer: 'Option<MultiAddress>',
       },
       force_collection_owner: {
         collection: 'u32',
-        owner: 'PezspRuntimeMultiAddress',
+        owner: 'MultiAddress',
       },
       force_collection_config: {
         collection: 'u32',
@@ -4379,13 +4363,13 @@ export default {
       approve_transfer: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         maybeDeadline: 'Option<u32>',
       },
       cancel_approval: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
       },
       clear_all_transfer_approvals: {
         collection: 'u32',
@@ -4405,7 +4389,7 @@ export default {
         value: 'Bytes',
       },
       force_set_attribute: {
-        setAs: 'Option<PezspCoreCryptoAccountId32>',
+        setAs: 'Option<AccountId32>',
         collection: 'u32',
         maybeItem: 'Option<u32>',
         namespace: 'PezpalletNftsAttributeNamespace',
@@ -4421,12 +4405,12 @@ export default {
       approve_item_attributes: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
       },
       cancel_item_attributes_approval: {
         collection: 'u32',
         item: 'u32',
-        delegate: 'PezspRuntimeMultiAddress',
+        delegate: 'MultiAddress',
         witness: 'PezpalletNftsCancelAttributesApprovalWitness',
       },
       set_metadata: {
@@ -4460,7 +4444,7 @@ export default {
         collection: 'u32',
         item: 'u32',
         price: 'Option<u128>',
-        whitelistedBuyer: 'Option<PezspRuntimeMultiAddress>',
+        whitelistedBuyer: 'Option<MultiAddress>',
       },
       buy_item: {
         collection: 'u32',
@@ -4492,12 +4476,12 @@ export default {
       mint_pre_signed: {
         mintData: 'PezpalletNftsPreSignedMint',
         signature: 'PezspRuntimeMultiSignature',
-        signer: 'PezspCoreCryptoAccountId32',
+        signer: 'AccountId32',
       },
       set_attributes_pre_signed: {
         data: 'PezpalletNftsPreSignedAttributes',
         signature: 'PezspRuntimeMultiSignature',
-        signer: 'PezspCoreCryptoAccountId32'
+        signer: 'AccountId32'
       }
     }
   },
@@ -4574,7 +4558,7 @@ export default {
   PezpalletNftsItemTip: {
     collection: 'u32',
     item: 'u32',
-    receiver: 'PezspCoreCryptoAccountId32',
+    receiver: 'AccountId32',
     amount: 'u128'
   },
   /**
@@ -4585,7 +4569,7 @@ export default {
     item: 'u32',
     attributes: 'Vec<(Bytes,Bytes)>',
     metadata: 'Bytes',
-    onlyAccount: 'Option<PezspCoreCryptoAccountId32>',
+    onlyAccount: 'Option<AccountId32>',
     deadline: 'u32',
     mintPrice: 'Option<u128>'
   },
@@ -4608,14 +4592,14 @@ export default {
         nftCollectionId: 'u32',
         nftId: 'u32',
         assetId: 'u32',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
         fractions: 'u128',
       },
       unify: {
         nftCollectionId: 'u32',
         nftId: 'u32',
         assetId: 'u32',
-        beneficiary: 'PezspRuntimeMultiAddress'
+        beneficiary: 'MultiAddress'
       }
     }
   },
@@ -4630,7 +4614,7 @@ export default {
       register: 'Null',
       payout: 'Null',
       payout_other: {
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       check_payment: 'Null'
     }
@@ -4641,7 +4625,7 @@ export default {
   PezpalletCoreFellowshipCall: {
     _enum: {
       bump: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       set_params: {
         params: 'PezpalletCoreFellowshipParamsTypeU128',
@@ -4650,18 +4634,18 @@ export default {
         isActive: 'bool',
       },
       approve: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         atRank: 'u16',
       },
       induct: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       promote: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         toRank: 'u16',
       },
       offboard: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       submit_evidence: {
         wish: 'PezpalletCoreFellowshipWish',
@@ -4672,11 +4656,11 @@ export default {
         partialParams: 'PezpalletCoreFellowshipParamsTypeOption',
       },
       promote_fast: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         toRank: 'u16',
       },
       import_member: {
-        who: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32'
       }
     }
   },
@@ -4720,14 +4704,14 @@ export default {
   PezpalletBagsListCall: {
     _enum: {
       rebag: {
-        dislocated: 'PezspRuntimeMultiAddress',
+        dislocated: 'MultiAddress',
       },
       put_in_front_of: {
-        lighter: 'PezspRuntimeMultiAddress',
+        lighter: 'MultiAddress',
       },
       put_in_front_of_other: {
-        heavier: 'PezspRuntimeMultiAddress',
-        lighter: 'PezspRuntimeMultiAddress'
+        heavier: 'MultiAddress',
+        lighter: 'MultiAddress'
       }
     }
   },
@@ -4811,7 +4795,7 @@ export default {
       propose_curator: {
         parentBountyId: 'Compact<u32>',
         childBountyId: 'Compact<u32>',
-        curator: 'PezspRuntimeMultiAddress',
+        curator: 'MultiAddress',
         fee: 'Compact<u128>',
       },
       accept_curator: {
@@ -4825,7 +4809,7 @@ export default {
       award_child_bounty: {
         parentBountyId: 'Compact<u32>',
         childBountyId: 'Compact<u32>',
-        beneficiary: 'PezspRuntimeMultiAddress',
+        beneficiary: 'MultiAddress',
       },
       claim_child_bounty: {
         parentBountyId: 'Compact<u32>',
@@ -4899,7 +4883,7 @@ export default {
   PezpalletRootTestingCall: {
     _enum: {
       fill_block: {
-        ratio: 'u32',
+        ratio: 'Perbill',
       },
       trigger_defensive: 'Null'
     }
@@ -4915,7 +4899,7 @@ export default {
       },
       delegate: {
         class: 'u16',
-        to: 'PezspRuntimeMultiAddress',
+        to: 'MultiAddress',
         conviction: 'PezpalletConvictionVotingConviction',
         balance: 'u128',
       },
@@ -4924,14 +4908,14 @@ export default {
       },
       unlock: {
         class: 'u16',
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
       },
       remove_vote: {
         class: 'Option<u16>',
         index: 'u32',
       },
       remove_other_vote: {
-        target: 'PezspRuntimeMultiAddress',
+        target: 'MultiAddress',
         class: 'u16',
         index: 'u32'
       }
@@ -4980,7 +4964,7 @@ export default {
         callWeightWitness: 'PezspWeightsWeightV2Weight',
       },
       dispatch_whitelisted_call_with_preimage: {
-        call: 'RuntimeCall'
+        call: 'Call'
       }
     }
   },
@@ -4991,7 +4975,7 @@ export default {
     _enum: {
       propose: {
         threshold: 'Compact<u32>',
-        proposal: 'RuntimeCall',
+        proposal: 'Call',
         lengthBound: 'Compact<u32>',
       },
       vote: {
@@ -5001,8 +4985,8 @@ export default {
       },
       __Unused2: 'Null',
       init_members: {
-        fellows: 'Vec<PezspCoreCryptoAccountId32>',
-        allies: 'Vec<PezspCoreCryptoAccountId32>',
+        fellows: 'Vec<AccountId32>',
+        allies: 'Vec<AccountId32>',
       },
       disband: {
         witness: 'PezpalletAllianceDisbandWitness',
@@ -5018,15 +5002,15 @@ export default {
       },
       join_alliance: 'Null',
       nominate_ally: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       elevate_ally: {
-        ally: 'PezspRuntimeMultiAddress',
+        ally: 'MultiAddress',
       },
       give_retirement_notice: 'Null',
       retire: 'Null',
       kick_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       add_unscrupulous_items: {
         items: 'Vec<PezpalletAllianceUnscrupulousItem>',
@@ -5079,7 +5063,7 @@ export default {
    **/
   PezpalletAllianceUnscrupulousItem: {
     _enum: {
-      AccountId: 'PezspCoreCryptoAccountId32',
+      AccountId: 'AccountId32',
       Website: 'Bytes'
     }
   },
@@ -5097,7 +5081,7 @@ export default {
       },
       claim_payout: 'Null',
       unbond: {
-        memberAccount: 'PezspRuntimeMultiAddress',
+        memberAccount: 'MultiAddress',
         unbondingPoints: 'Compact<u128>',
       },
       pool_withdraw_unbonded: {
@@ -5105,25 +5089,25 @@ export default {
         numSlashingSpans: 'u32',
       },
       withdraw_unbonded: {
-        memberAccount: 'PezspRuntimeMultiAddress',
+        memberAccount: 'MultiAddress',
         numSlashingSpans: 'u32',
       },
       create: {
         amount: 'Compact<u128>',
-        root: 'PezspRuntimeMultiAddress',
-        nominator: 'PezspRuntimeMultiAddress',
-        bouncer: 'PezspRuntimeMultiAddress',
+        root: 'MultiAddress',
+        nominator: 'MultiAddress',
+        bouncer: 'MultiAddress',
       },
       create_with_pool_id: {
         amount: 'Compact<u128>',
-        root: 'PezspRuntimeMultiAddress',
-        nominator: 'PezspRuntimeMultiAddress',
-        bouncer: 'PezspRuntimeMultiAddress',
+        root: 'MultiAddress',
+        nominator: 'MultiAddress',
+        bouncer: 'MultiAddress',
         poolId: 'u32',
       },
       nominate: {
         poolId: 'u32',
-        validators: 'Vec<PezspCoreCryptoAccountId32>',
+        validators: 'Vec<AccountId32>',
       },
       set_state: {
         poolId: 'u32',
@@ -5151,22 +5135,22 @@ export default {
         poolId: 'u32',
       },
       bond_extra_other: {
-        member: 'PezspRuntimeMultiAddress',
+        member: 'MultiAddress',
         extra: 'PezpalletNominationPoolsBondExtra',
       },
       set_claim_permission: {
         permission: 'PezpalletNominationPoolsClaimPermission',
       },
       claim_payout_other: {
-        other: 'PezspCoreCryptoAccountId32',
+        other: 'AccountId32',
       },
       set_commission: {
         poolId: 'u32',
-        newCommission: 'Option<(u32,PezspCoreCryptoAccountId32)>',
+        newCommission: 'Option<(Perbill,AccountId32)>',
       },
       set_commission_max: {
         poolId: 'u32',
-        maxCommission: 'u32',
+        maxCommission: 'Perbill',
       },
       set_commission_change_rate: {
         poolId: 'u32',
@@ -5183,10 +5167,10 @@ export default {
         permission: 'Option<PezpalletNominationPoolsCommissionClaimPermission>',
       },
       apply_slash: {
-        memberAccount: 'PezspRuntimeMultiAddress',
+        memberAccount: 'MultiAddress',
       },
       migrate_delegation: {
-        memberAccount: 'PezspRuntimeMultiAddress',
+        memberAccount: 'MultiAddress',
       },
       migrate_pool_to_delegate_stake: {
         poolId: 'u32'
@@ -5234,7 +5218,7 @@ export default {
   PezpalletNominationPoolsConfigOpPerbill: {
     _enum: {
       Noop: 'Null',
-      Set: 'u32',
+      Set: 'Perbill',
       Remove: 'Null'
     }
   },
@@ -5244,7 +5228,7 @@ export default {
   PezpalletNominationPoolsConfigOpAccountId32: {
     _enum: {
       Noop: 'Null',
-      Set: 'PezspCoreCryptoAccountId32',
+      Set: 'AccountId32',
       Remove: 'Null'
     }
   },
@@ -5258,7 +5242,7 @@ export default {
    * Lookup418: pallet_nomination_pools::CommissionChangeRate<BlockNumber>
    **/
   PezpalletNominationPoolsCommissionChangeRate: {
-    maxIncrease: 'u32',
+    maxIncrease: 'Perbill',
     minDelay: 'u32'
   },
   /**
@@ -5267,7 +5251,7 @@ export default {
   PezpalletNominationPoolsCommissionClaimPermission: {
     _enum: {
       Permissionless: 'Null',
-      Account: 'PezspCoreCryptoAccountId32'
+      Account: 'AccountId32'
     }
   },
   /**
@@ -5276,16 +5260,16 @@ export default {
   PezpalletRankedCollectiveCall: {
     _enum: {
       add_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       promote_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       demote_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
       },
       remove_member: {
-        who: 'PezspRuntimeMultiAddress',
+        who: 'MultiAddress',
         minRank: 'u16',
       },
       vote: {
@@ -5297,8 +5281,8 @@ export default {
         max: 'u32',
       },
       exchange_member: {
-        who: 'PezspRuntimeMultiAddress',
-        newWho: 'PezspRuntimeMultiAddress'
+        who: 'MultiAddress',
+        newWho: 'MultiAddress'
       }
     }
   },
@@ -5318,7 +5302,7 @@ export default {
         amount2Desired: 'u128',
         amount1Min: 'u128',
         amount2Min: 'u128',
-        mintTo: 'PezspCoreCryptoAccountId32',
+        mintTo: 'AccountId32',
       },
       remove_liquidity: {
         asset1: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
@@ -5326,20 +5310,20 @@ export default {
         lpTokenBurn: 'u128',
         amount1MinReceive: 'u128',
         amount2MinReceive: 'u128',
-        withdrawTo: 'PezspCoreCryptoAccountId32',
+        withdrawTo: 'AccountId32',
       },
       swap_exact_tokens_for_tokens: {
         path: 'Vec<PezframeSupportTokensFungibleUnionOfNativeOrWithId>',
         amountIn: 'u128',
         amountOutMin: 'u128',
-        sendTo: 'PezspCoreCryptoAccountId32',
+        sendTo: 'AccountId32',
         keepAlive: 'bool',
       },
       swap_tokens_for_exact_tokens: {
         path: 'Vec<PezframeSupportTokensFungibleUnionOfNativeOrWithId>',
         amountOut: 'u128',
         amountInMax: 'u128',
-        sendTo: 'PezspCoreCryptoAccountId32',
+        sendTo: 'AccountId32',
         keepAlive: 'bool',
       },
       touch: {
@@ -5407,15 +5391,15 @@ export default {
       force_extend: 'Null',
       force_exit: 'Null',
       force_slash_deposit: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         block: 'u32',
       },
       release_deposit: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         block: 'u32',
       },
       force_release_deposit: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         block: 'u32'
       }
     }
@@ -5498,7 +5482,7 @@ export default {
       },
       transfer: {
         regionId: 'PezpalletBrokerRegionId',
-        newOwner: 'PezspCoreCryptoAccountId32',
+        newOwner: 'AccountId32',
       },
       partition: {
         regionId: 'PezpalletBrokerRegionId',
@@ -5515,7 +5499,7 @@ export default {
       },
       pool: {
         regionId: 'PezpalletBrokerRegionId',
-        payee: 'PezspCoreCryptoAccountId32',
+        payee: 'AccountId32',
         finality: 'PezpalletBrokerFinality',
       },
       claim_revenue: {
@@ -5524,7 +5508,7 @@ export default {
       },
       purchase_credit: {
         amount: 'u128',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        beneficiary: 'AccountId32',
       },
       drop_region: {
         regionId: 'PezpalletBrokerRegionId',
@@ -5654,9 +5638,9 @@ export default {
     interludeLength: 'u32',
     leadinLength: 'u32',
     regionLength: 'u32',
-    idealBulkProportion: 'u32',
+    idealBulkProportion: 'Perbill',
     limitCoresOffered: 'Option<u16>',
-    renewalBump: 'u32',
+    renewalBump: 'Perbill',
     contributionTimeout: 'u32'
   },
   /**
@@ -5805,15 +5789,15 @@ export default {
   PezpalletReferendaCurve: {
     _enum: {
       LinearDecreasing: {
-        length: 'u32',
-        floor: 'u32',
-        ceil: 'u32',
+        length: 'Perbill',
+        floor: 'Perbill',
+        ceil: 'Perbill',
       },
       SteppedDecreasing: {
-        begin: 'u32',
-        end: 'u32',
-        step: 'u32',
-        period: 'u32',
+        begin: 'Perbill',
+        end: 'Perbill',
+        step: 'Perbill',
+        period: 'Perbill',
       },
       Reciprocal: {
         factor: 'i64',
@@ -5882,7 +5866,7 @@ export default {
       map_account: 'Null',
       unmap_account: 'Null',
       dispatch_as_fallback_account: {
-        call: 'RuntimeCall'
+        call: 'Call'
       }
     }
   },
@@ -5896,7 +5880,7 @@ export default {
         rewardAssetId: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
         rewardRatePerBlock: 'u128',
         expiry: 'PezframeSupportScheduleDispatchTime',
-        admin: 'Option<PezspCoreCryptoAccountId32>',
+        admin: 'Option<AccountId32>',
       },
       stake: {
         poolId: 'u32',
@@ -5905,11 +5889,11 @@ export default {
       unstake: {
         poolId: 'u32',
         amount: 'u128',
-        staker: 'Option<PezspCoreCryptoAccountId32>',
+        staker: 'Option<AccountId32>',
       },
       harvest_rewards: {
         poolId: 'u32',
-        staker: 'Option<PezspCoreCryptoAccountId32>',
+        staker: 'Option<AccountId32>',
       },
       set_pool_reward_rate_per_block: {
         poolId: 'u32',
@@ -5917,7 +5901,7 @@ export default {
       },
       set_pool_admin: {
         poolId: 'u32',
-        newAdmin: 'PezspCoreCryptoAccountId32',
+        newAdmin: 'AccountId32',
       },
       set_pool_expiry_block: {
         poolId: 'u32',
@@ -5946,9 +5930,9 @@ export default {
    * Lookup481: pallet_meta_tx::MetaTx<kitchensink_runtime::RuntimeCall, Extension>
    **/
   PezpalletMetaTxMetaTx: {
-    call: 'RuntimeCall',
+    call: 'Call',
     extensionVersion: 'u8',
-    extension: '(PezpalletVerifySignatureExtensionVerifySignature,PezpalletMetaTxExtensionMetaTxMarker,PezframeSystemExtensionsCheckNonZeroSender,PezframeSystemExtensionsCheckSpecVersion,PezframeSystemExtensionsCheckTxVersion,PezframeSystemExtensionsCheckGenesis,PezframeSystemExtensionsCheckMortality,PezframeSystemExtensionsCheckNonce,PezframeMetadataHashExtensionCheckMetadataHash)'
+    extension: '(PezpalletVerifySignatureExtensionVerifySignature,PezpalletMetaTxExtensionMetaTxMarker,PezframeSystemExtensionsCheckNonZeroSender,PezframeSystemExtensionsCheckSpecVersion,PezframeSystemExtensionsCheckTxVersion,PezframeSystemExtensionsCheckGenesis,Era,PezframeSystemExtensionsCheckNonce,PezframeMetadataHashExtensionCheckMetadataHash)'
   },
   /**
    * Lookup483: pallet_verify_signature::extension::VerifySignature<T>
@@ -5957,7 +5941,7 @@ export default {
     _enum: {
       Signed: {
         signature: 'PezspRuntimeMultiSignature',
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
       },
       Disabled: 'Null'
     }
@@ -5982,273 +5966,6 @@ export default {
    * Lookup488: frame_system::extensions::check_genesis::CheckGenesis<T>
    **/
   PezframeSystemExtensionsCheckGenesis: 'Null',
-  /**
-   * Lookup489: frame_system::extensions::check_mortality::CheckMortality<T>
-   **/
-  PezframeSystemExtensionsCheckMortality: 'PezspRuntimeEra',
-  /**
-   * Lookup490: sp_runtime::generic::era::Era
-   **/
-  PezspRuntimeEra: {
-    _enum: {
-      Immortal: 'Null',
-      Mortal1: 'u8',
-      Mortal2: 'u8',
-      Mortal3: 'u8',
-      Mortal4: 'u8',
-      Mortal5: 'u8',
-      Mortal6: 'u8',
-      Mortal7: 'u8',
-      Mortal8: 'u8',
-      Mortal9: 'u8',
-      Mortal10: 'u8',
-      Mortal11: 'u8',
-      Mortal12: 'u8',
-      Mortal13: 'u8',
-      Mortal14: 'u8',
-      Mortal15: 'u8',
-      Mortal16: 'u8',
-      Mortal17: 'u8',
-      Mortal18: 'u8',
-      Mortal19: 'u8',
-      Mortal20: 'u8',
-      Mortal21: 'u8',
-      Mortal22: 'u8',
-      Mortal23: 'u8',
-      Mortal24: 'u8',
-      Mortal25: 'u8',
-      Mortal26: 'u8',
-      Mortal27: 'u8',
-      Mortal28: 'u8',
-      Mortal29: 'u8',
-      Mortal30: 'u8',
-      Mortal31: 'u8',
-      Mortal32: 'u8',
-      Mortal33: 'u8',
-      Mortal34: 'u8',
-      Mortal35: 'u8',
-      Mortal36: 'u8',
-      Mortal37: 'u8',
-      Mortal38: 'u8',
-      Mortal39: 'u8',
-      Mortal40: 'u8',
-      Mortal41: 'u8',
-      Mortal42: 'u8',
-      Mortal43: 'u8',
-      Mortal44: 'u8',
-      Mortal45: 'u8',
-      Mortal46: 'u8',
-      Mortal47: 'u8',
-      Mortal48: 'u8',
-      Mortal49: 'u8',
-      Mortal50: 'u8',
-      Mortal51: 'u8',
-      Mortal52: 'u8',
-      Mortal53: 'u8',
-      Mortal54: 'u8',
-      Mortal55: 'u8',
-      Mortal56: 'u8',
-      Mortal57: 'u8',
-      Mortal58: 'u8',
-      Mortal59: 'u8',
-      Mortal60: 'u8',
-      Mortal61: 'u8',
-      Mortal62: 'u8',
-      Mortal63: 'u8',
-      Mortal64: 'u8',
-      Mortal65: 'u8',
-      Mortal66: 'u8',
-      Mortal67: 'u8',
-      Mortal68: 'u8',
-      Mortal69: 'u8',
-      Mortal70: 'u8',
-      Mortal71: 'u8',
-      Mortal72: 'u8',
-      Mortal73: 'u8',
-      Mortal74: 'u8',
-      Mortal75: 'u8',
-      Mortal76: 'u8',
-      Mortal77: 'u8',
-      Mortal78: 'u8',
-      Mortal79: 'u8',
-      Mortal80: 'u8',
-      Mortal81: 'u8',
-      Mortal82: 'u8',
-      Mortal83: 'u8',
-      Mortal84: 'u8',
-      Mortal85: 'u8',
-      Mortal86: 'u8',
-      Mortal87: 'u8',
-      Mortal88: 'u8',
-      Mortal89: 'u8',
-      Mortal90: 'u8',
-      Mortal91: 'u8',
-      Mortal92: 'u8',
-      Mortal93: 'u8',
-      Mortal94: 'u8',
-      Mortal95: 'u8',
-      Mortal96: 'u8',
-      Mortal97: 'u8',
-      Mortal98: 'u8',
-      Mortal99: 'u8',
-      Mortal100: 'u8',
-      Mortal101: 'u8',
-      Mortal102: 'u8',
-      Mortal103: 'u8',
-      Mortal104: 'u8',
-      Mortal105: 'u8',
-      Mortal106: 'u8',
-      Mortal107: 'u8',
-      Mortal108: 'u8',
-      Mortal109: 'u8',
-      Mortal110: 'u8',
-      Mortal111: 'u8',
-      Mortal112: 'u8',
-      Mortal113: 'u8',
-      Mortal114: 'u8',
-      Mortal115: 'u8',
-      Mortal116: 'u8',
-      Mortal117: 'u8',
-      Mortal118: 'u8',
-      Mortal119: 'u8',
-      Mortal120: 'u8',
-      Mortal121: 'u8',
-      Mortal122: 'u8',
-      Mortal123: 'u8',
-      Mortal124: 'u8',
-      Mortal125: 'u8',
-      Mortal126: 'u8',
-      Mortal127: 'u8',
-      Mortal128: 'u8',
-      Mortal129: 'u8',
-      Mortal130: 'u8',
-      Mortal131: 'u8',
-      Mortal132: 'u8',
-      Mortal133: 'u8',
-      Mortal134: 'u8',
-      Mortal135: 'u8',
-      Mortal136: 'u8',
-      Mortal137: 'u8',
-      Mortal138: 'u8',
-      Mortal139: 'u8',
-      Mortal140: 'u8',
-      Mortal141: 'u8',
-      Mortal142: 'u8',
-      Mortal143: 'u8',
-      Mortal144: 'u8',
-      Mortal145: 'u8',
-      Mortal146: 'u8',
-      Mortal147: 'u8',
-      Mortal148: 'u8',
-      Mortal149: 'u8',
-      Mortal150: 'u8',
-      Mortal151: 'u8',
-      Mortal152: 'u8',
-      Mortal153: 'u8',
-      Mortal154: 'u8',
-      Mortal155: 'u8',
-      Mortal156: 'u8',
-      Mortal157: 'u8',
-      Mortal158: 'u8',
-      Mortal159: 'u8',
-      Mortal160: 'u8',
-      Mortal161: 'u8',
-      Mortal162: 'u8',
-      Mortal163: 'u8',
-      Mortal164: 'u8',
-      Mortal165: 'u8',
-      Mortal166: 'u8',
-      Mortal167: 'u8',
-      Mortal168: 'u8',
-      Mortal169: 'u8',
-      Mortal170: 'u8',
-      Mortal171: 'u8',
-      Mortal172: 'u8',
-      Mortal173: 'u8',
-      Mortal174: 'u8',
-      Mortal175: 'u8',
-      Mortal176: 'u8',
-      Mortal177: 'u8',
-      Mortal178: 'u8',
-      Mortal179: 'u8',
-      Mortal180: 'u8',
-      Mortal181: 'u8',
-      Mortal182: 'u8',
-      Mortal183: 'u8',
-      Mortal184: 'u8',
-      Mortal185: 'u8',
-      Mortal186: 'u8',
-      Mortal187: 'u8',
-      Mortal188: 'u8',
-      Mortal189: 'u8',
-      Mortal190: 'u8',
-      Mortal191: 'u8',
-      Mortal192: 'u8',
-      Mortal193: 'u8',
-      Mortal194: 'u8',
-      Mortal195: 'u8',
-      Mortal196: 'u8',
-      Mortal197: 'u8',
-      Mortal198: 'u8',
-      Mortal199: 'u8',
-      Mortal200: 'u8',
-      Mortal201: 'u8',
-      Mortal202: 'u8',
-      Mortal203: 'u8',
-      Mortal204: 'u8',
-      Mortal205: 'u8',
-      Mortal206: 'u8',
-      Mortal207: 'u8',
-      Mortal208: 'u8',
-      Mortal209: 'u8',
-      Mortal210: 'u8',
-      Mortal211: 'u8',
-      Mortal212: 'u8',
-      Mortal213: 'u8',
-      Mortal214: 'u8',
-      Mortal215: 'u8',
-      Mortal216: 'u8',
-      Mortal217: 'u8',
-      Mortal218: 'u8',
-      Mortal219: 'u8',
-      Mortal220: 'u8',
-      Mortal221: 'u8',
-      Mortal222: 'u8',
-      Mortal223: 'u8',
-      Mortal224: 'u8',
-      Mortal225: 'u8',
-      Mortal226: 'u8',
-      Mortal227: 'u8',
-      Mortal228: 'u8',
-      Mortal229: 'u8',
-      Mortal230: 'u8',
-      Mortal231: 'u8',
-      Mortal232: 'u8',
-      Mortal233: 'u8',
-      Mortal234: 'u8',
-      Mortal235: 'u8',
-      Mortal236: 'u8',
-      Mortal237: 'u8',
-      Mortal238: 'u8',
-      Mortal239: 'u8',
-      Mortal240: 'u8',
-      Mortal241: 'u8',
-      Mortal242: 'u8',
-      Mortal243: 'u8',
-      Mortal244: 'u8',
-      Mortal245: 'u8',
-      Mortal246: 'u8',
-      Mortal247: 'u8',
-      Mortal248: 'u8',
-      Mortal249: 'u8',
-      Mortal250: 'u8',
-      Mortal251: 'u8',
-      Mortal252: 'u8',
-      Mortal253: 'u8',
-      Mortal254: 'u8',
-      Mortal255: 'u8'
-    }
-  },
   /**
    * Lookup491: frame_system::extensions::check_nonce::CheckNonce<T>
    **/
@@ -6283,7 +6000,7 @@ export default {
   PezpalletRemarkEvent: {
     _enum: {
       Stored: {
-        sender: 'PezspCoreCryptoAccountId32',
+        sender: 'AccountId32',
         contentHash: 'H256'
       }
     }
@@ -6299,18 +6016,18 @@ export default {
    **/
   PezpalletConvictionVotingEvent: {
     _enum: {
-      Delegated: '(PezspCoreCryptoAccountId32,PezspCoreCryptoAccountId32)',
-      Undelegated: 'PezspCoreCryptoAccountId32',
+      Delegated: '(AccountId32,AccountId32)',
+      Undelegated: 'AccountId32',
       Voted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         vote: 'PezpalletConvictionVotingVoteAccountVote',
       },
       VoteRemoved: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         vote: 'PezpalletConvictionVotingVoteAccountVote',
       },
       VoteUnlocked: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         class: 'u16'
       }
     }
@@ -6361,26 +6078,26 @@ export default {
         announcement: 'PezpalletAllianceCid',
       },
       MembersInitialized: {
-        fellows: 'Vec<PezspCoreCryptoAccountId32>',
-        allies: 'Vec<PezspCoreCryptoAccountId32>',
+        fellows: 'Vec<AccountId32>',
+        allies: 'Vec<AccountId32>',
       },
       NewAllyJoined: {
-        ally: 'PezspCoreCryptoAccountId32',
-        nominator: 'Option<PezspCoreCryptoAccountId32>',
+        ally: 'AccountId32',
+        nominator: 'Option<AccountId32>',
         reserved: 'Option<u128>',
       },
       AllyElevated: {
-        ally: 'PezspCoreCryptoAccountId32',
+        ally: 'AccountId32',
       },
       MemberRetirementPeriodStarted: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
       },
       MemberRetired: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         unreserved: 'Option<u128>',
       },
       MemberKicked: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         slashed: 'Option<u128>',
       },
       UnscrupulousItemAdded: {
@@ -6395,7 +6112,7 @@ export default {
         unreserved: 'u32',
       },
       FellowAbdicated: {
-        fellow: 'PezspCoreCryptoAccountId32'
+        fellow: 'AccountId32'
       }
     }
   },
@@ -6405,29 +6122,29 @@ export default {
   PezpalletNominationPoolsEvent: {
     _enum: {
       Created: {
-        depositor: 'PezspCoreCryptoAccountId32',
+        depositor: 'AccountId32',
         poolId: 'u32',
       },
       Bonded: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         poolId: 'u32',
         bonded: 'u128',
         joined: 'bool',
       },
       PaidOut: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         poolId: 'u32',
         payout: 'u128',
       },
       Unbonded: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         poolId: 'u32',
         balance: 'u128',
         points: 'u128',
         era: 'u32',
       },
       Withdrawn: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         poolId: 'u32',
         balance: 'u128',
         points: 'u128',
@@ -6441,13 +6158,13 @@ export default {
       },
       MemberRemoved: {
         poolId: 'u32',
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         releasedBalance: 'u128',
       },
       RolesUpdated: {
-        root: 'Option<PezspCoreCryptoAccountId32>',
-        bouncer: 'Option<PezspCoreCryptoAccountId32>',
-        nominator: 'Option<PezspCoreCryptoAccountId32>',
+        root: 'Option<AccountId32>',
+        bouncer: 'Option<AccountId32>',
+        nominator: 'Option<AccountId32>',
       },
       PoolSlashed: {
         poolId: 'u32',
@@ -6460,11 +6177,11 @@ export default {
       },
       PoolCommissionUpdated: {
         poolId: 'u32',
-        current: 'Option<(u32,PezspCoreCryptoAccountId32)>',
+        current: 'Option<(Perbill,AccountId32)>',
       },
       PoolMaxCommissionUpdated: {
         poolId: 'u32',
-        maxCommission: 'u32',
+        maxCommission: 'Perbill',
       },
       PoolCommissionChangeRateUpdated: {
         poolId: 'u32',
@@ -6487,20 +6204,20 @@ export default {
         amount: 'u128',
       },
       MemberClaimPermissionUpdated: {
-        member: 'PezspCoreCryptoAccountId32',
+        member: 'AccountId32',
         permission: 'PezpalletNominationPoolsClaimPermission',
       },
       MetadataUpdated: {
         poolId: 'u32',
-        caller: 'PezspCoreCryptoAccountId32',
+        caller: 'AccountId32',
       },
       PoolNominationMade: {
         poolId: 'u32',
-        caller: 'PezspCoreCryptoAccountId32',
+        caller: 'AccountId32',
       },
       PoolNominatorChilled: {
         poolId: 'u32',
-        caller: 'PezspCoreCryptoAccountId32',
+        caller: 'AccountId32',
       },
       GlobalParamsUpdated: {
         minJoinBond: 'u128',
@@ -6508,7 +6225,7 @@ export default {
         maxPools: 'Option<u32>',
         maxMembers: 'Option<u32>',
         maxMembersPerPool: 'Option<u32>',
-        globalMaxCommission: 'Option<u32>'
+        globalMaxCommission: 'Option<Perbill>'
       }
     }
   },
@@ -6526,25 +6243,25 @@ export default {
   PezpalletRankedCollectiveEvent: {
     _enum: {
       MemberAdded: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
       },
       RankChanged: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         rank: 'u16',
       },
       MemberRemoved: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         rank: 'u16',
       },
       Voted: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         poll: 'u32',
         vote: 'PezpalletRankedCollectiveVoteRecord',
         tally: 'PezpalletRankedCollectiveTally',
       },
       MemberExchanged: {
-        who: 'PezspCoreCryptoAccountId32',
-        newWho: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32',
+        newWho: 'AccountId32'
       }
     }
   },
@@ -6563,14 +6280,14 @@ export default {
   PezpalletAssetConversionEvent: {
     _enum: {
       PoolCreated: {
-        creator: 'PezspCoreCryptoAccountId32',
+        creator: 'AccountId32',
         poolId: '(PezframeSupportTokensFungibleUnionOfNativeOrWithId,PezframeSupportTokensFungibleUnionOfNativeOrWithId)',
-        poolAccount: 'PezspCoreCryptoAccountId32',
+        poolAccount: 'AccountId32',
         lpToken: 'u32',
       },
       LiquidityAdded: {
-        who: 'PezspCoreCryptoAccountId32',
-        mintTo: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        mintTo: 'AccountId32',
         poolId: '(PezframeSupportTokensFungibleUnionOfNativeOrWithId,PezframeSupportTokensFungibleUnionOfNativeOrWithId)',
         amount1Provided: 'u128',
         amount2Provided: 'u128',
@@ -6578,18 +6295,18 @@ export default {
         lpTokenMinted: 'u128',
       },
       LiquidityRemoved: {
-        who: 'PezspCoreCryptoAccountId32',
-        withdrawTo: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        withdrawTo: 'AccountId32',
         poolId: '(PezframeSupportTokensFungibleUnionOfNativeOrWithId,PezframeSupportTokensFungibleUnionOfNativeOrWithId)',
         amount1: 'u128',
         amount2: 'u128',
         lpToken: 'u32',
         lpTokenBurned: 'u128',
-        withdrawalFee: 'u32',
+        withdrawalFee: 'Permill',
       },
       SwapExecuted: {
-        who: 'PezspCoreCryptoAccountId32',
-        sendTo: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        sendTo: 'AccountId32',
         amountIn: 'u128',
         amountOut: 'u128',
         path: 'Vec<(PezframeSupportTokensFungibleUnionOfNativeOrWithId,u128)>',
@@ -6601,7 +6318,7 @@ export default {
       },
       Touched: {
         poolId: '(PezframeSupportTokensFungibleUnionOfNativeOrWithId,PezframeSupportTokensFungibleUnionOfNativeOrWithId)',
-        who: 'PezspCoreCryptoAccountId32'
+        who: 'AccountId32'
       }
     }
   },
@@ -6611,11 +6328,11 @@ export default {
   PezpalletFastUnstakeEvent: {
     _enum: {
       Unstaked: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         result: 'Result<Null, PezspRuntimeDispatchError>',
       },
       Slashed: {
-        stash: 'PezspCoreCryptoAccountId32',
+        stash: 'AccountId32',
         amount: 'u128',
       },
       BatchChecked: {
@@ -6705,15 +6422,15 @@ export default {
         reason: 'PezpalletSafeModeExitReason',
       },
       DepositPlaced: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         amount: 'u128',
       },
       DepositReleased: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         amount: 'u128',
       },
       DepositSlashed: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         amount: 'u128',
       },
       CannotDeposit: 'Null',
@@ -6732,7 +6449,7 @@ export default {
   PezpalletStatementEvent: {
     _enum: {
       NewStatement: {
-        account: 'PezspCoreCryptoAccountId32',
+        account: 'AccountId32',
         statement: 'PezspStatementStoreStatement'
       }
     }
@@ -6809,7 +6526,7 @@ export default {
   PezpalletBrokerEvent: {
     _enum: {
       Purchased: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         regionId: 'PezpalletBrokerRegionId',
         price: 'u128',
         duration: 'u32',
@@ -6821,7 +6538,7 @@ export default {
         workload: 'Vec<PezpalletBrokerScheduleItem>',
       },
       Renewed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         price: 'u128',
         oldCore: 'u16',
         core: 'u16',
@@ -6832,8 +6549,8 @@ export default {
       Transferred: {
         regionId: 'PezpalletBrokerRegionId',
         duration: 'u32',
-        oldOwner: 'Option<PezspCoreCryptoAccountId32>',
-        owner: 'Option<PezspCoreCryptoAccountId32>',
+        oldOwner: 'Option<AccountId32>',
+        owner: 'Option<AccountId32>',
       },
       Partitioned: {
         oldRegionId: 'PezpalletBrokerRegionId',
@@ -6903,13 +6620,13 @@ export default {
         amount: 'u128',
       },
       RevenueClaimPaid: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         amount: 'u128',
         next: 'Option<PezpalletBrokerRegionId>',
       },
       CreditPurchased: {
-        who: 'PezspCoreCryptoAccountId32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
+        beneficiary: 'AccountId32',
         amount: 'u128',
       },
       RegionDropped: {
@@ -6956,7 +6673,7 @@ export default {
       },
       AutoRenewalFailed: {
         core: 'u16',
-        payer: 'Option<PezspCoreCryptoAccountId32>',
+        payer: 'Option<AccountId32>',
       },
       AutoRenewalLimitReached: 'Null'
     }
@@ -7038,8 +6755,8 @@ export default {
     _enum: {
       MigratedToNewAccount: {
         poolId: '(PezframeSupportTokensFungibleUnionOfNativeOrWithId,PezframeSupportTokensFungibleUnionOfNativeOrWithId)',
-        priorAccount: 'PezspCoreCryptoAccountId32',
-        newAccount: 'PezspCoreCryptoAccountId32'
+        priorAccount: 'AccountId32',
+        newAccount: 'AccountId32'
       }
     }
   },
@@ -7061,23 +6778,23 @@ export default {
   PezpalletDelegatedStakingEvent: {
     _enum: {
       Delegated: {
-        agent: 'PezspCoreCryptoAccountId32',
-        delegator: 'PezspCoreCryptoAccountId32',
+        agent: 'AccountId32',
+        delegator: 'AccountId32',
         amount: 'u128',
       },
       Released: {
-        agent: 'PezspCoreCryptoAccountId32',
-        delegator: 'PezspCoreCryptoAccountId32',
+        agent: 'AccountId32',
+        delegator: 'AccountId32',
         amount: 'u128',
       },
       Slashed: {
-        agent: 'PezspCoreCryptoAccountId32',
-        delegator: 'PezspCoreCryptoAccountId32',
+        agent: 'AccountId32',
+        delegator: 'AccountId32',
         amount: 'u128',
       },
       MigratedDelegation: {
-        agent: 'PezspCoreCryptoAccountId32',
-        delegator: 'PezspCoreCryptoAccountId32',
+        agent: 'AccountId32',
+        delegator: 'AccountId32',
         amount: 'u128'
       }
     }
@@ -7088,30 +6805,30 @@ export default {
   PezpalletAssetRewardsEvent: {
     _enum: {
       Staked: {
-        staker: 'PezspCoreCryptoAccountId32',
+        staker: 'AccountId32',
         poolId: 'u32',
         amount: 'u128',
       },
       Unstaked: {
-        caller: 'PezspCoreCryptoAccountId32',
-        staker: 'PezspCoreCryptoAccountId32',
+        caller: 'AccountId32',
+        staker: 'AccountId32',
         poolId: 'u32',
         amount: 'u128',
       },
       RewardsHarvested: {
-        caller: 'PezspCoreCryptoAccountId32',
-        staker: 'PezspCoreCryptoAccountId32',
+        caller: 'AccountId32',
+        staker: 'AccountId32',
         poolId: 'u32',
         amount: 'u128',
       },
       PoolCreated: {
-        creator: 'PezspCoreCryptoAccountId32',
+        creator: 'AccountId32',
         poolId: 'u32',
         stakedAssetId: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
         rewardAssetId: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
         rewardRatePerBlock: 'u128',
         expiryBlock: 'u32',
-        admin: 'PezspCoreCryptoAccountId32',
+        admin: 'AccountId32',
       },
       PoolRewardRateModified: {
         poolId: 'u32',
@@ -7119,7 +6836,7 @@ export default {
       },
       PoolAdminModified: {
         poolId: 'u32',
-        newAdmin: 'PezspCoreCryptoAccountId32',
+        newAdmin: 'AccountId32',
       },
       PoolExpiryBlockModified: {
         poolId: 'u32',
@@ -7136,12 +6853,12 @@ export default {
   PezpalletAssetsFreezerEvent: {
     _enum: {
       Frozen: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         assetId: 'u32',
         amount: 'u128',
       },
       Thawed: {
-        who: 'PezspCoreCryptoAccountId32',
+        who: 'AccountId32',
         assetId: 'u32',
         amount: 'u128'
       }
@@ -7629,7 +7346,7 @@ export default {
    * Lookup619: pallet_election_provider_multi_phase::ReadySolution<AccountId, MaxWinners>
    **/
   PezpalletElectionProviderMultiPhaseReadySolution: {
-    supports: 'Vec<(PezspCoreCryptoAccountId32,PezspNposElectionsSupport)>',
+    supports: 'Vec<(AccountId32,PezspNposElectionsSupport)>',
     score: 'PezspNposElectionsElectionScore',
     compute: 'PezpalletElectionProviderMultiPhaseElectionCompute'
   },
@@ -7637,14 +7354,14 @@ export default {
    * Lookup621: pallet_election_provider_multi_phase::RoundSnapshot<sp_core::crypto::AccountId32, VoterType>
    **/
   PezpalletElectionProviderMultiPhaseRoundSnapshot: {
-    voters: 'Vec<(PezspCoreCryptoAccountId32,u64,Vec<PezspCoreCryptoAccountId32>)>',
-    targets: 'Vec<PezspCoreCryptoAccountId32>'
+    voters: 'Vec<(AccountId32,u64,Vec<AccountId32>)>',
+    targets: 'Vec<AccountId32>'
   },
   /**
    * Lookup628: pallet_election_provider_multi_phase::signed::SignedSubmission<sp_core::crypto::AccountId32, Balance, kitchensink_runtime::NposSolution16>
    **/
   PezpalletElectionProviderMultiPhaseSignedSignedSubmission: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     deposit: 'u128',
     rawSolution: 'PezpalletElectionProviderMultiPhaseRawSolution',
     callFee: 'u128'
@@ -7659,7 +7376,7 @@ export default {
    * Lookup630: pallet_staking::StakingLedger<T>
    **/
   PezpalletStakingStakingLedger: {
-    stash: 'PezspCoreCryptoAccountId32',
+    stash: 'AccountId32',
     total: 'Compact<u128>',
     active: 'Compact<u128>',
     unlocking: 'Vec<PezpalletStakingUnlockChunk>',
@@ -7669,7 +7386,7 @@ export default {
    * Lookup632: pallet_staking::Nominations<T>
    **/
   PezpalletStakingNominations: {
-    targets: 'Vec<PezspCoreCryptoAccountId32>',
+    targets: 'Vec<AccountId32>',
     submittedIn: 'u32',
     suppressed: 'bool'
   },
@@ -7692,7 +7409,7 @@ export default {
    * Lookup638: sp_staking::IndividualExposure<sp_core::crypto::AccountId32, Balance>
    **/
   PezspStakingIndividualExposure: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     value: 'Compact<u128>'
   },
   /**
@@ -7716,16 +7433,16 @@ export default {
    **/
   PezpalletStakingEraRewardPoints: {
     total: 'u32',
-    individual: 'BTreeMap<PezspCoreCryptoAccountId32, u32>'
+    individual: 'BTreeMap<AccountId32, u32>'
   },
   /**
    * Lookup647: pallet_staking::UnappliedSlash<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletStakingUnappliedSlash: {
-    validator: 'PezspCoreCryptoAccountId32',
+    validator: 'AccountId32',
     own: 'u128',
-    others: 'Vec<(PezspCoreCryptoAccountId32,u128)>',
-    reporters: 'Vec<PezspCoreCryptoAccountId32>',
+    others: 'Vec<(AccountId32,u128)>',
+    reporters: 'Vec<AccountId32>',
     payout: 'u128'
   },
   /**
@@ -7802,7 +7519,7 @@ export default {
       },
       Delegating: {
         balance: 'u128',
-        target: 'PezspCoreCryptoAccountId32',
+        target: 'AccountId32',
         conviction: 'PezpalletDemocracyConviction',
         delegations: 'PezpalletDemocracyDelegations',
         prior: 'PezpalletDemocracyVotePriorLock'
@@ -7832,8 +7549,8 @@ export default {
   PezpalletCollectiveVotes: {
     index: 'u32',
     threshold: 'u32',
-    ayes: 'Vec<PezspCoreCryptoAccountId32>',
-    nays: 'Vec<PezspCoreCryptoAccountId32>',
+    ayes: 'Vec<AccountId32>',
+    nays: 'Vec<AccountId32>',
     end: 'u32'
   },
   /**
@@ -7846,7 +7563,7 @@ export default {
    * Lookup685: pallet_elections_phragmen::SeatHolder<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletElectionsPhragmenSeatHolder: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     stake: 'u128',
     deposit: 'u128'
   },
@@ -7854,7 +7571,7 @@ export default {
    * Lookup686: pallet_elections_phragmen::Voter<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletElectionsPhragmenVoter: {
-    votes: 'Vec<PezspCoreCryptoAccountId32>',
+    votes: 'Vec<AccountId32>',
     stake: 'u128',
     deposit: 'u128'
   },
@@ -7906,9 +7623,9 @@ export default {
    * Lookup694: pallet_treasury::Proposal<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletTreasuryProposal: {
-    proposer: 'PezspCoreCryptoAccountId32',
+    proposer: 'AccountId32',
     value: 'u128',
-    beneficiary: 'PezspCoreCryptoAccountId32',
+    beneficiary: 'AccountId32',
     bond: 'u128'
   },
   /**
@@ -7917,7 +7634,7 @@ export default {
   PezpalletTreasurySpendStatus: {
     assetKind: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
     amount: 'u128',
-    beneficiary: 'PezspCoreCryptoAccountId32',
+    beneficiary: 'AccountId32',
     validFrom: 'u32',
     expireAt: 'u32',
     status: 'PezpalletTreasuryPaymentState'
@@ -7954,7 +7671,7 @@ export default {
    * Lookup702: pallet_contracts::wasm::CodeInfo<T>
    **/
   PezpalletContractsWasmCodeInfo: {
-    owner: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
     deposit: 'Compact<u128>',
     refcount: 'Compact<u64>',
     determinism: 'PezpalletContractsWasmDeterminism',
@@ -8065,8 +7782,8 @@ export default {
    * Lookup728: sp_staking::offence::OffenceDetails<sp_core::crypto::AccountId32, Offender>
    **/
   PezspStakingOffenceOffenceDetails: {
-    offender: '(PezspCoreCryptoAccountId32,Null)',
-    reporters: 'Vec<PezspCoreCryptoAccountId32>'
+    offender: '(AccountId32,Null)',
+    reporters: 'Vec<AccountId32>'
   },
   /**
    * Lookup732: pallet_identity::types::Registration<Balance, MaxJudgements, pallet_identity::legacy::IdentityInfo<FieldLimit>>
@@ -8080,7 +7797,7 @@ export default {
    * Lookup740: pallet_identity::types::RegistrarInfo<Balance, sp_core::crypto::AccountId32, IdField>
    **/
   PezpalletIdentityRegistrarInfo: {
-    account: 'PezspCoreCryptoAccountId32',
+    account: 'AccountId32',
     fee: 'u128',
     fields: 'u64'
   },
@@ -8088,14 +7805,14 @@ export default {
    * Lookup743: pallet_identity::types::AuthorityProperties<sp_core::crypto::AccountId32>
    **/
   PezpalletIdentityAuthorityProperties: {
-    accountId: 'PezspCoreCryptoAccountId32',
+    accountId: 'AccountId32',
     allocation: 'u32'
   },
   /**
    * Lookup744: pallet_identity::types::UsernameInformation<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletIdentityUsernameInformation: {
-    owner: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
     provider: 'PezpalletIdentityProvider'
   },
   /**
@@ -8140,7 +7857,7 @@ export default {
    * Lookup756: pallet_society::Bid<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletSocietyBid: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     kind: 'PezpalletSocietyBidKind',
     value: 'u128'
   },
@@ -8150,7 +7867,7 @@ export default {
   PezpalletSocietyBidKind: {
     _enum: {
       Deposit: 'u128',
-      Vouch: '(PezspCoreCryptoAccountId32,u128)'
+      Vouch: '(AccountId32,u128)'
     }
   },
   /**
@@ -8181,7 +7898,7 @@ export default {
    * Lookup764: pallet_society::IntakeRecord<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletSocietyIntakeRecord: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     bid: 'u128',
     round: 'u32'
   },
@@ -8197,7 +7914,7 @@ export default {
   PezpalletRecoveryRecoveryConfig: {
     delayPeriod: 'u32',
     deposit: 'u128',
-    friends: 'Vec<PezspCoreCryptoAccountId32>',
+    friends: 'Vec<AccountId32>',
     threshold: 'u16'
   },
   /**
@@ -8206,7 +7923,7 @@ export default {
   PezpalletRecoveryActiveRecovery: {
     created: 'u32',
     deposit: 'u128',
-    friends: 'Vec<PezspCoreCryptoAccountId32>'
+    friends: 'Vec<AccountId32>'
   },
   /**
    * Lookup770: pallet_recovery::pallet::Error<T>
@@ -8262,11 +7979,11 @@ export default {
   PezpalletPreimageOldRequestStatus: {
     _enum: {
       Unrequested: {
-        deposit: '(PezspCoreCryptoAccountId32,u128)',
+        deposit: '(AccountId32,u128)',
         len: 'u32',
       },
       Requested: {
-        deposit: 'Option<(PezspCoreCryptoAccountId32,u128)>',
+        deposit: 'Option<(AccountId32,u128)>',
         count: 'u32',
         len: 'Option<u32>'
       }
@@ -8278,11 +7995,11 @@ export default {
   PezpalletPreimageRequestStatus: {
     _enum: {
       Unrequested: {
-        ticket: '(PezspCoreCryptoAccountId32,u128)',
+        ticket: '(AccountId32,u128)',
         len: 'u32',
       },
       Requested: {
-        maybeTicket: 'Option<(PezspCoreCryptoAccountId32,u128)>',
+        maybeTicket: 'Option<(AccountId32,u128)>',
         count: 'u32',
         maybeLen: 'Option<u32>'
       }
@@ -8298,7 +8015,7 @@ export default {
    * Lookup792: pallet_proxy::ProxyDefinition<sp_core::crypto::AccountId32, kitchensink_runtime::ProxyType, BlockNumber>
    **/
   PezpalletProxyProxyDefinition: {
-    delegate: 'PezspCoreCryptoAccountId32',
+    delegate: 'AccountId32',
     proxyType: 'KitchensinkRuntimeProxyType',
     delay: 'u32'
   },
@@ -8306,7 +8023,7 @@ export default {
    * Lookup796: pallet_proxy::Announcement<sp_core::crypto::AccountId32, primitive_types::H256, BlockNumber>
    **/
   PezpalletProxyAnnouncement: {
-    real: 'PezspCoreCryptoAccountId32',
+    real: 'AccountId32',
     callHash: 'H256',
     height: 'u32'
   },
@@ -8322,8 +8039,8 @@ export default {
   PezpalletMultisigMultisig: {
     when: 'PezpalletMultisigTimepoint',
     deposit: 'u128',
-    depositor: 'PezspCoreCryptoAccountId32',
-    approvals: 'Vec<PezspCoreCryptoAccountId32>'
+    depositor: 'AccountId32',
+    approvals: 'Vec<AccountId32>'
   },
   /**
    * Lookup801: pallet_multisig::pallet::Error<T>
@@ -8335,7 +8052,7 @@ export default {
    * Lookup802: pallet_bounties::Bounty<sp_core::crypto::AccountId32, Balance, BlockNumber>
    **/
   PezpalletBountiesBounty: {
-    proposer: 'PezspCoreCryptoAccountId32',
+    proposer: 'AccountId32',
     value: 'u128',
     fee: 'u128',
     curatorDeposit: 'u128',
@@ -8351,19 +8068,19 @@ export default {
       Approved: 'Null',
       Funded: 'Null',
       CuratorProposed: {
-        curator: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
       },
       Active: {
-        curator: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
         updateDue: 'u32',
       },
       PendingPayout: {
-        curator: 'PezspCoreCryptoAccountId32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
+        beneficiary: 'AccountId32',
         unlockAt: 'u32',
       },
       ApprovedWithCurator: {
-        curator: 'PezspCoreCryptoAccountId32'
+        curator: 'AccountId32'
       }
     }
   },
@@ -8378,11 +8095,11 @@ export default {
    **/
   PezpalletTipsOpenTip: {
     reason: 'H256',
-    who: 'PezspCoreCryptoAccountId32',
-    finder: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
+    finder: 'AccountId32',
     deposit: 'u128',
     closes: 'Option<u32>',
-    tips: 'Vec<(PezspCoreCryptoAccountId32,u128)>',
+    tips: 'Vec<(AccountId32,u128)>',
     findersFee: 'bool'
   },
   /**
@@ -8395,10 +8112,10 @@ export default {
    * Lookup808: pallet_assets::types::AssetDetails<Balance, sp_core::crypto::AccountId32, DepositBalance>
    **/
   PezpalletAssetsAssetDetails: {
-    owner: 'PezspCoreCryptoAccountId32',
-    issuer: 'PezspCoreCryptoAccountId32',
-    admin: 'PezspCoreCryptoAccountId32',
-    freezer: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
+    issuer: 'AccountId32',
+    admin: 'AccountId32',
+    freezer: 'AccountId32',
     supply: 'u128',
     deposit: 'u128',
     minBalance: 'u128',
@@ -8438,7 +8155,7 @@ export default {
       Sufficient: 'Null',
       DepositHeld: 'u128',
       DepositRefunded: 'Null',
-      DepositFrom: '(PezspCoreCryptoAccountId32,u128)'
+      DepositFrom: '(AccountId32,u128)'
     }
   },
   /**
@@ -8499,15 +8216,15 @@ export default {
    **/
   PezpalletNisBid: {
     amount: 'u128',
-    who: 'PezspCoreCryptoAccountId32'
+    who: 'AccountId32'
   },
   /**
    * Lookup832: pallet_nis::pallet::SummaryRecord<BlockNumber, Balance>
    **/
   PezpalletNisSummaryRecord: {
-    proportionOwed: 'u64',
+    proportionOwed: 'Perquintill',
     index: 'u32',
-    thawed: 'u64',
+    thawed: 'Perquintill',
     lastPeriod: 'u32',
     receiptsOnHold: 'u128'
   },
@@ -8515,8 +8232,8 @@ export default {
    * Lookup833: pallet_nis::pallet::ReceiptRecord<sp_core::crypto::AccountId32, BlockNumber, Balance>
    **/
   PezpalletNisReceiptRecord: {
-    proportion: 'u64',
-    owner: 'Option<(PezspCoreCryptoAccountId32,u128)>',
+    proportion: 'Perquintill',
+    owner: 'Option<(AccountId32,u128)>',
     expiry: 'u32'
   },
   /**
@@ -8529,10 +8246,10 @@ export default {
    * Lookup836: pallet_uniques::types::CollectionDetails<sp_core::crypto::AccountId32, DepositBalance>
    **/
   PezpalletUniquesCollectionDetails: {
-    owner: 'PezspCoreCryptoAccountId32',
-    issuer: 'PezspCoreCryptoAccountId32',
-    admin: 'PezspCoreCryptoAccountId32',
-    freezer: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
+    issuer: 'AccountId32',
+    admin: 'AccountId32',
+    freezer: 'AccountId32',
     totalDeposit: 'u128',
     freeHolding: 'bool',
     items: 'u32',
@@ -8544,8 +8261,8 @@ export default {
    * Lookup838: pallet_uniques::types::ItemDetails<sp_core::crypto::AccountId32, DepositBalance>
    **/
   PezpalletUniquesItemDetails: {
-    owner: 'PezspCoreCryptoAccountId32',
-    approved: 'Option<PezspCoreCryptoAccountId32>',
+    owner: 'AccountId32',
+    approved: 'Option<AccountId32>',
     isFrozen: 'bool',
     deposit: 'u128'
   },
@@ -8575,7 +8292,7 @@ export default {
    * Lookup845: pallet_nfts::types::CollectionDetails<sp_core::crypto::AccountId32, DepositBalance>
    **/
   PezpalletNftsCollectionDetails: {
-    owner: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
     ownerDeposit: 'u128',
     items: 'u32',
     itemMetadatas: 'u32',
@@ -8592,15 +8309,15 @@ export default {
    * Lookup848: pallet_nfts::types::ItemDetails<sp_core::crypto::AccountId32, pallet_nfts::types::ItemDeposit<DepositBalance, sp_core::crypto::AccountId32>, bounded_collections::bounded_btree_map::BoundedBTreeMap<sp_core::crypto::AccountId32, Option<T>, S>>
    **/
   PezpalletNftsItemDetails: {
-    owner: 'PezspCoreCryptoAccountId32',
-    approvals: 'BTreeMap<PezspCoreCryptoAccountId32, Option<u32>>',
+    owner: 'AccountId32',
+    approvals: 'BTreeMap<AccountId32, Option<u32>>',
     deposit: 'PezpalletNftsItemDeposit'
   },
   /**
    * Lookup849: pallet_nfts::types::ItemDeposit<DepositBalance, sp_core::crypto::AccountId32>
    **/
   PezpalletNftsItemDeposit: {
-    account: 'PezspCoreCryptoAccountId32',
+    account: 'AccountId32',
     amount: 'u128'
   },
   /**
@@ -8621,14 +8338,14 @@ export default {
    * Lookup856: pallet_nfts::types::ItemMetadataDeposit<DepositBalance, sp_core::crypto::AccountId32>
    **/
   PezpalletNftsItemMetadataDeposit: {
-    account: 'Option<PezspCoreCryptoAccountId32>',
+    account: 'Option<AccountId32>',
     amount: 'u128'
   },
   /**
    * Lookup859: pallet_nfts::types::AttributeDeposit<DepositBalance, sp_core::crypto::AccountId32>
    **/
   PezpalletNftsAttributeDeposit: {
-    account: 'Option<PezspCoreCryptoAccountId32>',
+    account: 'Option<AccountId32>',
     amount: 'u128'
   },
   /**
@@ -8659,7 +8376,7 @@ export default {
     asset: 'u32',
     fractions: 'u128',
     deposit: 'u128',
-    assetCreator: 'PezspCoreCryptoAccountId32'
+    assetCreator: 'AccountId32'
   },
   /**
    * Lookup867: pallet_nft_fractionalization::pallet::Error<T>
@@ -8740,9 +8457,9 @@ export default {
    * Lookup879: pallet_bags_list::list::Node<T, I>
    **/
   PezpalletBagsListListNode: {
-    id: 'PezspCoreCryptoAccountId32',
-    prev: 'Option<PezspCoreCryptoAccountId32>',
-    next: 'Option<PezspCoreCryptoAccountId32>',
+    id: 'AccountId32',
+    prev: 'Option<AccountId32>',
+    next: 'Option<AccountId32>',
     bagUpper: 'u64',
     score: 'u64'
   },
@@ -8750,8 +8467,8 @@ export default {
    * Lookup880: pallet_bags_list::list::Bag<T, I>
    **/
   PezpalletBagsListListBag: {
-    head: 'Option<PezspCoreCryptoAccountId32>',
-    tail: 'Option<PezspCoreCryptoAccountId32>'
+    head: 'Option<AccountId32>',
+    tail: 'Option<AccountId32>'
   },
   /**
    * Lookup882: pallet_bags_list::pallet::Error<T, I>
@@ -8784,14 +8501,14 @@ export default {
     _enum: {
       Added: 'Null',
       CuratorProposed: {
-        curator: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
       },
       Active: {
-        curator: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
       },
       PendingPayout: {
-        curator: 'PezspCoreCryptoAccountId32',
-        beneficiary: 'PezspCoreCryptoAccountId32',
+        curator: 'AccountId32',
+        beneficiary: 'AccountId32',
         unlockAt: 'u32'
       }
     }
@@ -8835,7 +8552,7 @@ export default {
    * Lookup889: pallet_referenda::types::Deposit<sp_core::crypto::AccountId32, Balance>
    **/
   PezpalletReferendaDeposit: {
-    who: 'PezspCoreCryptoAccountId32',
+    who: 'AccountId32',
     amount: 'u128'
   },
   /**
@@ -8904,7 +8621,7 @@ export default {
    **/
   PezpalletConvictionVotingVoteDelegating: {
     balance: 'u128',
-    target: 'PezspCoreCryptoAccountId32',
+    target: 'AccountId32',
     conviction: 'PezpalletConvictionVotingConviction',
     delegations: 'PezpalletConvictionVotingDelegations',
     prior: 'PezpalletConvictionVotingVotePriorLock'
@@ -8956,8 +8673,8 @@ export default {
    * Lookup928: pallet_nomination_pools::Commission<T>
    **/
   PezpalletNominationPoolsCommission: {
-    current: 'Option<(u32,PezspCoreCryptoAccountId32)>',
-    max: 'Option<u32>',
+    current: 'Option<(Perbill,AccountId32)>',
+    max: 'Option<Perbill>',
     changeRate: 'Option<PezpalletNominationPoolsCommissionChangeRate>',
     throttleFrom: 'Option<u32>',
     claimPermission: 'Option<PezpalletNominationPoolsCommissionClaimPermission>'
@@ -8966,10 +8683,10 @@ export default {
    * Lookup930: pallet_nomination_pools::PoolRoles<sp_core::crypto::AccountId32>
    **/
   PezpalletNominationPoolsPoolRoles: {
-    depositor: 'PezspCoreCryptoAccountId32',
-    root: 'Option<PezspCoreCryptoAccountId32>',
-    nominator: 'Option<PezspCoreCryptoAccountId32>',
-    bouncer: 'Option<PezspCoreCryptoAccountId32>'
+    depositor: 'AccountId32',
+    root: 'Option<AccountId32>',
+    nominator: 'Option<AccountId32>',
+    bouncer: 'Option<AccountId32>'
   },
   /**
    * Lookup931: pallet_nomination_pools::RewardPool<T>
@@ -9103,7 +8820,7 @@ export default {
    * Lookup951: pallet_fast_unstake::types::UnstakeRequest<T>
    **/
   PezpalletFastUnstakeUnstakeRequest: {
-    stashes: 'Vec<(PezspCoreCryptoAccountId32,u128)>',
+    stashes: 'Vec<(AccountId32,u128)>',
     checked: 'Vec<u32>'
   },
   /**
@@ -9228,7 +8945,7 @@ export default {
    **/
   PezpalletBrokerRegionRecord: {
     end: 'u32',
-    owner: 'Option<PezspCoreCryptoAccountId32>',
+    owner: 'Option<AccountId32>',
     paid: 'Option<u128>'
   },
   /**
@@ -9236,7 +8953,7 @@ export default {
    **/
   PezpalletBrokerContributionRecord: {
     length: 'u32',
-    payee: 'PezspCoreCryptoAccountId32'
+    payee: 'AccountId32'
   },
   /**
    * Lookup977: pallet_broker::types::PoolIoRecord
@@ -9283,7 +9000,7 @@ export default {
    * Lookup987: pallet_revive::wasm::CodeInfo<T>
    **/
   PezpalletReviveWasmCodeInfo: {
-    owner: 'PezspCoreCryptoAccountId32',
+    owner: 'AccountId32',
     deposit: 'Compact<u128>',
     refcount: 'Compact<u64>',
     codeLen: 'u32',
@@ -9319,14 +9036,14 @@ export default {
    * Lookup992: pallet_delegated_staking::types::Delegation<T>
    **/
   PezpalletDelegatedStakingDelegation: {
-    agent: 'PezspCoreCryptoAccountId32',
+    agent: 'AccountId32',
     amount: 'u128'
   },
   /**
    * Lookup993: pallet_delegated_staking::types::AgentLedger<T>
    **/
   PezpalletDelegatedStakingAgentLedger: {
-    payee: 'PezspCoreCryptoAccountId32',
+    payee: 'AccountId32',
     totalDelegated: 'Compact<u128>',
     unclaimedWithdrawals: 'Compact<u128>',
     pendingSlash: 'Compact<u128>'
@@ -9353,11 +9070,11 @@ export default {
     rewardAssetId: 'PezframeSupportTokensFungibleUnionOfNativeOrWithId',
     rewardRatePerBlock: 'u128',
     expiryBlock: 'u32',
-    admin: 'PezspCoreCryptoAccountId32',
+    admin: 'AccountId32',
     totalTokensStaked: 'u128',
     rewardPerTokenStored: 'u128',
     lastUpdateBlock: 'u32',
-    account: 'PezspCoreCryptoAccountId32'
+    account: 'AccountId32'
   },
   /**
    * Lookup999: pallet_asset_rewards::pallet::Error<T>
@@ -9579,7 +9296,7 @@ export default {
    **/
   PezpalletContractsPrimitivesInstantiateReturnValue: {
     result: 'PezpalletContractsPrimitivesExecReturnValue',
-    accountId: 'PezspCoreCryptoAccountId32'
+    accountId: 'AccountId32'
   },
   /**
    * Lookup1051: pallet_contracts::primitives::CodeUploadReturnValue<primitive_types::H256, Balance>

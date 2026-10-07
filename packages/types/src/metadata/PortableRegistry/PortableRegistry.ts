@@ -1,4 +1,4 @@
-// Copyright 2017-2025 @pezkuwi/types authors & contributors
+// Copyright 2017-2026 @pezkuwi/types authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Option, Text, Type, u32, Vec } from '@pezkuwi/types-codec';
@@ -35,6 +35,9 @@ interface TypeInfoParams {
   // known param definitions
   PezframeSystemEventRecord: [event: SiTypeParameter, topic: SiTypeParameter]
   PezspRuntimeUncheckedExtrinsic: [address: SiTypeParameter, call: SiTypeParameter, signature: SiTypeParameter, extra: SiTypeParameter];
+  // the same types in metadata that uses the upstream (sp_*, frame_*) paths
+  FrameSystemEventRecord: [event: SiTypeParameter, topic: SiTypeParameter]
+  SpRuntimeUncheckedExtrinsic: [address: SiTypeParameter, call: SiTypeParameter, signature: SiTypeParameter, extra: SiTypeParameter];
 
   // other type definitions
   [key: string]: SiTypeParameter[];
@@ -49,8 +52,27 @@ const PRIMITIVE_ALIAS: Record<string, string> = {
   Str: 'Text'
 };
 
+/**
+ * The Pezkuwi runtimes name their primitives pezsp_* and pezframe_*; metadata
+ * from upstream-format runtimes (and this package's own static test metadata)
+ * uses sp_* and frame_*. Every pez-prefixed path matches in both forms.
+ */
+function withUpstream (paths: string[]): string[] {
+  return paths.flatMap((p) =>
+    /^pez(sp|frame)_/.test(p)
+      ? [p, p.slice(3)]
+      : p.startsWith('pezkuwi_runtime_common::')
+        ? [p, p.replace('pezkuwi_', 'polkadot_')]
+        : [p]
+  );
+}
+
+const WEIGHT_V2 = withUpstream(['pezframe_support::weights::weight_v2::Weight', 'pezsp_weights::weight_v2::Weight']);
+const MULTI_ADDRESS = withUpstream(['pezsp_runtime::multiaddress::MultiAddress']);
+const MULTI_SIGNATURE = withUpstream(['pezsp_runtime::MultiSignature']);
+
 // These are types where we have a specific decoding/encoding override + helpers
-const PATHS_ALIAS = splitNamespace([
+const PATHS_ALIAS = splitNamespace(withUpstream([
   // full matching on exact names...
   // these are well-known types with additional encoding
   'pezsp_core::crypto::AccountId32',
@@ -84,7 +106,7 @@ const PATHS_ALIAS = splitNamespace([
   'ink::primitives::types::*',
   'ink_env::types::*',
   'ink_primitives::types::*'
-]);
+]));
 
 // Mappings for types that should be converted to set via BitVec
 const PATHS_SET = splitNamespace([
@@ -173,7 +195,7 @@ function matchParts (first: string[], second: (string | Text)[]): boolean {
 function getAliasPath ({ def, path }: SiType): string | null {
   // specific logic for weights - we override when non-complex struct
   // (as applied in Weight 1.5 where we also have `Compact<{ refTime: u64 }>)
-  if (['pezframe_support::weights::weight_v2::Weight', 'pezsp_weights::weight_v2::Weight'].includes(path.join('::'))) {
+  if (WEIGHT_V2.includes(path.join('::'))) {
     return !def.isComposite || def.asComposite.fields.length === 1
       ? 'WeightV1'
       : null;
@@ -412,14 +434,16 @@ function registerTypes (lookup: PortableRegistry, lookups: Record<string, string
   lookup.registry.register(lookups);
 
   // Try and extract the AccountId/Address/Signature type from UncheckedExtrinsic
-  if (params.PezspRuntimeUncheckedExtrinsic) {
+  const uncheckedExtrinsic = params.PezspRuntimeUncheckedExtrinsic || params.SpRuntimeUncheckedExtrinsic;
+
+  if (uncheckedExtrinsic) {
     // Address, Call, Signature, Extra
-    const [addrParam,, sigParam] = params.PezspRuntimeUncheckedExtrinsic;
+    const [addrParam,, sigParam] = uncheckedExtrinsic;
     const siAddress = lookup.getSiType(addrParam.type.unwrap());
     const siSignature = lookup.getSiType(sigParam.type.unwrap());
     const nsSignature = siSignature.path.join('::');
     let nsAccountId = siAddress.path.join('::');
-    const isMultiAddress = nsAccountId === 'pezsp_runtime::multiaddress::MultiAddress';
+    const isMultiAddress = MULTI_ADDRESS.includes(nsAccountId);
 
     // With multiaddress, we check the first type param again
     if (isMultiAddress) {
@@ -437,7 +461,7 @@ function registerTypes (lookup: PortableRegistry, lookups: Record<string, string
       Address: isMultiAddress
         ? 'MultiAddress'
         : 'AccountId',
-      ExtrinsicSignature: nsSignature === 'pezsp_runtime::MultiSignature'
+      ExtrinsicSignature: MULTI_SIGNATURE.includes(nsSignature)
         ? 'MultiSignature'
         : names[sigParam.type.unwrap().toNumber()] || 'MultiSignature'
     });
@@ -449,21 +473,23 @@ function registerTypes (lookup: PortableRegistry, lookups: Record<string, string
  * Bizinikiwi chain. Specifically we want to have access to the Call and Event params
  **/
 function extractAliases (params: TypeInfoParams, isContract?: boolean): Record<number, string> {
-  const hasParams = Object.keys(params).some((k) => !k.startsWith('Pezpallet'));
+  const hasParams = Object.keys(params).some((k) => !k.startsWith('Pezpallet') && !k.startsWith('Pallet'));
   const alias: Record<number, string> = {};
+  const uncheckedExtrinsic = params.PezspRuntimeUncheckedExtrinsic || params.SpRuntimeUncheckedExtrinsic;
+  const eventRecord = params.PezframeSystemEventRecord || params.FrameSystemEventRecord;
 
-  if (params.PezspRuntimeUncheckedExtrinsic) {
+  if (uncheckedExtrinsic) {
     // Address, Call, Signature, Extra
-    const [, { type }] = params.PezspRuntimeUncheckedExtrinsic;
+    const [, { type }] = uncheckedExtrinsic;
 
     alias[type.unwrap().toNumber()] = 'Call';
   } else if (hasParams && !isContract) {
     l.warn('Unable to determine runtime Call type, cannot inspect pezsp_runtime::generic::unchecked_extrinsic::UncheckedExtrinsic');
   }
 
-  if (params.PezframeSystemEventRecord) {
+  if (eventRecord) {
     // Event, Topic
-    const [{ type }] = params.PezframeSystemEventRecord;
+    const [{ type }] = eventRecord;
 
     alias[type.unwrap().toNumber()] = 'Event';
   } else if (hasParams && !isContract) {
