@@ -18,11 +18,11 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "16.5.38",
+  "version": "16.5.39",
   "main": "index.js",
   "dependencies": {
-    "@pezkuwi/types": "16.5.38",
-    "@pezkuwi/types-codec": "16.5.38",
+    "@pezkuwi/types": "16.5.39",
+    "@pezkuwi/types-codec": "16.5.39",
     "@pezkuwi/util": "14.0.26",
     "tslib": "^2.8.1"
   }
