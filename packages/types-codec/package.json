@@ -18,12 +18,12 @@
     "./packageDetect.cjs"
   ],
   "type": "module",
-  "version": "16.5.37",
+  "version": "16.5.38",
   "main": "index.js",
   "dependencies": {
-    "@pezkuwi/types": "16.5.37",
-    "@pezkuwi/types-augment": "16.5.37",
-    "@pezkuwi/types-support": "16.5.37",
+    "@pezkuwi/types": "16.5.38",
+    "@pezkuwi/types-augment": "16.5.38",
+    "@pezkuwi/types-support": "16.5.38",
     "@pezkuwi/util": "14.0.26",
     "@pezkuwi/util-crypto": "14.0.26",
     "@pezkuwi/x-bigint": "14.0.26",
