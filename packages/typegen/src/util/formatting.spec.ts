@@ -48,9 +48,10 @@ describe('isInlineStruct', (): void => {
   });
 
   it('is linear on input that made the regex backtrack', (): void => {
+    // /^{.+:.+}/ needs ~9s here, the linear check ~1ms; 1s leaves room for a loaded machine
     const start = Date.now();
 
     expect(isInlineStruct(`{{${'a:'.repeat(100_000)}`)).toBe(false);
-    expect(Date.now() - start < 100).toBe(true);
+    expect(Date.now() - start < 1000).toBe(true);
   });
 });
