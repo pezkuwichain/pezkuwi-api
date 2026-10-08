@@ -583,26 +583,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pezkuwi/api-augment@npm:16.5.37, @pezkuwi/api-augment@workspace:packages/api-augment":
+"@pezkuwi/api-augment@npm:16.5.38, @pezkuwi/api-augment@workspace:packages/api-augment":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/api-augment@workspace:packages/api-augment"
   dependencies:
-    "@pezkuwi/api-base": "npm:16.5.37"
-    "@pezkuwi/rpc-augment": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-augment": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
+    "@pezkuwi/api-base": "npm:16.5.38"
+    "@pezkuwi/rpc-augment": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-augment": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/api-base@npm:16.5.37, @pezkuwi/api-base@workspace:packages/api-base":
+"@pezkuwi/api-base@npm:16.5.38, @pezkuwi/api-base@workspace:packages/api-base":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/api-base@workspace:packages/api-base"
   dependencies:
-    "@pezkuwi/rpc-core": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
+    "@pezkuwi/rpc-core": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     rxjs: "npm:^7.8.1"
     tslib: "npm:^2.8.1"
@@ -613,13 +613,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pezkuwi/api-contract@workspace:packages/api-contract"
   dependencies:
-    "@pezkuwi/api": "npm:16.5.37"
-    "@pezkuwi/api-augment": "npm:16.5.37"
+    "@pezkuwi/api": "npm:16.5.38"
+    "@pezkuwi/api-augment": "npm:16.5.38"
     "@pezkuwi/keyring": "npm:14.0.26"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-create": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-create": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     rxjs: "npm:^7.8.1"
@@ -627,18 +627,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/api-derive@npm:16.5.37, @pezkuwi/api-derive@workspace:packages/api-derive":
+"@pezkuwi/api-derive@npm:16.5.38, @pezkuwi/api-derive@workspace:packages/api-derive":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/api-derive@workspace:packages/api-derive"
   dependencies:
-    "@pezkuwi/api": "npm:16.5.37"
-    "@pezkuwi/api-augment": "npm:16.5.37"
-    "@pezkuwi/api-base": "npm:16.5.37"
-    "@pezkuwi/rpc-core": "npm:16.5.37"
-    "@pezkuwi/rpc-provider": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/api": "npm:16.5.38"
+    "@pezkuwi/api-augment": "npm:16.5.38"
+    "@pezkuwi/api-base": "npm:16.5.38"
+    "@pezkuwi/rpc-core": "npm:16.5.38"
+    "@pezkuwi/rpc-provider": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     rxjs: "npm:^7.8.1"
@@ -646,23 +646,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/api@npm:16.5.37, @pezkuwi/api@workspace:*, @pezkuwi/api@workspace:packages/api":
+"@pezkuwi/api@npm:16.5.38, @pezkuwi/api@workspace:*, @pezkuwi/api@workspace:packages/api":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/api@workspace:packages/api"
   dependencies:
-    "@pezkuwi/api-augment": "npm:16.5.37"
-    "@pezkuwi/api-base": "npm:16.5.37"
-    "@pezkuwi/api-derive": "npm:16.5.37"
+    "@pezkuwi/api-augment": "npm:16.5.38"
+    "@pezkuwi/api-base": "npm:16.5.38"
+    "@pezkuwi/api-derive": "npm:16.5.38"
     "@pezkuwi/keyring": "npm:14.0.26"
-    "@pezkuwi/rpc-augment": "npm:16.5.37"
-    "@pezkuwi/rpc-core": "npm:16.5.37"
-    "@pezkuwi/rpc-provider": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-augment": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-create": "npm:16.5.37"
-    "@pezkuwi/types-known": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/rpc-augment": "npm:16.5.38"
+    "@pezkuwi/rpc-core": "npm:16.5.38"
+    "@pezkuwi/rpc-provider": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-augment": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-create": "npm:16.5.38"
+    "@pezkuwi/types-known": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     eventemitter3: "npm:^5.0.1"
@@ -857,40 +857,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/rpc-augment@npm:16.5.37, @pezkuwi/rpc-augment@workspace:packages/rpc-augment":
+"@pezkuwi/rpc-augment@npm:16.5.38, @pezkuwi/rpc-augment@workspace:packages/rpc-augment":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/rpc-augment@workspace:packages/rpc-augment"
   dependencies:
-    "@pezkuwi/rpc-core": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
+    "@pezkuwi/rpc-core": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/rpc-core@npm:16.5.37, @pezkuwi/rpc-core@workspace:packages/rpc-core":
+"@pezkuwi/rpc-core@npm:16.5.38, @pezkuwi/rpc-core@workspace:packages/rpc-core":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/rpc-core@workspace:packages/rpc-core"
   dependencies:
     "@pezkuwi/keyring": "npm:14.0.26"
-    "@pezkuwi/rpc-augment": "npm:16.5.37"
-    "@pezkuwi/rpc-provider": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
+    "@pezkuwi/rpc-augment": "npm:16.5.38"
+    "@pezkuwi/rpc-provider": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     rxjs: "npm:^7.8.1"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/rpc-provider@npm:16.5.37, @pezkuwi/rpc-provider@workspace:packages/rpc-provider":
+"@pezkuwi/rpc-provider@npm:16.5.38, @pezkuwi/rpc-provider@workspace:packages/rpc-provider":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/rpc-provider@workspace:packages/rpc-provider"
   dependencies:
     "@bizinikiwi/connect": "npm:2.1.9"
     "@pezkuwi/keyring": "npm:14.0.26"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     "@pezkuwi/x-fetch": "npm:14.0.26"
@@ -920,16 +920,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pezkuwi/typegen@workspace:packages/typegen"
   dependencies:
-    "@pezkuwi/api": "npm:16.5.37"
-    "@pezkuwi/api-augment": "npm:16.5.37"
-    "@pezkuwi/api-derive": "npm:16.5.37"
-    "@pezkuwi/rpc-augment": "npm:16.5.37"
-    "@pezkuwi/rpc-provider": "npm:16.5.37"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-augment": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-create": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/api": "npm:16.5.38"
+    "@pezkuwi/api-augment": "npm:16.5.38"
+    "@pezkuwi/api-derive": "npm:16.5.38"
+    "@pezkuwi/rpc-augment": "npm:16.5.38"
+    "@pezkuwi/rpc-provider": "npm:16.5.38"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-augment": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-create": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     "@pezkuwi/x-ws": "npm:14.0.26"
@@ -946,24 +946,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types-augment@npm:16.5.37, @pezkuwi/types-augment@workspace:packages/types-augment":
+"@pezkuwi/types-augment@npm:16.5.38, @pezkuwi/types-augment@workspace:packages/types-augment":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types-augment@workspace:packages/types-augment"
   dependencies:
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types-codec@npm:16.5.37, @pezkuwi/types-codec@workspace:packages/types-codec":
+"@pezkuwi/types-codec@npm:16.5.38, @pezkuwi/types-codec@workspace:packages/types-codec":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types-codec@workspace:packages/types-codec"
   dependencies:
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-augment": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-augment": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     "@pezkuwi/x-bigint": "npm:14.0.26"
@@ -971,32 +971,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types-create@npm:16.5.37, @pezkuwi/types-create@workspace:packages/types-create":
+"@pezkuwi/types-create@npm:16.5.38, @pezkuwi/types-create@workspace:packages/types-create":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types-create@workspace:packages/types-create"
   dependencies:
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types-known@npm:16.5.37, @pezkuwi/types-known@workspace:packages/types-known":
+"@pezkuwi/types-known@npm:16.5.38, @pezkuwi/types-known@workspace:packages/types-known":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types-known@workspace:packages/types-known"
   dependencies:
     "@pezkuwi/api": "workspace:*"
     "@pezkuwi/networks": "npm:14.0.26"
-    "@pezkuwi/types": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-create": "npm:16.5.37"
+    "@pezkuwi/types": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-create": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     tslib: "npm:^2.8.1"
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types-support@npm:16.5.37, @pezkuwi/types-support@workspace:packages/types-support":
+"@pezkuwi/types-support@npm:16.5.38, @pezkuwi/types-support@workspace:packages/types-support":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types-support@workspace:packages/types-support"
   dependencies:
@@ -1005,15 +1005,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pezkuwi/types@npm:16.5.37, @pezkuwi/types@workspace:packages/types":
+"@pezkuwi/types@npm:16.5.38, @pezkuwi/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@pezkuwi/types@workspace:packages/types"
   dependencies:
     "@pezkuwi/keyring": "npm:14.0.26"
-    "@pezkuwi/types-augment": "npm:16.5.37"
-    "@pezkuwi/types-codec": "npm:16.5.37"
-    "@pezkuwi/types-create": "npm:16.5.37"
-    "@pezkuwi/types-support": "npm:16.5.37"
+    "@pezkuwi/types-augment": "npm:16.5.38"
+    "@pezkuwi/types-codec": "npm:16.5.38"
+    "@pezkuwi/types-create": "npm:16.5.38"
+    "@pezkuwi/types-support": "npm:16.5.38"
     "@pezkuwi/util": "npm:14.0.26"
     "@pezkuwi/util-crypto": "npm:14.0.26"
     rxjs: "npm:^7.8.1"
