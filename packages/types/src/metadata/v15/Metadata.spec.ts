@@ -7,7 +7,7 @@ import bizinikiwiData from '@pezkuwi/types-support/metadata/v15/bizinikiwi-hex';
 import dicleData from '@pezkuwi/types-support/metadata/v15/dicle-hex';
 import pezkuwiData from '@pezkuwi/types-support/metadata/v15/pezkuwi-hex';
 
-import { testMeta } from '../util/testUtil.js';
+import { testMeta } from '../test/testUtil.js';
 
 testMeta(15, {
   'asset-hub-dicle': {

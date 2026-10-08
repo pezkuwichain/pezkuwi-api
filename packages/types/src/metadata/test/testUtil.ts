@@ -7,8 +7,8 @@
 
 import type { Registry } from '@pezkuwi/types-codec/types';
 import type { HexString } from '@pezkuwi/util/types';
+import type { Check } from '../util/types.js';
 import type { MetaVersionAll } from '../versions.js';
-import type { Check } from './types.js';
 
 import fs from 'node:fs';
 
@@ -17,7 +17,7 @@ import { hexToU8a, stringCamelCase, stringify, u8aToHex } from '@pezkuwi/util';
 import { TypeRegistry } from '../../create/index.js';
 import { unwrapStorageSi, unwrapStorageType } from '../../util/index.js';
 import { Metadata } from '../Metadata.js';
-import { getUniqTypes } from './getUniqTypes.js';
+import { getUniqTypes } from '../util/getUniqTypes.js';
 
 interface MetadataJsonDef {
   lookup: unknown;

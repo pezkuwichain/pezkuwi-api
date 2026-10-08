@@ -7,7 +7,7 @@ import dicleData from '@pezkuwi/types-support/metadata/v16/dicle-hex';
 import pezkuwiData from '@pezkuwi/types-support/metadata/v16/pezkuwi-hex';*/
 import bizinikiwiData from '@pezkuwi/types-support/metadata/v16/bizinikiwi-hex';
 
-import { testMeta } from '../util/testUtil.js';
+import { testMeta } from '../test/testUtil.js';
 
 // TODO: Once MetadataV16 lands in an official release, pull the
 // latest metadata for each chain and update the tests

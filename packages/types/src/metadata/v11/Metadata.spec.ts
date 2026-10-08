@@ -3,7 +3,7 @@
 
 import bizinikiwiData from '@pezkuwi/types-support/metadata/v11/bizinikiwi-hex';
 
-import { testMeta } from '../util/testUtil.js';
+import { testMeta } from '../test/testUtil.js';
 
 testMeta(11, {
   bizinikiwi: {
