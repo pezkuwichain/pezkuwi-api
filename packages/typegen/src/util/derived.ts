@@ -44,13 +44,16 @@ export function getSimilarTypes (registry: Registry, definitions: Record<string,
     return ['null'];
   }
 
-  // Handle lookup types by name pattern before class-based checks
-  // Lookup types like PezspRuntimeMultiAddress may not be properly registered as children of GenericMultiAddress
-  if (type.includes('MultiAddress') || type.endsWith('RuntimeMultiAddress')) {
+  // Handle lookup types by name before class-based checks: lookup types like
+  // PezspRuntimeMultiAddress may not be registered as children of
+  // GenericMultiAddress. Match the whole name; a type that only contains one,
+  // such as Vec<AccountId32>, has to reach the Vec branch below, or it loses
+  // its array input.
+  if (/^\w*MultiAddress$/.test(type)) {
     possibleTypes.push('AccountId', 'AccountIndex', 'Address', 'LookupSource', 'string', 'Uint8Array');
 
     return possibleTypes;
-  } else if (type.includes('AccountId32') || type.endsWith('CryptoAccountId32')) {
+  } else if (/^\w*AccountId32$/.test(type)) {
     possibleTypes.push('string', 'Uint8Array');
 
     return possibleTypes;
