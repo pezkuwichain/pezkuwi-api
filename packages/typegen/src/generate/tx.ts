@@ -82,21 +82,27 @@ function generateForMeta (registry: Registry, meta: Metadata, dest: string, extr
                 rebrandTypeName(typeName.isSome
                   ? typeName.toString()
                   : typeDef.type),
-                rebrandTypeName(typeDef.isFromSi
+                // The registry knows lookup types by their metadata name
+                // (SpWeightsWeightV2Weight). getSimilarTypes and formatType have
+                // to be given that name, and rebrand what they return; given the
+                // rebranded name, the registry cannot find the type and the
+                // struct, enum and vector inputs are lost.
+                typeDef.isFromSi
                   ? typeDef.type
-                  : typeDef.lookupName || typeDef.type)
+                  : typeDef.lookupName || typeDef.type
               ];
             });
 
             const params = typesInfo
               .map(([name,, typeStr]) => {
                 const similarTypes = getSimilarTypes(registry, allDefs, typeStr, imports);
+                const typeName = rebrandTypeName(typeStr);
 
-                setImports(allDefs, imports, [typeStr, ...similarTypes]);
+                setImports(allDefs, imports, [typeName, ...similarTypes]);
 
                 // Add the type to the list of used types
-                if (!(imports.primitiveTypes[typeStr])) {
-                  usedTypes.add(typeStr);
+                if (!(imports.primitiveTypes[typeName])) {
+                  usedTypes.add(typeName);
                 }
 
                 return `${name}: ${similarTypes.join(' | ')}`;
