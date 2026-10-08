@@ -25,21 +25,21 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * ## Complexity
        * - O(1)
        **/
-      create: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset, rate: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, u128]>;
+      create: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, rate: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, u128]>;
       /**
        * Remove an existing conversion rate to native balance for the given asset.
        * 
        * ## Complexity
        * - O(1)
        **/
-      remove: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset]>;
+      remove: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset]>;
       /**
        * Update the conversion rate to native balance for the given asset.
        * 
        * ## Complexity
        * - O(1)
        **/
-      update: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset, rate: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, u128]>;
+      update: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, rate: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, u128]>;
       /**
        * Generic tx
        **/
@@ -91,14 +91,14 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Multiple calls to this method will replace any existing planned config change that had
        * not been enacted yet.
        **/
-      planConfigChange: AugmentedSubmittable<(config: PezspConsensusBabeDigestsNextConfigDescriptor) => SubmittableExtrinsic<ApiType>, [PezspConsensusBabeDigestsNextConfigDescriptor]>;
+      planConfigChange: AugmentedSubmittable<(config: PezspConsensusBabeDigestsNextConfigDescriptor | { V1: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBabeDigestsNextConfigDescriptor]>;
       /**
        * Report authority equivocation/misbehavior. This method will verify
        * the equivocation proof and validate the given key ownership proof
        * against the extracted offender. If both are valid, the offence will
        * be reported.
        **/
-      reportEquivocation: AugmentedSubmittable<(equivocationProof: PezspConsensusSlotsEquivocationProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusSlotsEquivocationProof, PezspSessionMembershipProof]>;
+      reportEquivocation: AugmentedSubmittable<(equivocationProof: PezspConsensusSlotsEquivocationProof | { offender?: any; slot?: any; firstHeader?: any; secondHeader?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusSlotsEquivocationProof, PezspSessionMembershipProof]>;
       /**
        * Report authority equivocation/misbehavior. This method will verify
        * the equivocation proof and validate the given key ownership proof
@@ -109,7 +109,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * if the block author is defined it will be defined as the equivocation
        * reporter.
        **/
-      reportEquivocationUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusSlotsEquivocationProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusSlotsEquivocationProof, PezspSessionMembershipProof]>;
+      reportEquivocationUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusSlotsEquivocationProof | { offender?: any; slot?: any; firstHeader?: any; secondHeader?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusSlotsEquivocationProof, PezspSessionMembershipProof]>;
       /**
        * Generic tx
        **/
@@ -133,7 +133,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * # Example
        **/
-      forceAdjustTotalIssuance: AugmentedSubmittable<(direction: PezpalletBalancesAdjustmentDirection, delta: Compact<u128> | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletBalancesAdjustmentDirection, Compact<u128>]>;
+      forceAdjustTotalIssuance: AugmentedSubmittable<(direction: PezpalletBalancesAdjustmentDirection | 'Increase' | 'Decrease' | number | Uint8Array, delta: Compact<u128> | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletBalancesAdjustmentDirection, Compact<u128>]>;
       /**
        * Set the regular balance of a given account.
        * 
@@ -211,7 +211,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * against the extracted offender. If both are valid, the offence
        * will be reported.
        **/
-      reportDoubleVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyDoubleVotingProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyDoubleVotingProof, PezspSessionMembershipProof]>;
+      reportDoubleVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyDoubleVotingProof | { first?: any; second?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyDoubleVotingProof, PezspSessionMembershipProof]>;
       /**
        * Report voter equivocation/misbehavior. This method will verify the
        * equivocation proof and validate the given key ownership proof
@@ -223,13 +223,13 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * if the block author is defined it will be defined as the equivocation
        * reporter.
        **/
-      reportDoubleVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyDoubleVotingProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyDoubleVotingProof, PezspSessionMembershipProof]>;
+      reportDoubleVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyDoubleVotingProof | { first?: any; second?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyDoubleVotingProof, PezspSessionMembershipProof]>;
       /**
        * Report fork voting equivocation. This method will verify the equivocation proof
        * and validate the given key ownership proof against the extracted offender.
        * If both are valid, the offence will be reported.
        **/
-      reportForkVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyForkVotingProofAncestryProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyForkVotingProofAncestryProof, PezspSessionMembershipProof]>;
+      reportForkVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyForkVotingProofAncestryProof | { vote?: any; ancestryProof?: any; header?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyForkVotingProofAncestryProof, PezspSessionMembershipProof]>;
       /**
        * Report fork voting equivocation. This method will verify the equivocation proof
        * and validate the given key ownership proof against the extracted offender.
@@ -240,13 +240,13 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * if the block author is defined it will be defined as the equivocation
        * reporter.
        **/
-      reportForkVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyForkVotingProofAncestryProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyForkVotingProofAncestryProof, PezspSessionMembershipProof]>;
+      reportForkVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyForkVotingProofAncestryProof | { vote?: any; ancestryProof?: any; header?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyForkVotingProofAncestryProof, PezspSessionMembershipProof]>;
       /**
        * Report future block voting equivocation. This method will verify the equivocation proof
        * and validate the given key ownership proof against the extracted offender.
        * If both are valid, the offence will be reported.
        **/
-      reportFutureBlockVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyFutureBlockVotingProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyFutureBlockVotingProof, PezspSessionMembershipProof]>;
+      reportFutureBlockVoting: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyFutureBlockVotingProof | { vote?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyFutureBlockVotingProof, PezspSessionMembershipProof]>;
       /**
        * Report future block voting equivocation. This method will verify the equivocation proof
        * and validate the given key ownership proof against the extracted offender.
@@ -257,7 +257,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * if the block author is defined it will be defined as the equivocation
        * reporter.
        **/
-      reportFutureBlockVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyFutureBlockVotingProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyFutureBlockVotingProof, PezspSessionMembershipProof]>;
+      reportFutureBlockVotingUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusBeefyFutureBlockVotingProof | { vote?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusBeefyFutureBlockVotingProof, PezspSessionMembershipProof]>;
       /**
        * Reset BEEFY consensus by setting a new BEEFY genesis at `delay_in_blocks` blocks in the
        * future.
@@ -638,7 +638,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Total Complexity: O(1)
        * </weight>
        **/
-      claim: AugmentedSubmittable<(dest: AccountId32 | string | Uint8Array, ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature) => SubmittableExtrinsic<ApiType>, [AccountId32, PezkuwiRuntimeCommonClaimsEcdsaSignature]>;
+      claim: AugmentedSubmittable<(dest: AccountId32 | string | Uint8Array, ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32, PezkuwiRuntimeCommonClaimsEcdsaSignature]>;
       /**
        * Make a claim to collect your DOTs by signing a statement.
        * 
@@ -668,7 +668,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Total Complexity: O(1)
        * </weight>
        **/
-      claimAttest: AugmentedSubmittable<(dest: AccountId32 | string | Uint8Array, ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature, statement: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32, PezkuwiRuntimeCommonClaimsEcdsaSignature, Bytes]>;
+      claimAttest: AugmentedSubmittable<(dest: AccountId32 | string | Uint8Array, ethereumSignature: PezkuwiRuntimeCommonClaimsEcdsaSignature | string | Uint8Array, statement: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32, PezkuwiRuntimeCommonClaimsEcdsaSignature, Bytes]>;
       /**
        * Mint a new claim to collect DOTs.
        * 
@@ -686,7 +686,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Total Complexity: O(1)
        * </weight>
        **/
-      mintClaim: AugmentedSubmittable<(who: EthereumAddress | string | Uint8Array, value: u128 | AnyNumber | Uint8Array, vestingSchedule: Option<ITuple<[u128, u128, u32]>> | null | Uint8Array | ITuple<[u128, u128, u32]> | [u128 | AnyNumber | Uint8Array, u128 | AnyNumber | Uint8Array, u32 | AnyNumber | Uint8Array], statement: Option<PezkuwiRuntimeCommonClaimsStatementKind> | null | Uint8Array | PezkuwiRuntimeCommonClaimsStatementKind) => SubmittableExtrinsic<ApiType>, [EthereumAddress, u128, Option<ITuple<[u128, u128, u32]>>, Option<PezkuwiRuntimeCommonClaimsStatementKind>]>;
+      mintClaim: AugmentedSubmittable<(who: EthereumAddress | string | Uint8Array, value: u128 | AnyNumber | Uint8Array, vestingSchedule: Option<ITuple<[u128, u128, u32]>> | null | Uint8Array | ITuple<[u128, u128, u32]> | [u128 | AnyNumber | Uint8Array, u128 | AnyNumber | Uint8Array, u32 | AnyNumber | Uint8Array], statement: Option<PezkuwiRuntimeCommonClaimsStatementKind> | null | Uint8Array | PezkuwiRuntimeCommonClaimsStatementKind | 'Regular' | 'Saft' | number) => SubmittableExtrinsic<ApiType>, [EthereumAddress, u128, Option<ITuple<[u128, u128, u32]>>, Option<PezkuwiRuntimeCommonClaimsStatementKind>]>;
       moveClaim: AugmentedSubmittable<(old: EthereumAddress | string | Uint8Array, updated: EthereumAddress | string | Uint8Array, maybePreclaim: Option<AccountId32> | null | Uint8Array | AccountId32 | string) => SubmittableExtrinsic<ApiType>, [EthereumAddress, EthereumAddress, Option<AccountId32>]>;
       /**
        * Generic tx
@@ -697,11 +697,11 @@ declare module '@pezkuwi/api-base/types/submittable' {
       /**
        * Set approval-voting-params.
        **/
-      setApprovalVotingParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8ApprovalVotingParams) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8ApprovalVotingParams]>;
+      setApprovalVotingParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8ApprovalVotingParams | { maxApprovalCoalesceCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8ApprovalVotingParams]>;
       /**
        * Set the asynchronous backing parameters.
        **/
-      setAsyncBackingParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams]>;
+      setAsyncBackingParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams | { maxCandidateDepth?: any; allowedAncestryLen?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8AsyncBackingAsyncBackingParams]>;
       /**
        * Setting this to true will disable consistency checks for the configuration setters.
        * Use with caution.
@@ -871,7 +871,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
       /**
        * Set scheduler-params.
        **/
-      setSchedulerParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8SchedulerParams) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8SchedulerParams]>;
+      setSchedulerParams: AugmentedSubmittable<(updated: PezkuwiPrimitivesV8SchedulerParams | { groupRotationFrequency?: any; parasAvailabilityPeriod?: any; maxValidatorsPerCore?: any; lookahead?: any; numCores?: any; maxAvailabilityTimeouts?: any; onDemandQueueMaxSize?: any; onDemandTargetQueueUtilization?: any; onDemandFeeVariability?: any; onDemandBaseFee?: any; ttl?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8SchedulerParams]>;
       /**
        * Set the scheduling lookahead, in expected number of blocks at peak throughput.
        **/
@@ -919,7 +919,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Weight: `O(R)` where R is the number of polls the voter delegating to has
        * voted on. Weight is initially charged as if maximum votes, but is refunded later.
        **/
-      delegate: AugmentedSubmittable<(clazz: u16 | AnyNumber | Uint8Array, to: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, conviction: PezpalletConvictionVotingConviction, balance: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, MultiAddress, PezpalletConvictionVotingConviction, u128]>;
+      delegate: AugmentedSubmittable<(clazz: u16 | AnyNumber | Uint8Array, to: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, conviction: PezpalletConvictionVotingConviction | 'None' | 'Locked1x' | 'Locked2x' | 'Locked3x' | 'Locked4x' | 'Locked5x' | 'Locked6x' | number | Uint8Array, balance: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, MultiAddress, PezpalletConvictionVotingConviction, u128]>;
       /**
        * Remove a vote for a poll.
        * 
@@ -1011,7 +1011,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Weight: `O(R)` where R is the number of polls the voter has voted on.
        **/
-      vote: AugmentedSubmittable<(pollIndex: Compact<u32> | AnyNumber | Uint8Array, vote: PezpalletConvictionVotingVoteAccountVote) => SubmittableExtrinsic<ApiType>, [Compact<u32>, PezpalletConvictionVotingVoteAccountVote]>;
+      vote: AugmentedSubmittable<(pollIndex: Compact<u32> | AnyNumber | Uint8Array, vote: PezpalletConvictionVotingVoteAccountVote | { Standard: any } | { Split: any } | { SplitAbstain: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Compact<u32>, PezpalletConvictionVotingVoteAccountVote]>;
       /**
        * Generic tx
        **/
@@ -1029,7 +1029,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * -`assignment`: How the blockspace should be utilised.
        * -`end_hint`: An optional hint as to when this particular set of instructions will end.
        **/
-      assignCore: AugmentedSubmittable<(core: u16 | AnyNumber | Uint8Array, begin: u32 | AnyNumber | Uint8Array, assignment: Vec<ITuple<[PezpalletBrokerCoretimeInterfaceCoreAssignment, u16]>> | ([PezpalletBrokerCoretimeInterfaceCoreAssignment, u16 | AnyNumber | Uint8Array])[], endHint: Option<u32> | null | Uint8Array | u32 | AnyNumber) => SubmittableExtrinsic<ApiType>, [u16, u32, Vec<ITuple<[PezpalletBrokerCoretimeInterfaceCoreAssignment, u16]>>, Option<u32>]>;
+      assignCore: AugmentedSubmittable<(core: u16 | AnyNumber | Uint8Array, begin: u32 | AnyNumber | Uint8Array, assignment: Vec<ITuple<[PezpalletBrokerCoretimeInterfaceCoreAssignment, u16]>> | ([PezpalletBrokerCoretimeInterfaceCoreAssignment | { Idle: any } | { Pool: any } | { Task: any } | string | Uint8Array, u16 | AnyNumber | Uint8Array])[], endHint: Option<u32> | null | Uint8Array | u32 | AnyNumber) => SubmittableExtrinsic<ApiType>, [u16, u32, Vec<ITuple<[PezpalletBrokerCoretimeInterfaceCoreAssignment, u16]>>, Option<u32>]>;
       creditAccount: AugmentedSubmittable<(who: AccountId32 | string | Uint8Array, amount: u128 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32, u128]>;
       /**
        * Request the configuration to be updated with the specified number of cores. Warning:
@@ -1063,13 +1063,13 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Contribute to a crowd sale. This will transfer some balance over to fund a parachain
        * slot. It will be withdrawable when the crowdloan has ended and the funds are unused.
        **/
-      contribute: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, value: Compact<u128> | AnyNumber | Uint8Array, signature: Option<PezspRuntimeMultiSignature> | null | Uint8Array | PezspRuntimeMultiSignature) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Option<PezspRuntimeMultiSignature>]>;
+      contribute: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, value: Compact<u128> | AnyNumber | Uint8Array, signature: Option<PezspRuntimeMultiSignature> | null | Uint8Array | PezspRuntimeMultiSignature | { Ed25519: any } | { Sr25519: any } | { Ecdsa: any } | string) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Option<PezspRuntimeMultiSignature>]>;
       /**
        * Contribute your entire balance to a crowd sale. This will transfer the entire balance of
        * a user over to fund a parachain slot. It will be withdrawable when the crowdloan has
        * ended and the funds are unused.
        **/
-      contributeAll: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, signature: Option<PezspRuntimeMultiSignature> | null | Uint8Array | PezspRuntimeMultiSignature) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Option<PezspRuntimeMultiSignature>]>;
+      contributeAll: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, signature: Option<PezspRuntimeMultiSignature> | null | Uint8Array | PezspRuntimeMultiSignature | { Ed25519: any } | { Sr25519: any } | { Ecdsa: any } | string) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Option<PezspRuntimeMultiSignature>]>;
       /**
        * Create a new crowdloaning campaign for a parachain slot with the given lease period
        * range.
@@ -1077,7 +1077,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * This applies a lock to your parachain configuration, ensuring that it cannot be changed
        * by the parachain manager.
        **/
-      create: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, cap: Compact<u128> | AnyNumber | Uint8Array, firstPeriod: Compact<u32> | AnyNumber | Uint8Array, lastPeriod: Compact<u32> | AnyNumber | Uint8Array, end: Compact<u32> | AnyNumber | Uint8Array, verifier: Option<PezspRuntimeMultiSigner> | null | Uint8Array | PezspRuntimeMultiSigner) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Compact<u32>, Compact<u32>, Compact<u32>, Option<PezspRuntimeMultiSigner>]>;
+      create: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, cap: Compact<u128> | AnyNumber | Uint8Array, firstPeriod: Compact<u32> | AnyNumber | Uint8Array, lastPeriod: Compact<u32> | AnyNumber | Uint8Array, end: Compact<u32> | AnyNumber | Uint8Array, verifier: Option<PezspRuntimeMultiSigner> | null | Uint8Array | PezspRuntimeMultiSigner | { Ed25519: any } | { Sr25519: any } | { Ecdsa: any } | string) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Compact<u32>, Compact<u32>, Compact<u32>, Option<PezspRuntimeMultiSigner>]>;
       /**
        * Remove a fund after the retirement period has ended and all funds have been returned.
        **/
@@ -1087,7 +1087,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Can only be called by Root origin.
        **/
-      edit: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, cap: Compact<u128> | AnyNumber | Uint8Array, firstPeriod: Compact<u32> | AnyNumber | Uint8Array, lastPeriod: Compact<u32> | AnyNumber | Uint8Array, end: Compact<u32> | AnyNumber | Uint8Array, verifier: Option<PezspRuntimeMultiSigner> | null | Uint8Array | PezspRuntimeMultiSigner) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Compact<u32>, Compact<u32>, Compact<u32>, Option<PezspRuntimeMultiSigner>]>;
+      edit: AugmentedSubmittable<(index: Compact<u32> | AnyNumber | Uint8Array, cap: Compact<u128> | AnyNumber | Uint8Array, firstPeriod: Compact<u32> | AnyNumber | Uint8Array, lastPeriod: Compact<u32> | AnyNumber | Uint8Array, end: Compact<u32> | AnyNumber | Uint8Array, verifier: Option<PezspRuntimeMultiSigner> | null | Uint8Array | PezspRuntimeMultiSigner | { Ed25519: any } | { Sr25519: any } | { Ecdsa: any } | string) => SubmittableExtrinsic<ApiType>, [Compact<u32>, Compact<u128>, Compact<u32>, Compact<u32>, Compact<u32>, Option<PezspRuntimeMultiSigner>]>;
       /**
        * Poke the fund into `NewRaise`
        * 
@@ -1145,7 +1145,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * feasibility check itself can in principle cause the election process to fail (due to
        * memory/weight constrains).
        **/
-      setEmergencyElectionResult: AugmentedSubmittable<(supports: Vec<ITuple<[AccountId32, PezspNposElectionsSupport]>> | ([AccountId32 | string | Uint8Array, PezspNposElectionsSupport])[]) => SubmittableExtrinsic<ApiType>, [Vec<ITuple<[AccountId32, PezspNposElectionsSupport]>>]>;
+      setEmergencyElectionResult: AugmentedSubmittable<(supports: Vec<ITuple<[AccountId32, PezspNposElectionsSupport]>> | ([AccountId32 | string | Uint8Array, PezspNposElectionsSupport | { total?: any; voters?: any } | string | Uint8Array])[]) => SubmittableExtrinsic<ApiType>, [Vec<ITuple<[AccountId32, PezspNposElectionsSupport]>>]>;
       /**
        * Set a new value for `MinimumUntrustedScore`.
        * 
@@ -1153,7 +1153,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * This check can be turned off by setting the value to `None`.
        **/
-      setMinimumUntrustedScore: AugmentedSubmittable<(maybeNextScore: Option<PezspNposElectionsElectionScore> | null | Uint8Array | PezspNposElectionsElectionScore) => SubmittableExtrinsic<ApiType>, [Option<PezspNposElectionsElectionScore>]>;
+      setMinimumUntrustedScore: AugmentedSubmittable<(maybeNextScore: Option<PezspNposElectionsElectionScore> | null | Uint8Array | PezspNposElectionsElectionScore | { minimalStake?: any; sumStake?: any; sumStakeSquared?: any } | string) => SubmittableExtrinsic<ApiType>, [Option<PezspNposElectionsElectionScore>]>;
       /**
        * Submit a solution for the signed phase.
        * 
@@ -1165,7 +1165,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * A deposit is reserved and recorded for the solution. Based on the outcome, the solution
        * might be rewarded, slashed, or get all or a part of the deposit back.
        **/
-      submit: AugmentedSubmittable<(rawSolution: PezpalletElectionProviderMultiPhaseRawSolution) => SubmittableExtrinsic<ApiType>, [PezpalletElectionProviderMultiPhaseRawSolution]>;
+      submit: AugmentedSubmittable<(rawSolution: PezpalletElectionProviderMultiPhaseRawSolution | { solution?: any; score?: any; round?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletElectionProviderMultiPhaseRawSolution]>;
       /**
        * Submit a solution for the unsigned phase.
        * 
@@ -1182,7 +1182,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * No deposit or reward is associated with this submission.
        **/
-      submitUnsigned: AugmentedSubmittable<(rawSolution: PezpalletElectionProviderMultiPhaseRawSolution, witness: PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize) => SubmittableExtrinsic<ApiType>, [PezpalletElectionProviderMultiPhaseRawSolution, PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize]>;
+      submitUnsigned: AugmentedSubmittable<(rawSolution: PezpalletElectionProviderMultiPhaseRawSolution | { solution?: any; score?: any; round?: any } | string | Uint8Array, witness: PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize | { voters?: any; targets?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletElectionProviderMultiPhaseRawSolution, PezpalletElectionProviderMultiPhaseSolutionOrSnapshotSize]>;
       /**
        * Generic tx
        **/
@@ -1429,7 +1429,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Emits `Submitted`.
        **/
-      submit: AugmentedSubmittable<(proposalOrigin: StagingDicleRuntimeOriginCaller, proposal: PezframeSupportPreimagesBounded, enactmentMoment: PezframeSupportScheduleDispatchTime) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, PezframeSupportPreimagesBounded, PezframeSupportScheduleDispatchTime]>;
+      submit: AugmentedSubmittable<(proposalOrigin: StagingDicleRuntimeOriginCaller | { system: any } | { Origins: any } | { ParachainsOrigin: any } | { XcmPallet: any } | string | Uint8Array, proposal: PezframeSupportPreimagesBounded | { Legacy: any } | { Inline: any } | { Lookup: any } | string | Uint8Array, enactmentMoment: PezframeSupportScheduleDispatchTime | { At: any } | { After: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, PezframeSupportPreimagesBounded, PezframeSupportScheduleDispatchTime]>;
       /**
        * Generic tx
        **/
@@ -1457,7 +1457,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * against the extracted offender. If both are valid, the offence
        * will be reported.
        **/
-      reportEquivocation: AugmentedSubmittable<(equivocationProof: PezspConsensusGrandpaEquivocationProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusGrandpaEquivocationProof, PezspSessionMembershipProof]>;
+      reportEquivocation: AugmentedSubmittable<(equivocationProof: PezspConsensusGrandpaEquivocationProof | { setId?: any; equivocation?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusGrandpaEquivocationProof, PezspSessionMembershipProof]>;
       /**
        * Report voter equivocation/misbehavior. This method will verify the
        * equivocation proof and validate the given key ownership proof
@@ -1469,7 +1469,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * if the block author is defined it will be defined as the equivocation
        * reporter.
        **/
-      reportEquivocationUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusGrandpaEquivocationProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezspConsensusGrandpaEquivocationProof, PezspSessionMembershipProof]>;
+      reportEquivocationUnsigned: AugmentedSubmittable<(equivocationProof: PezspConsensusGrandpaEquivocationProof | { setId?: any; equivocation?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezspConsensusGrandpaEquivocationProof, PezspSessionMembershipProof]>;
       /**
        * Generic tx
        **/
@@ -1560,14 +1560,14 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Total number of open requests (i.e. `HrmpOpenChannelRequestsList`) must be provided as
        * witness data.
        **/
-      hrmpCancelOpenRequest: AugmentedSubmittable<(channelId: PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId, openRequests: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId, u32]>;
+      hrmpCancelOpenRequest: AugmentedSubmittable<(channelId: PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId | { sender?: any; recipient?: any } | string | Uint8Array, openRequests: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId, u32]>;
       /**
        * Initiate unilateral closing of a channel. The origin must be either the sender or the
        * recipient in the channel being closed.
        * 
        * The closure can only happen on a session change.
        **/
-      hrmpCloseChannel: AugmentedSubmittable<(channelId: PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId) => SubmittableExtrinsic<ApiType>, [PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId]>;
+      hrmpCloseChannel: AugmentedSubmittable<(channelId: PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId | { sender?: any; recipient?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiTeyrchainPrimitivesPrimitivesHrmpChannelId]>;
       /**
        * Initiate opening a channel from a parachain to a given recipient with given channel
        * parameters.
@@ -1721,11 +1721,11 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Benchmark complexity considerations: O(index + weight_limit).
        **/
-      executeOverweight: AugmentedSubmittable<(messageOrigin: PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, page: u32 | AnyNumber | Uint8Array, index: u32 | AnyNumber | Uint8Array, weightLimit: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, u32, u32, PezspWeightsWeightV2Weight]>;
+      executeOverweight: AugmentedSubmittable<(messageOrigin: PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin | { Ump: any } | string | Uint8Array, page: u32 | AnyNumber | Uint8Array, index: u32 | AnyNumber | Uint8Array, weightLimit: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, u32, u32, PezspWeightsWeightV2Weight]>;
       /**
        * Remove a page which has no more messages remaining to be processed or is stale.
        **/
-      reapPage: AugmentedSubmittable<(messageOrigin: PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, pageIndex: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, u32]>;
+      reapPage: AugmentedSubmittable<(messageOrigin: PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin | { Ump: any } | string | Uint8Array, pageIndex: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeTeyrchainsInclusionAggregateMessageOrigin, u32]>;
       /**
        * Generic tx
        **/
@@ -1764,7 +1764,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - Storage: inserts one item, value size bounded by `MaxSignatories`, with a deposit
        * taken for its lifetime of `DepositBase + threshold * DepositFactor`.
        **/
-      approveAsMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], maybeTimepoint: Option<PezpalletMultisigTimepoint> | null | Uint8Array | PezpalletMultisigTimepoint, callHash: U8aFixed | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, Option<PezpalletMultisigTimepoint>, U8aFixed, PezspWeightsWeightV2Weight]>;
+      approveAsMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], maybeTimepoint: Option<PezpalletMultisigTimepoint> | null | Uint8Array | PezpalletMultisigTimepoint | { height?: any; index?: any } | string, callHash: U8aFixed | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, Option<PezpalletMultisigTimepoint>, U8aFixed, PezspWeightsWeightV2Weight]>;
       /**
        * Register approval for a dispatch to be made from a deterministic composite account if
        * approved by a total of `threshold - 1` of `other_signatories`.
@@ -1806,7 +1806,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - Storage: inserts one item, value size bounded by `MaxSignatories`, with a deposit
        * taken for its lifetime of `DepositBase + threshold * DepositFactor`.
        **/
-      asMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], maybeTimepoint: Option<PezpalletMultisigTimepoint> | null | Uint8Array | PezpalletMultisigTimepoint, call: Call | IMethod | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, Option<PezpalletMultisigTimepoint>, Call, PezspWeightsWeightV2Weight]>;
+      asMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], maybeTimepoint: Option<PezpalletMultisigTimepoint> | null | Uint8Array | PezpalletMultisigTimepoint | { height?: any; index?: any } | string, call: Call | IMethod | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, Option<PezpalletMultisigTimepoint>, Call, PezspWeightsWeightV2Weight]>;
       /**
        * Immediately dispatch a multi-signature call using a single approval from the caller.
        * 
@@ -1845,7 +1845,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - I/O: 1 read `O(S)`, one remove.
        * - Storage: removes one item.
        **/
-      cancelAsMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], timepoint: PezpalletMultisigTimepoint, callHash: U8aFixed | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, PezpalletMultisigTimepoint, U8aFixed]>;
+      cancelAsMulti: AugmentedSubmittable<(threshold: u16 | AnyNumber | Uint8Array, otherSignatories: Vec<AccountId32> | (AccountId32 | string | Uint8Array)[], timepoint: PezpalletMultisigTimepoint | { height?: any; index?: any } | string | Uint8Array, callHash: U8aFixed | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [u16, Vec<AccountId32>, PezpalletMultisigTimepoint, U8aFixed]>;
       /**
        * Poke the deposit reserved for an existing multisig operation.
        * 
@@ -1899,7 +1899,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Bonding extra funds implies an automatic payout of all pending rewards as well.
        * See `bond_extra_other` to bond pending rewards of `other` members.
        **/
-      bondExtra: AugmentedSubmittable<(extra: PezpalletNominationPoolsBondExtra) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsBondExtra]>;
+      bondExtra: AugmentedSubmittable<(extra: PezpalletNominationPoolsBondExtra | { FreeBalance: any } | { Rewards: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsBondExtra]>;
       /**
        * `origin` bonds funds from `extra` for some pool member `member` into their respective
        * pools.
@@ -1911,7 +1911,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * `other` members assuming set_claim_permission for the given member is
        * `PermissionlessCompound` or `PermissionlessAll`.
        **/
-      bondExtraOther: AugmentedSubmittable<(member: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, extra: PezpalletNominationPoolsBondExtra) => SubmittableExtrinsic<ApiType>, [MultiAddress, PezpalletNominationPoolsBondExtra]>;
+      bondExtraOther: AugmentedSubmittable<(member: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, extra: PezpalletNominationPoolsBondExtra | { FreeBalance: any } | { Rewards: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, PezpalletNominationPoolsBondExtra]>;
       /**
        * Chill on behalf of the pool.
        * 
@@ -2074,7 +2074,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * * `origin` - Member of a pool.
        * * `permission` - The permission to be applied.
        **/
-      setClaimPermission: AugmentedSubmittable<(permission: PezpalletNominationPoolsClaimPermission) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsClaimPermission]>;
+      setClaimPermission: AugmentedSubmittable<(permission: PezpalletNominationPoolsClaimPermission | 'Permissioned' | 'PermissionlessCompound' | 'PermissionlessWithdraw' | 'PermissionlessAll' | number | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsClaimPermission]>;
       /**
        * Set the commission of a pool.
        * Both a commission percentage and a commission payee must be provided in the `current`
@@ -2089,14 +2089,14 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Initial change rate is not bounded, whereas subsequent updates can only be more
        * restrictive than the current.
        **/
-      setCommissionChangeRate: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, changeRate: PezpalletNominationPoolsCommissionChangeRate) => SubmittableExtrinsic<ApiType>, [u32, PezpalletNominationPoolsCommissionChangeRate]>;
+      setCommissionChangeRate: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, changeRate: PezpalletNominationPoolsCommissionChangeRate | { maxIncrease?: any; minDelay?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [u32, PezpalletNominationPoolsCommissionChangeRate]>;
       /**
        * Set or remove a pool's commission claim permission.
        * 
        * Determines who can claim the pool's pending commission. Only the `Root` role of the pool
        * is able to configure commission claim permissions.
        **/
-      setCommissionClaimPermission: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, permission: Option<PezpalletNominationPoolsCommissionClaimPermission> | null | Uint8Array | PezpalletNominationPoolsCommissionClaimPermission) => SubmittableExtrinsic<ApiType>, [u32, Option<PezpalletNominationPoolsCommissionClaimPermission>]>;
+      setCommissionClaimPermission: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, permission: Option<PezpalletNominationPoolsCommissionClaimPermission> | null | Uint8Array | PezpalletNominationPoolsCommissionClaimPermission | { Permissionless: any } | { Account: any } | string) => SubmittableExtrinsic<ApiType>, [u32, Option<PezpalletNominationPoolsCommissionClaimPermission>]>;
       /**
        * Set the maximum commission of a pool.
        * 
@@ -2118,7 +2118,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * * `max_members_per_pool` - Set [`MaxPoolMembersPerPool`].
        * * `global_max_commission` - Set [`GlobalMaxCommission`].
        **/
-      setConfigs: AugmentedSubmittable<(minJoinBond: PezpalletNominationPoolsConfigOpU128, minCreateBond: PezpalletNominationPoolsConfigOpU128, maxPools: PezpalletNominationPoolsConfigOpU32, maxMembers: PezpalletNominationPoolsConfigOpU32, maxMembersPerPool: PezpalletNominationPoolsConfigOpU32, globalMaxCommission: PezpalletNominationPoolsConfigOpPerbill) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsConfigOpU128, PezpalletNominationPoolsConfigOpU128, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpPerbill]>;
+      setConfigs: AugmentedSubmittable<(minJoinBond: PezpalletNominationPoolsConfigOpU128 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, minCreateBond: PezpalletNominationPoolsConfigOpU128 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxPools: PezpalletNominationPoolsConfigOpU32 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxMembers: PezpalletNominationPoolsConfigOpU32 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxMembersPerPool: PezpalletNominationPoolsConfigOpU32 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, globalMaxCommission: PezpalletNominationPoolsConfigOpPerbill | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletNominationPoolsConfigOpU128, PezpalletNominationPoolsConfigOpU128, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpU32, PezpalletNominationPoolsConfigOpPerbill]>;
       /**
        * Set a new metadata for the pool.
        * 
@@ -2138,7 +2138,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 2. if the pool conditions to be open are NOT met (as described by `ok_to_be_open`), and
        * then the state of the pool can be permissionlessly changed to `Destroying`.
        **/
-      setState: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, state: PezpalletNominationPoolsPoolState) => SubmittableExtrinsic<ApiType>, [u32, PezpalletNominationPoolsPoolState]>;
+      setState: AugmentedSubmittable<(poolId: u32 | AnyNumber | Uint8Array, state: PezpalletNominationPoolsPoolState | 'Open' | 'Blocked' | 'Destroying' | number | Uint8Array) => SubmittableExtrinsic<ApiType>, [u32, PezpalletNominationPoolsPoolState]>;
       /**
        * Unbond up to `unbonding_points` of the `member_account`'s funds from the pool. It
        * implicitly collects the rewards one last time, since not doing so would mean some
@@ -2285,7 +2285,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
       /**
        * Enter the paras inherent. This will process bitfields and backed candidates.
        **/
-      enter: AugmentedSubmittable<(data: PezkuwiPrimitivesVstagingInherentData) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesVstagingInherentData]>;
+      enter: AugmentedSubmittable<(data: PezkuwiPrimitivesVstagingInherentData | { bitfields?: any; backedCandidates?: any; disputes?: any; parentHeader?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesVstagingInherentData]>;
       /**
        * Generic tx
        **/
@@ -2298,7 +2298,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * The dispatch origin of this call must be `AdminOrigin` for the given `key`. Values be
        * deleted by setting them to `None`.
        **/
-      setParameter: AugmentedSubmittable<(keyValue: StagingDicleRuntimeRuntimeParameters) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeRuntimeParameters]>;
+      setParameter: AugmentedSubmittable<(keyValue: StagingDicleRuntimeRuntimeParameters | { Inflation: any } | { Treasury: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeRuntimeParameters]>;
       /**
        * Generic tx
        **/
@@ -2371,7 +2371,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Includes a statement for a PVF pre-checking vote. Potentially, finalizes the vote and
        * enacts the results if that was the last vote before achieving the supermajority.
        **/
-      includePvfCheckStatement: AugmentedSubmittable<(stmt: PezkuwiPrimitivesV8PvfCheckStatement, signature: PezkuwiPrimitivesV8ValidatorAppSignature) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8PvfCheckStatement, PezkuwiPrimitivesV8ValidatorAppSignature]>;
+      includePvfCheckStatement: AugmentedSubmittable<(stmt: PezkuwiPrimitivesV8PvfCheckStatement | { accept?: any; subject?: any; sessionIndex?: any; validatorIndex?: any } | string | Uint8Array, signature: PezkuwiPrimitivesV8ValidatorAppSignature | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesV8PvfCheckStatement, PezkuwiPrimitivesV8ValidatorAppSignature]>;
       /**
        * Remove the validation code from the storage iff the reference count is 0.
        * 
@@ -2406,7 +2406,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
       [key: string]: SubmittableExtrinsicFunction<ApiType>;
     };
     parasSlashing: {
-      reportDisputeLostUnsigned: AugmentedSubmittable<(disputeProof: PezkuwiPrimitivesVstagingDisputeProof, keyOwnerProof: PezspSessionMembershipProof) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesVstagingDisputeProof, PezspSessionMembershipProof]>;
+      reportDisputeLostUnsigned: AugmentedSubmittable<(disputeProof: PezkuwiPrimitivesVstagingDisputeProof | { timeSlot?: any; kind?: any; validatorIndex?: any; validatorId?: any } | string | Uint8Array, keyOwnerProof: PezspSessionMembershipProof | { session?: any; trieNodes?: any; validatorCount?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezkuwiPrimitivesVstagingDisputeProof, PezspSessionMembershipProof]>;
       /**
        * Generic tx
        **/
@@ -2465,7 +2465,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - `delay`: The announcement period required of the initial proxy. Will generally be
        * zero.
        **/
-      addProxy: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u32]>;
+      addProxy: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number | Uint8Array, delay: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u32]>;
       /**
        * Publish the hash of a proxy-call that will be made in the future.
        * 
@@ -2504,7 +2504,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Fails if there are insufficient funds to pay for deposit.
        **/
-      createPure: AugmentedSubmittable<(proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 | AnyNumber | Uint8Array, index: u16 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [DicleRuntimeConstantsProxyProxyType, u32, u16]>;
+      createPure: AugmentedSubmittable<(proxyType: DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number | Uint8Array, delay: u32 | AnyNumber | Uint8Array, index: u16 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [DicleRuntimeConstantsProxyProxyType, u32, u16]>;
       /**
        * Removes a previously spawned pure proxy.
        * 
@@ -2523,7 +2523,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * Fails with `NoPermission` in case the caller is not a previously created pure
        * account whose `create_pure` call has corresponding parameters.
        **/
-      killPure: AugmentedSubmittable<(spawner: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType, index: u16 | AnyNumber | Uint8Array, height: Compact<u32> | AnyNumber | Uint8Array, extIndex: Compact<u32> | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u16, Compact<u32>, Compact<u32>]>;
+      killPure: AugmentedSubmittable<(spawner: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number | Uint8Array, index: u16 | AnyNumber | Uint8Array, height: Compact<u32> | AnyNumber | Uint8Array, extIndex: Compact<u32> | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u16, Compact<u32>, Compact<u32>]>;
       /**
        * Poke / Adjust deposits made for proxies and announcements based on current values.
        * This can be used by accounts to possibly lower their locked amount.
@@ -2546,7 +2546,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - `force_proxy_type`: Specify the exact proxy type to be used and checked for this call.
        * - `call`: The call to be made by the `real` account.
        **/
-      proxy: AugmentedSubmittable<(real: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, forceProxyType: Option<DicleRuntimeConstantsProxyProxyType> | null | Uint8Array | DicleRuntimeConstantsProxyProxyType, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, Option<DicleRuntimeConstantsProxyProxyType>, Call]>;
+      proxy: AugmentedSubmittable<(real: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, forceProxyType: Option<DicleRuntimeConstantsProxyProxyType> | null | Uint8Array | DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, Option<DicleRuntimeConstantsProxyProxyType>, Call]>;
       /**
        * Dispatch the given `call` from an account that the sender is authorized for through
        * `add_proxy`.
@@ -2560,7 +2560,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - `force_proxy_type`: Specify the exact proxy type to be used and checked for this call.
        * - `call`: The call to be made by the `real` account.
        **/
-      proxyAnnounced: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, real: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, forceProxyType: Option<DicleRuntimeConstantsProxyProxyType> | null | Uint8Array | DicleRuntimeConstantsProxyProxyType, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, MultiAddress, Option<DicleRuntimeConstantsProxyProxyType>, Call]>;
+      proxyAnnounced: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, real: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, forceProxyType: Option<DicleRuntimeConstantsProxyProxyType> | null | Uint8Array | DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, MultiAddress, Option<DicleRuntimeConstantsProxyProxyType>, Call]>;
       /**
        * Remove the given announcement of a delegate.
        * 
@@ -2605,7 +2605,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - `proxy`: The account that the `caller` would like to remove as a proxy.
        * - `proxy_type`: The permissions currently enabled for the removed proxy account.
        **/
-      removeProxy: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType, delay: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u32]>;
+      removeProxy: AugmentedSubmittable<(delegate: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, proxyType: DicleRuntimeConstantsProxyProxyType | 'Any' | 'NonTransfer' | 'Governance' | 'Staking' | 'CancelProxy' | 'Auction' | 'Society' | 'NominationPools' | 'Spokesperson' | 'ParaRegistration' | number | Uint8Array, delay: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, DicleRuntimeConstantsProxyProxyType, u32]>;
       /**
        * Generic tx
        **/
@@ -2624,7 +2624,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * This call is intended for emergency use only and is guarded by the
        * [`Config::AdminOrigin`].
        **/
-      forceSetStage: AugmentedSubmittable<(stage: PezpalletRcMigratorMigrationStage) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorMigrationStage]>;
+      forceSetStage: AugmentedSubmittable<(stage: PezpalletRcMigratorMigrationStage | { Pending: any } | { MigrationPaused: any } | { Scheduled: any } | { WaitingForAh: any } | { WarmUp: any } | { Starting: any } | { PureProxyCandidatesMigrationInit: any } | { AccountsMigrationInit: any } | { AccountsMigrationOngoing: any } | { AccountsMigrationDone: any } | { MultisigMigrationInit: any } | { MultisigMigrationOngoing: any } | { MultisigMigrationDone: any } | { ClaimsMigrationInit: any } | { ClaimsMigrationOngoing: any } | { ClaimsMigrationDone: any } | { ProxyMigrationInit: any } | { ProxyMigrationProxies: any } | { ProxyMigrationAnnouncements: any } | { ProxyMigrationDone: any } | { PreimageMigrationInit: any } | { PreimageMigrationChunksOngoing: any } | { PreimageMigrationChunksDone: any } | { PreimageMigrationRequestStatusOngoing: any } | { PreimageMigrationRequestStatusDone: any } | { PreimageMigrationLegacyRequestStatusInit: any } | { PreimageMigrationLegacyRequestStatusOngoing: any } | { PreimageMigrationLegacyRequestStatusDone: any } | { PreimageMigrationDone: any } | { NomPoolsMigrationInit: any } | { NomPoolsMigrationOngoing: any } | { NomPoolsMigrationDone: any } | { VestingMigrationInit: any } | { VestingMigrationOngoing: any } | { VestingMigrationDone: any } | { DelegatedStakingMigrationInit: any } | { DelegatedStakingMigrationOngoing: any } | { DelegatedStakingMigrationDone: any } | { IndicesMigrationInit: any } | { IndicesMigrationOngoing: any } | { IndicesMigrationDone: any } | { ReferendaMigrationInit: any } | { ReferendaMigrationOngoing: any } | { ReferendaMigrationDone: any } | { BagsListMigrationInit: any } | { BagsListMigrationOngoing: any } | { BagsListMigrationDone: any } | { SchedulerMigrationInit: any } | { SchedulerMigrationOngoing: any } | { SchedulerAgendaMigrationOngoing: any } | { SchedulerMigrationDone: any } | { ConvictionVotingMigrationInit: any } | { ConvictionVotingMigrationOngoing: any } | { ConvictionVotingMigrationDone: any } | { BountiesMigrationInit: any } | { BountiesMigrationOngoing: any } | { BountiesMigrationDone: any } | { ChildBountiesMigrationInit: any } | { ChildBountiesMigrationOngoing: any } | { ChildBountiesMigrationDone: any } | { AssetRateMigrationInit: any } | { AssetRateMigrationOngoing: any } | { AssetRateMigrationDone: any } | { CrowdloanMigrationInit: any } | { CrowdloanMigrationOngoing: any } | { CrowdloanMigrationDone: any } | { TreasuryMigrationInit: any } | { TreasuryMigrationOngoing: any } | { TreasuryMigrationDone: any } | { RecoveryMigrationInit: any } | { RecoveryMigrationOngoing: any } | { RecoveryMigrationDone: any } | { SocietyMigrationInit: any } | { SocietyMigrationOngoing: any } | { SocietyMigrationDone: any } | { StakingMigrationInit: any } | { StakingMigrationOngoing: any } | { StakingMigrationDone: any } | { CoolOff: any } | { SignalMigrationFinish: any } | { MigrationDone: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorMigrationStage]>;
       /**
        * Pause the migration.
        **/
@@ -2666,7 +2666,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Read [`MigrationStage::Scheduled`] documentation for more details.
        **/
-      scheduleMigration: AugmentedSubmittable<(start: PezframeSupportScheduleDispatchTime, warmUp: PezframeSupportScheduleDispatchTime, coolOff: PezframeSupportScheduleDispatchTime, unsafeIgnoreStakingLockCheck: bool | boolean | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezframeSupportScheduleDispatchTime, PezframeSupportScheduleDispatchTime, PezframeSupportScheduleDispatchTime, bool]>;
+      scheduleMigration: AugmentedSubmittable<(start: PezframeSupportScheduleDispatchTime | { At: any } | { After: any } | string | Uint8Array, warmUp: PezframeSupportScheduleDispatchTime | { At: any } | { After: any } | string | Uint8Array, coolOff: PezframeSupportScheduleDispatchTime | { At: any } | { After: any } | string | Uint8Array, unsafeIgnoreStakingLockCheck: bool | boolean | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezframeSupportScheduleDispatchTime, PezframeSupportScheduleDispatchTime, PezframeSupportScheduleDispatchTime, bool]>;
       /**
        * XCM send call identical to the [`pallet_xcm::Pallet::send`] call but with the
        * [Config::SendXcm] router which will be able to send messages to the Asset Hub during
@@ -2678,7 +2678,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Can only be called by the `AdminOrigin`.
        **/
-      setAhUmpQueuePriority: AugmentedSubmittable<(updated: PezpalletRcMigratorQueuePriority) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorQueuePriority]>;
+      setAhUmpQueuePriority: AugmentedSubmittable<(updated: PezpalletRcMigratorQueuePriority | { Config: any } | { OverrideConfig: any } | { Disabled: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorQueuePriority]>;
       /**
        * Set the canceller account id.
        * 
@@ -2716,7 +2716,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * The round system ensures that signatures from older round cannot be reused.
        **/
-      voteManagerMultisig: AugmentedSubmittable<(payload: PezpalletRcMigratorManagerMultisigVote, sig: PezspRuntimeMultiSignature) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorManagerMultisigVote, PezspRuntimeMultiSignature]>;
+      voteManagerMultisig: AugmentedSubmittable<(payload: PezpalletRcMigratorManagerMultisigVote | { who?: any; call?: any; round?: any } | string | Uint8Array, sig: PezspRuntimeMultiSignature | { Ed25519: any } | { Sr25519: any } | { Ecdsa: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletRcMigratorManagerMultisigVote, PezspRuntimeMultiSignature]>;
       /**
        * Generic tx
        **/
@@ -2964,7 +2964,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Emits `Submitted`.
        **/
-      submit: AugmentedSubmittable<(proposalOrigin: StagingDicleRuntimeOriginCaller, proposal: PezframeSupportPreimagesBounded, enactmentMoment: PezframeSupportScheduleDispatchTime) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, PezframeSupportPreimagesBounded, PezframeSupportScheduleDispatchTime]>;
+      submit: AugmentedSubmittable<(proposalOrigin: StagingDicleRuntimeOriginCaller | { system: any } | { Origins: any } | { ParachainsOrigin: any } | { XcmPallet: any } | string | Uint8Array, proposal: PezframeSupportPreimagesBounded | { Legacy: any } | { Inline: any } | { Lookup: any } | string | Uint8Array, enactmentMoment: PezframeSupportScheduleDispatchTime | { At: any } | { After: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, PezframeSupportPreimagesBounded, PezframeSupportScheduleDispatchTime]>;
       /**
        * Generic tx
        **/
@@ -3181,7 +3181,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - `O(1)`. Actual cost depends on the number of length of `T::Keys::key_ids()` which is
        * fixed.
        **/
-      setKeys: AugmentedSubmittable<(keys: StagingDicleRuntimeSessionKeys, proof: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeSessionKeys, Bytes]>;
+      setKeys: AugmentedSubmittable<(keys: StagingDicleRuntimeSessionKeys | { grandpa?: any; babe?: any; paraValidator?: any; paraAssignment?: any; authorityDiscovery?: any; beefy?: any } | string | Uint8Array, proof: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeSessionKeys, Bytes]>;
       /**
        * Generic tx
        **/
@@ -3452,7 +3452,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * unless the `origin` falls below _existential deposit_ (or equal to 0) and gets removed
        * as dust.
        **/
-      bond: AugmentedSubmittable<(value: Compact<u128> | AnyNumber | Uint8Array, payee: PezpalletStakingRewardDestination) => SubmittableExtrinsic<ApiType>, [Compact<u128>, PezpalletStakingRewardDestination]>;
+      bond: AugmentedSubmittable<(value: Compact<u128> | AnyNumber | Uint8Array, payee: PezpalletStakingRewardDestination | { Staked: any } | { Stash: any } | { Controller: any } | { Account: any } | { None: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Compact<u128>, PezpalletStakingRewardDestination]>;
       /**
        * Add some extra amount that have appeared in the stash `free_balance` into the balance up
        * for staking.
@@ -3744,7 +3744,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * ledger associated with the stash. If the input parameters are not set, the ledger will
        * be reset values from on-chain state.
        **/
-      restoreLedger: AugmentedSubmittable<(stash: AccountId32 | string | Uint8Array, maybeController: Option<AccountId32> | null | Uint8Array | AccountId32 | string, maybeTotal: Option<u128> | null | Uint8Array | u128 | AnyNumber, maybeUnlocking: Option<Vec<PezpalletStakingUnlockChunk>> | null | Uint8Array | Vec<PezpalletStakingUnlockChunk> | (PezpalletStakingUnlockChunk)[]) => SubmittableExtrinsic<ApiType>, [AccountId32, Option<AccountId32>, Option<u128>, Option<Vec<PezpalletStakingUnlockChunk>>]>;
+      restoreLedger: AugmentedSubmittable<(stash: AccountId32 | string | Uint8Array, maybeController: Option<AccountId32> | null | Uint8Array | AccountId32 | string, maybeTotal: Option<u128> | null | Uint8Array | u128 | AnyNumber, maybeUnlocking: Option<Vec<PezpalletStakingUnlockChunk>> | null | Uint8Array | Vec<PezpalletStakingUnlockChunk> | (PezpalletStakingUnlockChunk | { value?: any; era?: any } | string | Uint8Array)[]) => SubmittableExtrinsic<ApiType>, [AccountId32, Option<AccountId32>, Option<u128>, Option<Vec<PezpalletStakingUnlockChunk>>]>;
       /**
        * Scale up the ideal number of validators by a factor up to maximum of
        * `ElectionProviderBase::MaxWinners`.
@@ -3799,7 +3799,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * - Writes are limited to the `origin` account key.
        * ---------
        **/
-      setPayee: AugmentedSubmittable<(payee: PezpalletStakingRewardDestination) => SubmittableExtrinsic<ApiType>, [PezpalletStakingRewardDestination]>;
+      setPayee: AugmentedSubmittable<(payee: PezpalletStakingRewardDestination | { Staked: any } | { Stash: any } | { Controller: any } | { Account: any } | { None: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletStakingRewardDestination]>;
       /**
        * Update the various staking configurations .
        * 
@@ -3819,7 +3819,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * NOTE: Existing nominators and validators will not be affected by this update.
        * to kick people under the new limits, `chill_other` should be called.
        **/
-      setStakingConfigs: AugmentedSubmittable<(minNominatorBond: PezpalletStakingPezpalletConfigOpU128, minValidatorBond: PezpalletStakingPezpalletConfigOpU128, maxNominatorCount: PezpalletStakingPezpalletConfigOpU32, maxValidatorCount: PezpalletStakingPezpalletConfigOpU32, chillThreshold: PezpalletStakingPezpalletConfigOpPercent, minCommission: PezpalletStakingPezpalletConfigOpPerbill, maxStakedRewards: PezpalletStakingPezpalletConfigOpPercent) => SubmittableExtrinsic<ApiType>, [PezpalletStakingPezpalletConfigOpU128, PezpalletStakingPezpalletConfigOpU128, PezpalletStakingPezpalletConfigOpU32, PezpalletStakingPezpalletConfigOpU32, PezpalletStakingPezpalletConfigOpPercent, PezpalletStakingPezpalletConfigOpPerbill, PezpalletStakingPezpalletConfigOpPercent]>;
+      setStakingConfigs: AugmentedSubmittable<(minNominatorBond: PezpalletStakingPezpalletConfigOpU128 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, minValidatorBond: PezpalletStakingPezpalletConfigOpU128 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxNominatorCount: PezpalletStakingPezpalletConfigOpU32 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxValidatorCount: PezpalletStakingPezpalletConfigOpU32 | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, chillThreshold: PezpalletStakingPezpalletConfigOpPercent | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, minCommission: PezpalletStakingPezpalletConfigOpPerbill | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array, maxStakedRewards: PezpalletStakingPezpalletConfigOpPercent | { Noop: any } | { Set: any } | { Remove: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletStakingPezpalletConfigOpU128, PezpalletStakingPezpalletConfigOpU128, PezpalletStakingPezpalletConfigOpU32, PezpalletStakingPezpalletConfigOpU32, PezpalletStakingPezpalletConfigOpPercent, PezpalletStakingPezpalletConfigOpPerbill, PezpalletStakingPezpalletConfigOpPercent]>;
       /**
        * Sets the ideal number of validators.
        * 
@@ -3869,7 +3869,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * The dispatch origin for this call must be _Signed_ by the controller, not the stash.
        **/
-      validate: AugmentedSubmittable<(prefs: PezpalletStakingValidatorPrefs) => SubmittableExtrinsic<ApiType>, [PezpalletStakingValidatorPrefs]>;
+      validate: AugmentedSubmittable<(prefs: PezpalletStakingValidatorPrefs | { commission?: any; blocked?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletStakingValidatorPrefs]>;
       /**
        * Remove any unlocked chunks from the `unlocking` queue from our management.
        * 
@@ -3909,8 +3909,8 @@ declare module '@pezkuwi/api-base/types/submittable' {
       /**
        * Allows governance to force set the operating mode of the pallet.
        **/
-      setMode: AugmentedSubmittable<(mode: PezpalletStakingAsyncAhClientOperatingMode) => SubmittableExtrinsic<ApiType>, [PezpalletStakingAsyncAhClientOperatingMode]>;
-      validatorSet: AugmentedSubmittable<(report: PezpalletStakingAsyncRcClientValidatorSetReport) => SubmittableExtrinsic<ApiType>, [PezpalletStakingAsyncRcClientValidatorSetReport]>;
+      setMode: AugmentedSubmittable<(mode: PezpalletStakingAsyncAhClientOperatingMode | 'Passive' | 'Buffered' | 'Active' | number | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletStakingAsyncAhClientOperatingMode]>;
+      validatorSet: AugmentedSubmittable<(report: PezpalletStakingAsyncRcClientValidatorSetReport | { newValidatorSet?: any; id?: any; pruneUpTo?: any; leftover?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [PezpalletStakingAsyncRcClientValidatorSetReport]>;
       /**
        * Generic tx
        **/
@@ -4117,7 +4117,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * Emits [`Event::AssetSpendApproved`] if successful.
        **/
-      spend: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset, amount: Compact<u128> | AnyNumber | Uint8Array, beneficiary: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, validFrom: Option<u32> | null | Uint8Array | u32 | AnyNumber) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, Compact<u128>, XcmVersionedLocation, Option<u32>]>;
+      spend: AugmentedSubmittable<(assetKind: PezkuwiRuntimeCommonImplsVersionedLocatableAsset | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, amount: Compact<u128> | AnyNumber | Uint8Array, beneficiary: XcmVersionedLocation | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, validFrom: Option<u32> | null | Uint8Array | u32 | AnyNumber) => SubmittableExtrinsic<ApiType>, [PezkuwiRuntimeCommonImplsVersionedLocatableAsset, Compact<u128>, XcmVersionedLocation, Option<u32>]>;
       /**
        * Propose and approve a spend of treasury funds.
        * 
@@ -4224,7 +4224,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * ## Complexity
        * - O(1).
        **/
-      dispatchAs: AugmentedSubmittable<(asOrigin: StagingDicleRuntimeOriginCaller, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, Call]>;
+      dispatchAs: AugmentedSubmittable<(asOrigin: StagingDicleRuntimeOriginCaller | { system: any } | { Origins: any } | { ParachainsOrigin: any } | { XcmPallet: any } | string | Uint8Array, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, Call]>;
       /**
        * Dispatches a function call with a provided origin.
        * 
@@ -4232,7 +4232,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * The dispatch origin for this call must be _Root_.
        **/
-      dispatchAsFallible: AugmentedSubmittable<(asOrigin: StagingDicleRuntimeOriginCaller, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, Call]>;
+      dispatchAsFallible: AugmentedSubmittable<(asOrigin: StagingDicleRuntimeOriginCaller | { system: any } | { Origins: any } | { ParachainsOrigin: any } | { XcmPallet: any } | string | Uint8Array, call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [StagingDicleRuntimeOriginCaller, Call]>;
       /**
        * Send a batch of dispatch calls.
        * Unlike `batch`, it allows errors and won't interrupt.
@@ -4283,7 +4283,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * 
        * The dispatch origin for this call must be _Root_.
        **/
-      withWeight: AugmentedSubmittable<(call: Call | IMethod | string | Uint8Array, weight: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [Call, PezspWeightsWeightV2Weight]>;
+      withWeight: AugmentedSubmittable<(call: Call | IMethod | string | Uint8Array, weight: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Call, PezspWeightsWeightV2Weight]>;
       /**
        * Generic tx
        **/
@@ -4315,7 +4315,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * ## Complexity
        * - `O(1)`.
        **/
-      forceVestedTransfer: AugmentedSubmittable<(source: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, target: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, schedule: PezpalletVestingVestingInfo) => SubmittableExtrinsic<ApiType>, [MultiAddress, MultiAddress, PezpalletVestingVestingInfo]>;
+      forceVestedTransfer: AugmentedSubmittable<(source: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, target: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, schedule: PezpalletVestingVestingInfo | { locked?: any; perBlock?: any; startingBlock?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, MultiAddress, PezpalletVestingVestingInfo]>;
       /**
        * Merge two vesting schedules together, creating a new vesting schedule that unlocks over
        * the highest possible start and end blocks. If both schedules have already started the
@@ -4367,7 +4367,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * ## Complexity
        * - `O(1)`.
        **/
-      vestedTransfer: AugmentedSubmittable<(target: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, schedule: PezpalletVestingVestingInfo) => SubmittableExtrinsic<ApiType>, [MultiAddress, PezpalletVestingVestingInfo]>;
+      vestedTransfer: AugmentedSubmittable<(target: MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array, schedule: PezpalletVestingVestingInfo | { locked?: any; perBlock?: any; startingBlock?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [MultiAddress, PezpalletVestingVestingInfo]>;
       /**
        * Unlock any vested funds of a `target` account.
        * 
@@ -4426,7 +4426,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
       [key: string]: SubmittableExtrinsicFunction<ApiType>;
     };
     whitelist: {
-      dispatchWhitelistedCall: AugmentedSubmittable<(callHash: H256 | string | Uint8Array, callEncodedLen: u32 | AnyNumber | Uint8Array, callWeightWitness: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [H256, u32, PezspWeightsWeightV2Weight]>;
+      dispatchWhitelistedCall: AugmentedSubmittable<(callHash: H256 | string | Uint8Array, callEncodedLen: u32 | AnyNumber | Uint8Array, callWeightWitness: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [H256, u32, PezspWeightsWeightV2Weight]>;
       dispatchWhitelistedCallWithPreimage: AugmentedSubmittable<(call: Call | IMethod | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Call]>;
       removeWhitelistedCall: AugmentedSubmittable<(callHash: H256 | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [H256]>;
       whitelistCall: AugmentedSubmittable<(callHash: H256 | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [H256]>;
@@ -4469,7 +4469,7 @@ declare module '@pezkuwi/api-base/types/submittable' {
        * the maximum amount of weight that the message could take to be executed, then no
        * execution attempt will be made.
        **/
-      execute: AugmentedSubmittable<(message: XcmVersionedXcm | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight) => SubmittableExtrinsic<ApiType>, [XcmVersionedXcm, PezspWeightsWeightV2Weight]>;
+      execute: AugmentedSubmittable<(message: XcmVersionedXcm | { V3: any } | { V4: any } | { V5: any } | string | Uint8Array, maxWeight: PezspWeightsWeightV2Weight | { refTime?: any; proofSize?: any } | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [XcmVersionedXcm, PezspWeightsWeightV2Weight]>;
       /**
        * Set a safe XCM version (the version that XCM should be encoded with if the most recent
        * version a destination can accept is unknown).
