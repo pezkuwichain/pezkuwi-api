@@ -1760,7 +1760,7 @@ declare module '@pezkuwi/api-base/types/storage' {
       /**
        * All unapplied slashes that are queued for later.
        **/
-      unappliedSlashes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: ITuple<[AccountId32, Perbill, u32]> | string | Uint8Array) => Observable<Option<PezpalletStakingAsyncUnappliedSlash>>, [u32, ITuple<[AccountId32, Perbill, u32]>]> & QueryableStorageEntry<ApiType, [u32, ITuple<[AccountId32, Perbill, u32]>]>;
+      unappliedSlashes: AugmentedQuery<ApiType, (arg1: u32 | AnyNumber | Uint8Array, arg2: ITuple<[AccountId32, Perbill, u32]> | [AccountId32 | string | Uint8Array, Perbill | AnyNumber | Uint8Array, u32 | AnyNumber | Uint8Array]) => Observable<Option<PezpalletStakingAsyncUnappliedSlash>>, [u32, ITuple<[AccountId32, Perbill, u32]>]> & QueryableStorageEntry<ApiType, [u32, ITuple<[AccountId32, Perbill, u32]>]>;
       /**
        * The ideal number of active validators.
        **/

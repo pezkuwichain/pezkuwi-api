@@ -47,7 +47,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Amounts currently reserved in the accounts of the bidders currently winning
        * (sub-)ranges.
        **/
-      reservedAmounts: AugmentedQuery<ApiType, (arg: ITuple<[AccountId32, u32]> | string | Uint8Array) => Observable<Option<u128>>, [ITuple<[AccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[AccountId32, u32]>]>;
+      reservedAmounts: AugmentedQuery<ApiType, (arg: ITuple<[AccountId32, u32]> | [AccountId32 | string | Uint8Array, u32 | AnyNumber | Uint8Array]) => Observable<Option<u128>>, [ITuple<[AccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[AccountId32, u32]>]>;
       /**
        * The winning bids for each of the 10 ranges at each sample in the final Ending Period of
        * the current auction. The map's key is the 0-based index into the Sample Size. The
@@ -1916,7 +1916,7 @@ declare module '@pezkuwi/api-base/types/storage' {
        * Records information about the maximum slash of a stash within a slashing span,
        * as well as how much reward has been paid out.
        **/
-      spanSlash: AugmentedQuery<ApiType, (arg: ITuple<[AccountId32, u32]> | string | Uint8Array) => Observable<PezpalletStakingSlashingSpanRecord>, [ITuple<[AccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[AccountId32, u32]>]>;
+      spanSlash: AugmentedQuery<ApiType, (arg: ITuple<[AccountId32, u32]> | [AccountId32 | string | Uint8Array, u32 | AnyNumber | Uint8Array]) => Observable<PezpalletStakingSlashingSpanRecord>, [ITuple<[AccountId32, u32]>]> & QueryableStorageEntry<ApiType, [ITuple<[AccountId32, u32]>]>;
       /**
        * All unapplied slashes that are queued for later.
        **/

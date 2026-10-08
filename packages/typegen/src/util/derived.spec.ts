@@ -55,4 +55,20 @@ describe('getSimilarTypes', (): void => {
   } & Struct>`
     ]);
   });
+
+  it('keeps the array input for vectors of accounts and addresses', (): void => {
+    expect(getSimilarTypes(registry, {}, 'Vec<AccountId32>', mockImports)).toEqual([
+      'Vec<AccountId32>',
+      '(AccountId32 | string | Uint8Array)[]'
+    ]);
+    expect(getSimilarTypes(registry, {}, 'Vec<MultiAddress>', mockImports)).toEqual([
+      'Vec<MultiAddress>',
+      '(MultiAddress | AccountId | AccountIndex | Address | LookupSource | string | Uint8Array)[]'
+    ]);
+  });
+
+  it('still widens the account and address lookup types themselves', (): void => {
+    expect(getSimilarTypes(registry, {}, 'PezspCoreCryptoAccountId32', mockImports)).toEqual(['PezspCoreCryptoAccountId32', 'string', 'Uint8Array']);
+    expect(getSimilarTypes(registry, {}, 'PezspRuntimeMultiAddress', mockImports)).toEqual(['PezspRuntimeMultiAddress', 'AccountId', 'AccountIndex', 'Address', 'LookupSource', 'string', 'Uint8Array']);
+  });
 });
