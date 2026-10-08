@@ -9,13 +9,13 @@ import type { HexString } from '@pezkuwi/util/types';
 
 import { parse, type Spec } from 'comment-parser';
 import fs from 'node:fs';
-import path, { dirname, resolve } from 'node:path';
+import path, { resolve } from 'node:path';
 import process from 'node:process';
-import { fileURLToPath } from 'node:url';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { derive } from '@pezkuwi/api-derive';
+import { packageInfo as derivePackageInfo } from '@pezkuwi/api-derive/packageInfo';
 import { Metadata, TypeRegistry, Vec } from '@pezkuwi/types';
 import * as definitions from '@pezkuwi/types/interfaces/definitions';
 import { getStorage as getBizinikiwiStorage } from '@pezkuwi/types/metadata/decorate/storage/getStorage';
@@ -564,17 +564,26 @@ function addErrors (runtimeDesc: string, { lookup, pallets }: MetadataLatest): s
   });
 }
 
-function getDependencyBasePath (moduleName: string): string {
-  const modulePath = import.meta.resolve(moduleName);
+/**
+ * The directory of the installed @pezkuwi/api-derive modules: the package root
+ * for ESM, cjs/ for CommonJS. Taken from its packageInfo, which the build
+ * fills for each format; import.meta.resolve is not valid in the CJS output.
+ */
+function getDeriveBasePath (): string {
+  if (derivePackageInfo.path === 'auto') {
+    throw new Error('Unable to locate the built @pezkuwi/api-derive modules; run this from an installed @pezkuwi/typegen');
+  }
 
-  return resolve(dirname(fileURLToPath(modulePath)));
+  return resolve(
+    derivePackageInfo.type === 'esm'
+      ? decodeURIComponent(derivePackageInfo.path)
+      : derivePackageInfo.path
+  );
 }
-
-const BASE_DERIVE_PATH = getDependencyBasePath('@pezkuwi/api-derive');
 
 // It finds all typescript file paths withing a given derive module.
 const obtainDeriveFiles = (deriveModule: string) => {
-  const filePath = `${BASE_DERIVE_PATH}/${deriveModule}`;
+  const filePath = `${getDeriveBasePath()}/${deriveModule}`;
   const files = fs.readdirSync(filePath);
 
   return files
@@ -646,7 +655,7 @@ const getDeriveDocs = (
   metadata: Record<string, Derive[]>,
   file: string
 ) => {
-  const filePath = `${BASE_DERIVE_PATH}/${file}`;
+  const filePath = `${getDeriveBasePath()}/${file}`;
   const deriveModule = file.split('/')[0];
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const comments = parse(fileContent);
@@ -735,6 +744,8 @@ function generateDerives () {
 
 /** @internal */
 function writeFile (name: string, ...chunks: any[]): void {
+  fs.mkdirSync(path.dirname(name), { recursive: true });
+
   const writeStream = fs.createWriteStream(name, { encoding: 'utf8', flags: 'w' });
 
   writeStream.on('finish', (): void => {
@@ -757,7 +768,7 @@ async function mainPromise (): Promise<void> {
       type: 'string'
     },
     endpoint: {
-      description: 'The endpoint to connect to (e.g. wss://dicle-rpc.pezkuwi.io) or relative path to a file containing the JSON output of an RPC state_getMetadata call',
+      description: 'The endpoint to connect to (e.g. wss://rpc.pezkuwichain.io) or relative path to a file containing the JSON output of an RPC state_getMetadata call',
       type: 'string'
     },
     metadataVer: {

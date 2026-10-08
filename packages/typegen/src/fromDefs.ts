@@ -21,7 +21,7 @@ interface ArgV { input: string; package: string; endpoint?: string; }
 async function mainPromise (): Promise<void> {
   const { endpoint, input, package: pkg } = yargs(hideBin(process.argv)).strict().options({
     endpoint: {
-      description: 'The endpoint to connect to (e.g. wss://dicle-rpc.pezkuwi.io) or relative path to a file containing the JSON output of an RPC state_getMetadata call',
+      description: 'The endpoint to connect to (e.g. wss://rpc.pezkuwichain.io) or relative path to a file containing the JSON output of an RPC state_getMetadata call',
       type: 'string'
     },
     input: {
