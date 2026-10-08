@@ -5,7 +5,7 @@ import bizinikiwiData from '@pezkuwi/types-support/metadata/v14/bizinikiwi-hex';
 import dicleData from '@pezkuwi/types-support/metadata/v14/dicle-hex';
 import pezkuwiData from '@pezkuwi/types-support/metadata/v14/pezkuwi-hex';
 
-import { testMeta } from '../util/testUtil.js';
+import { testMeta } from '../test/testUtil.js';
 
 testMeta(14, {
   bizinikiwi: {
