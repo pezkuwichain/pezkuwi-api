@@ -37,7 +37,7 @@ export function main (): void {
     .options({
       ws: {
         default: 'ws://127.0.0.1:9944',
-        description: 'The API endpoint to connect to, e.g. wss://dicle-rpc.pezkuwi.io',
+        description: 'The API endpoint to connect to, e.g. wss://rpc.pezkuwichain.io',
         required: true,
         type: 'string'
       }
