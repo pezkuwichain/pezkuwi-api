@@ -26,10 +26,10 @@ export type DecoratedRpcSection<ApiType extends ApiTypes, Section> = {
   [M in keyof Section]: Section[M] extends AnyFunction
     ? RpcMethodResult<ApiType, Section[M]>
     : never
-}
+};
 
 export type RawRpcType<ApiType extends ApiTypes> = (method: string, ...params: unknown[]) => ApiType extends 'rxjs' ? Observable<AnyJson> : Promise<AnyJson>;
 
 export type DecoratedRpc<ApiType extends ApiTypes, AllSections> = {
   [S in keyof AllSections]: DecoratedRpcSection<ApiType, AllSections[S]>
-} & RawRpcType<ApiType>
+} & RawRpcType<ApiType>;

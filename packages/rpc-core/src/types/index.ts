@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // augmented, do an augmentation export
-export * from '@pezkuwi/rpc-core/types/jsonrpc';
+export type * from '@pezkuwi/rpc-core/types/jsonrpc';
 
 // normal exports
-export * from './base.js';
+export type * from './base.js';

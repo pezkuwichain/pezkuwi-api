@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import type { GenericEthereumAccountId as AccountId } from './AccountId.js';
 
 import { Raw } from '@pezkuwi/types-codec';

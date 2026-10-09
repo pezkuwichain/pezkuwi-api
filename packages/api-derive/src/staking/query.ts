@@ -62,7 +62,7 @@ function filterRewards (stashIds: AccountId[], eras: number[], claimedRewards: [
     const overviewPerEra = overviewData[id.toString()];
 
     return eras.map((era) => {
-      if (rewardsPerEra && rewardsPerEra.has(era) && overviewPerEra && overviewPerEra.has(era)) {
+      if (rewardsPerEra && rewardsPerEra.has(era) && overviewPerEra?.has(era)) {
         const rewards = rewardsPerEra.get(era) as unknown as u32[];
         const pageCount = overviewPerEra.get(era) as unknown as u32;
 
@@ -109,7 +109,7 @@ function getLedgers (api: DeriveApi, optIds: (Option<AccountId> | null)[], { wit
       let offset = -1;
 
       return optIds.map((o): Option<PezpalletStakingStakingLedger> =>
-        o && o.isSome
+        o?.isSome
           ? optLedgers[++offset] || emptyLed
           : emptyLed
       );

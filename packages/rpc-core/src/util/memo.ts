@@ -16,7 +16,7 @@ type ObsFn <T> = (...params: unknown[]) => Observable<T>;
 //   1. creates a memo of the inner fn -> Observable, removing when unsubscribed
 //   2. wraps the observable in a drr() (which includes an unsub delay)
 /** @internal */
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export function memo <T> (instanceId: string, inner: Function): Memoized<ObsFn<T>> {
   const options = { getInstanceId: () => instanceId };
   const cached = memoize(

@@ -14,7 +14,7 @@ interface VoteType {
   conviction?: number | ArrayElementType<typeof AllConvictions>;
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-wrapper-object-types
 type InputTypes = boolean | number | Boolean | Uint8Array | VoteType;
 
 // For votes, the topmost bit indicated aye/nay, the lower bits indicate the conviction

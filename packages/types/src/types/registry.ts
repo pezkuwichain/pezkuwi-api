@@ -19,21 +19,66 @@ export type { Registry, RegistryError, RegistryTypes } from '@pezkuwi/types-code
 
 export interface InterfaceTypes {
   // base codec
-  BitVec: BitVec, Bytes: Bytes, Json: Json, Null: Null, OptionBool: OptionBool, Raw: Raw, Text: Text, Type: Type,
+  BitVec: BitVec,
+  Bytes: Bytes,
+  Json: Json,
+  Null: Null,
+  OptionBool: OptionBool,
+  Raw: Raw,
+  Text: Text,
+  Type: Type,
   // base codec - upper variants
-  Bool: Bool, F32: F32, F64: F64, I128: I128, I16: I16, I256: I256, I32: I32, I64: I64, I8: I8, ISize: ISize, U128: U128, U16: U16, U256: U256, U32: U32, U64: U64, U8: U8, USize: USize,
+  Bool: Bool,
+  F32: F32,
+  F64: F64,
+  I128: I128,
+  I16: I16,
+  I256: I256,
+  I32: I32,
+  I64: I64,
+  I8: I8,
+  ISize: ISize,
+  U128: U128,
+  U16: U16,
+  U256: U256,
+  U32: U32,
+  U64: U64,
+  U8: U8,
+  USize: USize,
   // base codec - lower variants
-  bool: bool, f32: f32, f64: f64, i128: i128, i16: i16, i256: i256, i32: i32, i64: i64, i8: i8, isize: isize, u128: u128, u16: u16, u256: u256, u32: u32, u64: u64, u8: u8, usize: usize,
+  bool: bool,
+  f32: f32,
+  f64: f64,
+  i128: i128,
+  i16: i16,
+  i256: i256,
+  i32: i32,
+  i64: i64,
+  i8: i8,
+  isize: isize,
+  u128: u128,
+  u16: u16,
+  u256: u256,
+  u32: u32,
+  u64: u64,
+  u8: u8,
+  usize: usize,
   // extrinsic
-  Extrinsic: GenericExtrinsic, ExtrinsicEra: GenericExtrinsicEra, ExtrinsicPayload: GenericExtrinsicPayload, SignerPayload: GenericSignerPayload,
+  Extrinsic: GenericExtrinsic,
+  ExtrinsicEra: GenericExtrinsicEra,
+  ExtrinsicPayload: GenericExtrinsicPayload,
+  SignerPayload: GenericSignerPayload,
   // generic
   Call: GenericCall,
   // primitive
-  Data: Data, StorageKey: StorageKey,
+  Data: Data,
+  StorageKey: StorageKey,
   // metadata
-  Metadata: Metadata, PortableRegistry: PortableRegistry,
+  Metadata: Metadata,
+  PortableRegistry: PortableRegistry,
   // interfaces
-  HeaderPartial: HeaderPartial, RuntimeVersionPartial: RuntimeVersionPartial
+  HeaderPartial: HeaderPartial,
+  RuntimeVersionPartial: RuntimeVersionPartial
 }
 
 export type CodecHasher = (data: Uint8Array) => Uint8Array;

@@ -733,7 +733,7 @@ export class PortableRegistry extends Struct implements ILookup {
         }
       }
     } catch (error) {
-      throw new Error(`PortableRegistry: ${lookupIndex}${namespace ? ` (${namespace})` : ''}: Error extracting ${stringify(type)}: ${(error as Error).message}`);
+      throw new Error(`PortableRegistry: ${lookupIndex}${namespace ? ` (${namespace})` : ''}: Error extracting ${stringify(type)}: ${(error as Error).message}`, { cause: error });
     }
 
     return objectSpread({

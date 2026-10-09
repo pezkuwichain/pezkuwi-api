@@ -120,7 +120,7 @@ const infoMapping: Record<TypeDefInfo, (registry: Registry, value: TypeDef) => C
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     Clazz.prototype.toRawType = function (): string {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call
       return `Linkage<${this.next.toRawType(true)}>`;
     };
 
@@ -155,7 +155,6 @@ const infoMapping: Record<TypeDefInfo, (registry: Registry, value: TypeDef) => C
   [TypeDefInfo.Result]: (_registry: Registry, value: TypeDef): CodecClass<Codec> => {
     const [Ok, Err] = getTypeClassArray(value);
 
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     return Result.with({ Err, Ok });
   },
 
@@ -233,7 +232,7 @@ export function constructTypeClass<T extends Codec = Codec> (registry: Registry,
 
     return Type as CodecClass<T>;
   } catch (error) {
-    throw new Error(`Unable to construct class from ${stringify(typeDef)}: ${(error as Error).message}`);
+    throw new Error(`Unable to construct class from ${stringify(typeDef)}: ${(error as Error).message}`, { cause: error });
   }
 }
 

@@ -70,7 +70,7 @@ function initType<T extends Codec> (registry: Registry, Type: CodecClass, params
 // runtime error.
 export function createTypeUnsafe<T extends Codec = Codec, K extends string = string> (registry: Registry, type: K, params: unknown[] = [], options: CreateOptions = {}): T {
   let Clazz: CodecClass | null = null;
-  let firstError: Error | null = null;
+  let firstError: Error;
 
   try {
     Clazz = createClassUnsafe(registry, type);

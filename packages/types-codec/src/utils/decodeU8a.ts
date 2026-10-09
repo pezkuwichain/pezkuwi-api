@@ -55,7 +55,7 @@ export function decodeU8a <T extends Codec = Codec> (registry: Registry, result:
       i++;
     }
   } catch (error) {
-    throw new Error(formatFailure(registry, 'decodeU8a', result, error as Error, u8a.subarray(offset), i, count, Types[i], keys[i]));
+    throw new Error(formatFailure(registry, 'decodeU8a', result, error as Error, u8a.subarray(offset), i, count, Types[i], keys[i]), { cause: error });
   }
 
   return [result, offset];
@@ -85,7 +85,7 @@ export function decodeU8aStruct (registry: Registry, result: [string, Codec][], 
       i++;
     }
   } catch (error) {
-    throw new Error(formatFailure(registry, 'decodeU8aStruct', result, error as Error, u8a.subarray(offset), i, count, Types[i], keys[i]));
+    throw new Error(formatFailure(registry, 'decodeU8aStruct', result, error as Error, u8a.subarray(offset), i, count, Types[i], keys[i]), { cause: error });
   }
 
   return [result, offset];
@@ -116,7 +116,7 @@ export function decodeU8aVec <T extends Codec = Codec> (registry: Registry, resu
       i++;
     }
   } catch (error) {
-    throw new Error(formatFailure(registry, 'decodeU8aVec', result, error as Error, u8a.subarray(offset), i, count, Type));
+    throw new Error(formatFailure(registry, 'decodeU8aVec', result, error as Error, u8a.subarray(offset), i, count, Type), { cause: error });
   }
 
   return [offset, offset - startAt];

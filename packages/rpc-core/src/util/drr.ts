@@ -42,10 +42,10 @@ export function drr ({ delay, skipChange = false, skipTimeout = false }: Options
       skipChange
         ? tap(NOOP)
         : distinctUntilChanged<T>(CMP),
-      // eslint-disable-next-line deprecation/deprecation
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       publishReplay(1),
       skipTimeout
-        // eslint-disable-next-line deprecation/deprecation
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         ? refCount()
         : refCountDelay(delay)
     );

@@ -17,7 +17,7 @@ export type AugmentedCall<ApiType extends ApiTypes, F extends AnyFunction = (...
 
 // augmented interfaces
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface AugmentedCalls<ApiType extends ApiTypes> extends EmptyBase<ApiType> {
   // augmented
 }

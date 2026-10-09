@@ -122,8 +122,8 @@ function docsVecToMarkdown (docLines: Vec<Text>, indent = 0): string {
         ? `${md}\n\n` // empty line
         : /^[*-]/.test(docLine.trimStart()) && !md.endsWith('\n\n')
           ? `${md}\n\n${docLine}` // line calling for a preceding linebreak
-          : `${md} ${docLine.replace(/^#{1,3} /, '#### ')} `
-    , '')
+          : `${md} ${docLine.replace(/^#{1,3} /, '#### ')} `,
+    '')
     .replace(/#### <weight>/g, '<weight>')
     .replace(/<weight>(.|\n)*?<\/weight>/g, '')
     .replace(/#### Weight:/g, 'Weight:');
@@ -166,7 +166,6 @@ function renderPage (page: Page): string {
         .filter((key) => !['link', 'name'].includes(key))
         .forEach((bullet) => {
           md += `\n- **${bullet}**: ${
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             item[bullet] instanceof Vec
               ? docsVecToMarkdown(item[bullet], 2).toString()
               : item[bullet]
@@ -232,7 +231,6 @@ function addRpc (_runtimeDesc: string, rpcMethods?: string[]): string {
             }
 
             const args = method.params.map(({ isOptional, name, type }: DefinitionRpcParam): string => {
-              // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
               return name + (isOptional ? '?' : '') + ': `' + type + '`';
             }).join(', ');
             const type = '`' + method.type + '`';
@@ -311,7 +309,6 @@ function runtimeSections (registry: Registry) {
       .sort(([a], [b]) => a.localeCompare(b))
       .forEach(([methodName, { description, params, type }]): void => {
         const args = params.map(({ name, type }): string => {
-          // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
           return name + ': `' + type + '`';
         }).join(', ');
 
@@ -356,7 +353,7 @@ function addLegacyRuntime (_runtimeDesc: string, _registry: Registry, apis?: Api
                   const apiHash = blake2AsHex(apiName, 64);
                   const api = apis.find(([hash]) => hash === apiHash);
 
-                  if (!api || api[1] !== version) {
+                  if (api?.[1] !== version) {
                     return;
                   }
                 } else if (index) {
@@ -373,7 +370,6 @@ function addLegacyRuntime (_runtimeDesc: string, _registry: Registry, apis?: Api
                   .sort(([a], [b]) => a.localeCompare(b))
                   .forEach(([methodName, { description, params, type }]): void => {
                     const args = params.map(({ name, type }): string => {
-                      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
                       return name + ': `' + type + '`';
                     }).join(', ');
 
@@ -629,9 +625,9 @@ function extractDeriveExample (tags: Spec[]) {
       return;
     }
 
-    if (line.source.indexOf('```') !== -1 && !inCodeBlock.found) {
+    if (line.source.includes('```') && !inCodeBlock.found) {
       inCodeBlock.found = true;
-    } else if (line.source.indexOf('```') !== -1 && inCodeBlock.found) {
+    } else if (line.source.includes('```') && inCodeBlock.found) {
       inCodeBlock.done = true;
     }
 

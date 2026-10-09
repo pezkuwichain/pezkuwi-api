@@ -27,12 +27,10 @@ describe('GenericVote', (): void => {
     });
 
     it('has isYay for positive', (): void => {
-      // eslint-disable-next-line no-new-wrappers
       expect(new GenericVote(registry, true).isAye).toBe(true);
     });
 
     it('has isNay for negative', (): void => {
-      // eslint-disable-next-line no-new-wrappers
       expect(new GenericVote(registry, false).isNay).toBe(true);
     });
 

@@ -27,7 +27,7 @@ type Result = [
 function parseActive (id: ParaId, active: Active): DeriveTeyrchainActive | null {
   const found = active.find(([paraId]) => paraId === id);
 
-  if (found && found[1].isSome) {
+  if (found?.[1].isSome) {
     const [collatorId, retriable] = found[1].unwrap();
 
     return objectSpread<DeriveTeyrchainActive>(

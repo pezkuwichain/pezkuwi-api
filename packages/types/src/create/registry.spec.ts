@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import type { Codec, CodecClass } from '@pezkuwi/types-codec/types';
 
 import { DoNotConstruct, Struct, Text, U32 } from '@pezkuwi/types-codec';
@@ -30,7 +28,6 @@ describe('TypeRegistry', (): void => {
     const Type = registry.getOrUnknown('non-exist');
 
     expect(Type).toBeDefined();
-    // eslint-disable-next-line no-prototype-builtins
     expect(isChildClass(DoNotConstruct, Type)).toBe(true);
   });
 
@@ -72,7 +69,6 @@ describe('TypeRegistry', (): void => {
       const first = new Recursive(registry, { next: last });
 
       expect((first as any).next.isSome).toBe(true);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       expect((first as any).next.unwrap().next.isSome).toBe(false);
     });
 
@@ -153,9 +149,7 @@ describe('TypeRegistry', (): void => {
       });
 
       expect(struct instanceof Struct).toBe(true);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       expect(struct.foo.toNumber()).toEqual(42);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       expect(struct.bar.toString()).toEqual('testing');
     });
   });

@@ -25,20 +25,20 @@ export type { Signer, SignerResult } from '@pezkuwi/types/types';
 export { ApiBase } from '../base/index.js';
 
 // all starred
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/calls';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/consts';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/errors';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/events';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/storage';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api/types/submittable';
-// eslint-disable-next-line import/export
-export * from '@pezkuwi/api-base/types';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/calls';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/consts';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/errors';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/events';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/storage';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api/types/submittable';
+// eslint-disable-next-line import-x/export
+export type * from '@pezkuwi/api-base/types';
 
 // A smaller interface of ApiRx, used in derive and in SubmittableExtrinsic
 export interface ApiInterfaceRx extends ApiInterfaceBase {

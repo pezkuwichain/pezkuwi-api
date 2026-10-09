@@ -151,16 +151,8 @@ export abstract class Init<ApiType extends ApiTypes> extends Decorate<ApiType> {
 
     if (isUndefined(waiting)) {
       // nothing waiting, construct new
-      waiting = this.#waitingRegistries[key] = new Promise<VersionedRegistry<ApiType>>((resolve, reject): void => {
-        creator()
-          .then((registry): void => {
-            delete this.#waitingRegistries[key];
-            resolve(registry);
-          })
-          .catch((error): void => {
-            delete this.#waitingRegistries[key];
-            reject(error);
-          });
+      waiting = this.#waitingRegistries[key] = creator().finally((): void => {
+        delete this.#waitingRegistries[key];
       });
     }
 

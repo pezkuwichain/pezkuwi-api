@@ -6,7 +6,7 @@ import type { Server } from 'mock-socket';
 export type Global = typeof globalThis & {
   WebSocket: typeof WebSocket;
   fetch: any;
-}
+};
 
 export interface Mock {
   body: Record<string, Record<string, unknown>>;

@@ -29,7 +29,7 @@ interface StorageChangeSetJSON {
 type MemoizedRpcInterfaceMethod = Memoized<RpcInterfaceMethod> & {
   raw: Memoized<RpcInterfaceMethod>;
   meta: DefinitionRpc;
-}
+};
 
 interface Options {
   isPedantic?: boolean;
@@ -295,11 +295,11 @@ export class RpcCore {
           }
         };
       }).pipe(
-        // eslint-disable-next-line deprecation/deprecation
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
         publishReplay(1), // create a Replay(1)
         isDelayed
           ? refCountDelay() // Unsubscribe after delay
-          // eslint-disable-next-line deprecation/deprecation
+          // eslint-disable-next-line @typescript-eslint/no-deprecated
           : refCount()
       );
     };
@@ -418,7 +418,7 @@ export class RpcCore {
         ? this._formatStorageSet(registry, (result as StorageChangeSetJSON).block, keys, (result as StorageChangeSetJSON).changes)
         : registry.createType('StorageChangeSet', result);
     } else if (rpc.type === 'Vec<StorageChangeSet>') {
-      const jsonSet = (result as StorageChangeSetJSON[]);
+      const jsonSet = result as StorageChangeSetJSON[];
       const count = jsonSet.length;
       const mapped = new Array<[Hash, Codec[]]>(count);
 
@@ -529,7 +529,7 @@ export class RpcCore {
             : input
       ], { blockHash, isFallback: isEmpty && !!meta.fallback, isOptional: meta.modifier.isOptional, isPedantic: this.#isPedantic && !meta.modifier.isOptional });
     } catch (error) {
-      throw new Error(`Unable to decode storage ${key.section || 'unknown'}.${key.method || 'unknown'}:${entryNum}: ${(error as Error).message}`);
+      throw new Error(`Unable to decode storage ${key.section || 'unknown'}.${key.method || 'unknown'}:${entryNum}: ${(error as Error).message}`, { cause: error });
     }
   }
 }

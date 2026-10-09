@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import type { RuntimeVersion } from './types.js';
 
 import rpc from '@pezkuwi/types-support/json/RuntimeVersion.002.json' with { type: 'json' };

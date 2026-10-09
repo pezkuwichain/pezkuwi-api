@@ -22,7 +22,7 @@ interface AccountType { isFrameAccountData: boolean }
 
 type DeriveCustomAccount = DeriveApi['derive'] & Record<string, {
   customAccount?: DeriveApi['query']['balances']['account']
-}>
+}>;
 
 function zeroBalance (api: DeriveApi) {
   return api.registry.createType('Balance');
@@ -145,7 +145,7 @@ function querySystemAccount (api: DeriveApi, accountId: AccountId): Observable<R
       const isFrameType = !!(infoOrTuple as PezframeSystemAccountInfo).data.frozen;
 
       if (isFrameType) {
-        const { flags, free, frozen, reserved } = (data as unknown as PezpalletBalancesAccountData);
+        const { flags, free, frozen, reserved } = data as unknown as PezpalletBalancesAccountData;
 
         return [
           nonce,

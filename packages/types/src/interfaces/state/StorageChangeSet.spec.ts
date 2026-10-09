@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import { TypeRegistry } from '@pezkuwi/types/create';
 import json from '@pezkuwi/types-support/json/StorageChangeSet.001.json' with { type: 'json' };
 

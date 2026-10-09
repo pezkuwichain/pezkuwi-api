@@ -18,7 +18,7 @@ interface AbiJson {
   [key: string]: unknown;
 }
 
-type EventOf<M> = M extends {spec: { events: Vec<infer E>}} ? E : never
+type EventOf<M> = M extends { spec: { events: Vec<infer E> } } ? E : never;
 export type ContractMetadataSupported = ContractMetadataV4 | ContractMetadataV5 | ContractMetadataV6;
 type ContractEventSupported = EventOf<ContractMetadataSupported>;
 
@@ -87,7 +87,7 @@ function parseJson (json: Record<string, unknown>, chainProperties?: ChainProper
   const revive = isRevive(json);
   const typeName = revive ? 'ContractReviveProjectInfo' : 'ContractProjectInfo';
 
-  const info = registry.createType(typeName, json) as unknown as ContractProjectInfo;
+  const info = registry.createType(typeName, json);
   const metadata = getMetadata(registry, json as unknown as AbiJson);
   const lookup = registry.createType('PortableRegistry', { types: metadata.types }, true);
 

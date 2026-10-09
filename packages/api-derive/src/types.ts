@@ -8,18 +8,18 @@ import type { PezpalletBountiesBounty, PezpalletTreasuryProposal } from '@pezkuw
 import type { BN } from '@pezkuwi/util';
 import type { ExactDerive } from './derive.js';
 
-export * from './accounts/types.js';
-export * from './bagsList/types.js';
-export * from './balances/types.js';
-export * from './council/types.js';
-export * from './crowdloan/types.js';
-export * from './democracy/types.js';
-export * from './elections/types.js';
-export * from './session/types.js';
-export * from './society/types.js';
-export * from './staking/types.js';
-export * from './teyrchains/types.js';
-export * from './type/types.js';
+export type * from './accounts/types.js';
+export type * from './bagsList/types.js';
+export type * from './balances/types.js';
+export type * from './council/types.js';
+export type * from './crowdloan/types.js';
+export type * from './democracy/types.js';
+export type * from './elections/types.js';
+export type * from './session/types.js';
+export type * from './society/types.js';
+export type * from './staking/types.js';
+export type * from './teyrchains/types.js';
+export type * from './type/types.js';
 
 export interface DeriveApi extends ApiInterfaceRx {
   derive: ExactDerive;

@@ -251,7 +251,7 @@ export function createFunction (registry: Registry, itemFn: CreateItemFn, option
   }
 
   storageFn.keyPrefix = (...args: unknown[]): Uint8Array =>
-    (storageFn.iterKey && storageFn.iterKey(...args)) ||
+    (storageFn.iterKey?.(...args)) ||
     compactStripLength(storageFn())[1];
 
   return storageFn;

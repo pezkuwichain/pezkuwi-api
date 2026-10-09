@@ -76,7 +76,7 @@ describe('Type', (): void => {
         registry,
         new Text(registry, ' Box<Proposal> ')
       ).toString()
-    ).toEqual('Proposal'); // eslint-disable-line
+    ).toEqual('Proposal');
   });
 
   it('unwraps compact', (): void => {

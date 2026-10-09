@@ -175,7 +175,8 @@ export class MetadataVersioned extends Struct {
   public override toJSON (): Record<string, AnyJson> {
     // HACK(y): ensure that we apply the aliases if we have not done so already, this is
     // needed to ensure we have the correct overrides (which is only applied in toLatest)
-    // eslint-disable-next-line no-unused-expressions
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions -- the getter is read for its side effect
     this.asLatest;
 
     return super.toJSON();

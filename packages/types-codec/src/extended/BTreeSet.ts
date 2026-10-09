@@ -18,7 +18,7 @@ function decodeSetFromU8a<V extends Codec> (registry: Registry, ValClass: CodecC
   const [decodedLength] = decodeU8aVec(registry, result, u8a, offset, ValClass);
 
   for (let i = 0; i < count; i++) {
-    output.add(result[i] as unknown as V);
+    output.add(result[i]);
   }
 
   return [ValClass, output, decodedLength];

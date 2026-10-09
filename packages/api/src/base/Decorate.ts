@@ -56,7 +56,7 @@ const l = logger('api/init');
 let instanceCounter = 0;
 
 function getAtQueryFn<ApiType extends ApiTypes> (api: ApiDecoration<ApiType>, { method, section }: StorageEntry): AugmentedQuery<'rxjs', GenericStorageEntryFunction, AnyTuple> {
-  return assertReturn(api.rx.query[section] && api.rx.query[section][method], () => `query.${section}.${method} is not available in this version of the metadata`);
+  return assertReturn(api.rx.query[section]?.[method], () => `query.${section}.${method} is not available in this version of the metadata`);
 }
 
 export abstract class Decorate<ApiType extends ApiTypes> extends Events {
@@ -728,7 +728,6 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
     decorated.is = (other: IMethod<AnyTuple>) =>
       method.is(other);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return this._decorateFunctionMeta(method as unknown as MetaDecoration, decorated as unknown as MetaDecoration) as unknown as SubmittableExtrinsicFunction<ApiType>;
   }
 
@@ -760,13 +759,13 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
         map((api) => getAtQueryFn(api, creator)));
 
     // Disable this where it occurs for each field we are decorating
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
     const decorated: AugmentedQuery<'rxjs', GenericStorageEntryFunction, AnyTuple> & MetaDecoration = this._decorateStorageCall(creator, decorateMethod);
 
     decorated.creator = creator;
 
-    // eslint-disable-next-line deprecation/deprecation
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     decorated.at = decorateMethod((blockHash: Hash, ...args: unknown[]): Observable<Codec> =>
       getQueryAt(blockHash).pipe(
         switchMap((q) => q(...args))));
@@ -787,7 +786,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
     decorated.size = decorateMethod((...args: unknown[]): Observable<u64> =>
       this._rpcCore.state.getStorageSize(getArgs(args)));
 
-    // eslint-disable-next-line deprecation/deprecation
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     decorated.sizeAt = decorateMethod((blockHash: Hash | Uint8Array | string, ...args: unknown[]): Observable<u64> =>
       getQueryAt(blockHash).pipe(
         switchMap((q) =>
@@ -799,7 +798,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
         memo(this.#instanceId, (...args: unknown[]): Observable<[StorageKey, Codec][]> =>
           this._retrieveMapEntries(creator, null, args)));
 
-      // eslint-disable-next-line deprecation/deprecation
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       decorated.entriesAt = decorateMethod(
         memo(this.#instanceId, (blockHash: Hash | Uint8Array | string, ...args: unknown[]): Observable<[StorageKey, Codec][]> =>
           getQueryAt(blockHash).pipe(
@@ -813,7 +812,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
         memo(this.#instanceId, (...args: unknown[]): Observable<StorageKey[]> =>
           this._retrieveMapKeys(creator, null, args)));
 
-      // eslint-disable-next-line deprecation/deprecation
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       decorated.keysAt = decorateMethod(
         memo(this.#instanceId, (blockHash: Hash | Uint8Array | string, ...args: unknown[]): Observable<StorageKey[]> =>
           getQueryAt(blockHash).pipe(
@@ -833,7 +832,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
       );
     }
 
-    /* eslint-enable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
     return this._decorateFunctionMeta(creator as unknown as MetaDecoration, decorated) as unknown as QueryableStorageEntry<ApiType>;
   }
@@ -842,7 +841,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
     const getArgs = (args: unknown[]): unknown[] => extractStorageArgs(registry, creator, args);
 
     // Disable this where it occurs for each field we are decorating
-    /* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+    /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
     const decorated: AugmentedQuery<'rxjs', GenericStorageEntryFunction, AnyTuple> & MetaDecoration = decorateMethod((...args: unknown[]): Observable<Codec> =>
       this._rpcCore.state.getStorage(getArgs(args), blockHash));
@@ -893,7 +892,7 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
       );
     }
 
-    /* eslint-enable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment */
+    /* eslint-enable @typescript-eslint/no-unsafe-assignment */
 
     return this._decorateFunctionMeta(creator as unknown as MetaDecoration, decorated) as unknown as QueryableStorageEntry<ApiType>;
   }
@@ -924,6 +923,9 @@ export abstract class Decorate<ApiType extends ApiTypes> extends Events {
             // (anything after this will be added to a new queue)
             const calls = queue[queueIdx][1];
 
+            // The hole marks this queue as fired (see the check above);
+            // removing the entry instead would shift every later index.
+            // eslint-disable-next-line @typescript-eslint/no-array-delete
             delete queue[queueIdx];
 
             resolve(calls);

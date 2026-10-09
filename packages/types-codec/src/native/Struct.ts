@@ -77,7 +77,7 @@ function decodeStructFromObject (registry: Registry, [Types, keys]: Definition, 
         // ignore
       }
 
-      throw new Error(`Struct: failed on ${jsonKey}: ${type}:: ${(error as Error).message}`);
+      throw new Error(`Struct: failed on ${jsonKey}: ${type}:: ${(error as Error).message}`, { cause: error });
     }
   }
 

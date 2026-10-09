@@ -69,8 +69,8 @@ describe('RpcError', (): void => {
   });
 
   describe('stack traces', (): void => {
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    let captureStackTrace: (targetObject: Record<string, any>, constructorOpt?: Function | undefined) => void;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    let captureStackTrace: (targetObject: Record<string, any>, constructorOpt?: Function) => void;
 
     beforeEach((): void => {
       captureStackTrace = Error.captureStackTrace;

@@ -11,7 +11,7 @@ import { combineLatest, map, of } from 'rxjs';
 
 import { memo } from '../util/index.js';
 
-type Result = [Vec<PezpalletSocietyBid>, Option<AccountId> | undefined, Option<AccountId>, Option<AccountId>, u32 | undefined, BalanceOf]
+type Result = [Vec<PezpalletSocietyBid>, Option<AccountId> | undefined, Option<AccountId>, Option<AccountId>, u32 | undefined, BalanceOf];
 
 /**
  * @name info

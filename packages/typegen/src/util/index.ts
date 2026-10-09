@@ -1,9 +1,13 @@
 // Copyright 2017-2026 @pezkuwi/typegen authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+// docs.js exports only types, but registers the `docs` Handlebars partial
+// when loaded; the type-only re-export below does not load it.
+import './docs.js';
+
 export * from './assert.js';
 export * from './derived.js';
-export * from './docs.js';
+export type * from './docs.js';
 export * from './file.js';
 export * from './formatting.js';
 export * from './imports.js';

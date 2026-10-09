@@ -4,7 +4,6 @@
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import json1 from '@pezkuwi/types-support/json/EventRecord.001.json' with { type: 'json' };
 import json3 from '@pezkuwi/types-support/json/EventRecord.003.json' with { type: 'json' };

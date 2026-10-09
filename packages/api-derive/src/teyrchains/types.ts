@@ -8,11 +8,11 @@ import type { ITuple } from '@pezkuwi/types/types';
 export type ParaInfoResult = Option<ParaInfo>;
 export type PendingSwap = Option<ParaId>;
 export type Active = Vec<ITuple<[ParaId, Option<ITuple<[CollatorId, Retriable]>>]>>;
-export type RetryQueue = Vec<Vec<ITuple<[ParaId, CollatorId]>>>
-export type SelectedThreads = Vec<Vec<ITuple<[ParaId, CollatorId]>>>
+export type RetryQueue = Vec<Vec<ITuple<[ParaId, CollatorId]>>>;
+export type SelectedThreads = Vec<Vec<ITuple<[ParaId, CollatorId]>>>;
 export type Code = Bytes;
 export type Heads = Bytes;
-export type RelayDispatchQueue = Vec<UpwardMessage>
+export type RelayDispatchQueue = Vec<UpwardMessage>;
 export type RelayDispatchQueueSize = ITuple<[u32, u32]>;
 export type DidUpdate = Option<Vec<ParaId>>;
 

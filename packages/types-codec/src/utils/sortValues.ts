@@ -34,11 +34,10 @@ function isNumberLike (arg: SortArg): arg is BN | bigint | number {
 /** @internal */
 function sortArray (a: Uint8Array | Codec[] | number[], b: Uint8Array | Codec[] | number[]): number {
   // Vec, Tuple, Bytes etc.
-  let sortRes = 0;
   const minLen = Math.min(a.length, b.length);
 
   for (let i = 0; i < minLen; ++i) {
-    sortRes = sortAsc(a[i], b[i]);
+    const sortRes = sortAsc(a[i], b[i]);
 
     if (sortRes !== 0) {
       return sortRes;

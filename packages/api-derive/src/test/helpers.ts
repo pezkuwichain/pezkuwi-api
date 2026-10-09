@@ -16,7 +16,7 @@ export function createApiWithAugmentations (): ApiPromise {
     registry
   });
 
-  // eslint-disable-next-line deprecation/deprecation
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   api.injectMetadata(metadata, true, registry);
 
   return api;

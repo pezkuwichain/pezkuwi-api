@@ -36,7 +36,7 @@ export class RpcCoder {
   #id = 0;
 
   public decodeResponse <T> (response?: JsonRpcResponse<T>): T {
-    if (!response || response.jsonrpc !== '2.0') {
+    if (response?.jsonrpc !== '2.0') {
       throw new Error('Invalid jsonrpc field in decoded object');
     }
 

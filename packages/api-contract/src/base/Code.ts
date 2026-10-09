@@ -26,7 +26,7 @@ export class CodeSubmittableResult<ApiType extends ApiTypes> extends Submittable
   readonly blueprint?: Blueprint<ApiType> | undefined;
   readonly contract?: Contract<ApiType> | undefined;
 
-  constructor (result: ISubmittableResult, blueprint?: Blueprint<ApiType> | undefined, contract?: Contract<ApiType> | undefined) {
+  constructor (result: ISubmittableResult, blueprint?: Blueprint<ApiType>, contract?: Contract<ApiType>) {
     super(result);
 
     this.blueprint = blueprint;
