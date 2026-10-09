@@ -4,7 +4,7 @@
 import type { Observable } from 'rxjs';
 import type { AnyFunction, Callback, Codec } from '@pezkuwi/types/types';
 
-export type Push<T extends readonly unknown[], V> = [...T, V]
+export type Push<T extends readonly unknown[], V> = [...T, V];
 
 export type DropLast<T extends readonly unknown[]> = T extends readonly [...infer U, any?] ? U : [...T];
 
@@ -71,7 +71,7 @@ type AsCodec<R> = R extends Codec
 
 export type ReturnCodec<F extends AnyFunction> = AsCodec<ObsInnerType<ReturnType<F>>>;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface EmptyBase<_> {
   // this is use to allow use to have unused vars in augmented interfaces,
   // so intentionally left empty

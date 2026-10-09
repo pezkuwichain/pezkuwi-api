@@ -150,7 +150,7 @@ function tsResultGetter (registry: Registry, definitions: Record<string, ModuleT
 
 /** @internal */
 function tsResult (registry: Registry, definitions: Record<string, ModuleTypes>, def: TypeDef, imports: TypeImports): string {
-  const [okDef, errorDef] = (def.sub as TypeDef[]);
+  const [okDef, errorDef] = def.sub as TypeDef[];
   const inner = [
     tsResultGetter(registry, definitions, def.name, 'Err', errorDef, imports),
     tsResultGetter(registry, definitions, def.name, 'Ok', okDef, imports)

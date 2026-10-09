@@ -30,7 +30,7 @@ export interface StorageEntryPromiseOverloadsAt {
 }
 
 // This is the most generic typings we can have for a storage entry function
-export type GenericStorageEntryFunction = (...args: unknown[]) => Observable<Codec>
+export type GenericStorageEntryFunction = (...args: unknown[]) => Observable<Codec>;
 
 export type QueryableStorageEntry<ApiType extends ApiTypes, A extends AnyTuple = AnyTuple> =
   ApiType extends 'rxjs'
@@ -106,7 +106,7 @@ export type AugmentedQueryDoubleMap<ApiType extends ApiTypes, F extends AnyFunct
 
 // augmented interfaces
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface AugmentedQueries<ApiType extends ApiTypes> extends EmptyBase<ApiType> {
   // augmented
 }

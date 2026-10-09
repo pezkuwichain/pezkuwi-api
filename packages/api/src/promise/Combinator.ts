@@ -22,7 +22,6 @@ export class Combinator<T extends unknown[] = unknown[]> {
   constructor (fns: (CombinatorFunction | [CombinatorFunction, ...unknown[]])[], callback: CombinatorCallback<T>) {
     this.#callback = callback;
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises, @typescript-eslint/require-await
     this.#subscriptions = fns.map(async (input, index): UnsubscribePromise => {
       const [fn, ...args] = Array.isArray(input)
         ? input
@@ -31,9 +30,8 @@ export class Combinator<T extends unknown[] = unknown[]> {
       this.#fired.push(false);
       this.#fns.push(fn);
 
-      // Not quite 100% how to have a variable number at the front here
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/ban-types
-      return (fn as Function)(...args, this._createCallback(index));
+      // the leading arguments vary per function, the callback is always last
+      return (fn as (...params: unknown[]) => UnsubscribePromise)(...args, this._createCallback(index));
     });
   }
 

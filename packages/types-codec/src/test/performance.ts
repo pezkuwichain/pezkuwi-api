@@ -7,7 +7,6 @@
 
 import { formatDecimal, formatNumber } from '@pezkuwi/util';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ExecFn = (...params: any[]) => unknown;
 
 const NUM_PAD = 16;

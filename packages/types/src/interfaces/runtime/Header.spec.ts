@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import json1 from '@pezkuwi/types-support/json/Header.001.json' with { type: 'json' };
 import json2 from '@pezkuwi/types-support/json/Header.002.json' with { type: 'json' };
 import json3 from '@pezkuwi/types-support/json/Header.003.json' with { type: 'json' };

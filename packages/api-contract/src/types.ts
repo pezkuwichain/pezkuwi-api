@@ -23,9 +23,9 @@ export interface AbiParam {
   type: TypeDef;
 }
 
-export type AbiMessageParam = AbiParam
+export type AbiMessageParam = AbiParam;
 
-export interface AbiEventParam extends AbiParam{
+export interface AbiEventParam extends AbiParam {
   indexed: boolean;
 }
 
@@ -57,7 +57,7 @@ export interface AbiMessage {
 
 export type AbiConstructor = AbiMessage;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export type InterfaceContractCalls = Record<string, Function>;
 
 export interface ContractCallOutcome {

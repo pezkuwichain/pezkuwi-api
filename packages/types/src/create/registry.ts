@@ -472,10 +472,8 @@ export class TypeRegistry implements Registry {
 
   public register (type: CodecClass | RegistryTypes): void;
 
-  // eslint-disable-next-line no-dupe-class-members
   public register (name: string, type: CodecClass): void;
 
-  // eslint-disable-next-line no-dupe-class-members
   public register (arg1: string | CodecClass | RegistryTypes, arg2?: CodecClass): void {
     // NOTE Constructors appear as functions here
     if (isFunction(arg1)) {

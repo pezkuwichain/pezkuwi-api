@@ -13,7 +13,7 @@ import { combineLatest, map, of, switchMap } from 'rxjs';
 import { memo } from '../util/index.js';
 
 type ResultSuspend = Option<ITuple<[BalanceOf, PezpalletSocietyBidKind]>>;
-type Result = [PezpalletSocietyBid[], ResultSuspend[]]
+type Result = [PezpalletSocietyBid[], ResultSuspend[]];
 
 function getPrev (api: DeriveApi): Observable<DeriveSocietyCandidate[]> {
   return api.query.society.candidates<Vec<PezpalletSocietyBid>>().pipe(

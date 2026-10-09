@@ -1,8 +1,6 @@
 // Copyright 2017-2026 @pezkuwi/api authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-/* eslint-disable no-dupe-class-members */
-
 import type { Observable } from 'rxjs';
 import type { Address, ApplyExtrinsicResult, Call, Extrinsic, ExtrinsicEra, ExtrinsicStatus, Hash, Header, Index, RuntimeDispatchInfo, SignerPayload } from '@pezkuwi/types/interfaces';
 import type { Callback, Codec, CodecClass, ISubmittableResult, SignatureOptions } from '@pezkuwi/types/types';
@@ -365,7 +363,7 @@ export function createClass <ApiType extends ApiTypes> ({ api, apiType, blockHas
           const ext = this.registry.createTypeUnsafe<Extrinsic>('Extrinsic', [result.signedTransaction]);
           const newSignerPayload = this.registry.createTypeUnsafe<SignerPayload>('SignerPayload', [objectSpread({}, {
             address,
-            assetId: ext.assetId && ext.assetId.isSome ? ext.assetId.toHex() : null,
+            assetId: ext.assetId?.isSome ? ext.assetId.toHex() : null,
             blockHash: payload.blockHash,
             blockNumber: header ? header.number : 0,
             era: ext.era.toHex(),

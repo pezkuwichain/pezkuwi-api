@@ -100,7 +100,7 @@ export interface SubmittableExtrinsicFunction<ApiType extends ApiTypes, A extend
 
 // augmented interfaces
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface AugmentedSubmittables<ApiType extends ApiTypes> extends EmptyBase<ApiType> {
   // augmented
 }

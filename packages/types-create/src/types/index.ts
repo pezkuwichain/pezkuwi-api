@@ -7,5 +7,5 @@ import './augmentRegistry.js';
 export type { CodecCreateOptions as CreateOptions } from '@pezkuwi/types-codec/types';
 
 // all starred
-export * from './lookup.js';
+export type * from './lookup.js';
 export * from './types.js';

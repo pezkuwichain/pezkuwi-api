@@ -14,11 +14,11 @@ export type HasherFunction = (data: HasherInput) => Uint8Array;
 const DEFAULT_FN = (data: HasherInput): Uint8Array => xxhashAsU8a(data, 128);
 
 const HASHERS: Record<keyof typeof AllHashers, HasherFunction> = {
-  Blake2_128: (data: HasherInput) => // eslint-disable-line camelcase
+  Blake2_128: (data: HasherInput) =>
     blake2AsU8a(data, 128),
-  Blake2_128Concat: (data: HasherInput) => // eslint-disable-line camelcase
+  Blake2_128Concat: (data: HasherInput) =>
     u8aConcat(blake2AsU8a(data, 128), u8aToU8a(data)),
-  Blake2_256: (data: HasherInput) => // eslint-disable-line camelcase
+  Blake2_256: (data: HasherInput) =>
     blake2AsU8a(data, 256),
   Identity: (data: HasherInput) =>
     u8aToU8a(data),

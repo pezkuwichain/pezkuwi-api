@@ -139,7 +139,7 @@ export function exportInterface (lookupIndex = -1, name = '', base: string, body
 }
 
 function singleParamNotation (registry: Registry, wrapper: string, typeDef: TypeDef, definitions: Record<string, ModuleTypes>, imports: TypeImports, withShortcut: boolean): string {
-  const sub = (typeDef.sub as TypeDef);
+  const sub = typeDef.sub as TypeDef;
   const lookupName = rebrandTypeName(sub.lookupName || '');
 
   setImports(definitions, imports, [wrapper, lookupName]);
@@ -148,7 +148,7 @@ function singleParamNotation (registry: Registry, wrapper: string, typeDef: Type
 }
 
 function dualParamsNotation (registry: Registry, wrapper: string, typeDef: TypeDef, definitions: Record<string, ModuleTypes>, imports: TypeImports, withShortcut: boolean): string {
-  const [a, b] = (typeDef.sub as TypeDef[]);
+  const [a, b] = typeDef.sub as TypeDef[];
   const aLookupName = rebrandTypeName(a.lookupName || '');
   const bLookupName = rebrandTypeName(b.lookupName || '');
 
@@ -254,7 +254,7 @@ const formatters: Record<TypeDefInfo, (registry: Registry, typeDef: TypeDef, def
   },
 
   [TypeDefInfo.VecFixed]: (registry: Registry, typeDef: TypeDef, definitions: Record<string, ModuleTypes>, imports: TypeImports, withShortcut: boolean) => {
-    const sub = (typeDef.sub as TypeDef);
+    const sub = typeDef.sub as TypeDef;
 
     if (sub.type === 'u8') {
       // Use lookupName if available (e.g., PezspCoreCryptoAccountId32) instead of generic U8aFixed
@@ -318,7 +318,6 @@ export function isInlineStruct (type: string): boolean {
  * Correctly format a given type
  */
 /** @internal */
-// eslint-disable-next-line @typescript-eslint/ban-types
 export function formatType (registry: Registry, definitions: Record<string, ModuleTypes>, type: AnyString | TypeDef, imports: TypeImports, withShortcut = false): string {
   let typeDef: TypeDef;
 

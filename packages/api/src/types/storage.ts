@@ -1,4 +1,4 @@
 // Copyright 2017-2026 @pezkuwi/api-augment authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-export * from '@pezkuwi/api-base/types/storage';
+export type * from '@pezkuwi/api-base/types/storage';

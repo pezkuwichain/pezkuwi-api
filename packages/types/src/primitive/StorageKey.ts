@@ -28,9 +28,9 @@ interface StorageKeyExtra {
 // hasher type -> [initialHashLength, canDecodeKey]
 const HASHER_MAP: Record<keyof typeof AllHashers, [number, boolean]> = {
   // opaque
-  Blake2_128: [16, false], // eslint-disable-line camelcase
-  Blake2_128Concat: [16, true], // eslint-disable-line camelcase
-  Blake2_256: [32, false], // eslint-disable-line camelcase
+  Blake2_128: [16, false],
+  Blake2_128Concat: [16, true],
+  Blake2_256: [32, false],
   Identity: [0, true],
   Twox128: [16, false],
   Twox256: [32, false],
@@ -61,7 +61,7 @@ function decodeStorageKey (value?: string | Uint8Array | StorageKey | StorageEnt
       throw new Error('Expected function input for key construction');
     }
 
-    if (fn.meta && fn.meta.type.isMap) {
+    if (fn.meta?.type.isMap) {
       const map = fn.meta.type.asMap;
 
       if (!Array.isArray(args) || args.length !== map.hashers.length) {
@@ -102,7 +102,7 @@ function decodeHashers <A extends AnyTuple> (registry: Registry, value: Uint8Arr
 
 /** @internal */
 function decodeArgsFromMeta <A extends AnyTuple> (registry: Registry, value: Uint8Array, meta?: StorageEntryMetadataLatest): A {
-  if (!meta || !meta.type.isMap) {
+  if (!meta?.type.isMap) {
     return [] as unknown as A;
   }
 

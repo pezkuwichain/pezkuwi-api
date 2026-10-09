@@ -9,7 +9,7 @@ export type AugmentedEvent<_ extends ApiTypes, T extends AnyTuple = AnyTuple, N 
 
 // augmented interfaces
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface AugmentedEvents<ApiType extends ApiTypes> extends EmptyBase<ApiType> {
   // augmented
 }

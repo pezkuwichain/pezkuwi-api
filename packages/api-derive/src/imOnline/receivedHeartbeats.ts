@@ -22,7 +22,7 @@ function mapResult ([result, validators, heartbeats, numBlocks]: Result): Derive
     const hasMessage = !heartbeats[index].isEmpty;
     const prev = result[validatorId];
 
-    if (!prev || prev.hasMessage !== hasMessage || !prev.blockCount.eq(blockCount)) {
+    if (prev?.hasMessage !== hasMessage || !prev.blockCount.eq(blockCount)) {
       result[validatorId] = {
         blockCount,
         hasMessage,

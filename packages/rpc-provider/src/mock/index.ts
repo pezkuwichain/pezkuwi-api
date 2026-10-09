@@ -1,8 +1,6 @@
 // Copyright 2017-2026 @pezkuwi/rpc-provider authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-/* eslint-disable camelcase */
-
 import type { Header } from '@pezkuwi/types/interfaces';
 import type { Codec, Registry } from '@pezkuwi/types/types';
 import type { ProviderInterface, ProviderInterfaceEmitCb, ProviderInterfaceEmitted } from '../types.js';
@@ -53,12 +51,9 @@ export class MockProvider implements ProviderInterface {
   private prevNumber = new BN(-1);
 
   private requests: Record<string, (...params: any[]) => unknown> = {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     chain_getBlock: () => this.registry.createType('SignedBlock', rpcSignedBlock.result).toJSON(),
     chain_getBlockHash: () => '0x1234000000000000000000000000000000000000000000000000000000000000',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     chain_getFinalizedHead: () => this.registry.createType('Header', rpcHeader.result).hash,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     chain_getHeader: () => this.registry.createType('Header', rpcHeader.result).toJSON(),
     rpc_methods: () => this.registry.createType('RpcMethods').toJSON(),
     state_getKeys: () => [],
@@ -236,6 +231,9 @@ export class MockProvider implements ProviderInterface {
 
     this.prevNumber = blockNumber;
 
+    // Needed in this package's own build, where api-augment is not loaded and
+    // createType returns a plain Codec; the repository-wide lint sees it augmented.
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return header as unknown as Header;
   }
 

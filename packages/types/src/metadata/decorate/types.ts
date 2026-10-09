@@ -30,7 +30,7 @@ export type ModuleEvents = Record<string, IsEvent<AnyTuple>>;
 
 export type ModuleExtrinsics = Record<string, CallFunction>;
 
-export type ModuleStorage = Record<string, StorageEntry>
+export type ModuleStorage = Record<string, StorageEntry>;
 
 export type Constants = Record<string, ModuleConstants>;
 
@@ -38,7 +38,7 @@ export type Errors = Record<string, ModuleErrors>;
 
 export type Events = Record<string, ModuleEvents>;
 
-export type Extrinsics = Record<string, ModuleExtrinsics>
+export type Extrinsics = Record<string, ModuleExtrinsics>;
 
 export type Storage = Record<string, ModuleStorage>;
 

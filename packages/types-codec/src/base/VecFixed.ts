@@ -33,7 +33,6 @@ export class VecFixed<T extends Codec> extends AbstractArray<T> {
   public static with<O extends Codec> (Type: CodecClass<O> | string, length: number): CodecClass<VecFixed<O>> {
     let definition: CodecClass<O> | undefined;
 
-    // eslint-disable-next-line no-return-assign
     const setDefinition = <T> (d: CodecClass<T>) =>
       (definition = d as unknown as CodecClass<O>) as unknown as CodecClass<T>;
 

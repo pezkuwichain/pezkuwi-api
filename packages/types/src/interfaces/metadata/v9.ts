@@ -73,8 +73,8 @@ export const v9: DefinitionsTypes = {
   },
   StorageHasherV9: {
     _enum: {
-      Blake2_128: null, // eslint-disable-line camelcase
-      Blake2_256: null, // eslint-disable-line camelcase
+      Blake2_128: null,
+      Blake2_256: null,
       Twox128: null,
       Twox256: null,
       Twox64Concat: null

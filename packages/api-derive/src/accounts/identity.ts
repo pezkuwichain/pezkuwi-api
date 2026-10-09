@@ -213,12 +213,12 @@ export function hasIdentityMulti (instanceId: string, api: DeriveApi): (accountI
         map(([identities, supers]) =>
           identities.map((identityOfOpt, index): DeriveHasIdentity => {
             const superOfOpt = supers[index];
-            const parentId = superOfOpt && superOfOpt.isSome
+            const parentId = superOfOpt?.isSome
               ? superOfOpt.unwrap()[0].toString()
               : undefined;
             let display: string | undefined;
 
-            if (identityOfOpt && identityOfOpt.isSome) {
+            if (identityOfOpt?.isSome) {
               const value = dataAsString(identityCompat(identityOfOpt).info.display);
 
               if (value && !isHex(value)) {

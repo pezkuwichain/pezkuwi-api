@@ -43,11 +43,10 @@ describe('methodSend', (): void => {
 
   it('checks for mismatched parameters', async (): Promise<void> => {
     // private method
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const method = (rpc as any)._createMethodSend('test', 'bleh', methods.bleh);
 
     await new Promise<boolean>((resolve) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
       method(1).subscribe(
         (): void => undefined,
         (error: Error): void => {
@@ -59,14 +58,12 @@ describe('methodSend', (): void => {
 
   it('calls the provider with the correct parameters', async (): Promise<void> => {
     // private method
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const method = (rpc as any)._createMethodSend('test', 'blah', methods.blah);
 
     await new Promise<boolean>((resolve) => {
       // Args are length-prefixed, because it's a Bytes
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
       method(new Uint8Array([2 << 2, 0x12, 0x34])).subscribe((): void => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         expect(provider.send).toHaveBeenCalledWith('test_blah', ['0x1234'], false);
         resolve(true);
       });

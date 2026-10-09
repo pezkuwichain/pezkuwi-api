@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // These are augmented, do an augmentation export
-export * from '@pezkuwi/api-base/types/calls';
-export * from '@pezkuwi/api-base/types/consts';
-export * from '@pezkuwi/api-base/types/errors';
-export * from '@pezkuwi/api-base/types/events';
-export * from '@pezkuwi/api-base/types/storage';
-export * from '@pezkuwi/api-base/types/submittable';
+export type * from '@pezkuwi/api-base/types/calls';
+export type * from '@pezkuwi/api-base/types/consts';
+export type * from '@pezkuwi/api-base/types/errors';
+export type * from '@pezkuwi/api-base/types/events';
+export type * from '@pezkuwi/api-base/types/storage';
+export type * from '@pezkuwi/api-base/types/submittable';
 
 // normal exports
-export * from './api.js';
-export * from './base.js';
-export * from './derive.js';
-export * from './rpc.js';
+export type * from './api.js';
+export type * from './base.js';
+export type * from './derive.js';
+export type * from './rpc.js';

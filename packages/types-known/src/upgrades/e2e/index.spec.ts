@@ -35,7 +35,7 @@ for (const chain of keys) {
   // SPDX-License-Identifier: Apache-2.0
 
   // Auto-generated from on-chain data & manual definitions, do not edit
-  /* eslint-disable quotes, comma-spacing */
+  /* eslint-disable @stylistic/quotes, @stylistic/comma-spacing */
 
   import type { ChainUpgradesExpanded } from '../types.js';
 

@@ -41,7 +41,7 @@ function inspectType (type: string): void {
       inspectType(sub.type);
     }
   } catch (error) {
-    throw new Error(`${type}:: ${(error as Error).message}`);
+    throw new Error(`${type}:: ${(error as Error).message}`, { cause: error });
   }
 }
 

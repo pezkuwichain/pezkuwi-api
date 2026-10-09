@@ -43,7 +43,7 @@ function traverseLinks (api: DeriveApi, head: AccountId32 | string): Observable<
  */
 export function listNodes (instanceId: string, api: DeriveApi): (bag: PezpalletBagsListListBag | null) => Observable<PezpalletBagsListListNode[]> {
   return memo(instanceId, (bag: PezpalletBagsListListBag | null): Observable<PezpalletBagsListListNode[]> =>
-    bag && bag.head.isSome
+    bag?.head.isSome
       ? traverseLinks(api, bag.head.unwrap())
       : of([])
   );

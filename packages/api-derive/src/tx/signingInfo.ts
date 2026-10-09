@@ -82,7 +82,7 @@ function babeOrAuraPeriod (api: DeriveApi): BN | undefined {
     (api.consts['aura'] as unknown as Aura)?.['slotDuration'] ||
     api.consts.timestamp?.minimumPeriod.muln(2);
 
-  return period && period.isZero && !period.isZero() ? period : undefined;
+  return period?.isZero && !period.isZero() ? period : undefined;
 }
 
 /**

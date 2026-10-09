@@ -50,7 +50,6 @@ const PreambleMask = {
 
 const preambleUnMask: Record<string, Preamble> = {
   0: 'bare',
-  // eslint-disable-next-line sort-keys
   64: 'general'
 };
 
@@ -342,7 +341,7 @@ export class GenericExtrinsic<A extends AnyTuple = AnyTuple> extends ExtrinsicBa
    */
   public override get hash (): CodecHash {
     if (!this.#hashCache) {
-      this.#hashCache = super.hash as CodecHash;
+      this.#hashCache = super.hash;
     }
 
     return this.#hashCache;

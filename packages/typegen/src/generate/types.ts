@@ -8,7 +8,7 @@ export type ExtraTypes = Record<string, Record<string, {
   types: Record<string, any>;
 }>>;
 
-export function getDeprecationNotice<T extends { isDeprecated: boolean; asDeprecated: { note: Text; since: Option<Text> }}> (deprecationInfo: T, name: string, label?: string): string {
+export function getDeprecationNotice<T extends { isDeprecated: boolean; asDeprecated: { note: Text; since: Option<Text> } }> (deprecationInfo: T, name: string, label?: string): string {
   let deprecationNotice = '@deprecated';
 
   if (deprecationInfo.isDeprecated) {

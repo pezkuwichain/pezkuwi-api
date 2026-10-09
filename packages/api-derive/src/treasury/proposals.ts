@@ -26,8 +26,8 @@ function parseResult (api: DeriveApi, { allIds, allProposals, approvalIds, counc
     // FIXME `approveProposal` and `rejectProposal` have been removed in bizinikiwi and released in 1.14
     // in favor of `spend`. See: https://github.com/pezkuwichain/pezkuwi-sdk/pull/3820
     proposal && (
-      (api.tx.treasury['approveProposal'] && api.tx.treasury['approveProposal'].is(proposal)) ||
-      (api.tx.treasury['rejectProposal'] && api.tx.treasury['rejectProposal'].is(proposal))
+      (api.tx.treasury['approveProposal']?.is(proposal)) ||
+      (api.tx.treasury['rejectProposal']?.is(proposal))
     )
   );
 

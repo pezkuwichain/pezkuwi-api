@@ -93,7 +93,6 @@ describe('Combinator', (): void => {
   // eslint-disable-next-line jest/expect-expect
   it('unsubscribes as required', async (): Promise<void> => {
     await new Promise<void>((resolve) => {
-      // eslint-disable-next-line @typescript-eslint/require-await
       const mocker = () => Promise.resolve(resolve);
       const combinator = new Combinator([
         mocker,

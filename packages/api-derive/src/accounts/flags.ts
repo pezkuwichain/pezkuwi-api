@@ -3,7 +3,7 @@
 
 import type { Observable } from 'rxjs';
 import type { AccountId, Address, Balance } from '@pezkuwi/types/interfaces';
-import type{ PezpalletElectionsPhragmenSeatHolder } from '@pezkuwi/types/lookup';
+import type { PezpalletElectionsPhragmenSeatHolder } from '@pezkuwi/types/lookup';
 import type { Codec } from '@pezkuwi/types/types';
 import type { Option } from '@pezkuwi/types-codec';
 import type { DeriveAccountFlags, DeriveApi } from '../types.js';

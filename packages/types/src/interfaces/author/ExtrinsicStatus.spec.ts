@@ -3,8 +3,6 @@
 
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import type { ExtrinsicStatus } from './types.js';
 
 import rpc from '@pezkuwi/types-support/json/ExtrinsicStatus.001.json' with { type: 'json' };

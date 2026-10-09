@@ -139,7 +139,6 @@ export abstract class AbstractInt extends BN implements INumber {
   /**
    * @description Compares the value of the input to see if there is a match
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public override eq (other?: unknown): boolean {
     // Here we are actually overriding the built-in .eq to take care of both
     // number and BN inputs (no `.eqn` needed) - numbers will be converted

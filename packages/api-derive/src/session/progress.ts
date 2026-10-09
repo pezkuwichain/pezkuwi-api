@@ -68,7 +68,7 @@ function queryBabe (api: DeriveApi): Observable<[DeriveSessionInfo, ResultSlotsF
       ])
     ),
     map(([info, [currentSlot, epochIndex, genesisSlot, optStartIndex]]): [DeriveSessionInfo, ResultSlotsFlat] => [
-      info, [currentSlot, epochIndex, genesisSlot, optStartIndex && optStartIndex.isSome ? optStartIndex.unwrap() : api.registry.createType('SessionIndex', 1)]
+      info, [currentSlot, epochIndex, genesisSlot, optStartIndex?.isSome ? optStartIndex.unwrap() : api.registry.createType('SessionIndex', 1)]
     ])
   );
 }

@@ -150,7 +150,7 @@ export class ApiPromise extends ApiBase<'promise'> {
   public static create (options?: ApiOptions): Promise<ApiPromise> {
     const instance = new ApiPromise(options);
 
-    if (options && options.throwOnConnect) {
+    if (options?.throwOnConnect) {
       return instance.isReadyOrError;
     }
 

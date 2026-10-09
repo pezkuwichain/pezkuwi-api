@@ -6,17 +6,17 @@ import './augmentLookup.js';
 import './augmentRegistry.js';
 
 // augmented exports
-export * from '@pezkuwi/types/types/registry';
+export type * from '@pezkuwi/types/types/registry';
 
 // used inside augmented definitions
 export type { Observable } from 'rxjs';
 
 // other exports
 export * from '../create/types.js';
-export * from './calls.js';
-export * from './codec.js';
-export * from './definitions.js';
-export * from './detect.js';
-export * from './events.js';
-export * from './extrinsic.js';
-export * from './interfaces.js';
+export type * from './calls.js';
+export type * from './codec.js';
+export type * from './definitions.js';
+export type * from './detect.js';
+export type * from './events.js';
+export type * from './extrinsic.js';
+export type * from './interfaces.js';

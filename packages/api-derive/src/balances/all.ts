@@ -25,7 +25,7 @@ interface AllLocked {
 
 type DeriveCustomLocks = DeriveApi['derive'] & Record<string, {
   customLocks?: DeriveApi['query']['balances']['locks']
-}>
+}>;
 
 const VESTING_ID = '0x76657374696e6720';
 
@@ -38,7 +38,7 @@ function calcLocked (api: DeriveApi, bestNumber: BlockNumber, locks: (PezpalletB
   if (Array.isArray(locks)) {
     // only get the locks that are valid until passed the current block
     lockedBreakdown = (locks as BalanceLockTo212[]).filter(({ until }): boolean => !until || (bestNumber && until.gt(bestNumber)));
-    allLocked = lockedBreakdown.some(({ amount }) => amount && amount.isMax());
+    allLocked = lockedBreakdown.some(({ amount }) => amount?.isMax());
     vestingLocked = api.registry.createType('Balance', lockedBreakdown.filter(({ id }) => id.eq(VESTING_ID)).reduce((result: BN, { amount }) => result.iadd(amount), new BN(0)));
 
     // get the maximum of the locks according to https://github.com/pezkuwichain/bizinikiwi/blob/master/srml/balances/src/lib.rs#L699

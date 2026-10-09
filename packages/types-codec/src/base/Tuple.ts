@@ -27,7 +27,7 @@ function decodeTuple (registry: Registry, result: Codec[], value: Exclude<AnyTup
           ? entry
           : new Types[i](registry, entry);
       } catch (error) {
-        throw new Error(`Tuple: failed on ${i}:: ${(error as Error).message}`);
+        throw new Error(`Tuple: failed on ${i}:: ${(error as Error).message}`, { cause: error });
       }
     }
 

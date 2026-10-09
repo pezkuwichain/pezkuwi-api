@@ -1,14 +1,11 @@
 // Copyright 2017-2026 @pezkuwi/types-known authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-/* eslint-disable sort-keys */
-
 import type { OverrideVersionedType } from '@pezkuwi/types/types';
 
 import { mapXcmTypes } from '@pezkuwi/types-create';
 
 // structs need to be in order
-/* eslint-disable sort-keys */
 
 const sharedTypes = {
   DispatchErrorModule: 'DispatchErrorModuleU8',

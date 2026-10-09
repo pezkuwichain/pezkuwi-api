@@ -115,7 +115,7 @@ async function query (api: ApiPromise, pairs: TestKeyringMapBizinikiwi): Promise
   const bal2 = await api.query.balances.totalIssuance('WRONG_ARG'); // bal2 is Codec (wrong args)
   const override = await api.query.balances.totalIssuance<Header>(); // override is still available
 
-  // eslint-disable-next-line deprecation/deprecation
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const oldBal = await api.query.balances.totalIssuance.at('abcd');
 
   // For older queries we can cast with `<Balance>` (newer chain have multi typed)
@@ -144,7 +144,7 @@ async function queryExtra (api: ApiPromise): Promise<void> {
   });
 
   // at queries
-  // eslint-disable-next-line deprecation/deprecation
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const events = await api.query.system.events.at('0x12345');
 
   console.log(`Received ${events.length} events:`);
@@ -221,7 +221,7 @@ async function rpc (api: ApiPromise): Promise<void> {
   });
 
   // deprecated methods
-  // eslint-disable-next-line deprecation/deprecation
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   await api.rpc.state.getPairs('123');
 }
 
@@ -304,17 +304,18 @@ async function main (): Promise<void> {
   const api = await ApiPromise.create();
   const pairs = createTestPairs();
 
+  consts(api);
+  errors(api);
+  events(api);
+  types(api);
+
   await Promise.all([
     calls(api),
-    consts(api),
     derive(api),
-    errors(api),
-    events(api),
     query(api, pairs),
     queryExtra(api),
     queryMulti(api, pairs),
     rpc(api),
-    types(api),
     tx(api, pairs),
     at(api)
   ]);

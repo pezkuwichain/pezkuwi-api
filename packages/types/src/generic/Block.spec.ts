@@ -4,7 +4,6 @@
 /// <reference types="@pezkuwi/dev-test/globals.d.ts" />
 
 /* eslint-disable sort-keys */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import type { BlockValue } from './Block.js';
 

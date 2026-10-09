@@ -38,7 +38,6 @@ export function decodeVec<T extends Codec> (registry: Registry, result: T[], val
 
     for (let i = 0; i < count; i++) {
       // 26/08/2022 this is actually a false positive - after recent eslint upgdates
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const entry = value[i];
 
       try {
@@ -88,7 +87,6 @@ export class Vec<T extends Codec> extends AbstractArray<T> {
   public static with<O extends Codec> (Type: CodecClass<O> | string): CodecClass<Vec<O>> {
     let definition: CodecClass<O> | undefined;
 
-    // eslint-disable-next-line no-return-assign
     const setDefinition = <T> (d: CodecClass<T>) =>
       (definition = d as unknown as CodecClass<O>) as unknown as CodecClass<T>;
 

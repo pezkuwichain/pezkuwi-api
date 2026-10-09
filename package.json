@@ -39,9 +39,9 @@
     "test:one": "pezkuwi-dev-run-test --env node"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "^0.85.12",
-    "@pezkuwi/dev-test": "^0.85.12",
-    "@pezkuwi/dev-ts": "^0.85.12",
+    "@pezkuwi/dev": "^0.86.3",
+    "@pezkuwi/dev-test": "^0.86.3",
+    "@pezkuwi/dev-ts": "^0.86.3",
     "@pezkuwi/typegen": "workspace:*",
     "@types/node": "^22.10.5",
     "@types/yargs": "^17.0.35"

@@ -12,7 +12,7 @@ describe('Bool', (): void => {
   const registry = new TypeRegistry();
 
   describe('decode', (): void => {
-    // eslint-disable-next-line @typescript-eslint/ban-types
+    // eslint-disable-next-line @typescript-eslint/no-wrapper-object-types
     const testDecode = (type: string, input: Uint8Array | boolean | Boolean | Bool | number, expected: boolean): void =>
       it(`can decode from ${type}`, (): void => {
         expect(new Bool(registry, input).toJSON()).toBe(expected);

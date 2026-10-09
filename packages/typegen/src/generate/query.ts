@@ -64,7 +64,7 @@ function entrySignature (lookup: PortableRegistry, allDefs: Record<string, Modul
 
     throw new Error(`Expected Plain or Map type, found ${storageEntry.type.type}`);
   } catch (error) {
-    throw new Error(`entrySignature: Cannot create signature for query ${section}.${storageEntry.name.toString()}:: ${(error as Error).message}`);
+    throw new Error(`entrySignature: Cannot create signature for query ${section}.${storageEntry.name.toString()}:: ${(error as Error).message}`, { cause: error });
   }
 }
 

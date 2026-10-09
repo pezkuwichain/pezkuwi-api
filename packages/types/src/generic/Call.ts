@@ -10,7 +10,6 @@ import { isHex, isObject, isU8a, objectSpread, u8aToU8a } from '@pezkuwi/util';
 
 interface DecodeMethodInput {
   args: unknown;
-  // eslint-disable-next-line no-use-before-define
   callIndex: GenericCallIndex | Uint8Array;
 }
 
@@ -40,7 +39,6 @@ function decodeCallViaObject (registry: Registry, value: DecodedMethod, _meta?: 
   const { args, callIndex } = value;
 
   // Get the correct lookupIndex
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   const lookupIndex = callIndex instanceof GenericCallIndex
     ? callIndex.toU8a()
     : callIndex;
@@ -141,7 +139,7 @@ export class GenericCall<A extends AnyTuple = AnyTuple> extends Struct implement
         // ignore
       }
 
-      throw new Error(`Call: failed decoding ${method}:: ${(error as Error).message}`);
+      throw new Error(`Call: failed decoding ${method}:: ${(error as Error).message}`, { cause: error });
     }
 
     this._meta = decoded.meta;

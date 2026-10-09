@@ -163,7 +163,7 @@ export function defaultValues (registry: Registry, { data, fails = [] }: Check, 
               const message = `${location}:: ${(error as Error).message}`;
 
               if (withThrow && !fails.some((f) => location.includes(f))) {
-                throw new Error(message);
+                throw new Error(message, { cause: error });
               } else {
                 console.warn(message);
               }
