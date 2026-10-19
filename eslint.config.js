@@ -9,7 +9,8 @@ export default [
       // see the tsconfig.eslint.json for explanation
       'packages/api-augment/src/dicle/*.ts',
       'packages/api-augment/src/pezkuwi/*.ts',
-      // compiled packages without sources here; there is nothing to lint
+      // upstream polkadot-api packages (src/ + committed dist/), kept in upstream's style;
+      // scripts/check-papi-sources.mjs ties dist/ to src/
       'packages/bizinikiwi-bindings/**',
       'packages/merkleize-metadata/**',
       'packages/metadata-builders/**',

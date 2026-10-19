@@ -1,4 +1,15 @@
-# @polkadot-api/metadata-builders
+# @pezkuwi/metadata-builders
+
+**Source:** `src/` is [`@polkadot-api/metadata-builders`](https://www.npmjs.com/package/@polkadot-api/metadata-builders/v/0.13.2) 0.13.2 from
+[polkadot-api](https://github.com/polkadot-api/polkadot-api) (MIT), with imports of
+`@polkadot-api/*` renamed to `@pezkuwi/*` (`substrate-bindings` → `bizinikiwi-bindings`). `dist/` is its build;
+`scripts/check-papi-sources.mjs` fails CI unless the source embedded in `dist/` equals `src/`.
+
+The upstream README follows.
+
+---
+
+## @polkadot-api/metadata-builders
 
 This package has multiple functions that read a metadata object, denormalizes it, and builds other structures needed for different processes
 

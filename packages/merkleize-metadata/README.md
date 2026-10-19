@@ -1,4 +1,15 @@
-# @polkadot-api/merkleize-metadata
+# @pezkuwi/merkleize-metadata
+
+**Source:** `src/` is [`@polkadot-api/merkleize-metadata`](https://www.npmjs.com/package/@polkadot-api/merkleize-metadata/v/1.1.22) 1.1.22 from
+[polkadot-api](https://github.com/polkadot-api/polkadot-api) (MIT), with imports of
+`@polkadot-api/*` renamed to `@pezkuwi/*` (`substrate-bindings` → `bizinikiwi-bindings`). `dist/` is its build;
+`scripts/check-papi-sources.mjs` fails CI unless the source embedded in `dist/` equals `src/`.
+
+The upstream README follows.
+
+---
+
+## @polkadot-api/merkleize-metadata
 
 This TS package provides utils for the merkleization of [`frame_metadata`](https://docs.rs/frame-metadata/latest/frame_metadata/) as described in
 [RFC78](https://polkadot-fellows.github.io/RFCs/approved/0078-merkleized-metadata.html).

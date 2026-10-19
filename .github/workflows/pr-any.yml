@@ -31,3 +31,8 @@ jobs:
     - name: check built manifests
       if: matrix.step == 'build'
       run: python3 scripts/check-built-manifests.py .
+    # The four polkadot-api packages ship committed dist/ builds; their source
+    # maps must embed exactly the src/ committed beside them.
+    - name: check papi sources
+      if: matrix.step == 'lint'
+      run: node scripts/check-papi-sources.mjs

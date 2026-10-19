@@ -16,6 +16,11 @@
     // these include the different-chain augmentations, which then overrides
     // the bizinikiwi base. TS only allow single augmentations, so exclude here
     "packages/api-augment/src/zagros/*.ts",
-    "packages/api-augment/src/pezkuwi/*.ts"
+    "packages/api-augment/src/pezkuwi/*.ts",
+    // upstream polkadot-api sources behind committed dist/ builds; checked by scripts/check-papi-sources.mjs
+    "packages/bizinikiwi-bindings/src/**/*",
+    "packages/merkleize-metadata/src/**/*",
+    "packages/metadata-builders/src/**/*",
+    "packages/papi-utils/src/**/*"
   ]
 }
