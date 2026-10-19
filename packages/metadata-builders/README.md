@@ -1,9 +1,9 @@
 # @pezkuwi/metadata-builders
 
-**Source:** `src/` is [`@polkadot-api/metadata-builders`](https://www.npmjs.com/package/@polkadot-api/metadata-builders/v/0.13.2) 0.13.2 from
+**Source:** `upstream-src/` is [`@polkadot-api/metadata-builders`](https://www.npmjs.com/package/@polkadot-api/metadata-builders/v/0.13.2) 0.13.2 from
 [polkadot-api](https://github.com/polkadot-api/polkadot-api) (MIT), with imports of
 `@polkadot-api/*` renamed to `@pezkuwi/*` (`substrate-bindings` → `bizinikiwi-bindings`). `dist/` is its build;
-`scripts/check-papi-sources.mjs` fails CI unless the source embedded in `dist/` equals `src/`.
+`scripts/check-papi-sources.mjs` fails CI unless the source embedded in `dist/` equals `upstream-src/`.
 
 The upstream README follows.
 

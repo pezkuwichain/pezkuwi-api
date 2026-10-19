@@ -4,8 +4,10 @@
 // papi-utils, bizinikiwi-bindings, metadata-builders and merkleize-metadata
 // ship committed dist/ builds of upstream polkadot-api packages. Every source
 // map in dist/ embeds the TypeScript it was compiled from; this check fails
-// unless that embedded source is exactly the src/ committed beside it, so a
-// published dist/ can only come from source held in this repository.
+// unless that embedded source is exactly the upstream-src/ committed beside it,
+// so a published dist/ can only come from source held in this repository.
+// (Not src/: the pezkuwi-dev build treats any package with src/ as its own and
+// requires our license header on every file.)
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,7 +25,7 @@ function walk (dir) {
 
 for (const name of PACKAGES) {
   const pkg = path.join('packages', name);
-  const srcDir = path.join(pkg, 'src');
+  const srcDir = path.join(pkg, 'upstream-src');
   const embedded = new Map();
 
   for (const map of walk(path.join(pkg, 'dist')).filter((f) => f.endsWith('.map'))) {
@@ -31,7 +33,7 @@ for (const name of PACKAGES) {
 
     sources.forEach((source, i) => {
       const resolved = path.normalize(path.join(path.dirname(map), source));
-      const rel = resolved.slice(resolved.indexOf(`${path.sep}src${path.sep}`) + 1);
+      const rel = path.join('upstream-src', resolved.slice(resolved.indexOf(`${path.sep}src${path.sep}`) + 5));
       const content = sourcesContent[i];
 
       if (content == null) {
