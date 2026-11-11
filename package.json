@@ -32,6 +32,7 @@
     "build:upgrades": "pezkuwi-dev-run-test upgrades/e2e",
     "chain:info": "pezkuwi-types-chain-info",
     "clean": "pezkuwi-dev-clean-build",
+    "docs": "typedoc",
     "lint": "pezkuwi-dev-run-lint",
     "postinstall": "pezkuwi-dev-yarn-only",
     "test": "pezkuwi-dev-run-test --env node ^e2e",
@@ -44,7 +45,8 @@
     "@pezkuwi/dev-ts": "^0.86.3",
     "@pezkuwi/typegen": "workspace:*",
     "@types/node": "^22.10.5",
-    "@types/yargs": "^17.0.35"
+    "@types/yargs": "^17.0.35",
+    "typedoc": "0.28.20"
   },
   "resolutions": {
     "@isaacs/nonrecursive-glob-match@npm:^1.0.1": "1.0.1",

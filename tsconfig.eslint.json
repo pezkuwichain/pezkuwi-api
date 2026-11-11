@@ -11,7 +11,8 @@
     "scripts/*",
     ".prettierrc.cjs",
     "eslint.config.js",
-    "rollup.config.js"
+    "rollup.config.js",
+    "typedoc.config.mjs"
   ],
   "exclude": [
     "**/node_modules/**/*",

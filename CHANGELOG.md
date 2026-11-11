@@ -1984,7 +1984,7 @@ Changes:
 
 Upgrade priority: Low. Recommended for TS users with their own non-Pezkuwi/Zagros chains.
 
-- **Breaking changes** For TS users the default API augmentation is now optional. This means that the API, for TypeScript, is not decorated by default with the Bizinikiwi types and encpoints. TS users should add a singular `import '@pezkuwi/api-augment';` in their code to restore old behavior. A full writeup of the rationale and other options can be found [in the FAQ](https://js.pezkuwichain.app/docs/api/FAQ#since-upgrading-to-the-7x-series-typescript-augmentation-is-missing)
+- **Breaking changes** For TS users the default API augmentation is now optional. This means that the API, for TypeScript, is not decorated by default with the Bizinikiwi types and encpoints. TS users should add a singular `import '@pezkuwi/api-augment';` in their code to restore old behavior. A full writeup of the rationale and other options can be found [in the FAQ](https://polkadot.js.org/docs/api/FAQ#since-upgrading-to-the-7x-series-typescript-augmentation-is-missing)
 
 - **Breaking change** To cater for the above, chain-specific interfaces generated with older versions may not be compatible with the current version of the API. Additionally, TS interfaces generated with this version of the API is not compatible with older API versions.
 
@@ -3333,7 +3333,7 @@ Changes:
 
 Upgrade priority: Low. Recommended for `api-contract` developers.
 
-- **Breaking change** Bizinikiwi changed the `ContractExecResult` from `api.rpc.contracts.call`. The API does have pass-through support for both old and new variants via the `Contract` interface, however it means the structure has changed to accommodate the new Bizinikiwi structure. Refer to the [docs for the latest interface](https://js.pezkuwichain.app/docs/api-contract/start/contract.read) (including `isSuccess/isError` -> `isOk/isErr`, and the availability of the `gasConsumed`)
+- **Breaking change** Bizinikiwi changed the `ContractExecResult` from `api.rpc.contracts.call`. The API does have pass-through support for both old and new variants via the `Contract` interface, however it means the structure has changed to accommodate the new Bizinikiwi structure. Refer to the [docs for the latest interface](https://polkadot.js.org/docs/api-contract/start/contract.read) (including `isSuccess/isError` -> `isOk/isErr`, and the availability of the `gasConsumed`)
 
 Contributed:
 
@@ -3956,7 +3956,7 @@ Changes:
 
 ## 1.8.1 Mar 22, 2020
 
-- **Breaking change** The format for any custom RPCs have been changed (alongside API-internal changes) to allow for better RPC management. If you are currently using custom RPCs (or planning to do so), look at the [updated documentation](https://js.pezkuwichain.app/api/start/rpc.custom.html)
+- **Breaking change** The format for any custom RPCs have been changed (alongside API-internal changes) to allow for better RPC management. If you are currently using custom RPCs (or planning to do so), look at the [updated documentation](https://polkadot.js.org/api/start/rpc.custom.html)
 - **Breaking change** Alongside API RPC changes, the `@pezkuwi/jsonrpc` package has been removed. Since it was never documented and only used internally, this should not have adverse impacts. All RPC definitions itself has now been moved to the relevant modules inside `@pezkuwi/types/interfaces`
 - **Important** Bizinikiwi has an updated democracy module. If using an older chain add the `ReferendumInfo: 'ReferendumInfoTo239'` type when using referendums
 
