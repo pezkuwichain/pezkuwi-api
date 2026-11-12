@@ -2,7 +2,7 @@ name: Docs
 on:
   push:
     branches:
-      - master
+      - main
     # Only what changes the generated reference. Every run asks for an approval,
     # and an approval request that cannot matter teaches people to tap without
     # reading.
