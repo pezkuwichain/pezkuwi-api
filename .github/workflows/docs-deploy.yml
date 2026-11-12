@@ -1,0 +1,92 @@
+name: Docs
+on:
+  push:
+    branches:
+      - master
+    # Only what changes the generated reference. Every run asks for an approval,
+    # and an approval request that cannot matter teaches people to tap without
+    # reading.
+    paths:
+      - 'packages/**'
+      - 'docs/**'
+      - 'typedoc.config.mjs'
+      - 'yarn.lock'
+      - '.github/deploy/**'
+      - '.github/workflows/docs-deploy.yml'
+  workflow_dispatch:
+    inputs:
+      rollback_to:
+        description: 'Make an earlier release live again (full commit sha); empty = deploy this commit'
+        required: false
+        default: ''
+
+# Deploys wait for each other; a newer push queues behind a running one.
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # The release bot's version-bump commits change no source.
+    if: github.event.inputs.rollback_to == '' && !startsWith(github.event.head_commit.message, '[CI Skip]')
+    runs-on: ubuntu-latest
+    env:
+      YARN_ENABLE_SCRIPTS: false
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/*'
+    - name: docs
+      run: |
+        yarn install --immutable
+        yarn docs
+        echo "$GITHUB_SHA" > build-docs/.deploy-sha
+        tar -C build-docs -czf docs-www.tgz .
+    - uses: actions/upload-artifact@v4
+      with:
+        name: docs-www
+        path: docs-www.tgz
+        retention-days: 7
+
+  # The only job that names the environment, so a run asks for approval once,
+  # and the deploy secrets (environment-scoped) exist only after it is given.
+  deploy:
+    needs: build
+    if: always() && (needs.build.result == 'success' || (needs.build.result == 'skipped' && github.event.inputs.rollback_to != ''))
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      HOST: ${{ secrets.DOCS_DEPLOY_HOST }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        sparse-checkout: .github/deploy
+    - name: ssh setup
+      env:
+        KEY: ${{ secrets.DOCS_DEPLOY_SSH_KEY }}
+        KNOWN_HOSTS: ${{ secrets.DOCS_DEPLOY_KNOWN_HOSTS }}
+      run: |
+        install -m 700 -d ~/.ssh
+        printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - uses: actions/download-artifact@v4
+      if: github.event.inputs.rollback_to == ''
+      with:
+        name: docs-www
+    - name: upload
+      if: github.event.inputs.rollback_to == ''
+      run: scp -o BatchMode=yes docs-www.tgz "docs-deploy@$HOST:/var/www/docs-deploy/incoming/$GITHUB_SHA.tgz"
+    - name: go live
+      env:
+        ROLLBACK_TO: ${{ github.event.inputs.rollback_to }}
+      run: |
+        if [ -n "$ROLLBACK_TO" ]; then set -- rollback "$ROLLBACK_TO"; else set -- deploy "$GITHUB_SHA"; fi
+        # ssh hands its arguments to the remote shell as one string: only a
+        # bare sha may get there.
+        [[ $2 =~ ^[0-9a-f]{40}$ ]] || { echo "not a full commit sha: $2"; exit 1; }
+        ssh -o BatchMode=yes "docs-deploy@$HOST" bash -s -- "$@" < .github/deploy/release.sh
