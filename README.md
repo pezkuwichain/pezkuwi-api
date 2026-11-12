@@ -10,7 +10,7 @@ This library provides a clean wrapper around all the methods exposed by a Pezkuw
 
 ## Documentation
 
-For complete documentation around the interfaces and their use, visit the [documentation portal](https://js.pezkuwichain.app/docs/api/).
+The API reference and a getting-started guide are at [developers.pezkuwichain.io](https://developers.pezkuwichain.io).
 
 ## Installation
 
@@ -48,7 +48,7 @@ console.log(`Connected to ${chain}`);
 
 ## Tutorials
 
-Looking for tutorials? Check out [examples](https://js.pezkuwichain.app/docs/api/examples/promise/) for guides on how to use the API to make queries and submit transactions.
+Looking for a walkthrough? [Getting started](https://developers.pezkuwichain.io/documents/Getting_started.html) connects, reads chain state, follows blocks and sends a transfer.
 
 ## Changelog
 
@@ -57,8 +57,8 @@ If you are an existing user, please track the [CHANGELOG](CHANGELOG.md) when cha
 ## Links
 
 - Website: https://pezkuwichain.io
-- Documentation: https://docs.pezkuwichain.io
-- API Docs: https://js.pezkuwichain.app
+- Developer docs: https://developers.pezkuwichain.io
+- Wiki: https://wiki.pezkuwichain.io
 - GitHub: https://github.com/pezkuwichain
 
 ## License
