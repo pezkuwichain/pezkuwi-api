@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://git.pezkuwichain.io/pezkuwichain/pezkuwi-api/tree/master/packages/types-support#readme",
+  "homepage": "https://developers.pezkuwichain.io/",
   "license": "Apache-2.0",
   "name": "@pezkuwi/types-support",
   "repository": {
