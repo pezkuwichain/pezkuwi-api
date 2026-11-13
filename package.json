@@ -40,7 +40,7 @@
     "test:one": "pezkuwi-dev-run-test --env node"
   },
   "devDependencies": {
-    "@pezkuwi/dev": "^0.86.3",
+    "@pezkuwi/dev": "^0.86.9",
     "@pezkuwi/dev-test": "^0.86.3",
     "@pezkuwi/dev-ts": "^0.86.3",
     "@pezkuwi/typegen": "workspace:*",

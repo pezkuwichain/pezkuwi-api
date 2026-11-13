@@ -1349,6 +1349,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pezkuwi/dev-test@npm:^0.86.9":
+  version: 0.86.9
+  resolution: "@pezkuwi/dev-test@npm:0.86.9"
+  dependencies:
+    jsdom: "npm:^24.0.0"
+    tslib: "npm:^2.7.0"
+  checksum: 10/e843e126726d64d939c59bbb70d48968e1b179fa283abfe1ed9363d11cbbd23760679008cfa2a2fee7d1a38304cf0c2a1a67574e4b3ab35f59820630306fbbe7
+  languageName: node
+  linkType: hard
+
 "@pezkuwi/dev-ts@npm:^0.86.3":
   version: 0.86.3
   resolution: "@pezkuwi/dev-ts@npm:0.86.3"
@@ -1360,14 +1370,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pezkuwi/dev@npm:^0.86.3":
-  version: 0.86.3
-  resolution: "@pezkuwi/dev@npm:0.86.3"
+"@pezkuwi/dev-ts@npm:^0.86.9":
+  version: 0.86.9
+  resolution: "@pezkuwi/dev-ts@npm:0.86.9"
+  dependencies:
+    json5: "npm:^2.2.3"
+    tslib: "npm:^2.7.0"
+    typescript: "npm:^5.5.4"
+  checksum: 10/96def2811988a6682797a7241b44d1c7f5dbf54be575d1a37125eadd9d40cc4d1f371c6b334f77487f4f4c5459f6cd70bd82667645c64cf540603e8447f3729e
+  languageName: node
+  linkType: hard
+
+"@pezkuwi/dev@npm:^0.86.9":
+  version: 0.86.9
+  resolution: "@pezkuwi/dev@npm:0.86.9"
   dependencies:
     "@eslint/compat": "npm:^2.1.1"
     "@eslint/js": "npm:^10.0.1"
-    "@pezkuwi/dev-test": "npm:^0.86.3"
-    "@pezkuwi/dev-ts": "npm:^0.86.3"
+    "@pezkuwi/dev-test": "npm:^0.86.9"
+    "@pezkuwi/dev-ts": "npm:^0.86.9"
     "@rollup/plugin-alias": "npm:^5.1.1"
     "@rollup/plugin-commonjs": "npm:^29.0.3"
     "@rollup/plugin-dynamic-import-vars": "npm:^2.1.5"
@@ -1432,7 +1453,7 @@ __metadata:
     pezkuwi-exec-rollup: scripts/pezkuwi-exec-rollup.mjs
     pezkuwi-exec-tsc: scripts/pezkuwi-exec-tsc.mjs
     pezkuwi-exec-webpack: scripts/pezkuwi-exec-webpack.mjs
-  checksum: 10/b1c92457df89a022b030472982c14f39caa491200535e732f4c2e4fba349bddacbe2d4baa8e52df64999ad54e016dece8ba48e72cd4f19411f730e1666035f1e
+  checksum: 10/f459e09bb3d0cfbcbfbd34767b594422bac66eec6899efed0180e1f241be63611764c6f1cd5d2f06861dca766381a6618629b8203309310741cd8bf600a6a919
   languageName: node
   linkType: hard
 
@@ -8076,7 +8097,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@pezkuwi/dev": "npm:^0.86.3"
+    "@pezkuwi/dev": "npm:^0.86.9"
     "@pezkuwi/dev-test": "npm:^0.86.3"
     "@pezkuwi/dev-ts": "npm:^0.86.3"
     "@pezkuwi/typegen": "workspace:*"
